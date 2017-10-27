@@ -1,0 +1,17 @@
+<schemalist>
+  <schema id="com.github.bitseater.weather" path="/com/github/bitseater/weather/" gettext-domain="weather">
+
+    <key name="idplace" type="s">
+        <default l10n="messages">""</default>
+        <summary>City ID</summary>
+        <description>City ID from OpenWeatherMap</description>
+    </key>
+
+    <key name="units" type="s">
+        <default l10n="messages">"metric"</default>
+        <summary>Local units</summary>
+        <description>Units to use in application</description>
+    </key>
+
+  </schema>
+</schemalist>

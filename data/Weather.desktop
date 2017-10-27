@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Weather
+Comment=Forecast App for elementary OS
+GenericName=Weather
+Exec=Weather %U
+Icon=Weather
+Terminal=false
+Categories=Accesories
