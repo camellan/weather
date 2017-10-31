@@ -40,7 +40,11 @@ namespace Weather {
             // Set main content
             mainstack = new Gtk.Stack ();
             mainstack.transition_type = Gtk.StackTransitionType.SLIDE_DOWN;
-            if (setting.get_string ("idplace") != "") {
+            if (setting.get_string ("apiid") == "") {
+                var apikey = new Weather.Widgets.Apikey (this);
+                mainstack.add_named (apikey, "apikey");
+                mainstack.set_visible_child_name ("apikey");
+            } else if (setting.get_string ("idplace") != "") {
                 create_main ();
                 mainstack.set_visible_child_name ("main");
             } else {
@@ -87,17 +91,8 @@ namespace Weather {
         }
 
         private void create_location () {
-            var placegrid = new Gtk.Grid ();
-            placegrid.column_spacing = 15;
-            placegrid.row_spacing = 15;
-            placegrid.halign = Gtk.Align.CENTER;
-            placegrid.valign = Gtk.Align.CENTER;
-            setting = new Settings ("com.github.bitseater.weather");
-            var placetxt = new Gtk.Label ("Search for your location to show weather conditions in your area.");
-            var placeicon = new Gtk.Image.from_icon_name ("preferences-system-network", Gtk.IconSize.DIALOG);
-            placegrid.attach (placeicon, 0, 0, 4, 1);
-            placegrid.attach (placetxt, 0, 1, 4, 1);
-            mainstack.add_named (placegrid, "location");
+            var city = new Weather.Widgets.City (this);
+            mainstack.add_named (city, "location");
         }
     }
 }

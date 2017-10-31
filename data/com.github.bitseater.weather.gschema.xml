@@ -1,10 +1,22 @@
 <schemalist>
   <schema id="com.github.bitseater.weather" path="/com/github/bitseater/weather/" gettext-domain="weather">
+    
+    <key name="apiid" type="s">
+        <default l10n="messages">""</default>
+        <summary>API key</summary>
+        <description>API key from OpenWeatherMap</description>
+    </key>
 
     <key name="idplace" type="s">
         <default l10n="messages">""</default>
         <summary>City ID</summary>
         <description>City ID from OpenWeatherMap</description>
+    </key>
+
+    <key name="location" type="s">
+        <default l10n="messages">""</default>
+        <summary>City name</summary>
+        <description>City name from OpenWeatherMap</description>
     </key>
 
     <key name="units" type="s">
