@@ -61,13 +61,7 @@ namespace Weather {
 
         private void create_main () {
             var setting = new Settings ("com.github.bitseater.weather");
-            header = new Gtk.HeaderBar ();
-            header.show_close_button = true;
-            header.get_style_context ().add_class ("compact");
-            var menu = new Gtk.Menu ();
-            var app_menu = app.create_appmenu (menu);
-            header.pack_end (app_menu);
-            header.title = setting.get_string ("idplace");
+            header = new Weather.Widgets.Header (this, false);
             this.set_titlebar (header);
             var mainbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 1);
             mainbox.homogeneous = true;
