@@ -22,71 +22,35 @@ namespace Weather {
 
     public class MainWindow : Gtk.Window {
 
-        Gtk.Stack mainstack;
-        Gtk.HeaderBar header;
-        Settings setting;
-
         public WeatherApp app;
 
         public MainWindow (WeatherApp app) {
-            Gtk.Settings.get_default().set("gtk-application-prefer-dark-theme", true);
             this.app = app;
             this.set_application (app);
             this.set_default_size (750, 600);
             window_position = Gtk.WindowPosition.CENTER;
+            var header = new Weather.Widgets.Header (this, false);
+            this.set_titlebar (header);
 
-            setting = new Settings ("com.github.bitseater.weather");
-
-            // Set main content
-            mainstack = new Gtk.Stack ();
-            mainstack.transition_type = Gtk.StackTransitionType.SLIDE_DOWN;
-            if (setting.get_string ("apiid") == "") {
-                var apikey = new Weather.Widgets.Apikey (this);
-                mainstack.add_named (apikey, "apikey");
-                mainstack.set_visible_child_name ("apikey");
-            } else if (setting.get_string ("idplace") != "") {
-                create_main ();
-                mainstack.set_visible_child_name ("main");
+            var setting = new Settings ("com.github.bitseater.weather");
+            if (setting.get_boolean ("dark")) {
+                Gtk.Settings.get_default().set("gtk-application-prefer-dark-theme", true);
             } else {
-                create_welcome ();
-                create_location ();
-                create_main ();
-                mainstack.set_visible_child_name ("welcome");
+                Gtk.Settings.get_default().set("gtk-application-prefer-dark-theme", false);
             }
 
-            // Add everything to window
-            this.add (mainstack);
+            // Set main content
+            if (setting.get_string ("apiid") == "") {
+                var apikey = new Weather.Widgets.Apikey (this);
+                this.add (apikey);
+            } else if (setting.get_string ("idplace") == "") {
+                var city = new Weather.Widgets.City (this);
+                this.add (city);
+            } else {
+                var current = new Weather.Widgets.Current (this);
+                this.add (current);
+            }
             this.show_all ();
-        }
-
-        private void create_main () {
-            var setting = new Settings ("com.github.bitseater.weather");
-            header = new Weather.Widgets.Header (this, false);
-            this.set_titlebar (header);
-            var mainbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 1);
-            mainbox.homogeneous = true;
-            mainbox.pack_start (new Gtk.Label ("izq"), true, true, 1);
-            mainbox.pack_start (new Gtk.Label ("der"), true, true, 1);
-            mainstack.add_named (mainbox, "main");
-        }
-
-        private void create_welcome () {
-            var welcome = new Granite.Widgets.Welcome ("Welcome to Weather", "A forecast application for elementary OS");
-            welcome.append ("preferences-system-network", "Add place", "Select your current location");
-
-            welcome.activated.connect ((index) => {
-                switch (index) {
-                    case 0:
-                        mainstack.set_visible_child_name ("location");
-                        break;
-                    }
-                });
-            mainstack.add_named (welcome, "welcome");
-        }
-
-        private void create_location () {
-            var city = new Weather.Widgets.City (this);
-            mainstack.add_named (city, "location");
         }
     }
 }

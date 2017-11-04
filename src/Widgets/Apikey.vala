@@ -43,18 +43,17 @@ namespace  Weather.Widgets {
             var apibutton = new Gtk.Button.with_label ("Save");
             apibutton.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             attach (apibutton, 8, 2, 1, 1);
-            apibutton.clicked.connect (() => {
-                if (apientry.get_text () != "") {
-                    setting.set_string ("apiid", apientry.get_text ());
-                    window.remove (this);
-                    window.add (new Weather.Widgets.City (window));
-                    window.show_all ();
-                }
-            });
             var apilink = new Gtk.Label ("");
             apilink.label = "\n\n\n<small>If you don't have it, please visit:   <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a></small>";
             apilink.use_markup = true;
             attach (apilink, 1, 3, 8, 4);
+            apibutton.clicked.connect (() => {
+                setting.set_string ("apiid", apientry.get_text ());
+                window.remove (window.get_child ());
+                var city = new Weather.Widgets.City (window);
+                window.add (city);
+                window.show_all ();
+            });
         }
     }
 }

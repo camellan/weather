@@ -143,6 +143,11 @@ namespace  Weather.Widgets {
                 var setting = new Settings ("com.github.bitseater.weather");
                 setting.set_string ("location", city.name);
                 setting.set_string ("idplace", city.id.to_string());
+                var window = cityview.get_toplevel () as Gtk.Window;
+                window.remove (window.get_child ());
+                var current = new Weather.Widgets.Current (window);
+                window.add (current);
+                window.show_all ();
             }
         }
     }
