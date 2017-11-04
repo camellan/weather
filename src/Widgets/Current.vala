@@ -29,6 +29,9 @@ namespace Weather.Widgets {
             column_spacing = 8;
             margin = 12;
 
+            var header = new Weather.Widgets.Header (window, true);
+            window.set_titlebar (header);
+
             var setting = new Settings ("com.github.bitseater.weather");
 
             string uri = "http://api.openweathermap.org/data/2.5/weather?id=" +
@@ -83,6 +86,7 @@ namespace Weather.Widgets {
                 this.attach (degrees, 0, 10, 1, 1);
                 this.attach (clouds_all, 0, 11, 1, 1);
                 this.attach (datetime, 0, 12, 1, 1);
+                header.set_title_header (city, country);
             } catch (Error e) {
                 stderr.printf ("Encontrado un error");
             }

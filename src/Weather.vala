@@ -64,6 +64,7 @@ namespace Weather {
             Granite.Services.Logger.initialize ("Weather");
             Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
         }
+
         public override void activate () {
             if (get_windows () == null) {
                 window = new MainWindow (this);
@@ -71,10 +72,6 @@ namespace Weather {
             } else {
                 window.present ();
             }
-        }
-
-        public override void open (File [] files, string hint) {
-            //TODO
         }
 
         public static void main (string [] args) {

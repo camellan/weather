@@ -22,8 +22,6 @@ namespace Weather.Widgets {
 
     public class Header : Gtk.HeaderBar {
 
-        private Settings setting;
-
         public Header (Gtk.Window window, bool view) {
             show_close_button = true;
             var app = window.get_application () as Granite.Application;
@@ -56,21 +54,25 @@ namespace Weather.Widgets {
             });
 
             var upd_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.BUTTON);
-            upd_button.sensitive = false;
-            //TODO update content
-
             var loc_button = new Gtk.Button.from_icon_name ("mark-location-symbolic", Gtk.IconSize.BUTTON);
             if (view) {
                 loc_button.sensitive = true;
+                upd_button.sensitive = true;
             } else {
                 loc_button.sensitive = false;
+                upd_button.sensitive = false;
             }
 
-
             loc_button.clicked.connect (() =>{
-//                window.remove (window.get_child ());
-//                window.add (new Weather.Widgets.City (window));
-//                window.show_all ();
+                window.remove (window.get_child ());
+                window.add (new Weather.Widgets.City (window));
+                window.show_all ();
+            });
+
+            upd_button.clicked.connect (() =>{
+                window.remove (window.get_child ());
+                window.add (new Weather.Widgets.Current (window));
+                window.show_all ();
             });
 
             pack_end (app_button);

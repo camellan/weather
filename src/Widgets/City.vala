@@ -34,6 +34,10 @@ namespace  Weather.Widgets {
             orientation = Gtk.Orientation.VERTICAL;
             spacing = 5;
 
+            var header = new Weather.Widgets.Header (window, false);
+            window.set_titlebar (header);
+            header.set_title ("");
+
             var search_line = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
             setting = new Settings ("com.github.bitseater.weather");
             var uri1 = "http://api.openweathermap.org/data/2.5/find?q=";
@@ -139,7 +143,6 @@ namespace  Weather.Widgets {
             Gtk.TreeIter iter;
             if (cityview.model.get_iter (out iter, path)) {
                 Mycity city = get_selection (cityview.model, iter);
-                stdout.printf("%s %i %s\n", city.country, city.id, city.name);
                 var setting = new Settings ("com.github.bitseater.weather");
                 setting.set_string ("location", city.name);
                 setting.set_string ("idplace", city.id.to_string());
