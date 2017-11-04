@@ -40,7 +40,7 @@ namespace  Weather.Widgets {
 
             var search_line = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
             setting = new Settings ("com.github.bitseater.weather");
-            var uri1 = "http://api.openweathermap.org/data/2.5/find?q=";
+            var uri1 = Constants.OWM_API_ADDR + "find?q=";
             var uri2 = "&type=like&APPID=" + setting.get_string ("apiid");
 
             var citylabel = new Gtk.Label ("");

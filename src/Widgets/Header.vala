@@ -32,9 +32,10 @@ namespace Weather.Widgets {
             });
             app.add_action (on_pref);
 
+            var about = new Weather.Widgets.About (window);
             var on_about = new GLib.SimpleAction ("on_about", null);
             on_about.activate.connect (() => {
-                app.show_about (window);
+                about.present ();
             });
             app.add_action (on_about);
 

@@ -1,1 +1,1 @@
-valac --pkg gtk+-3.0 --pkg libsoup-2.4 --pkg json-glib-1.0 --pkg granite src/Weather.vala src/MainWindow.vala src/Constants.vala src/Widgets/City.vala src/Widgets/Apikey.vala src/Widgets/Current.vala src/Widgets/Header.vala src/Widgets/Preferences.vala
+valac --pkg gtk+-3.0 --pkg libsoup-2.4 --pkg json-glib-1.0 --pkg granite src/Weather.vala src/MainWindow.vala src/Constants.vala src/Widgets/City.vala src/Widgets/Apikey.vala src/Widgets/Current.vala src/Widgets/Header.vala src/Widgets/Preferences.vala src/Widgets/About.vala

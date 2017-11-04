@@ -27,29 +27,13 @@ namespace Weather {
         construct {
             program_name = "Weather";
             exec_name = "Weather";
-
             build_data_dir = Constants.DATADIR;
             build_pkg_data_dir = Constants.PKGDATADIR;
             build_release_name = Constants.RELEASE_NAME;
             build_version = Constants.VERSION;
             build_version_info = Constants.VERSION_INFO;
-
-            app_years = "2016";
-            app_icon = "weather-clear";
             app_launcher = "Weather.desktop";
             application_id = "com.github.bitseater.weather";
-
-            main_url = "https://github.com/bitseater/weather";
-            bug_url = "https://github.com/bitseater/weather";
-            help_url = "https://github.com/bitseater/weather";
-            translate_url = "https://github.com/bitseater/weather";
-
-            about_authors = { "bitseater <bitseater@gmail.com>" };
-            about_documenters = { "bitseater <bitseater@gmail.com>" };
-            about_artists = { "bitseater <bitseater@gmail.com>" };
-            about_comments = "A forecast application for elementary OS";
-            about_translators = "bitseater <bitseater@gmail.com>";
-            about_license_type = Gtk.License.GPL_3_0;
         }
 
         public WeatherApp () {

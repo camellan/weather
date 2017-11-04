@@ -34,8 +34,7 @@ namespace Weather.Widgets {
 
             var setting = new Settings ("com.github.bitseater.weather");
 
-            string uri = "http://api.openweathermap.org/data/2.5/weather?id=" +
-                                setting.get_string ("idplace") + "&APPID=" +
+            string uri = Constants.OWM_API_ADDR + "weather?id=" + setting.get_string ("idplace") + "&APPID=" +
                                 setting.get_string ("apiid");
 
             var session = new Soup.Session ();
