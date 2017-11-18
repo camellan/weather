@@ -1,5 +1,5 @@
-## Weather
-####A forecast application for the desktop.
+# Weather
+###A forecast application for the desktop.
 
 Built in Vala, Granite & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
 
