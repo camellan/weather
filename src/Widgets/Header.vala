@@ -22,57 +22,46 @@ namespace Weather.Widgets {
 
     public class Header : Gtk.HeaderBar {
 
+        public Gtk.Button upd_button;
+        public Gtk.Button loc_button;
+
         public Header (Gtk.Window window, bool view) {
             show_close_button = true;
-            var app = window.get_application () as Granite.Application;
-            var on_pref = new GLib.SimpleAction ("on_pref", null);
-            on_pref.activate.connect (() => {
-                var preferences = new Weather.Widgets.Preferences (window);
+
+            //Create menu
+            var menu = new Gtk.Menu ();
+            var pref_item = new Gtk.MenuItem.with_label (_("Preferences"));
+            var about_item = new Gtk.MenuItem.with_label (_("About Weather"));
+            menu.add (pref_item);
+            menu.add (new Gtk.SeparatorMenuItem ());
+            menu.add (about_item);
+            pref_item.activate.connect (() => {
+                var preferences = new Weather.Widgets.Preferences (window, this);
                 preferences.run ();
             });
-            app.add_action (on_pref);
-
-            var about = new Weather.Widgets.About (window);
-            var on_about = new GLib.SimpleAction ("on_about", null);
-            on_about.activate.connect (() => {
-                about.present ();
-            });
-            app.add_action (on_about);
-
-            var app_button = new Gtk.Button.from_icon_name ("open-menu-symbolic", Gtk.IconSize.BUTTON);
-            var menu = new GLib.Menu ();
-            var section1 = new GLib.Menu ();
-            var pref_item = new GLib.MenuItem ("Preferences", "app.on_pref");
-            section1.append_item (pref_item);
-            menu.append_section (null, section1);
-            var section2 = new GLib.Menu ();
-            var about_item = new GLib.MenuItem ("About Weather", "app.on_about");
-            section2.append_item (about_item);
-            menu.append_section (null, section2);
-            var popover = new Gtk.Popover.from_model (app_button, menu);
-            app_button.clicked.connect (() => {
-                popover.show_all ();
+            about_item.activate.connect (() => {
+                var about = new Weather.Widgets.About (window);
+                about.show ();
             });
 
-            var upd_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.BUTTON);
-            var loc_button = new Gtk.Button.from_icon_name ("mark-location-symbolic", Gtk.IconSize.BUTTON);
-            if (view) {
-                loc_button.sensitive = true;
-                upd_button.sensitive = true;
-            } else {
-                loc_button.sensitive = false;
-                upd_button.sensitive = false;
-            }
+            var app_button = new Gtk.MenuButton ();
+            app_button.popup = menu;
+            app_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.BUTTON);
+            menu.show_all ();
+
+            upd_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.BUTTON);
+            loc_button = new Gtk.Button.from_icon_name ("mark-location-symbolic", Gtk.IconSize.BUTTON);
+            change_visible (false);
 
             loc_button.clicked.connect (() =>{
                 window.remove (window.get_child ());
-                window.add (new Weather.Widgets.City (window));
+                window.add (new Weather.Widgets.City (window, this));
                 window.show_all ();
             });
 
             upd_button.clicked.connect (() =>{
                 window.remove (window.get_child ());
-                window.add (new Weather.Widgets.Current (window));
+                window.add (new Weather.Widgets.Current (window, this));
                 window.show_all ();
             });
 
@@ -81,9 +70,9 @@ namespace Weather.Widgets {
             pack_end (loc_button);
         }
 
-        public void set_title_header (string city, string country) {
-            this.title = city + " (" + country + ") ";
+        public void change_visible (bool s) {
+            this.upd_button.sensitive = s;
+            this.loc_button.sensitive = s;
         }
     }
-
 }

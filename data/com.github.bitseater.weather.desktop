@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Weather
+GenericName=Weather
+Comment=Forecast App for desktop
+Categories=Utility;Education;Science;
+Exec=com.github.bitseater.weather
+Icon=com.github.bitseater.weather
+Terminal=false
+Type=Application
+X-GNOME-Gettext-Domain=weather
+Keywords=Weather;Forecast;Temperature;
+X-GNOME-UsesNotifications=true

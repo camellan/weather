@@ -27,12 +27,14 @@ namespace Weather {
         public MainWindow (WeatherApp app) {
             this.app = app;
             this.set_application (app);
-            this.set_default_size (750, 600);
+            this.set_default_size (750, 590);
+            this.set_size_request (750, 590);
             window_position = Gtk.WindowPosition.CENTER;
             var header = new Weather.Widgets.Header (this, false);
             this.set_titlebar (header);
 
             var setting = new Settings ("com.github.bitseater.weather");
+            setting.get_boolean ("dark");
             if (setting.get_boolean ("dark")) {
                 Gtk.Settings.get_default().set("gtk-application-prefer-dark-theme", true);
             } else {
@@ -41,13 +43,13 @@ namespace Weather {
 
             // Set main content
             if (setting.get_string ("apiid") == "") {
-                var apikey = new Weather.Widgets.Apikey (this);
+                var apikey = new Weather.Widgets.Apikey (this, header);
                 this.add (apikey);
             } else if (setting.get_string ("idplace") == "") {
-                var city = new Weather.Widgets.City (this);
+                var city = new Weather.Widgets.City (this, header);
                 this.add (city);
             } else {
-                var current = new Weather.Widgets.Current (this);
+                var current = new Weather.Widgets.Current (this, header);
                 this.add (current);
             }
             this.show_all ();

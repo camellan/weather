@@ -1,0 +1,141 @@
+# WEATHER
+# Copyright (C) 2017 Carlos Suárez
+# This file is distributed under the same license as the com.github.bitseater.weather package.
+# Carlos Suárez <bitseater@gmail.com>, 2017.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-18 23:04+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Widgets/Apikey.vala:53
+msgid ""
+"\n"
+"\n"
+"\n"
+"<small>If you don't have it, please visit: <a href =\"https://home."
+"openweathermap.org/users/sign_up\">OpenWeatherMap</a></small>"
+msgstr ""
+
+#: src/Widgets/Apikey.vala:37
+msgid "<big>Enter your OpenWeatherMap API key</big>\n"
+msgstr ""
+
+#: src/Widgets/About.vala:31
+msgid "A forecast application with OpenWeatherMap API"
+msgstr ""
+
+#: src/Widgets/Header.vala:34
+msgid "About Weather"
+msgstr ""
+
+#: src/Widgets/City.vala:91
+msgid "At least of 3 characters are required!"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:89
+msgid "Close"
+msgstr ""
+
+#: src/Widgets/Today.vala:107
+msgid "Cloudiness :"
+msgstr ""
+
+#: src/Widgets/Today.vala:59
+msgid "Coordinates :"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:36
+msgid "Dark theme:"
+msgstr ""
+
+#: src/Widgets/About.vala:32
+msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
+msgstr ""
+
+#: src/Widgets/Apikey.vala:66
+msgid "Error"
+msgstr ""
+
+#: src/Widgets/Forecast.vala:51
+msgid "Forecast"
+msgstr ""
+
+#: src/Widgets/City.vala:120 src/Widgets/Today.vala:142
+#: src/Widgets/Forecast.vala:75
+#, c-format
+msgid "Found an error"
+msgstr ""
+
+#: src/Widgets/Today.vala:93
+msgid "Humidity :"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:59
+msgid "Imperial System"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:58
+msgid "Metric System"
+msgstr ""
+
+#: src/Widgets/City.vala:107
+msgid "No data"
+msgstr ""
+
+#: src/Widgets/Header.vala:33 src/Widgets/Preferences.vala:33
+msgid "Preferences"
+msgstr ""
+
+#: src/Widgets/Today.vala:89
+msgid "Pressure :"
+msgstr ""
+
+#: src/Widgets/Apikey.vala:46
+msgid "Save"
+msgstr ""
+
+#: src/Widgets/City.vala:46
+msgid "Search for new location:"
+msgstr ""
+
+#: src/Widgets/Today.vala:109
+msgid "Sunrise :"
+msgstr ""
+
+#: src/Widgets/Today.vala:114
+msgid "Sunset :"
+msgstr ""
+
+#: src/Widgets/Apikey.vala:67
+msgid "The API key cannot be empty"
+msgstr ""
+
+#: src/Widgets/Today.vala:54
+msgid "Today"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:55
+msgid "Units:"
+msgstr ""
+
+#: src/Widgets/Today.vala:102
+msgid "Wind dir :"
+msgstr ""
+
+#: src/Widgets/Today.vala:98
+msgid "Wind speed :"
+msgstr ""
+
+#: src/Widgets/About.vala:39
+msgid "website"
+msgstr ""

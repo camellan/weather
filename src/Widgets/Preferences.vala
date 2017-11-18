@@ -22,25 +22,22 @@ namespace  Weather.Widgets {
 
     public class Preferences : Gtk.Dialog {
 
-        private Settings settings = new Settings ("com.github.bitseater.weather");
-
-        public Preferences (Gtk.Window window) {
-            this.border_width = 5;
+        public Preferences (Gtk.Window window, Weather.Widgets.Header header) {
             this.resizable = false;
             this.deletable = false;
             this.transient_for = window;
             this.modal = true;
 
-            var title = new Gtk.Label ("Preferences");
-            title.get_style_context ().add_class ("h4");
-            title.halign = Gtk.Align.START;
+            var setting = new Settings ("com.github.bitseater.weather");
 
-            var theme_lab = new Gtk.Label ("Dark theme: ");
+            var tit_pref = new Gtk.Label (_("Preferences"));
+            tit_pref.get_style_context ().add_class ("h4");
+            tit_pref.halign = Gtk.Align.START;
+            var theme_lab = new Gtk.Label (_("Dark theme:"));
             theme_lab.halign = Gtk.Align.END;
-            theme_lab.margin_start = 12;
-
             var theme = new Gtk.Switch ();
-            if (settings.get_boolean ("dark")) {
+            theme.halign = Gtk.Align.START;
+            if (setting.get_boolean ("dark")) {
                 theme.active = true;
             } else {
                 theme.active = false;
@@ -48,30 +45,62 @@ namespace  Weather.Widgets {
             theme.notify["active"].connect (() => {
                if (theme.get_active ()) {
                    Gtk.Settings.get_default().set("gtk-application-prefer-dark-theme", true);
-                   settings.set_boolean ("dark", true);
+                   setting.set_boolean ("dark", true);
                } else {
                    Gtk.Settings.get_default().set("gtk-application-prefer-dark-theme", false);
-                   settings.set_boolean ("dark", false);
+                   setting.set_boolean ("dark", false);
                }
             });
 
-            var layout = new Gtk.Grid ();
-            layout.column_spacing = 12;
-            layout.row_spacing = 6;
-            layout.margin = 5;
-            layout.margin_bottom = 19;
-            layout.margin_top = 0;
+            var unit_lab = new Gtk.Label (_("Units:"));
+            unit_lab.halign = Gtk.Align.END;
+            var unit_box = new Gtk.ComboBoxText ();
+            unit_box.append_text (_("Metric System"));
+            unit_box.append_text (_("Imperial System"));
+            if (setting.get_string ("units") != "metric") {
+                unit_box.active = 1;
+            } else {
+                unit_box.active = 0;
+            }
 
-            layout.attach (title, 0, 0, 1, 1);
-            layout.attach (theme_lab, 0, 1, 1, 1);
-            layout.attach (theme, 1, 1, 1, 1);
+            unit_box.changed.connect (() => {
+                if (unit_box.active == 0) {
+                    setting.set_string ("units", "metric");
+                } else {
+                    setting.set_string ("units", "imperial");
+                }
+            });
+
+            var layout = new Gtk.Grid ();
+            layout.column_spacing = 10;
+            layout.row_spacing = 10;
+            layout.margin = 15;
+
+            layout.attach (tit_pref, 0, 0, 2, 1);
+            layout.attach (theme_lab, 2, 1, 1, 1);
+            layout.attach (theme, 3, 1, 1, 1);
+            layout.attach (unit_lab, 2, 4, 1, 1);
+            layout.attach (unit_box, 3, 4, 2, 1);
 
             Gtk.Box content = this.get_content_area () as Gtk.Box;
+            content.border_width = 15;
             content.add (layout);
 
-            this.add_button ("Close", Gtk.ResponseType.CANCEL);
+            this.add_button (_("Close"), Gtk.ResponseType.CANCEL);
             this.response.connect (() => {
                 this.destroy ();
+                window.remove (window.get_child ());
+                if (setting.get_string ("apiid") == "") {
+                    var apikey = new Weather.Widgets.Apikey (window, header);
+                    window.add (apikey);
+                } else if (setting.get_string ("idplace") == "") {
+                    var city = new Weather.Widgets.City (window, header);
+                    window.add (city);
+                } else {
+                    var current = new Weather.Widgets.Current (window, header);
+                    window.add (current);
+                }
+                window.show_all ();
             });
 
             this.show_all ();

@@ -26,23 +26,25 @@ namespace Weather {
 
         construct {
             program_name = "Weather";
-            exec_name = "Weather";
+            exec_name = "weather";
             build_data_dir = Constants.DATADIR;
             build_pkg_data_dir = Constants.PKGDATADIR;
             build_release_name = Constants.RELEASE_NAME;
             build_version = Constants.VERSION;
             build_version_info = Constants.VERSION_INFO;
-            app_launcher = "Weather.desktop";
+            app_icon = "com.github.bitseater.weather";
+            app_launcher = "com.github.bitseater.weather.desktop";
             application_id = "com.github.bitseater.weather";
         }
 
         public WeatherApp () {
-//          // Traducción
-//          Intl.setlocale (LocaleCategory.ALL, "");
-//          string langpack_dir = Path.build_filename (Constants.INSTALL_PREFIX, "share", "locale");
-//          Intl.bindtextdomain (Constants.GETTEXT_PACKAGE, langpack_dir);
-//          Intl.bind_textdomain_codeset (Constants.GETTEXT_PACKAGE, "UTF-8");
-//          Intl.textdomain (Constants.GETTEXT_PACKAGE);
+
+            // localization
+            string package_name = Constants.GETTEXT_PACKAGE;
+            Intl.setlocale (LocaleCategory.ALL, "");
+            Intl.textdomain (package_name);
+            Intl.bindtextdomain (package_name, "./locale");
+            Intl.bind_textdomain_codeset (package_name, "UTF-8");
 
             // Debug service
             Granite.Services.Logger.initialize ("Weather");

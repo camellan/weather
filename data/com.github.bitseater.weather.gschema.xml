@@ -25,10 +25,16 @@
         <description>City name from OpenWeatherMap</description>
     </key>
 
+    <key name="country" type="s">
+        <default l10n="messages">""</default>
+        <summary>Country name</summary>
+        <description>Country name from OpenWeatherMap</description>
+    </key>
+
     <key name="units" type="s">
         <default l10n="messages">"metric"</default>
         <summary>Local units</summary>
-        <description>Units to use in application</description>
+        <description>Units System to use in application: 0-metric, 1-imperial</description>
     </key>
 
   </schema>

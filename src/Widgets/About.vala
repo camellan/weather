@@ -23,27 +23,23 @@ namespace  Weather.Widgets {
     public class About : Gtk.AboutDialog {
 
         public About (Gtk.Window window) {
-
-            set_destroy_with_parent (true);
-            set_transient_for (window);
-            set_modal (true);
-
-            artists = {"bitseater <bitseater@gmail.com>"};
-            authors = {"bitseater <bitseater@gmail.com>"};
-            comments = "A forecast application for elementary OS";
-            copyright = "Developed using Vala, Gtk & Granite - 2017";
+            transient_for = window;
+            modal = true;
+            destroy_with_parent = true;
+            artists = {"Carlos Suárez <bitseater@gmail.com>"};
+            authors = {"Carlos Suárez <bitseater@gmail.com>"};
+            comments = _("A forecast application with OpenWeatherMap API");
+            copyright = _("Developed using Vala, Gtk & Granite - bitseater - 2017");
             license_type = Gtk.License.GPL_3_0;
-            logo_icon_name = "weather-clear";
+            logo_icon_name = "weather-clear-symbolic";
             program_name = "Weather";
-            translator_credits = "bitseater <bitseater@gmail.com>";
+            translator_credits = "Carlos Suárez <bitseater@gmail.com>";
             version = Constants.VERSION;
             website = "https://github.com/bitseater/weather";
-            website_label = "website";
+            website_label = _("website");
 
-            response.connect ((response_id) => {
-                if (response_id == Gtk.ResponseType.CANCEL || response_id == Gtk.ResponseType.DELETE_EVENT) {
-                    hide_on_delete ();
-                }
+            response.connect (() => {
+                    destroy ();
             });
         }
     }

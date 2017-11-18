@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 bitseater <bitseater@gmail.com> -->
+<component type="desktop">
+    <id>com.github.bitseater.weather.desktop</id>
+    <metadata_license>CC0</metadata_license>
+    <name>Weather</name>
+    <summary>A Forecast App for desktop</summary>
+    <description>
+        <p>Current weather and forecast for next 18 hours and next five days. Pressure, temperature, wind direction and speed, sunrise and sunset.</p>
+    </description>
+</component>
+<custom>
+    <value key="x-appcenter-color-primary">#660066</value>
+    <value key="x-appcenter-color-primary-text">rgb(189, 253, 255)</value>
+    <value key="x-appcenter-suggested-price">1</value>
+</custom>
+

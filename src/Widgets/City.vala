@@ -30,30 +30,26 @@ namespace  Weather.Widgets {
             string name;
         }
 
-        public City (Gtk.Window window) {
+        public City (Gtk.Window window, Weather.Widgets.Header header) {
             orientation = Gtk.Orientation.VERTICAL;
             spacing = 5;
 
-            var header = new Weather.Widgets.Header (window, false);
-            window.set_titlebar (header);
             header.set_title ("");
+            header.change_visible (false);
 
-            var search_line = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
             setting = new Settings ("com.github.bitseater.weather");
+            var search_line = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
+            pack_start (search_line, false, false, 5);
             var uri1 = Constants.OWM_API_ADDR + "find?q=";
             var uri2 = "&type=like&APPID=" + setting.get_string ("apiid");
 
-            var citylabel = new Gtk.Label ("");
-            citylabel.label = "Search for new location: ";
+            var citylabel = new Gtk.Label (_("Search for new location:"));
             search_line.pack_start (citylabel, false, false, 5);
             var cityentry = new Gtk.Entry ();
+            cityentry.max_length = 40;
             cityentry.primary_icon_name = "system-search-symbolic";
             cityentry.secondary_icon_name = "edit-clear-symbolic";
-            var search_button = new Gtk.Button.with_label ("Search");
-            search_button.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            search_line.pack_end (search_button, false, false, 3);
-            search_line.pack_end (cityentry, true, true, 3);
-            pack_start (search_line, false, false, 3);
+            search_line.pack_start (cityentry, true, true, 5);
 
             var cityview = new Gtk.TreeView ();
             cityview.expand = true;
@@ -66,7 +62,6 @@ namespace  Weather.Widgets {
             scroll.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
             scroll.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
             scroll.add (cityview);
-            pack_start (scroll, true, true, 5);
 
             cityentry.icon_press.connect ((pos, event) => {
                 if (pos == Gtk.EntryIconPosition.SECONDARY) {
@@ -75,28 +70,26 @@ namespace  Weather.Widgets {
                 }
             });
 
-            search_button.clicked.connect (() => {
+            var overlay = new Gtk.Overlay ();
+            pack_end (overlay, true, true, 0);
+            var toast = new Granite.Widgets.Toast ("");
+            toast.set_default_action (null);
+            overlay.add_overlay (scroll);
+            overlay.add_overlay (toast);
+
+            setting.get_string ("country");
+            setting.changed["country"].connect (() => {
+                window.remove (window.get_child ());
+                var current = new Weather.Widgets.Current (window, header);
+                window.add (current);
+                window.show_all ();
+            });
+
+            cityentry.changed.connect (() => {
                 if (cityentry.get_text_length () < 3) {
-                    var min_charac = new Gtk.Dialog ();
-                    min_charac.transient_for = window;
-                    min_charac.modal = true;
-                    min_charac.add_button ("Close", Gtk.ResponseType.CLOSE).get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
-                    var content = min_charac.get_content_area () as Gtk.Box;
-                    var error = new Gtk.Label ("<b>ERROR</b>");
-                    error.use_markup = true;
-                    min_charac.set_titlebar (error);
-                    var alert = new Gtk.Label (" At least of 3 characters are required! ");
-                    content.add (alert);
-                    min_charac.show_all ();
-                    min_charac.response.connect ((response_id) => {
-                        switch (response_id) {
-                            case Gtk.ResponseType.CLOSE:
-                                break;
-                        }
-                        min_charac.destroy ();
-                    });
-                    min_charac.show ();
                     citylist.clear ();
+                    toast.title = _("At least of 3 characters are required!");
+                    toast.send_notification ();
                 } else {
                     string uri = "";
                     citylist.clear ();
@@ -111,9 +104,8 @@ namespace  Weather.Widgets {
                         var root = parser.get_root ().get_object ();
                         var city = root.get_array_member ("list");
                         if (root.get_int_member ("count") == 0) {
-                            Gtk.TreeIter iter;
-                            citylist.append (out iter);
-                            citylist.set (iter, 2, "No hay datos");
+                            toast.title = _("No data");
+                            toast.send_notification ();
                         } else {
                             Gtk.TreeIter iter;
                             foreach (var geonode in city.get_elements ()) {
@@ -125,11 +117,10 @@ namespace  Weather.Widgets {
                             }
                         }
                     } catch (Error e) {
-                            stderr.printf ("Encontrado un error");
+                            stderr.printf (_("Found an error"));
                     }
                 }
             });
-
             cityview.row_activated.connect (on_row_activated);
         }
 
@@ -146,11 +137,7 @@ namespace  Weather.Widgets {
                 var setting = new Settings ("com.github.bitseater.weather");
                 setting.set_string ("location", city.name);
                 setting.set_string ("idplace", city.id.to_string());
-                var window = cityview.get_toplevel () as Gtk.Window;
-                window.remove (window.get_child ());
-                var current = new Weather.Widgets.Current (window);
-                window.add (current);
-                window.show_all ();
+                setting.set_string ("country", city.country);
             }
         }
     }

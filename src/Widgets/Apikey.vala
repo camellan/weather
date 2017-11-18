@@ -24,35 +24,54 @@ namespace  Weather.Widgets {
 
         private Settings setting;
 
-        public Apikey (Gtk.Window window) {
+        public Apikey (Gtk.Window window, Weather.Widgets.Header header) {
             valign = Gtk.Align.CENTER;
             halign = Gtk.Align.CENTER;
-            column_homogeneous = true;
             row_spacing = 10;
             column_spacing = 10;
 
             setting = new Settings ("com.github.bitseater.weather");
             var apilogo = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.DIALOG);
-            attach (apilogo, 1, 0, 8, 1);
-            var apilabel = new Gtk.Label ("<big>Enter your OpenWeatherMap API key</big>\n");
+            apilogo.halign = Gtk.Align.CENTER;
+            attach (apilogo, 0, 0, 1, 1);
+            var apilabel = new Gtk.Label (_("<big>Enter your OpenWeatherMap API key</big>\n"));
             apilabel.use_markup = true;
-            attach (apilabel, 1, 1, 8, 1);
+            apilabel.halign = Gtk.Align.CENTER;
+            attach (apilabel, 0, 1, 1, 1);
+            var apibox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
             var apientry = new Gtk.Entry ();
+            apientry.width_chars = 35;
             apientry.set_text (setting.get_string ("apiid"));
-            attach (apientry, 2, 2, 6, 1);
-            var apibutton = new Gtk.Button.with_label ("Save");
+            apientry.halign = Gtk.Align.END;
+            var apibutton = new Gtk.Button.with_label (_("Save"));
             apibutton.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            attach (apibutton, 8, 2, 1, 1);
+            apibutton.halign = Gtk.Align.START;
+            apibox.pack_start (apientry, true, false, 0);
+            apibox.pack_start (apibutton, false, false, 0);
+            attach (apibox, 0, 2, 1, 1);
             var apilink = new Gtk.Label ("");
-            apilink.label = "\n\n\n<small>If you don't have it, please visit:   <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a></small>";
+            apilink.label = _("\n\n\n<small>If you don't have it, please visit: <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a></small>");
             apilink.use_markup = true;
-            attach (apilink, 1, 3, 8, 4);
+            apilink.halign = Gtk.Align.CENTER;
+            attach (apilink, 0, 3, 1, 1);
             apibutton.clicked.connect (() => {
-                setting.set_string ("apiid", apientry.get_text ());
-                window.remove (window.get_child ());
-                var city = new Weather.Widgets.City (window);
-                window.add (city);
-                window.show_all ();
+                if (apientry.get_text () != "") {
+                    setting.set_string ("apiid", apientry.get_text ());
+                    window.remove (window.get_child ());
+                    var city = new Weather.Widgets.City (window, header);
+                    window.add (city);
+                    window.show_all ();
+                } else {
+                    var err_msg = new Granite.MessageDialog.with_image_from_icon_name (
+                        _("Error"),
+                        _("The API key cannot be empty"),
+                        "dialog-warning",
+                        Gtk.ButtonsType.CLOSE
+                    );
+                    err_msg.transient_for = window;
+                    err_msg.run ();
+                    err_msg.destroy ();
+                }
             });
         }
     }
