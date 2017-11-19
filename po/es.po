@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: weather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-11-19 20:54+0100\n"
-"PO-Revision-Date: 2017-11-19 20:56+0100\n"
+"PO-Revision-Date: 2017-11-19 21:17+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -111,7 +111,7 @@ msgstr "Amanecer :"
 
 #: src/Widgets/Today.vala:74
 msgid "Sunset :"
-msgstr "Crepúsculo"
+msgstr "Crepúsculo :"
 
 #: src/Widgets/Apikey.vala:101
 msgid "The API key cannot be empty."
