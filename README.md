@@ -1,11 +1,11 @@
 # Weather
-###A forecast application for the desktop.###
+### A forecast application for the desktop.
 
 Built in Vala, Granite & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
 
 ![Screenshot](screenshot.png  "Weather")
 
-###Features:###
+### Features:
 
 - Current weather, with information about temperature, pressure, wind speed and direction, 
 sunrise & sunset.
@@ -14,7 +14,7 @@ sunrise & sunset.
 - Choose your units (metric or imperial).
 - Choose your city.
 
-###How To Build###
+### How To Build
 
 For advanced users only!
 
