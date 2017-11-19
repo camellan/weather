@@ -3,140 +3,143 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-19 20:54+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2017-11-19 21:01+0100\n"
+"PO-Revision-Date: 2017-11-19 21:03+0100\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: en\n"
 
 #: src/Widgets/Apikey.vala:41
 msgid "<big>Enter your OpenWeatherMap API key</big>\n"
-msgstr ""
+msgstr "<big>Enter your OpenWeatherMap API key</big>\n"
 
 #: src/Widgets/Apikey.vala:61
 msgid ""
 "<small>If you don't have it, please visit: <a href =\"https://home."
 "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
 msgstr ""
+"<small>If you don't have it, please visit: <a href =\"https://home."
+"openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
 
 #: src/Widgets/About.vala:31
 msgid "A forecast application with OpenWeatherMap API"
-msgstr ""
+msgstr "A forecast application with OpenWeatherMap API"
 
 #: src/Widgets/Header.vala:34
 msgid "About Weather"
-msgstr ""
+msgstr "About Weather"
 
 #: src/Widgets/City.vala:91
 msgid "At least of 3 characters are required!"
-msgstr ""
+msgstr "At least of 3 characters are required!"
 
 #: src/Widgets/Preferences.vala:89
 msgid "Close"
-msgstr ""
+msgstr "Close"
 
 #: src/Widgets/Today.vala:68
 msgid "Cloudiness :"
-msgstr ""
+msgstr "Cloudiness :"
 
 #: src/Widgets/Today.vala:37
 msgid "Coordinates :"
-msgstr ""
+msgstr "Coordinates :"
 
 #: src/Widgets/Preferences.vala:36
 msgid "Dark theme:"
-msgstr ""
+msgstr "Dark theme:"
 
 #: src/Widgets/About.vala:32
 msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
-msgstr ""
+msgstr "Developed using Vala, Gtk & Granite - bitseater - 2017"
 
 #: src/Widgets/Forecast.vala:51
 msgid "Forecast"
-msgstr ""
+msgstr "Forecast"
 
 #: src/Utils/OWM_Today.vala:159 src/Widgets/City.vala:120
 #: src/Widgets/Apikey.vala:123 src/Widgets/Forecast.vala:75
 #, c-format
 msgid "Found an error"
-msgstr ""
+msgstr "Found an error"
 
 #: src/Widgets/Today.vala:56
 msgid "Humidity :"
-msgstr ""
+msgstr "Humidity :"
 
 #: src/Widgets/Preferences.vala:59
 msgid "Imperial System"
-msgstr ""
+msgstr "Imperial System"
 
 #: src/Widgets/Preferences.vala:58
 msgid "Metric System"
-msgstr ""
+msgstr "Metric System"
 
 #: src/Widgets/City.vala:107
 msgid "No data"
-msgstr ""
+msgstr "No data"
 
 #: src/Widgets/Header.vala:33 src/Widgets/Preferences.vala:33
 msgid "Preferences"
-msgstr ""
+msgstr "Preferences"
 
 #: src/Widgets/Today.vala:52
 msgid "Pressure :"
-msgstr ""
+msgstr "Pressure :"
 
 #: src/Widgets/Apikey.vala:50
 msgid "Save"
-msgstr ""
+msgstr "Save"
 
 #: src/Widgets/City.vala:46
 msgid "Search for new location:"
-msgstr ""
+msgstr "Search for new location:"
 
 #: src/Widgets/Today.vala:70
 msgid "Sunrise :"
-msgstr ""
+msgstr "Sunrise :"
 
 #: src/Widgets/Today.vala:74
 msgid "Sunset :"
-msgstr ""
+msgstr "Sunset :"
 
 #: src/Widgets/Apikey.vala:101
 msgid "The API key cannot be empty."
-msgstr ""
+msgstr "The API key cannot be empty."
 
 #: src/Widgets/Today.vala:34
 msgid "Today"
-msgstr ""
+msgstr "Today"
 
 #: src/Widgets/Preferences.vala:55
 msgid "Units:"
-msgstr ""
+msgstr "Units:"
 
 #: src/Widgets/Apikey.vala:66
 msgid "Use API key built-in"
-msgstr ""
+msgstr "Use API key built-in"
 
 #: src/Widgets/Today.vala:64
 msgid "Wind dir :"
-msgstr ""
+msgstr "Wind dir :"
 
 #: src/Widgets/Today.vala:60
 msgid "Wind speed :"
-msgstr ""
+msgstr "Wind speed :"
 
 #: src/Widgets/Apikey.vala:95
 msgid "Wrong API Key. Please, try again."
-msgstr ""
+msgstr "Wrong API Key. Please, try again."
 
 #: src/Widgets/About.vala:39
 msgid "website"
-msgstr ""
+msgstr "website"

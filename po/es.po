@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-18 23:04+0100\n"
-"PO-Revision-Date: 2017-11-18 23:30+0100\n"
+"POT-Creation-Date: 2017-11-19 20:54+0100\n"
+"PO-Revision-Date: 2017-11-19 20:56+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -19,23 +19,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: src/Widgets/Apikey.vala:53
-msgid ""
-"\n"
-"\n"
-"\n"
-"<small>If you don't have it, please visit: <a href =\"https://home."
-"openweathermap.org/users/sign_up\">OpenWeatherMap</a></small>"
-msgstr ""
-"\n"
-"\n"
-"\n"
-"<small>Si no tiene, por favor visite: <a href =\"https://home.openweathermap."
-"org/users/sign_up\">OpenWeatherMap</a></small>"
-
-#: src/Widgets/Apikey.vala:37
+#: src/Widgets/Apikey.vala:41
 msgid "<big>Enter your OpenWeatherMap API key</big>\n"
 msgstr "<big>Introduzca su clave API de OpenWeatherMap</big>\n"
+
+#: src/Widgets/Apikey.vala:61
+msgid ""
+"<small>If you don't have it, please visit: <a href =\"https://home."
+"openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
+msgstr ""
+"<small>Si no tiene, por favor visite: <a href =\"https://home.openweathermap."
+"org/users/sign_up\">OpenWeatherMap</a></small>"
 
 #: src/Widgets/About.vala:31
 msgid "A forecast application with OpenWeatherMap API"
@@ -53,11 +47,11 @@ msgstr "¡Se necesitan al menos 3 caracteres!"
 msgid "Close"
 msgstr "Cerrar"
 
-#: src/Widgets/Today.vala:107
+#: src/Widgets/Today.vala:68
 msgid "Cloudiness :"
 msgstr "Nubosidad :"
 
-#: src/Widgets/Today.vala:59
+#: src/Widgets/Today.vala:37
 msgid "Coordinates :"
 msgstr "Coordenadas :"
 
@@ -69,21 +63,17 @@ msgstr "Tema oscuro:"
 msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
 msgstr "Desarrolada con Vala, Gtk y Granite - bitseater - 2017"
 
-#: src/Widgets/Apikey.vala:66
-msgid "Error"
-msgstr "Error"
-
 #: src/Widgets/Forecast.vala:51
 msgid "Forecast"
 msgstr "Previsión"
 
-#: src/Widgets/City.vala:120 src/Widgets/Today.vala:142
-#: src/Widgets/Forecast.vala:75
+#: src/Utils/OWM_Today.vala:159 src/Widgets/City.vala:120
+#: src/Widgets/Apikey.vala:123 src/Widgets/Forecast.vala:75
 #, c-format
 msgid "Found an error"
 msgstr "Encontrado un error"
 
-#: src/Widgets/Today.vala:93
+#: src/Widgets/Today.vala:56
 msgid "Humidity :"
 msgstr "Humedad :"
 
@@ -103,11 +93,11 @@ msgstr "No hay datos"
 msgid "Preferences"
 msgstr "Preferencias"
 
-#: src/Widgets/Today.vala:89
+#: src/Widgets/Today.vala:52
 msgid "Pressure :"
 msgstr "Presión :"
 
-#: src/Widgets/Apikey.vala:46
+#: src/Widgets/Apikey.vala:50
 msgid "Save"
 msgstr "Guardar"
 
@@ -115,19 +105,19 @@ msgstr "Guardar"
 msgid "Search for new location:"
 msgstr "Buscar nueva ubicación:"
 
-#: src/Widgets/Today.vala:109
+#: src/Widgets/Today.vala:70
 msgid "Sunrise :"
 msgstr "Amanecer :"
 
-#: src/Widgets/Today.vala:114
+#: src/Widgets/Today.vala:74
 msgid "Sunset :"
 msgstr "Crepúsculo"
 
-#: src/Widgets/Apikey.vala:67
-msgid "The API key cannot be empty"
-msgstr "La clave API no puede estar vacía"
+#: src/Widgets/Apikey.vala:101
+msgid "The API key cannot be empty."
+msgstr "La clave API no puede estar vacía."
 
-#: src/Widgets/Today.vala:54
+#: src/Widgets/Today.vala:34
 msgid "Today"
 msgstr "Hoy"
 
@@ -135,14 +125,25 @@ msgstr "Hoy"
 msgid "Units:"
 msgstr "Unidades:"
 
-#: src/Widgets/Today.vala:102
+#: src/Widgets/Apikey.vala:66
+msgid "Use API key built-in"
+msgstr "Usar la clave API incorporada"
+
+#: src/Widgets/Today.vala:64
 msgid "Wind dir :"
 msgstr "Dir. viento :"
 
-#: src/Widgets/Today.vala:98
+#: src/Widgets/Today.vala:60
 msgid "Wind speed :"
 msgstr "Veloc. viento :"
+
+#: src/Widgets/Apikey.vala:95
+msgid "Wrong API Key. Please, try again."
+msgstr "Clave API errónea. Por favor, inténtelo de nuevo"
 
 #: src/Widgets/About.vala:39
 msgid "website"
 msgstr "sitio web"
+
+#~ msgid "Error"
+#~ msgstr "Error"

@@ -35,7 +35,7 @@ namespace Weather.Widgets {
             string units = setting.get_string ("units");
             string uri = idplace + "&APPID=" + apiid + "&units=" + units + "&lang=" + lang;
 
-            var today = new Weather.Widgets.Today (uri);
+            var today = new Weather.Widgets.Today (setting.get_string ("idplace"));
             var forecast = new Weather.Widgets.Forecast (uri);
             var separator = new Gtk.Separator (Gtk.Orientation.VERTICAL);
             pack_start (today, true, true, 0);

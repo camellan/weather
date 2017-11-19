@@ -44,6 +44,7 @@
         src/Constants.vala
 
         src/Utils/Iconame.vala
+        src/Utils/OWM_Today.vala
         src/Utils/Utils.vala
 
         src/Widgets/City.vala
