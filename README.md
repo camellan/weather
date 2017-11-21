@@ -16,7 +16,14 @@ sunrise & sunset.
 
 ### How To Build
 
-For advanced users only!
+Library Dependencies :
+
+- gtk+-3.0
+- libsoup-2.4
+- json-glib-1.0
+- granite-0.5
+
+For advanced users!
 
 	git clone https://github.com/bitseater/weather
 	cd weather

@@ -9,11 +9,11 @@ Build-Depends: cmake (>= 2.8),
                libsoup-2.4,
                json-glib-1.0,
                granite,
-               valac-0.30 | valac (>= 0.30)
-Standards-Version: 3.9.3
+               valac-0.32 | valac (>= 0.32)
+Standards-Version: 3.9.7
 
 Package: com.github.bitseater.weather
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Forecast app for desktop
- This is a OpenWeatherMap client written in Vala, Granite & Gtk, using CMake build system.
+ OpenWeatherMap client written in Vala, Granite & Gtk.
