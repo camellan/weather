@@ -1,4 +1,7 @@
 # Weather
+
+[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.USER.REPO)﻿
+
 ### Know the forecast of the next hours & days.
 
 Built in Vala, Granite & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
