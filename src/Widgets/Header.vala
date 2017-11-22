@@ -46,11 +46,14 @@ namespace Weather.Widgets {
 
             var app_button = new Gtk.MenuButton ();
             app_button.popup = menu;
+            app_button.tooltip_text = _("Options");
             app_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.BUTTON);
             menu.show_all ();
 
             upd_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.BUTTON);
+            upd_button.tooltip_text = _("Update");
             loc_button = new Gtk.Button.from_icon_name ("mark-location-symbolic", Gtk.IconSize.BUTTON);
+            loc_button.tooltip_text = _("Change location");
             change_visible (false);
 
             loc_button.clicked.connect (() =>{

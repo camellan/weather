@@ -5,9 +5,16 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0+</project_license>
     <name>Weather</name>
-    <summary>A Forecast App for desktop</summary>
+    <summary>Know the forecast of the next hours and days.</summary>
     <description>
-        <p>Current weather and forecast for next 18 hours and next five days. Pressure, temperature, wind direction and speed, sunrise and sunset.</p>
+        <p>Current weather, with information about temperature, pressure, wind speed and direction, sunrise and sunset. Other features:
+        <ul>
+            <li>Forecast for next 18 hours.</li>
+            <li>Forecast for next five days.</li>
+            <li>Choose your units (metric or imperial).</li>
+            <li>Choose your city.</li>
+        </ul>
+        </p>
     </description>
     <provides>
         <binary>com.github.bitseater.weather</binary>
@@ -18,7 +25,7 @@
         </screenshot>
     </screenshots>
     <developer_name>Carlos Suárez</developer_name>
-    <url type="homepage">https://github.com/bitseater</url>
+    <url type="homepage">https://github.com/bitseater/weather</url>
     <url type="bugtracker">https://github.com/bitseater/weather/issues</url>
     <custom>
         <value key="x-appcenter-color-primary">#660066</value>
@@ -26,9 +33,9 @@
         <value key="x-appcenter-suggested-price">1</value>
     </custom>
   ​  <releases>
-        <release version="0.1.2" date="2017-11-21">
+        <release version="0.2" date="2017-11-22">
             <description>
-        ​        <p>Fix issue #3 : Appstream changelog added.</p>
+        ​        <p>Fix translation issue and adding tooltips.</p>
       ​      </description>
         </release>
     </releases>

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-19 20:54+0100\n"
-"PO-Revision-Date: 2017-11-19 21:17+0100\n"
+"POT-Creation-Date: 2017-11-22 13:12+0100\n"
+"PO-Revision-Date: 2017-11-22 13:13+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -43,6 +43,14 @@ msgstr "Acerca de Weather"
 msgid "At least of 3 characters are required!"
 msgstr "¡Se necesitan al menos 3 caracteres!"
 
+#: src/Widgets/Header.vala:56
+msgid "Change location"
+msgstr "Cambiar ubicación"
+
+#: src/Widgets/City.vala:60
+msgid "City"
+msgstr "Ciudad"
+
 #: src/Widgets/Preferences.vala:89
 msgid "Close"
 msgstr "Cerrar"
@@ -54,6 +62,10 @@ msgstr "Nubosidad :"
 #: src/Widgets/Today.vala:37
 msgid "Coordinates :"
 msgstr "Coordenadas :"
+
+#: src/Widgets/City.vala:58
+msgid "Country"
+msgstr "Pais"
 
 #: src/Widgets/Preferences.vala:36
 msgid "Dark theme:"
@@ -88,6 +100,14 @@ msgstr "Sistema Métrico"
 #: src/Widgets/City.vala:107
 msgid "No data"
 msgstr "No hay datos"
+
+#: src/Widgets/City.vala:59
+msgid "OpenWM ID"
+msgstr "Id. OpenWM"
+
+#: src/Widgets/Header.vala:49
+msgid "Options"
+msgstr "Opciones"
 
 #: src/Widgets/Header.vala:33 src/Widgets/Preferences.vala:33
 msgid "Preferences"
@@ -124,6 +144,10 @@ msgstr "Hoy"
 #: src/Widgets/Preferences.vala:55
 msgid "Units:"
 msgstr "Unidades:"
+
+#: src/Widgets/Header.vala:54
+msgid "Update"
+msgstr "Actualizar"
 
 #: src/Widgets/Apikey.vala:66
 msgid "Use API key built-in"

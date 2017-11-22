@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-19 20:54+0100\n"
+"POT-Creation-Date: 2017-11-22 13:12+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,6 +39,14 @@ msgstr ""
 msgid "At least of 3 characters are required!"
 msgstr ""
 
+#: src/Widgets/Header.vala:56
+msgid "Change location"
+msgstr ""
+
+#: src/Widgets/City.vala:60
+msgid "City"
+msgstr ""
+
 #: src/Widgets/Preferences.vala:89
 msgid "Close"
 msgstr ""
@@ -49,6 +57,10 @@ msgstr ""
 
 #: src/Widgets/Today.vala:37
 msgid "Coordinates :"
+msgstr ""
+
+#: src/Widgets/City.vala:58
+msgid "Country"
 msgstr ""
 
 #: src/Widgets/Preferences.vala:36
@@ -85,6 +97,14 @@ msgstr ""
 msgid "No data"
 msgstr ""
 
+#: src/Widgets/City.vala:59
+msgid "OpenWM ID"
+msgstr ""
+
+#: src/Widgets/Header.vala:49
+msgid "Options"
+msgstr ""
+
 #: src/Widgets/Header.vala:33 src/Widgets/Preferences.vala:33
 msgid "Preferences"
 msgstr ""
@@ -119,6 +139,10 @@ msgstr ""
 
 #: src/Widgets/Preferences.vala:55
 msgid "Units:"
+msgstr ""
+
+#: src/Widgets/Header.vala:54
+msgid "Update"
 msgstr ""
 
 #: src/Widgets/Apikey.vala:66

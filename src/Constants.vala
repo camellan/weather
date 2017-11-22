@@ -23,7 +23,7 @@ namespace Constants {
     public const string PKGDATADIR = "/usr/share/com.github.bitseater.weather";
     public const string GETTEXT_PACKAGE = "weather";
     public const string RELEASE_NAME = "Loki";
-    public const string VERSION = "0.1";
+    public const string VERSION = "0.2";
     public const string VERSION_INFO = "Release";
     public const string INSTALL_PREFIX = "/usr";
     public const string APP_NAME = "Weather";
