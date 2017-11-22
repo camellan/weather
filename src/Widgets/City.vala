@@ -55,9 +55,9 @@ namespace  Weather.Widgets {
             cityview.expand = true;
             var citylist = new Gtk.ListStore (3, typeof (string), typeof (int), typeof(string));
             cityview.model = citylist;
-            cityview.insert_column_with_attributes (-1, "Country", new Gtk.CellRendererText (), "text", 0);
-            cityview.insert_column_with_attributes (-1, "OpenWM ID", new Gtk.CellRendererText (), "text", 1);
-            cityview.insert_column_with_attributes (-1, "City", new Gtk.CellRendererText (), "text", 2);
+            cityview.insert_column_with_attributes (-1, _("Country"), new Gtk.CellRendererText (), "text", 0);
+            cityview.insert_column_with_attributes (-1, _("OpenWM ID"), new Gtk.CellRendererText (), "text", 1);
+            cityview.insert_column_with_attributes (-1, _("City"), new Gtk.CellRendererText (), "text", 2);
             var scroll = new Gtk.ScrolledWindow (null,null);
             scroll.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
             scroll.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;

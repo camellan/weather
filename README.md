@@ -1,5 +1,5 @@
 # Weather
-### A forecast application for the desktop.
+### Know the forecast of the next hours & days.
 
 Built in Vala, Granite & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
 
@@ -7,8 +7,7 @@ Built in Vala, Granite & Gtk,using OpenWeatherMap API (https://openweathermap.or
 
 ### Features:
 
-- Current weather, with information about temperature, pressure, wind speed and direction, 
-sunrise & sunset.
+- Current weather, with information about temperature, pressure, wind speed and direction, sunrise & sunset.
 - Forecast for next 18 hours.
 - Forecast for next five days.
 - Choose your units (metric or imperial).
