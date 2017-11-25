@@ -55,7 +55,7 @@ namespace  Weather.Widgets {
                 var root = parser.get_root ().get_object ();
                 var list = root.get_array_member ("list");
                 for (int a = 0; a < 5; a++) {
-                    var time = new Gtk.Label (new DateTime.from_unix_local (list.get_object_element (a).get_int_member ("dt")).format ("%H:%M").to_string ());
+                    var time = new Gtk.Label (time_format (new DateTime.from_unix_local (list.get_object_element (a).get_int_member ("dt"))));
                     var icon = new Weather.Utils.Iconame (list.get_object_element(a).get_array_member ("weather").get_object_element (0).get_string_member ("icon"), 36);
                     var temp = new Gtk.Label (Weather.Utils.to_string0 (list.get_object_element(a).get_object_member ("main").get_double_member ("temp")) + "\u00B0" + temp_un);
                     attach (time, a, 1, 2, 1);
@@ -64,7 +64,7 @@ namespace  Weather.Widgets {
                 }
                 attach (new Gtk.Label (" "), 1, 4, 1, 1);
                 for (int b = 0; b < 5; b++) {
-                    var time = new Gtk.Label (new DateTime.from_unix_local (list.get_object_element (b*8+7).get_int_member ("dt")).format ("%a").to_string ());
+                    var time = new Gtk.Label (new DateTime.from_unix_local (list.get_object_element (b*8+7).get_int_member ("dt")).format ("%a"));
                     var icon = new Weather.Utils.Iconame (list.get_object_element(b*8+7).get_array_member ("weather").get_object_element (0).get_string_member ("icon"), 36);
                     var temp = new Gtk.Label (Weather.Utils.to_string0 (list.get_object_element(b*8+7).get_object_member ("main").get_double_member ("temp")) + "\u00B0" + temp_un);
                     attach (time, 1, 5+b, 2, 1);
@@ -74,6 +74,17 @@ namespace  Weather.Widgets {
             } catch (Error e) {
                 stderr.printf (_("Found an error"));
             }
+        }
+
+        private string time_format (GLib.DateTime datetime) {
+            string timeformat = "";
+            var syssetting = new Settings ("org.gnome.desktop.interface");
+            if (syssetting.get_string ("clock-format") == "12h") {
+                timeformat = datetime.format ("%I:%M");
+            } else {
+                timeformat = datetime.format ("%R");
+            }
+            return timeformat;
         }
     }
 }

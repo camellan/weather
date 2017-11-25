@@ -148,16 +148,39 @@ namespace  Weather.Utils {
                 _humidity = vmain.get_int_member ("humidity").to_string () + " %";
                 var wind = root.get_object_member ("wind");
                 _windspeed = Weather.Utils.to_string0 (wind.get_double_member ("speed")) + speed_un;
-                _winddir = Weather.Utils.to_string0 (wind.get_double_member ("deg")) + "\u00B0";
+                _winddir = cardinal (wind.get_double_member ("deg"));
                 var clouds = root.get_object_member ("clouds");
                 _clouds = clouds.get_int_member ("all").to_string () + " %";
                 var sunr = new DateTime.from_unix_local (root.get_object_member ("sys").get_int_member ("sunrise"));
-                _sunrise = sunr.format ("%R UTC%z").to_string ();
+                _sunrise = time_format (sunr);
                 var suns = new DateTime.from_unix_local (root.get_object_member ("sys").get_int_member ("sunset"));
-                _sunset = suns.format ("%R UTC%z").to_string ();
+                _sunset = time_format (suns);
             } catch (Error e) {
                 stderr.printf (_("Found an error"));
             }
+        }
+
+        private string time_format (GLib.DateTime datetime) {
+            string timeformat = "";
+            var syssetting = new Settings ("org.gnome.desktop.interface");
+            if (syssetting.get_string ("clock-format") == "12h") {
+                timeformat = datetime.format ("%I:%M UTC%z");
+                if (datetime.get_hour () >= 12) {
+                    timeformat = timeformat + " PM";
+                } else {
+                    timeformat = timeformat + " AM";
+                }
+            } else {
+                timeformat = datetime.format ("%R UTC%z");
+            }
+            return timeformat;
+        }
+
+        private string cardinal(double grados) {
+            double val = Math.floor((grados / 22.5) + 0.5);
+            string[] arr = {"N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"};
+            int index = (int)(val % 16);
+            return arr[index];
         }
     }
 }

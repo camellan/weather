@@ -26,8 +26,9 @@
     pkg_check_modules(DEPS REQUIRED gtk+-3.0 libsoup-2.4 json-glib-1.0 granite)
 
     add_definitions(${DEPS_CFLAGS})
-    link_libraries(${DEPS_LIBRARIES})
+    link_libraries(${DEPS_LIBRARIES} -lm)
     link_directories(${DEPS_LIBRARY_DIRS})
+ 
 
     # make sure we have vala
     find_package(Vala REQUIRED)

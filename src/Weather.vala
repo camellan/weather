@@ -32,7 +32,6 @@ namespace Weather {
             build_release_name = Constants.RELEASE_NAME;
             build_version = Constants.VERSION;
             build_version_info = Constants.VERSION_INFO;
-            app_icon = "com.github.bitseater.weather";
             app_launcher = "com.github.bitseater.weather.desktop";
             application_id = "com.github.bitseater.weather";
         }

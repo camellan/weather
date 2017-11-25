@@ -26,12 +26,12 @@ namespace  Weather.Widgets {
             transient_for = window;
             modal = true;
             destroy_with_parent = true;
-            artists = {"Carlos Suárez <bitseater@gmail.com>"};
+            artists = {"Carlos Suárez <bitseater@gmail.com>", "Paulo Galardi <lainsce@airmail.cc>"};
             authors = {"Carlos Suárez <bitseater@gmail.com>"};
             comments = _("A forecast application with OpenWeatherMap API");
             copyright = _("Developed using Vala, Gtk & Granite - bitseater - 2017");
             license_type = Gtk.License.GPL_3_0;
-            logo_icon_name = "weather-clear-symbolic";
+            logo_icon_name = "com.github.bitseater.weather";
             program_name = "Weather";
             translator_credits = "Carlos Suárez <bitseater@gmail.com>";
             version = Constants.VERSION;
