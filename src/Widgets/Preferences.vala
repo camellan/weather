@@ -71,19 +71,39 @@ namespace  Weather.Widgets {
                 }
             });
 
+            var api_lab = new Gtk.Label (_("Restore API key:"));
+            api_lab.halign = Gtk.Align.END;
+            var api_entry = new Gtk.Entry ();
+            api_entry.halign = Gtk.Align.START;
+            api_entry.width_chars = 30;
+            api_entry.editable = false;
+            api_entry.text = setting.get_string ("apiid");
+            api_entry.secondary_icon_name = "edit-clear";
+            api_entry.icon_press.connect ((pos, event) => {
+                if (pos == Gtk.EntryIconPosition.SECONDARY) {
+                    api_entry.set_text ("");
+                    setting.set_string ("apiid", "");
+                }
+            });
+
             var layout = new Gtk.Grid ();
-            layout.column_spacing = 10;
-            layout.row_spacing = 10;
-            layout.margin = 15;
+            layout.valign = Gtk.Align.START;
+            layout.column_spacing = 12;
+            layout.row_spacing = 6;
+            layout.margin = 12;
+            layout.margin_top = 0;
 
             layout.attach (tit_pref, 0, 0, 2, 1);
             layout.attach (theme_lab, 2, 1, 1, 1);
             layout.attach (theme, 3, 1, 1, 1);
-            layout.attach (unit_lab, 2, 4, 1, 1);
-            layout.attach (unit_box, 3, 4, 2, 1);
+            layout.attach (unit_lab, 2, 2, 1, 1);
+            layout.attach (unit_box, 3, 2, 2, 1);
+            layout.attach (api_lab, 2, 3, 1, 1);
+            layout.attach (api_entry, 3, 3, 1, 1);
 
             Gtk.Box content = this.get_content_area () as Gtk.Box;
-            content.border_width = 15;
+            content.valign = Gtk.Align.START;
+            content.border_width = 6;
             content.add (layout);
 
             this.add_button (_("Close"), Gtk.ResponseType.CANCEL);

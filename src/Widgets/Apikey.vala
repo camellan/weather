@@ -84,7 +84,6 @@ namespace  Weather.Widgets {
             apibutton.clicked.connect (() => {
                 if (apientry.get_text () != "") {
                     string uri = Constants.OWM_API_ADDR + "weather?id=2643743&appid=" + apientry.get_text ();
-                    stdout.printf ("uri %s\n", uri);
                     if (check_apikey (uri)) {
                         setting.set_string ("apiid", apientry.get_text ());
                         window.remove (window.get_child ());
