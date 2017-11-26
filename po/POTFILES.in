@@ -5,6 +5,7 @@ src/Weather.vala
 src/MainWindow.vala
 src/Constants.vala
 src/Utils/Iconame.vala
+src/Utils/MapCity.vala
 src/Utils/OWM_Today.vala
 src/Utils/Utils.vala
 src/Widgets/City.vala

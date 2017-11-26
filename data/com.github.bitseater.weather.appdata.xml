@@ -12,7 +12,7 @@
             <li>Forecast for next 18 hours.</li>
             <li>Forecast for next five days.</li>
             <li>Choose your units (metric or imperial).</li>
-            <li>Choose your city.</li>
+            <li>Choose your city with maps info.</li>
         </ul>
         </p>
     </description>
@@ -33,9 +33,9 @@
         <value key="x-appcenter-suggested-price">1</value>
     </custom>
   ​  <releases>
-        <release version="0.2" date="2017-11-22">
+        <release version="0.3" date="2017-11-26">
             <description>
-        ​        <p>Adding tooltips and fix translation issue.</p>
+        ​        <p>Some issues fixed and new features added.</p>
       ​      </description>
         </release>
     </releases>

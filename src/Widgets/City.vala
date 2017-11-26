@@ -23,11 +23,14 @@ namespace  Weather.Widgets {
     public class City : Gtk.Box {
 
         private Settings setting;
+        private Gtk.TreeView cityview;
 
         struct Mycity {
             string country;
             int id;
             string name;
+            double lat;
+            double lon;
         }
 
         public City (Gtk.Window window, Weather.Widgets.Header header) {
@@ -51,9 +54,9 @@ namespace  Weather.Widgets {
             cityentry.secondary_icon_name = "edit-clear-symbolic";
             search_line.pack_start (cityentry, true, true, 5);
 
-            var cityview = new Gtk.TreeView ();
+            cityview = new Gtk.TreeView ();
             cityview.expand = true;
-            var citylist = new Gtk.ListStore (3, typeof (string), typeof (int), typeof(string));
+            var citylist = new Gtk.ListStore (5, typeof (string), typeof (int), typeof (string), typeof (double), typeof (double));
             cityview.model = citylist;
             cityview.insert_column_with_attributes (-1, _("Country"), new Gtk.CellRendererText (), "text", 0);
             cityview.insert_column_with_attributes (-1, _("OpenWM ID"), new Gtk.CellRendererText (), "text", 1);
@@ -113,7 +116,9 @@ namespace  Weather.Widgets {
                                 citylist.append (out iter);
                                 citylist.set (iter, 0, geoname.get_object_member ("sys").get_string_member ("country"),
                                                     1, geoname.get_int_member ("id"),
-                                                    2, geoname.get_string_member ("name"));
+                                                    2, geoname.get_string_member ("name"),
+                                                    3, geoname.get_object_member ("coord").get_double_member ("lat"),
+                                                    4, geoname.get_object_member ("coord").get_double_member ("lon"));
                             }
                         }
                     } catch (Error e) {
@@ -122,18 +127,27 @@ namespace  Weather.Widgets {
                 }
             });
             cityview.row_activated.connect (on_row_activated);
+            cityview.get_selection().changed.connect (() => {
+                Gtk.TreeModel model;
+                Gtk.TreeIter iter;
+                if (cityview.get_selection ().get_selected (out model, out iter)) {
+                    Mycity city = def_selection (this.cityview.model, iter);
+                    var mapview = new Weather.Utils.MapCity (city.lat, city.lon);
+                    mapview.show_all ();
+                }
+            });
         }
 
-        private static Mycity get_selection (Gtk.TreeModel model, Gtk.TreeIter iter) {
+        private static Mycity def_selection (Gtk.TreeModel model, Gtk.TreeIter iter) {
             var city = Mycity ();
-            model.get (iter, 0, out city.country, 1, out city.id, 2, out city.name);
+            model.get (iter, 0, out city.country, 1, out city.id, 2, out city.name, 3, out city.lat, 4, out city.lon);
             return city;
         }
 
         private void on_row_activated (Gtk.TreeView cityview , Gtk.TreePath path, Gtk.TreeViewColumn column) {
             Gtk.TreeIter iter;
             if (cityview.model.get_iter (out iter, path)) {
-                Mycity city = get_selection (cityview.model, iter);
+                Mycity city = def_selection (cityview.model, iter);
                 var setting = new Settings ("com.github.bitseater.weather");
                 setting.set_string ("location", city.name);
                 setting.set_string ("idplace", city.id.to_string());

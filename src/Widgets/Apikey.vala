@@ -33,6 +33,8 @@ namespace  Weather.Widgets {
             add_overlay (grid);
 
             setting = new Settings ("com.github.bitseater.weather");
+            var units = Weather.Utils.get_units ();
+            setting.set_string ("units", units);
             var toast = new Granite.Widgets.Toast ("");
             add_overlay (toast);
             var apilogo = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.DIALOG);

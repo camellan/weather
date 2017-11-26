@@ -26,7 +26,7 @@ namespace Weather {
 
         construct {
             program_name = "Weather";
-            exec_name = "weather";
+            exec_name = "com.github.bitseater.weather";
             build_data_dir = Constants.DATADIR;
             build_pkg_data_dir = Constants.PKGDATADIR;
             build_release_name = Constants.RELEASE_NAME;
@@ -60,6 +60,8 @@ namespace Weather {
         }
 
         public static void main (string [] args) {
+            Clutter.init (ref args);
+            //GtkClutter.init (ref args);
             var app = new Weather.WeatherApp ();
             app.run (args);
         }

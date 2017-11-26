@@ -33,4 +33,24 @@ namespace  Weather.Utils {
             string texto = (string) cadena;
             return texto;
     }
+
+    public static string get_units () {
+        string lang = Gtk.get_default_language ().to_string ().substring (0, 2);
+        string units = "";
+        switch (lang) {
+            case "C":
+                units = "imperial";
+                break;
+            case "en_US":
+                units = "imperial";
+                break;
+            case "my_MM":
+                units = "imperial";
+                break;
+            default:
+                units = "metric";
+                break;
+        }
+        return units;
+    }
 }

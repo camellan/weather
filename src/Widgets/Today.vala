@@ -36,7 +36,7 @@ namespace  Weather.Widgets {
             title.halign = Gtk.Align.START;
             var coord_lb = new Gtk.Label (_("Coordinates :"));
             coord_lb.halign = Gtk.Align.END;
-            var coord_c = new Gtk.Label ("[ " + today.coor_lon + " , " + today.coor_lat + " ]");
+            var coord_c = new Gtk.Label ("[ " + today.coor_lat + " , " + today.coor_lon + " ]");
             coord_c.halign = Gtk.Align.START;
             var weather_main = new Gtk.Label (today.wmain + ", " + today.wdescrip);
             weather_main.halign = Gtk.Align.START;

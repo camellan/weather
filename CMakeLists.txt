@@ -23,13 +23,12 @@
     find_package(PkgConfig)
 
     # now let's actually check for the required dependencies
-    pkg_check_modules(DEPS REQUIRED gtk+-3.0 libsoup-2.4 json-glib-1.0 granite)
+    pkg_check_modules(DEPS REQUIRED gtk+-3.0 libsoup-2.4 json-glib-1.0 granite clutter-1.0 champlain-0.12 clutter-gtk-1.0)
 
     add_definitions(${DEPS_CFLAGS})
     link_libraries(${DEPS_LIBRARIES} -lm)
     link_directories(${DEPS_LIBRARY_DIRS})
  
-
     # make sure we have vala
     find_package(Vala REQUIRED)
     # make sure we use vala
@@ -45,6 +44,7 @@
         src/Constants.vala
 
         src/Utils/Iconame.vala
+        src/Utils/MapCity.vala
         src/Utils/OWM_Today.vala
         src/Utils/Utils.vala
 
@@ -63,6 +63,9 @@
         libsoup-2.4
         json-glib-1.0
         granite
+        clutter-1.0
+        champlain-0.12
+        clutter-gtk-1.0
     )
 
     # tell cmake what to call the executable we just made
@@ -81,10 +84,14 @@
     install (FILES "${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bitseater.weather.svg" DESTINATION share/icons/hicolor/scalable/apps)
     
     # Translation files
+    # add_subdirectory (po)
+    # Native Language Support
     set (GETTEXT_PACKAGE "${CMAKE_PROJECT_NAME}")
     add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
-    add_subdirectory (po)
-    
+    find_package (Gettext REQUIRED)
+    file (GLOB weather_PO_FILES ${CMAKE_CURRENT_SOURCE_DIR}/po/*.po)
+    gettext_create_translations (po/weather.pot ALL ${weather_PO_FILES})
+
     # Disable gcc warnings
     add_definitions (-w)
     

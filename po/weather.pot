@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-22 13:12+0100\n"
+"POT-Creation-Date: 2017-11-26 22:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,150 +17,154 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/Widgets/Apikey.vala:41
+#: weather/src/Widgets/Apikey.vala:43
 msgid "<big>Enter your OpenWeatherMap API key</big>\n"
 msgstr ""
 
-#: src/Widgets/Apikey.vala:61
+#: weather/src/Widgets/Apikey.vala:63
 msgid ""
 "<small>If you don't have it, please visit: <a href =\"https://home."
 "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
 msgstr ""
 
-#: src/Widgets/About.vala:31
+#: weather/src/Widgets/About.vala:31
 msgid "A forecast application with OpenWeatherMap API"
 msgstr ""
 
-#: src/Widgets/Header.vala:34
+#: weather/src/Widgets/Header.vala:34
 msgid "About Weather"
 msgstr ""
 
-#: src/Widgets/City.vala:91
+#: weather/src/Widgets/City.vala:94
 msgid "At least of 3 characters are required!"
 msgstr ""
 
-#: src/Widgets/Header.vala:56
+#: weather/src/Widgets/Header.vala:56
 msgid "Change location"
 msgstr ""
 
-#: src/Widgets/City.vala:60
+#: weather/src/Widgets/City.vala:63
 msgid "City"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:89
+#: weather/src/Widgets/Preferences.vala:109
 msgid "Close"
 msgstr ""
 
-#: src/Widgets/Today.vala:68
+#: weather/src/Widgets/Today.vala:68
 msgid "Cloudiness :"
 msgstr ""
 
-#: src/Widgets/Today.vala:37
+#: weather/src/Widgets/Today.vala:37
 msgid "Coordinates :"
 msgstr ""
 
-#: src/Widgets/City.vala:58
+#: weather/src/Widgets/City.vala:61
 msgid "Country"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:36
+#: weather/src/Widgets/Preferences.vala:36
 msgid "Dark theme:"
 msgstr ""
 
-#: src/Widgets/About.vala:32
+#: weather/src/Widgets/About.vala:32
 msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
 msgstr ""
 
-#: src/Widgets/Forecast.vala:51
+#: weather/src/Widgets/Forecast.vala:51
 msgid "Forecast"
 msgstr ""
 
-#: src/Utils/OWM_Today.vala:159 src/Widgets/City.vala:120
-#: src/Widgets/Apikey.vala:123 src/Widgets/Forecast.vala:75
+#: weather/src/Utils/OWM_Today.vala:159 weather/src/Widgets/City.vala:125
+#: weather/src/Widgets/Apikey.vala:124 weather/src/Widgets/Forecast.vala:75
 #, c-format
 msgid "Found an error"
 msgstr ""
 
-#: src/Widgets/Today.vala:56
+#: weather/src/Widgets/Today.vala:56
 msgid "Humidity :"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:59
+#: weather/src/Widgets/Preferences.vala:59
 msgid "Imperial System"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:58
+#: weather/src/Widgets/Preferences.vala:58
 msgid "Metric System"
 msgstr ""
 
-#: src/Widgets/City.vala:107
+#: weather/src/Widgets/City.vala:110
 msgid "No data"
 msgstr ""
 
-#: src/Widgets/City.vala:59
+#: weather/src/Widgets/City.vala:62
 msgid "OpenWM ID"
 msgstr ""
 
-#: src/Widgets/Header.vala:49
+#: weather/src/Widgets/Header.vala:49
 msgid "Options"
 msgstr ""
 
-#: src/Widgets/Header.vala:33 src/Widgets/Preferences.vala:33
+#: weather/src/Widgets/Header.vala:33 weather/src/Widgets/Preferences.vala:33
 msgid "Preferences"
 msgstr ""
 
-#: src/Widgets/Today.vala:52
+#: weather/src/Widgets/Today.vala:52
 msgid "Pressure :"
 msgstr ""
 
-#: src/Widgets/Apikey.vala:50
+#: weather/src/Widgets/Preferences.vala:74
+msgid "Restore API key:"
+msgstr ""
+
+#: weather/src/Widgets/Apikey.vala:52
 msgid "Save"
 msgstr ""
 
-#: src/Widgets/City.vala:46
+#: weather/src/Widgets/City.vala:49
 msgid "Search for new location:"
 msgstr ""
 
-#: src/Widgets/Today.vala:70
+#: weather/src/Widgets/Today.vala:70
 msgid "Sunrise :"
 msgstr ""
 
-#: src/Widgets/Today.vala:74
+#: weather/src/Widgets/Today.vala:74
 msgid "Sunset :"
 msgstr ""
 
-#: src/Widgets/Apikey.vala:101
+#: weather/src/Widgets/Apikey.vala:102
 msgid "The API key cannot be empty."
 msgstr ""
 
-#: src/Widgets/Today.vala:34
+#: weather/src/Widgets/Today.vala:34
 msgid "Today"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:55
+#: weather/src/Widgets/Preferences.vala:55
 msgid "Units:"
 msgstr ""
 
-#: src/Widgets/Header.vala:54
+#: weather/src/Widgets/Header.vala:54
 msgid "Update"
 msgstr ""
 
-#: src/Widgets/Apikey.vala:66
+#: weather/src/Widgets/Apikey.vala:68
 msgid "Use API key built-in"
 msgstr ""
 
-#: src/Widgets/Today.vala:64
+#: weather/src/Widgets/Today.vala:64
 msgid "Wind dir :"
 msgstr ""
 
-#: src/Widgets/Today.vala:60
+#: weather/src/Widgets/Today.vala:60
 msgid "Wind speed :"
 msgstr ""
 
-#: src/Widgets/Apikey.vala:95
+#: weather/src/Widgets/Apikey.vala:96
 msgid "Wrong API Key. Please, try again."
 msgstr ""
 
-#: src/Widgets/About.vala:39
+#: weather/src/Widgets/About.vala:39
 msgid "website"
 msgstr ""
