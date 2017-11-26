@@ -14,7 +14,7 @@ Built in Vala, Granite & Gtk,using OpenWeatherMap API (https://openweathermap.or
 - Forecast for next 18 hours.
 - Forecast for next five days.
 - Choose your units (metric or imperial).
-- Choose your city.
+- Choose your city, with maps help.
 
 ### How To Build
 
@@ -24,6 +24,9 @@ Library Dependencies :
 - libsoup-2.4
 - json-glib-1.0
 - granite-0.5
+- clutter-1.0
+- clutter-gtk-1.0
+- champlain-0.12
 
 For advanced users!
 
