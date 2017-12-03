@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Weather\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-11-26 22:57+0100\n"
+"PO-Revision-Date: 2017-12-03 12:48+0400\n"
+"Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Basepath: ../src\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: Utils\n"
+"X-Poedit-SearchPath-2: Widgets\n"
+
+#: weather/src/Widgets/Apikey.vala:43
+msgid "<big>Enter your OpenWeatherMap API key</big>\n"
+msgstr "<big>Введите ключ API OpenWeatherMap</big>\n"
+
+#: weather/src/Widgets/Apikey.vala:63
+msgid ""
+"<small>If you don't have it, please visit: <a href =\"https://home."
+"openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
+msgstr ""
+"<small>Если у вас его нет, посетите: <a href =\"https://home.openweathermap."
+"org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
+
+#: weather/src/Widgets/About.vala:31
+msgid "A forecast application with OpenWeatherMap API"
+msgstr "Приложение для прогноза погоды использующее API OpenWeatherMap"
+
+#: weather/src/Widgets/Header.vala:34
+msgid "About Weather"
+msgstr "О Weather"
+
+#: weather/src/Widgets/City.vala:94
+msgid "At least of 3 characters are required!"
+msgstr "Требуется не менее 3 символов!"
+
+#: weather/src/Widgets/Header.vala:56
+msgid "Change location"
+msgstr "Выбрать местоположение"
+
+#: weather/src/Widgets/City.vala:63
+msgid "City"
+msgstr "Город"
+
+#: weather/src/Widgets/Preferences.vala:109
+msgid "Close"
+msgstr "Закрыть"
+
+#: weather/src/Widgets/Today.vala:68
+msgid "Cloudiness :"
+msgstr "Облачность :"
+
+#: weather/src/Widgets/Today.vala:37
+msgid "Coordinates :"
+msgstr "Координаты :"
+
+#: weather/src/Widgets/City.vala:61
+msgid "Country"
+msgstr "Страна"
+
+#: weather/src/Widgets/Preferences.vala:36
+msgid "Dark theme:"
+msgstr "Тёмная тема :"
+
+#: weather/src/Widgets/About.vala:32
+msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
+msgstr "Разработано с использованием Vala, Gtk & Granite - bitseater - 2017"
+
+#: weather/src/Widgets/Forecast.vala:51
+msgid "Forecast"
+msgstr "Прогноз погоды"
+
+#: weather/src/Utils/OWM_Today.vala:159 weather/src/Widgets/City.vala:125
+#: weather/src/Widgets/Apikey.vala:124 weather/src/Widgets/Forecast.vala:75
+#, c-format
+msgid "Found an error"
+msgstr "Обнаружена ошибка"
+
+#: weather/src/Widgets/Today.vala:56
+msgid "Humidity :"
+msgstr "Влажность :"
+
+#: weather/src/Widgets/Preferences.vala:59
+msgid "Imperial System"
+msgstr "Имперская система"
+
+#: weather/src/Widgets/Preferences.vala:58
+msgid "Metric System"
+msgstr "Метрическая система"
+
+#: weather/src/Widgets/City.vala:110
+msgid "No data"
+msgstr "Нет данных"
+
+#: weather/src/Widgets/City.vala:62
+msgid "OpenWM ID"
+msgstr "OpenWM ID"
+
+#: weather/src/Widgets/Header.vala:49
+msgid "Options"
+msgstr "Опции"
+
+#: weather/src/Widgets/Header.vala:33 weather/src/Widgets/Preferences.vala:33
+msgid "Preferences"
+msgstr "Настройки"
+
+#: weather/src/Widgets/Today.vala:52
+msgid "Pressure :"
+msgstr "Давление :"
+
+#: weather/src/Widgets/Preferences.vala:74
+msgid "Restore API key:"
+msgstr "Восстановить ключ API:"
+
+#: weather/src/Widgets/Apikey.vala:52
+msgid "Save"
+msgstr "Сохранить"
+
+#: weather/src/Widgets/City.vala:49
+msgid "Search for new location:"
+msgstr "Поиск для нового местоположения:"
+
+#: weather/src/Widgets/Today.vala:70
+msgid "Sunrise :"
+msgstr "Восход :"
+
+#: weather/src/Widgets/Today.vala:74
+msgid "Sunset :"
+msgstr "Закат :"
+
+#: weather/src/Widgets/Apikey.vala:102
+msgid "The API key cannot be empty."
+msgstr "Ключ API не может быть пустым."
+
+#: weather/src/Widgets/Today.vala:34
+msgid "Today"
+msgstr "Cегодня"
+
+#: weather/src/Widgets/Preferences.vala:55
+msgid "Units:"
+msgstr "Единицы:"
+
+#: weather/src/Widgets/Header.vala:54
+msgid "Update"
+msgstr "Обновить"
+
+#: weather/src/Widgets/Apikey.vala:68
+msgid "Use API key built-in"
+msgstr "Использовать встроенный ключ API"
+
+#: weather/src/Widgets/Today.vala:64
+msgid "Wind dir :"
+msgstr "Ветер :"
+
+#: weather/src/Widgets/Today.vala:60
+msgid "Wind speed :"
+msgstr "Скорость ветра :"
+
+#: weather/src/Widgets/Apikey.vala:96
+msgid "Wrong API Key. Please, try again."
+msgstr "Неверный ключ API. Пожалуйста, попробуйте еще раз."
+
+#: weather/src/Widgets/About.vala:39
+msgid "website"
+msgstr "вебсайт"

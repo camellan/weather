@@ -28,7 +28,7 @@
     add_definitions(${DEPS_CFLAGS})
     link_libraries(${DEPS_LIBRARIES} -lm)
     link_directories(${DEPS_LIBRARY_DIRS})
- 
+
     # make sure we have vala
     find_package(Vala REQUIRED)
     # make sure we use vala
@@ -79,10 +79,10 @@
 
     # install our .appdata.xml file so AppCenter will see it
     install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bitseater.weather.appdata.xml DESTINATION ${DATADIR}/metainfo/)
-    
+
     # install application icons
     install (FILES "${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bitseater.weather.svg" DESTINATION share/icons/hicolor/scalable/apps)
-    
+
     # Translation files
     # add_subdirectory (po)
     # Native Language Support
@@ -94,8 +94,8 @@
 
     # Disable gcc warnings
     add_definitions (-w)
-    
+
     # Settings schema
     include (GSettings)
     add_schema ("/data/com.github.bitseater.weather.gschema.xml")
-    
+
