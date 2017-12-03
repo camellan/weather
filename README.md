@@ -33,6 +33,7 @@ For advanced users!
 	git clone https://github.com/bitseater/weather
 	cd weather
 	mkdir build
-	cd build 
+	cd build
 	cmake -DCMAKE_INSTALL_PREFIX=/usr ../
+	make
 	sudo make install
