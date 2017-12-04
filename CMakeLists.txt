@@ -90,7 +90,7 @@
     add_definitions (-DGETTEXT_PACKAGE=\"${GETTEXT_PACKAGE}\")
     find_package (Gettext REQUIRED)
     file (GLOB weather_PO_FILES ${CMAKE_CURRENT_SOURCE_DIR}/po/*.po)
-    gettext_create_translations (po/weather.pot ALL ${weather_PO_FILES})
+    gettext_create_translations (po/com.github.bitseater.weather.pot ALL ${weather_PO_FILES})
 
     # Disable gcc warnings
     add_definitions (-w)
