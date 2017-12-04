@@ -33,7 +33,7 @@
         <value key="x-appcenter-suggested-price">1</value>
     </custom>
   ​  <releases>
-        <release version="0.3" date="2017-11-26">
+        <release version="0.4" date="2017-12-04">
             <description>
         ​        <p>Some issues fixed and new features added.</p>
       ​      </description>
