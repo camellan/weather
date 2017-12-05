@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2017 bitseater ()
+* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 * Boston, MA 02111-1307, USA.
 *
-* Authored by: bitseater <bitseater@gmail.com>
+* Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace  Weather.Widgets {
 
@@ -31,7 +31,7 @@ namespace  Weather.Widgets {
             var setting = new Settings ("com.github.bitseater.weather");
 
             var tit_pref = new Gtk.Label (_("Preferences"));
-            tit_pref.get_style_context ().add_class ("h4");
+            tit_pref.get_style_context ().add_class ("preferences");
             tit_pref.halign = Gtk.Align.START;
             var theme_lab = new Gtk.Label (_("Dark theme:"));
             theme_lab.halign = Gtk.Align.END;

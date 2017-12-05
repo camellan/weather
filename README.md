@@ -4,7 +4,7 @@
 
 ### Know the forecast of the next hours & days.
 
-Built in Vala, Granite & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
+Developed with Vala & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
 
 ![Screenshot](screenshot.png  "Weather")
 
@@ -23,7 +23,6 @@ Library Dependencies :
 - gtk+-3.0
 - libsoup-2.4
 - json-glib-1.0
-- granite-0.5
 - clutter-1.0
 - clutter-gtk-1.0
 - champlain-0.12

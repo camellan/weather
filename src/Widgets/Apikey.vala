@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016 bitseater (https://github.com/bitseater/weather)
+* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 * Boston, MA 02111-1307, USA.
 *
-* Authored by: bitseater <bitseater@gmail.com>
+* Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace  Weather.Widgets {
 
@@ -35,8 +35,8 @@ namespace  Weather.Widgets {
             setting = new Settings ("com.github.bitseater.weather");
             var units = Weather.Utils.get_units ();
             setting.set_string ("units", units);
-            var toast = new Granite.Widgets.Toast ("");
-            add_overlay (toast);
+            var ticket = new Weather.Widgets.Ticket ("");
+            add_overlay (ticket);
             var apilogo = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.DIALOG);
             apilogo.halign = Gtk.Align.CENTER;
             grid.attach (apilogo, 0, 0, 1, 1);
@@ -93,14 +93,14 @@ namespace  Weather.Widgets {
                         window.add (city);
                         window.show_all ();
                     } else {
-                        toast.title = _("Wrong API Key. Please, try again.");
-                        toast.send_notification();
+                        ticket.set_text (_("Wrong API Key. Please, try again."));
+                        ticket.reveal_child = true;
                         apientry.set_text ("");
                         apibutton.sensitive = false;
                     }
                 } else {
-                    toast.title = _("The API key cannot be empty.");
-                    toast.send_notification ();
+                    ticket.set_text (_("The API key cannot be empty."));
+                    ticket.reveal_child = true;
                 }
             });
         }

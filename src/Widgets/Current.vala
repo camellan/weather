@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2017 bitseater (https://github.com/bitseater/weather)
+* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 * Boston, MA 02111-1307, USA.
 *
-* Authored by: bitseater <bitseater@gmail.com>
+* Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace Weather.Widgets {
 
@@ -39,7 +39,7 @@ namespace Weather.Widgets {
             var forecast = new Weather.Widgets.Forecast (uri);
             var separator = new Gtk.Separator (Gtk.Orientation.VERTICAL);
             pack_start (today, true, true, 0);
-            pack_start (separator, true, true, 0);
+            pack_start (separator, false, true, 0);
             pack_start (forecast, true, true, 0);
         }
     }

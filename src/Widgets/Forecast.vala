@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2017 bitseater ()
+* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 * Boston, MA 02111-1307, USA.
 *
-* Authored by: bitseater <bitseater@gmail.com>
+* Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace  Weather.Widgets {
 
@@ -49,7 +49,7 @@ namespace  Weather.Widgets {
                 parser.load_from_data ((string) message.response_body.flatten ().data, -1);
 
                 var forecast = new Gtk.Label (_("Forecast"));
-                forecast.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+                forecast.get_style_context ().add_class ("weather");
                 forecast.halign = Gtk.Align.START;
                 attach (forecast, 0, 0, 2, 1);
                 var root = parser.get_root ().get_object ();
@@ -58,17 +58,18 @@ namespace  Weather.Widgets {
                     var time = new Gtk.Label (time_format (new DateTime.from_unix_local (list.get_object_element (a).get_int_member ("dt"))));
                     var icon = new Weather.Utils.Iconame (list.get_object_element(a).get_array_member ("weather").get_object_element (0).get_string_member ("icon"), 36);
                     var temp = new Gtk.Label (Weather.Utils.to_string0 (list.get_object_element(a).get_object_member ("main").get_double_member ("temp")) + "\u00B0" + temp_un);
-                    attach (time, a, 1, 2, 1);
-                    attach (icon, a, 2, 2, 1);
-                    attach (temp, a, 3, 2, 1);
+                    attach (time, a, 1, 1, 1);
+                    attach (icon, a, 2, 1, 1);
+                    attach (temp, a, 3, 1, 1);
                 }
                 attach (new Gtk.Label (" "), 1, 4, 1, 1);
+                int cnt = ((int) root.get_int_member ("cnt") - 33);
                 for (int b = 0; b < 5; b++) {
-                    var time = new Gtk.Label (new DateTime.from_unix_local (list.get_object_element (b*8+7).get_int_member ("dt")).format ("%a"));
-                    var icon = new Weather.Utils.Iconame (list.get_object_element(b*8+7).get_array_member ("weather").get_object_element (0).get_string_member ("icon"), 36);
-                    var temp = new Gtk.Label (Weather.Utils.to_string0 (list.get_object_element(b*8+7).get_object_member ("main").get_double_member ("temp")) + "\u00B0" + temp_un);
-                    attach (time, 1, 5+b, 2, 1);
-                    attach (icon, 2, 5+b, 2, 1);
+                    var time = new Gtk.Label (new DateTime.from_unix_local (list.get_object_element (b*8+cnt).get_int_member ("dt")).format ("%a %H:%M"));
+                    var icon = new Weather.Utils.Iconame (list.get_object_element(b*8+cnt).get_array_member ("weather").get_object_element (0).get_string_member ("icon"), 36);
+                    var temp = new Gtk.Label (Weather.Utils.to_string0 (list.get_object_element(b*8+cnt).get_object_member ("main").get_double_member ("temp")) + "\u00B0" + temp_un);
+                    attach (time, 0, 5+b, 2, 1);
+                    attach (icon, 2, 5+b, 1, 1);
                     attach (temp, 3, 5+b, 2, 1);
                 }
             } catch (Error e) {

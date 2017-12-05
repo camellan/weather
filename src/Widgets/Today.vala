@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2017 bitseater ()
+* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 * Boston, MA 02111-1307, USA.
 *
-* Authored by: bitseater <bitseater@gmail.com>
+* Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace  Weather.Widgets {
 
@@ -32,7 +32,7 @@ namespace  Weather.Widgets {
             var today = new Weather.Utils.OWM_Today (idplace);
 
             var title = new Gtk.Label (_("Today"));
-            title.get_style_context ().add_class (Granite.STYLE_CLASS_H2_LABEL);
+            title.get_style_context ().add_class ("weather");
             title.halign = Gtk.Align.START;
             var coord_lb = new Gtk.Label (_("Coordinates :"));
             coord_lb.halign = Gtk.Align.END;
@@ -40,12 +40,12 @@ namespace  Weather.Widgets {
             coord_c.halign = Gtk.Align.START;
             var weather_main = new Gtk.Label (today.wmain + ", " + today.wdescrip);
             weather_main.halign = Gtk.Align.START;
-            weather_main.get_style_context ().add_class (Granite.STYLE_CLASS_H3_LABEL);
+            weather_main.get_style_context ().add_class ("resumen");
             var icon = new Weather.Utils.Iconame (today.icon, 128);
             icon.halign = Gtk.Align.END;
             icon.valign = Gtk.Align.START;
             var temp = new Gtk.Label (today.temp);
-            temp.get_style_context ().add_class (Granite.STYLE_CLASS_H1_LABEL);
+            temp.get_style_context ().add_class ("temp");
             temp.halign = Gtk.Align.START;
             var pres = new Gtk.Label (today.pressure);
             pres.halign = Gtk.Align.START;

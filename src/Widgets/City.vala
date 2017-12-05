@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016 bitseater (https://github.com/bitseater/weather)
+* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 * Boston, MA 02111-1307, USA.
 *
-* Authored by: bitseater <bitseater@gmail.com>
+* Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace  Weather.Widgets {
 
@@ -75,10 +75,9 @@ namespace  Weather.Widgets {
 
             var overlay = new Gtk.Overlay ();
             pack_end (overlay, true, true, 0);
-            var toast = new Granite.Widgets.Toast ("");
-            toast.set_default_action (null);
+            var ticket = new Weather.Widgets.Ticket ("");
             overlay.add_overlay (scroll);
-            overlay.add_overlay (toast);
+            overlay.add_overlay (ticket);
 
             setting.get_string ("country");
             setting.changed["country"].connect (() => {
@@ -91,8 +90,9 @@ namespace  Weather.Widgets {
             cityentry.changed.connect (() => {
                 if (cityentry.get_text_length () < 3) {
                     citylist.clear ();
-                    toast.title = _("At least of 3 characters are required!");
-                    toast.send_notification ();
+                    ticket.set_text (_("At least of 3 characters are required!"));
+                    ticket.reveal_child = true;
+                    ticket.showtime (1500);
                 } else {
                     string uri = "";
                     citylist.clear ();
@@ -107,8 +107,9 @@ namespace  Weather.Widgets {
                         var root = parser.get_root ().get_object ();
                         var city = root.get_array_member ("list");
                         if (root.get_int_member ("count") == 0) {
-                            toast.title = _("No data");
-                            toast.send_notification ();
+                            ticket.set_text (_("No data"));
+                            ticket.reveal_child = true;
+                            ticket.showtime (1500);
                         } else {
                             Gtk.TreeIter iter;
                             foreach (var geonode in city.get_elements ()) {

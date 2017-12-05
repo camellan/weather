@@ -1,7 +1,10 @@
 [Desktop Entry]
 Name=Weather
+Name[lt]=Orai
 GenericName=Weather
+GenericName[lt]=Orai
 Comment=Forecast App for desktop
+Comment[lt]=Orų prognozės programa, skirta darbalaukiui
 Categories=Utility;Education;Science;
 Exec=com.github.bitseater.weather
 Icon=com.github.bitseater.weather
@@ -9,4 +12,5 @@ Terminal=false
 Type=Application
 X-GNOME-Gettext-Domain=weather
 Keywords=Weather;Forecast;Temperature;
+Keywords[lt]=Orai;Prognozė;Temperatūra;Oras;
 X-GNOME-UsesNotifications=true

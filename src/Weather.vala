@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2016 bitseater (https://github.com/bitseater/weather)
+* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
 * License as published by the Free Software Foundation; either
-* version 3 of the License, or (at your option) any later version.
+* version 2 of the License, or (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -16,27 +16,17 @@
 * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 * Boston, MA 02111-1307, USA.
 *
-* Authored by: bitseater <bitseater@gmail.com>
+* Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace Weather {
 
-    public class WeatherApp : Granite.Application {
+    public class WeatherApp : Gtk.Application {
 
         public MainWindow window;
 
-        construct {
-            program_name = "Weather";
-            exec_name = "com.github.bitseater.weather";
-            build_data_dir = Constants.DATADIR;
-            build_pkg_data_dir = Constants.PKGDATADIR;
-            build_release_name = Constants.RELEASE_NAME;
-            build_version = Constants.VERSION;
-            build_version_info = Constants.VERSION_INFO;
-            app_launcher = "com.github.bitseater.weather.desktop";
-            application_id = "com.github.bitseater.weather";
-        }
-
         public WeatherApp () {
+            application_id = "com.github.bitseater.weather";
+            flags |= GLib.ApplicationFlags.FLAGS_NONE;
 
             // localization
             string package_name = Constants.GETTEXT_PACKAGE;
@@ -44,10 +34,6 @@ namespace Weather {
             Intl.textdomain (package_name);
             Intl.bindtextdomain (package_name, "./locale");
             Intl.bind_textdomain_codeset (package_name, "UTF-8");
-
-            // Debug service
-            Granite.Services.Logger.initialize ("Weather");
-            Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
         }
 
         public override void activate () {

@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2016 bitseater (https://github.com/bitseater/weather)
+* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
@@ -16,7 +16,7 @@
 * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 * Boston, MA 02111-1307, USA.
 *
-* Authored by: bitseater <bitseater@gmail.com>
+* Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace Weather {
 
@@ -32,6 +32,39 @@ namespace Weather {
             window_position = Gtk.WindowPosition.CENTER;
             var header = new Weather.Widgets.Header (this, false);
             this.set_titlebar (header);
+
+            //Define style
+            string weather_css = """
+                .temp {
+                    font-size: 250%;
+                    font-weight: 500;
+                }
+                .weather {
+                    font-size: 170%;
+                }
+                .resumen {
+                    font-size: 110%;
+                }
+                .preferences {
+                    font-size: 110%;
+                    font-weight: 600;
+                }
+                .ticket {
+                    background-color: @text-color;
+                    color: @background_color;
+                    opacity: 0.5;
+                }
+                .ticket:hover {
+                    opacity: 1.0;
+                }
+            """;
+            var provider = new Gtk.CssProvider();
+            try {
+                provider.load_from_data (weather_css, -1);
+            } catch (GLib.Error e) {
+                GLib.error ("Failed to load css: %s", e.message);
+            }
+            Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var setting = new Settings ("com.github.bitseater.weather");
             setting.get_boolean ("dark");

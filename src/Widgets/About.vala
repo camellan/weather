@@ -29,11 +29,11 @@ namespace  Weather.Widgets {
             artists = {"Carlos Suárez <bitseater@gmail.com>", "Paulo Galardi <lainsce@airmail.cc>"};
             authors = {"Carlos Suárez <bitseater@gmail.com>"};
             comments = _("A forecast application with OpenWeatherMap API");
-            copyright = _("Developed using Vala, Gtk & Granite - bitseater - 2017");
+            copyright = _("Developed using Vala & Gtk - 2017");
             license_type = Gtk.License.GPL_3_0;
-            logo_icon_name = "com.github.bitseater.weather";
-            program_name = "Weather";
-            translator_credits = "Carlos Suárez <bitseater@gmail.com>";
+            logo_icon_name = Constants.ICON_NAME;
+            program_name = Constants.APP_NAME;
+            translator_credits = "Carlos Suárez <bitseater@gmail.com>, Andrey Kultyapov <camellan@yandex.ru>, welaq https://github.com/welaq";
             version = Constants.VERSION;
             website = "https://github.com/bitseater/weather";
             website_label = _("website");
