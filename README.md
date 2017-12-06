@@ -26,6 +26,7 @@ Library Dependencies :
 - clutter-1.0
 - clutter-gtk-1.0
 - champlain-0.12
+- geocode-glib-1.0
 
 For advanced users!
 

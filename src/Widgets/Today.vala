@@ -38,7 +38,7 @@ namespace  Weather.Widgets {
             coord_lb.halign = Gtk.Align.END;
             var coord_c = new Gtk.Label ("[ " + today.coor_lat + " , " + today.coor_lon + " ]");
             coord_c.halign = Gtk.Align.START;
-            var weather_main = new Gtk.Label (today.wmain + ", " + today.wdescrip);
+            var weather_main = new Gtk.Label (today.wdescrip);
             weather_main.halign = Gtk.Align.START;
             weather_main.get_style_context ().add_class ("resumen");
             var icon = new Weather.Utils.Iconame (today.icon, 128);

@@ -24,7 +24,7 @@
     find_package(PkgConfig)
 
     # now let's actually check for the required dependencies
-    pkg_check_modules(DEPS REQUIRED gtk+-3.0 libsoup-2.4 json-glib-1.0 clutter-1.0 champlain-0.12 clutter-gtk-1.0)
+    pkg_check_modules(DEPS REQUIRED gtk+-3.0 libsoup-2.4 json-glib-1.0 clutter-1.0 champlain-0.12 clutter-gtk-1.0 geocode-glib-1.0)
 
     add_definitions(${DEPS_CFLAGS})
     link_libraries(${DEPS_LIBRARIES} -lm)
@@ -46,6 +46,7 @@
 
         src/Utils/Iconame.vala
         src/Utils/MapCity.vala
+        src/Utils/MiniMap.vala
         src/Utils/OWM_Today.vala
         src/Utils/Utils.vala
 
@@ -67,6 +68,7 @@
         clutter-1.0
         champlain-0.12
         clutter-gtk-1.0
+        geocode-glib-1.0
     )
 
     # tell cmake what to call the executable we just made
