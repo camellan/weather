@@ -18,4 +18,4 @@ Package: com.github.bitseater.weather
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Description: Forecast app for desktop
- OpenWeatherMap client written in Vala, Granite & Gtk.
+ OpenWeatherMap client built in Vala & Gtk.

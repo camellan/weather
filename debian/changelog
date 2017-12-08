@@ -2,13 +2,15 @@ com.github.bitseater.weather (0.4) xenial; urgency=medium
 
   * Add cmake support to other SO than elementaryOS.
   * Add lituanian and russian translations. Thx to welaq and camellan.
-  * Fix internationalization and localization (gettext) issue. Special thx to Andrey Kultyapov <camellan@yandex.ru>.
+  * Fix gettext issue. Thx to Andrey Kultyapov <camellan@yandex.ru>.
   * Add support to Debian/Ubuntu.
-  * Fix visual issues in UI
+  * Fix visual issues in UI.
   * CSS support added.
   * New "find location" screen, with elegants maps.
+  * Automatic location on start (Can disabled on preferences).
+  * Choose between realistic and symbolic icons.
 
- -- Carlos Suárez <bitseater@gmail.com>  Mon, 06 Dic 2017 22:20:00 +0100
+ -- Carlos Suárez <bitseater@gmail.com>  Fri, 08 Dec 2017 15:10:00 +0100
 
 com.github.bitseater.weather (0.3) xenial; urgency=medium
 

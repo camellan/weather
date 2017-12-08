@@ -27,7 +27,7 @@ namespace Weather.Widgets {
 
             var setting = new Settings ("com.github.bitseater.weather");
             header.custom_title = null;
-            header.set_title (setting.get_string ("location") + ", " + setting.get_string ("country"));
+            header.set_title (setting.get_string ("location") + ", " + setting.get_string ("state") + " " + setting.get_string ("country"));
             header.change_visible (true);
 
             string lang = Gtk.get_default_language ().to_string ().substring (0, 2);

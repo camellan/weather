@@ -37,7 +37,7 @@ namespace  Weather.Widgets {
 
             header.change_visible (false);
             var entry = new Gtk.SearchEntry ();
-            entry.placeholder_text = "Search for new location:";
+            entry.placeholder_text = _("Search for new location:");
             entry.width_chars = 30;
             header.custom_title = entry;
 
@@ -93,7 +93,8 @@ namespace  Weather.Widgets {
                                     string uri = uri1 + lat.to_string () + "&lon=" + lon.to_string () + uri2;
                                     setting.set_string ("idplace", update_id (uri).to_string());
                                     setting.set_string ("location", town);
-                                    setting.set_string ("country", state + " " + country);
+                                    setting.set_string ("state", state);
+                                    setting.set_string ("country", country);
                                     header.custom_title = null;
                                     header.title = town + ", " + state + " " + country;
                                     window.remove (window.get_child ());
@@ -154,7 +155,7 @@ namespace  Weather.Widgets {
                 var root = parser.get_root ().get_object ();
                 id = root.get_int_member ("id");
             } catch (Error e) {
-                stderr.printf (_("Found an error"));
+                debug (e.message);
             }
             return id;
         }

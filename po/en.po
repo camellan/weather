@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-26 22:57+0100\n"
-"PO-Revision-Date: 2017-11-26 22:58+0100\n"
+"POT-Creation-Date: 2017-12-08 15:31+0100\n"
+"PO-Revision-Date: 2017-12-08 15:33+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
 "Language: en\n"
@@ -18,11 +18,11 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: weather/src/Widgets/Apikey.vala:43
+#: src/Widgets/Apikey.vala:43
 msgid "<big>Enter your OpenWeatherMap API key</big>\n"
 msgstr "<big>Enter your OpenWeatherMap API key</big>\n"
 
-#: weather/src/Widgets/Apikey.vala:63
+#: src/Widgets/Apikey.vala:63
 msgid ""
 "<small>If you don't have it, please visit: <a href =\"https://home."
 "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
@@ -30,144 +30,163 @@ msgstr ""
 "<small>If you don't have it, please visit: <a href =\"https://home."
 "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
 
-#: weather/src/Widgets/About.vala:31
+#: src/Widgets/About.vala:32
 msgid "A forecast application with OpenWeatherMap API"
 msgstr "A forecast application with OpenWeatherMap API"
 
-#: weather/src/Widgets/Header.vala:34
+#: src/Widgets/Header.vala:34
 msgid "About Weather"
 msgstr "About Weather"
 
-#: weather/src/Widgets/City.vala:94
+#: src/Widgets/City.vala:53 src/Widgets/City.vala:130 src/Widgets/City.vala:138
 msgid "At least of 3 characters are required!"
 msgstr "At least of 3 characters are required!"
 
-#: weather/src/Widgets/Header.vala:56
+#: src/Widgets/Header.vala:56
 msgid "Change location"
 msgstr "Cambiar ubicación"
 
-#: weather/src/Widgets/City.vala:63
-msgid "City"
-msgstr "City"
-
-#: weather/src/Widgets/Preferences.vala:109
+#: src/Widgets/Preferences.vala:160
 msgid "Close"
 msgstr "Close"
 
-#: weather/src/Widgets/Today.vala:68
+#: src/Widgets/Today.vala:68
 msgid "Cloudiness :"
 msgstr "Cloudiness :"
 
-#: weather/src/Widgets/Today.vala:37
+#: src/Widgets/About.vala:45
+msgid "Colaborators"
+msgstr "Colaborators"
+
+#: src/Widgets/Today.vala:37
 msgid "Coordinates :"
 msgstr "Coordinates :"
 
-#: weather/src/Widgets/City.vala:61
-msgid "Country"
-msgstr "Country"
-
-#: weather/src/Widgets/Preferences.vala:36
+#: src/Widgets/Preferences.vala:42
 msgid "Dark theme:"
 msgstr "Dark theme:"
 
-#: weather/src/Widgets/About.vala:32
-msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
-msgstr "Developed using Vala, Gtk & Granite - bitseater - 2017"
+#: src/Widgets/Preferences.vala:116
+msgid "Find my location automatically:"
+msgstr "Find my location automatically:"
 
-#: weather/src/Widgets/Forecast.vala:51
+#: src/Widgets/Forecast.vala:51
 msgid "Forecast"
 msgstr "Forecast"
 
-#: weather/src/Utils/OWM_Today.vala:159 weather/src/Widgets/City.vala:125
-#: weather/src/Widgets/Apikey.vala:124 weather/src/Widgets/Forecast.vala:75
+#: src/Utils/GeoLocate.vala:69 src/Widgets/Apikey.vala:132
 #, c-format
 msgid "Found an error"
 msgstr "Found an error"
 
-#: weather/src/Widgets/Today.vala:56
+#: src/Widgets/Preferences.vala:37
+msgid "General"
+msgstr "General"
+
+#: src/Widgets/Today.vala:56
 msgid "Humidity :"
 msgstr "Humidity :"
 
-#: weather/src/Widgets/Preferences.vala:59
+#: src/Widgets/Preferences.vala:84
 msgid "Imperial System"
 msgstr "Imperial System"
 
-#: weather/src/Widgets/Preferences.vala:58
+#: src/Widgets/Preferences.vala:34
+msgid "Interface"
+msgstr "Interface"
+
+#: src/Widgets/Preferences.vala:83
 msgid "Metric System"
 msgstr "Metric System"
 
-#: weather/src/Widgets/City.vala:110
+#: src/Widgets/City.vala:121
 msgid "No data"
 msgstr "No data"
 
-#: weather/src/Widgets/City.vala:62
-msgid "OpenWM ID"
-msgstr "OpenWM ID"
-
-#: weather/src/Widgets/Header.vala:49
+#: src/Widgets/Header.vala:49
 msgid "Options"
 msgstr "Opciones"
 
-#: weather/src/Widgets/Header.vala:33 weather/src/Widgets/Preferences.vala:33
+#: src/Widgets/Header.vala:33
 msgid "Preferences"
 msgstr "Preferences"
 
-#: weather/src/Widgets/Today.vala:52
+#: src/Widgets/Today.vala:52
 msgid "Pressure :"
 msgstr "Pressure :"
 
-#: weather/src/Widgets/Preferences.vala:74
+#: src/Widgets/Preferences.vala:100
 msgid "Restore API key:"
 msgstr "Restore API key:"
 
-#: weather/src/Widgets/Apikey.vala:52
+#: src/Widgets/Apikey.vala:52
 msgid "Save"
 msgstr "Save"
 
-#: weather/src/Widgets/City.vala:49
+#: src/Widgets/City.vala:40
 msgid "Search for new location:"
 msgstr "Search for new location:"
 
-#: weather/src/Widgets/Today.vala:70
+#: src/Widgets/City.vala:91
+msgid "Select"
+msgstr "Select"
+
+#: src/Widgets/Today.vala:70
 msgid "Sunrise :"
 msgstr "Sunrise :"
 
-#: weather/src/Widgets/Today.vala:74
+#: src/Widgets/Today.vala:74
 msgid "Sunset :"
 msgstr "Sunset :"
 
-#: weather/src/Widgets/Apikey.vala:102
+#: src/Widgets/Preferences.vala:62
+msgid "Symbolic icons:"
+msgstr "Symbolic icons:"
+
+#: src/Widgets/Apikey.vala:110
 msgid "The API key cannot be empty."
 msgstr "The API key cannot be empty."
 
-#: weather/src/Widgets/Today.vala:34
+#: src/Widgets/Today.vala:34
 msgid "Today"
 msgstr "Today"
 
-#: weather/src/Widgets/Preferences.vala:55
+#: src/Widgets/Preferences.vala:80
 msgid "Units:"
 msgstr "Units:"
 
-#: weather/src/Widgets/Header.vala:54
+#: src/Widgets/Header.vala:54
 msgid "Update"
 msgstr "Actualizar"
 
-#: weather/src/Widgets/Apikey.vala:68
+#: src/Widgets/Apikey.vala:68
 msgid "Use API key built-in"
 msgstr "Use API key built-in"
 
-#: weather/src/Widgets/Today.vala:64
+#: src/Widgets/Today.vala:64
 msgid "Wind dir :"
 msgstr "Wind dir :"
 
-#: weather/src/Widgets/Today.vala:60
+#: src/Widgets/Today.vala:60
 msgid "Wind speed :"
 msgstr "Wind speed :"
 
-#: weather/src/Widgets/Apikey.vala:96
+#: src/Widgets/Apikey.vala:104
 msgid "Wrong API Key. Please, try again."
 msgstr "Wrong API Key. Please, try again."
 
-#: weather/src/Widgets/About.vala:39
+#: src/Widgets/About.vala:42
 msgid "website"
 msgstr "website"
+
+#~ msgid "City"
+#~ msgstr "City"
+
+#~ msgid "Country"
+#~ msgstr "Country"
+
+#~ msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
+#~ msgstr "Developed using Vala, Gtk & Granite - bitseater - 2017"
+
+#~ msgid "OpenWM ID"
+#~ msgstr "OpenWM ID"

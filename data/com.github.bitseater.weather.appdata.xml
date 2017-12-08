@@ -33,9 +33,19 @@
         <value key="x-appcenter-suggested-price">1</value>
     </custom>
   ​  <releases>
-        <release version="0.4" date="2017-12-04">
+        <release version="0.4" date="2017-12-08">
             <description>
-        ​        <p>Some issues fixed and new features added.</p>
+        ​        <p>Changes to new release:
+                    <li>Add cmake support to other SO than elementaryOS.</li>
+                    <li>Add lituanian and russian translations.</li>
+                    <li>Fix localization (gettext) issue.</li>
+                    <li>Add support to Debian/Ubuntu.</li>
+                    <li>Fix visual issues in UI.</li>
+                    <li>CSS support added.</li>
+                    <li>New "find location" screen, with elegants maps.</li>
+                    <li>Automatic location on start (Can disabled on preferences).</li>
+                    <li>Choose between realistic and symbolic icons.</li>
+                </p>
       ​      </description>
         </release>
     </releases>

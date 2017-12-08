@@ -156,8 +156,9 @@ namespace  Weather.Utils {
                 _sunrise = time_format (sunr);
                 var suns = new DateTime.from_unix_local (root.get_object_member ("sys").get_int_member ("sunset"));
                 _sunset = time_format (suns);
+
             } catch (Error e) {
-                stderr.printf (_("Found an error"));
+                stdout.printf ("Hubo un error: %s\n", e.message);
             }
         }
 

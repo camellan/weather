@@ -4,6 +4,7 @@
 src/Weather.vala
 src/MainWindow.vala
 src/Constants.vala
+src/Utils/GeoLocate.vala
 src/Utils/Iconame.vala
 src/Utils/MapCity.vala
 src/Utils/MiniMap.vala

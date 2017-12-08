@@ -73,7 +73,7 @@ namespace  Weather.Widgets {
                     attach (temp, 3, 5+b, 2, 1);
                 }
             } catch (Error e) {
-                stderr.printf (_("Found an error"));
+                debug (e.message);
             }
         }
 

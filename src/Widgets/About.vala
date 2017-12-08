@@ -26,17 +26,23 @@ namespace  Weather.Widgets {
             transient_for = window;
             modal = true;
             destroy_with_parent = true;
-            artists = {"Carlos Suárez <bitseater@gmail.com>", "Paulo Galardi <lainsce@airmail.cc>"};
+
+            artists = {"Carlos Suárez <bitseater@gmail.com>"};
             authors = {"Carlos Suárez <bitseater@gmail.com>"};
             comments = _("A forecast application with OpenWeatherMap API");
-            copyright = _("Developed using Vala & Gtk - 2017");
+            copyright = "Copyright \xc2\xa9 Carlos Suárez - 2017";
             license_type = Gtk.License.GPL_3_0;
             logo_icon_name = Constants.ICON_NAME;
             program_name = Constants.APP_NAME;
-            translator_credits = "Carlos Suárez <bitseater@gmail.com>, Andrey Kultyapov <camellan@yandex.ru>, welaq https://github.com/welaq";
+            translator_credits = "(es, en, fr) Carlos Suárez <bitseater@gmail.com>
+                                (ru) Andrey Kultyapov <camellan@yandex.ru>
+                                (lt) welaq https://github.com/welaq";
             version = Constants.VERSION;
             website = "https://github.com/bitseater/weather";
             website_label = _("website");
+
+            string[] colaborators = {"Paulo Galardi <lainsce@airmail.cc>", "Andrey Kultyapov <camellan@yandex.ru>", "Cassidy James Blaede https://github.com/cassidyjames"};
+            add_credit_section (_("Colaborators"), colaborators);
 
             response.connect (() => {
                     destroy ();

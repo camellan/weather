@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-26 22:57+0100\n"
+"POT-Creation-Date: 2017-12-08 15:31+0100\n"
 "PO-Revision-Date: 2017-12-04 14:49+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
@@ -19,11 +19,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: weather/src/Widgets/Apikey.vala:43
+#: src/Widgets/Apikey.vala:43
 msgid "<big>Enter your OpenWeatherMap API key</big>\n"
 msgstr "<big>Įveskite savo OpenWeatherMap API raktą</big>\n"
 
-#: weather/src/Widgets/Apikey.vala:63
+#: src/Widgets/Apikey.vala:63
 msgid ""
 "<small>If you don't have it, please visit: <a href =\"https://home."
 "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
@@ -32,144 +32,163 @@ msgstr ""
 "openweathermap.org/users/sign_up\">OpenWeatherMap</a> arba, tiesiog, "
 "pažymėkite :</small>"
 
-#: weather/src/Widgets/About.vala:31
+#: src/Widgets/About.vala:32
 msgid "A forecast application with OpenWeatherMap API"
 msgstr "Orų prognozės programa su OpenWeatherMap API"
 
-#: weather/src/Widgets/Header.vala:34
+#: src/Widgets/Header.vala:34
 msgid "About Weather"
 msgstr "Apie Orus"
 
-#: weather/src/Widgets/City.vala:94
+#: src/Widgets/City.vala:53 src/Widgets/City.vala:130 src/Widgets/City.vala:138
 msgid "At least of 3 characters are required!"
 msgstr "Reikia bent 3 simbolių!"
 
-#: weather/src/Widgets/Header.vala:56
+#: src/Widgets/Header.vala:56
 msgid "Change location"
 msgstr "Keisti vietą"
 
-#: weather/src/Widgets/City.vala:63
-msgid "City"
-msgstr "Miestas"
-
-#: weather/src/Widgets/Preferences.vala:109
+#: src/Widgets/Preferences.vala:160
 msgid "Close"
 msgstr "Užverti"
 
-#: weather/src/Widgets/Today.vala:68
+#: src/Widgets/Today.vala:68
 msgid "Cloudiness :"
 msgstr "Debesuotumas :"
 
-#: weather/src/Widgets/Today.vala:37
+#: src/Widgets/About.vala:45
+msgid "Colaborators"
+msgstr ""
+
+#: src/Widgets/Today.vala:37
 msgid "Coordinates :"
 msgstr "Koordinatės :"
 
-#: weather/src/Widgets/City.vala:61
-msgid "Country"
-msgstr "Šalis"
-
-#: weather/src/Widgets/Preferences.vala:36
+#: src/Widgets/Preferences.vala:42
 msgid "Dark theme:"
 msgstr "Tamsi tema:"
 
-#: weather/src/Widgets/About.vala:32
-msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
-msgstr "Sukurta, naudojant Vala, Gtk ir Granite - bitseater - 2017"
+#: src/Widgets/Preferences.vala:116
+msgid "Find my location automatically:"
+msgstr ""
 
-#: weather/src/Widgets/Forecast.vala:51
+#: src/Widgets/Forecast.vala:51
 msgid "Forecast"
 msgstr "Orų prognozė"
 
-#: weather/src/Utils/OWM_Today.vala:159 weather/src/Widgets/City.vala:125
-#: weather/src/Widgets/Apikey.vala:124 weather/src/Widgets/Forecast.vala:75
+#: src/Utils/GeoLocate.vala:69 src/Widgets/Apikey.vala:132
 #, c-format
 msgid "Found an error"
 msgstr "Rasta klaida"
 
-#: weather/src/Widgets/Today.vala:56
+#: src/Widgets/Preferences.vala:37
+msgid "General"
+msgstr ""
+
+#: src/Widgets/Today.vala:56
 msgid "Humidity :"
 msgstr "Drėgnumas :"
 
-#: weather/src/Widgets/Preferences.vala:59
+#: src/Widgets/Preferences.vala:84
 msgid "Imperial System"
 msgstr "Imperinė sistema"
 
-#: weather/src/Widgets/Preferences.vala:58
+#: src/Widgets/Preferences.vala:34
+msgid "Interface"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:83
 msgid "Metric System"
 msgstr "Metrinė sistema"
 
-#: weather/src/Widgets/City.vala:110
+#: src/Widgets/City.vala:121
 msgid "No data"
 msgstr "Nėra duomenų"
 
-#: weather/src/Widgets/City.vala:62
-msgid "OpenWM ID"
-msgstr "OpenWM ID"
-
-#: weather/src/Widgets/Header.vala:49
+#: src/Widgets/Header.vala:49
 msgid "Options"
 msgstr "Parametrai"
 
-#: weather/src/Widgets/Header.vala:33 weather/src/Widgets/Preferences.vala:33
+#: src/Widgets/Header.vala:33
 msgid "Preferences"
 msgstr "Nuostatos"
 
-#: weather/src/Widgets/Today.vala:52
+#: src/Widgets/Today.vala:52
 msgid "Pressure :"
 msgstr "Slėgis :"
 
-#: weather/src/Widgets/Preferences.vala:74
+#: src/Widgets/Preferences.vala:100
 msgid "Restore API key:"
 msgstr "Atkurti API raktą:"
 
-#: weather/src/Widgets/Apikey.vala:52
+#: src/Widgets/Apikey.vala:52
 msgid "Save"
 msgstr "Įrašyti"
 
-#: weather/src/Widgets/City.vala:49
+#: src/Widgets/City.vala:40
 msgid "Search for new location:"
 msgstr "Ieškoti naujos vietos:"
 
-#: weather/src/Widgets/Today.vala:70
+#: src/Widgets/City.vala:91
+msgid "Select"
+msgstr ""
+
+#: src/Widgets/Today.vala:70
 msgid "Sunrise :"
 msgstr "Saulėtekis :"
 
-#: weather/src/Widgets/Today.vala:74
+#: src/Widgets/Today.vala:74
 msgid "Sunset :"
 msgstr "Saulėlydis :"
 
-#: weather/src/Widgets/Apikey.vala:102
+#: src/Widgets/Preferences.vala:62
+msgid "Symbolic icons:"
+msgstr ""
+
+#: src/Widgets/Apikey.vala:110
 msgid "The API key cannot be empty."
 msgstr "API raktas negali būti tuščias."
 
-#: weather/src/Widgets/Today.vala:34
+#: src/Widgets/Today.vala:34
 msgid "Today"
 msgstr "Šiandien"
 
-#: weather/src/Widgets/Preferences.vala:55
+#: src/Widgets/Preferences.vala:80
 msgid "Units:"
 msgstr "Vienetai:"
 
-#: weather/src/Widgets/Header.vala:54
+#: src/Widgets/Header.vala:54
 msgid "Update"
 msgstr "Atnaujinti"
 
-#: weather/src/Widgets/Apikey.vala:68
+#: src/Widgets/Apikey.vala:68
 msgid "Use API key built-in"
 msgstr "Naudoti įtaisytąjį API raktą"
 
-#: weather/src/Widgets/Today.vala:64
+#: src/Widgets/Today.vala:64
 msgid "Wind dir :"
 msgstr "Vėjo kryptis :"
 
-#: weather/src/Widgets/Today.vala:60
+#: src/Widgets/Today.vala:60
 msgid "Wind speed :"
 msgstr "Vėjo greitis :"
 
-#: weather/src/Widgets/Apikey.vala:96
+#: src/Widgets/Apikey.vala:104
 msgid "Wrong API Key. Please, try again."
 msgstr "Neteisingas API raktas. Bandykite dar kartą."
 
-#: weather/src/Widgets/About.vala:39
+#: src/Widgets/About.vala:42
 msgid "website"
 msgstr "svetainė"
+
+#~ msgid "City"
+#~ msgstr "Miestas"
+
+#~ msgid "Country"
+#~ msgstr "Šalis"
+
+#~ msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
+#~ msgstr "Sukurta, naudojant Vala, Gtk ir Granite - bitseater - 2017"
+
+#~ msgid "OpenWM ID"
+#~ msgstr "OpenWM ID"

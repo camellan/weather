@@ -78,6 +78,10 @@ namespace Weather {
             if (setting.get_string ("apiid") == "") {
                 var apikey = new Weather.Widgets.Apikey (this, header);
                 this.add (apikey);
+            } else if (setting.get_boolean ("auto")) {
+                Weather.Utils.geolocate ();
+                var current = new Weather.Widgets.Current (this, header);
+                this.add (current);
             } else if (setting.get_string ("idplace") == "") {
                 var city = new Weather.Widgets.City (this, header);
                 this.add (city);

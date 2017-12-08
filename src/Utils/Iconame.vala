@@ -23,8 +23,13 @@ namespace  Weather.Utils {
     public class Iconame : Gtk.Image {
 
         public Iconame (string iconum, int size) {
+            var setting = new Settings ("com.github.bitseater.weather");
+            string subico = "";
+            if (setting.get_boolean ("symbolic")) {
+                subico = "-symbolic";
+            }
             icon_size = Gtk.IconSize.DIALOG;
-            icon_name = get_icon (iconum);
+            icon_name = get_icon (iconum) + subico;
             pixel_size = size;
         }
 
@@ -32,61 +37,61 @@ namespace  Weather.Utils {
             string str_icon = "";
             switch (code) {
                 case "01d":
-                    str_icon = "weather-clear-symbolic";
+                    str_icon = "weather-clear";
                     break;
                 case "01n":
-                    str_icon = "weather-clear-night-symbolic";
+                    str_icon = "weather-clear-night";
                     break;
                 case "02d":
-                    str_icon = "weather-few-clouds-symbolic";
+                    str_icon = "weather-few-clouds";
                     break;
                 case "02n":
-                    str_icon = "weather-few-clouds-night-symbolic";
+                    str_icon = "weather-few-clouds";
                     break;
                 case "03d":
-                    str_icon = "weather-few-clouds-symbolic";
+                    str_icon = "weather-few-clouds";
                     break;
                 case "03n":
-                    str_icon = "weather-few-clouds-night-symbolic";
+                    str_icon = "weather-few-clouds-night";
                     break;
                 case "04d":
-                    str_icon = "weather-overcast-symbolic";
+                    str_icon = "weather-overcast";
                     break;
                 case "04n":
-                    str_icon = "weather-overcast-symbolic";
+                    str_icon = "weather-overcast";
                     break;
                 case "09d":
-                    str_icon = "weather-showers-scattered-symbolic";
+                    str_icon = "weather-showers-scattered";
                     break;
                 case "09n":
-                    str_icon = "weather-showers-scattered-symbolic";
+                    str_icon = "weather-showers-scattered";
                     break;
                 case "10d":
-                    str_icon = "weather-showers-symbolic";
+                    str_icon = "weather-showers";
                     break;
                 case "10n":
-                    str_icon = "weather-showers-symbolic";
+                    str_icon = "weather-showers";
                     break;
                 case "11d":
-                    str_icon = "weather-storm-symbolic";
+                    str_icon = "weather-storm";
                     break;
                 case "11n":
-                    str_icon = "weather-storm-symbolic";
+                    str_icon = "weather-storm";
                     break;
                 case "13d":
-                    str_icon = "weather-snow-symbolic";
+                    str_icon = "weather-snow";
                     break;
                 case "13n":
-                    str_icon = "weather-snow-symbolic";
+                    str_icon = "weather-snow";
                     break;
                 case "50d":
-                    str_icon = "weather-fog-symbolic";
+                    str_icon = "weather-fog";
                     break;
                 case "50n":
-                    str_icon = "weather-fog-symbolic";
+                    str_icon = "weather-fog";
                     break;
                 default :
-                    str_icon = "dialog-error-symbolic";
+                    str_icon = "dialog-error";
                     break;
             }
             return str_icon;

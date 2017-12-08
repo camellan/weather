@@ -37,3 +37,20 @@ For advanced users!
 	cmake -DCMAKE_INSTALL_PREFIX=/usr ../
 	make
 	sudo make install
+
+----
+
+#### New on release 0.40:
+
+- Add cmake support to other SO than elementaryOS.
+- Add lituanian and russian translations. Thx to welaq and camellan.
+- Fix gettext issue. Thx to Andrey Kultyapov.
+- Add support to Debian/Ubuntu.
+- Fix visual issues in UI.
+- CSS support added.
+- Choose between realistic and symbolic icons.
+  
+Suggested by Cassidy James Blaede:
+  
+- New "find location" screen, with elegants maps.
+- Automatic location on start (Can disabled on preferences).

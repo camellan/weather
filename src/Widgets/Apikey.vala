@@ -88,10 +88,18 @@ namespace  Weather.Widgets {
                     string uri = Constants.OWM_API_ADDR + "weather?id=2643743&appid=" + apientry.get_text ();
                     if (check_apikey (uri)) {
                         setting.set_string ("apiid", apientry.get_text ());
-                        window.remove (window.get_child ());
-                        var city = new Weather.Widgets.City (window, header);
-                        window.add (city);
-                        window.show_all ();
+                        if (setting.get_boolean ("auto")){
+                            Weather.Utils.geolocate ();
+                            window.remove (window.get_child ());
+                            var current = new Weather.Widgets.Current (window, header);
+                            window.add (current);
+                            window.show_all ();
+                        } else {
+                            window.remove (window.get_child ());
+                            var city = new Weather.Widgets.City (window, header);
+                            window.add (city);
+                            window.show_all ();
+                        }
                     } else {
                         ticket.set_text (_("Wrong API Key. Please, try again."));
                         ticket.reveal_child = true;
