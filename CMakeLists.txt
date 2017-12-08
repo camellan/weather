@@ -85,7 +85,7 @@
     install (FILES ${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bitseater.weather.appdata.xml DESTINATION ${DATADIR}/metainfo/)
 
     # install application icons
-    install (FILES "${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bitseater.weather.svg" DESTINATION ${DATADIR}/share/icons/hicolor/scalable/apps)
+    install (FILES "${CMAKE_CURRENT_SOURCE_DIR}/data/com.github.bitseater.weather.svg" DESTINATION ${DATADIR}/icons/hicolor/scalable/apps)
 
     # Translation files
     # add_subdirectory (po)

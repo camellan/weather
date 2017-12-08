@@ -189,8 +189,8 @@ msgstr "sitio web"
 #~ msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
 #~ msgstr "Desarrolada con Vala, Gtk y Granite - bitseater - 2017"
 
-#~ msgid "OpenWM ID"
-#~ msgstr "Id. OpenWM"
-
 #~ msgid "Error"
 #~ msgstr "Error"
+
+#~ msgid "OpenWM ID"
+#~ msgstr "Id. OpenWM"
