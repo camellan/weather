@@ -40,7 +40,7 @@ For advanced users!
 
 ----
 
-#### New on release 0.40:
+#### New on release 0.4.1:
 
 - Add cmake support to other SO than elementaryOS.
 - Add lituanian and russian translations. Thx to welaq and camellan.

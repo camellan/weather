@@ -17,7 +17,7 @@
 
     set (EXEC_NAME "com.github.bitseater.weather")
     set (RELEASE_NAME "xenial")
-    set (VERSION "0.4")
+    set (VERSION "0.4.1")
     set (VERSION_INFO "Release")
 
     # we're about to use pkgconfig to make sure dependencies are installed so let's find pkgconfig first

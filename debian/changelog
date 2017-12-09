@@ -1,5 +1,11 @@
 com.github.bitseater.weather (0.4) xenial; urgency=medium
 
+  * Fix application icon issue.
+
+ -- Carlos Suárez <bitseater@gmail.com>  Sat, 09 Dec 2017 04:45:00 +0100
+
+com.github.bitseater.weather (0.4) xenial; urgency=medium
+
   * Add cmake support to other SO than elementaryOS.
   * Add lituanian and russian translations. Thx to welaq and camellan.
   * Fix gettext issue. Thx to Andrey Kultyapov <camellan@yandex.ru>.
