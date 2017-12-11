@@ -58,7 +58,7 @@ msgstr "Debesuotumas :"
 
 #: src/Widgets/About.vala:45
 msgid "Colaborators"
-msgstr ""
+msgstr "Talkininkai"
 
 #: src/Widgets/Today.vala:37
 msgid "Coordinates :"
@@ -70,7 +70,7 @@ msgstr "Tamsi tema:"
 
 #: src/Widgets/Preferences.vala:116
 msgid "Find my location automatically:"
-msgstr ""
+msgstr "Automatiškai rasti mano buvimo vietą:"
 
 #: src/Widgets/Forecast.vala:51
 msgid "Forecast"
@@ -83,7 +83,7 @@ msgstr "Rasta klaida"
 
 #: src/Widgets/Preferences.vala:37
 msgid "General"
-msgstr ""
+msgstr "Bendra"
 
 #: src/Widgets/Today.vala:56
 msgid "Humidity :"
@@ -95,7 +95,7 @@ msgstr "Imperinė sistema"
 
 #: src/Widgets/Preferences.vala:34
 msgid "Interface"
-msgstr ""
+msgstr "Sąsaja"
 
 #: src/Widgets/Preferences.vala:83
 msgid "Metric System"
@@ -131,7 +131,7 @@ msgstr "Ieškoti naujos vietos:"
 
 #: src/Widgets/City.vala:91
 msgid "Select"
-msgstr ""
+msgstr "Pasirinkti"
 
 #: src/Widgets/Today.vala:70
 msgid "Sunrise :"
@@ -143,7 +143,7 @@ msgstr "Saulėlydis :"
 
 #: src/Widgets/Preferences.vala:62
 msgid "Symbolic icons:"
-msgstr ""
+msgstr "Simbolinės piktogramos:"
 
 #: src/Widgets/Apikey.vala:110
 msgid "The API key cannot be empty."
@@ -179,7 +179,7 @@ msgstr "Neteisingas API raktas. Bandykite dar kartą."
 
 #: src/Widgets/About.vala:42
 msgid "website"
-msgstr "svetainė"
+msgstr "Internetinė svetainė"
 
 #~ msgid "City"
 #~ msgstr "Miestas"
