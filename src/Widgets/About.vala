@@ -41,7 +41,7 @@ namespace  Weather.Widgets {
             website = "https://github.com/bitseater/weather";
             website_label = _("website");
 
-            string[] colaborators = {"Paulo Galardi <lainsce@airmail.cc>", "Andrey Kultyapov <camellan@yandex.ru>", "Cassidy James Blaede https://github.com/cassidyjames"};
+            string[] colaborators = {"Paulo Galardi <lainsce@airmail.cc>", "Andrey Kultyapov <camellan@yandex.ru>", "Cassidy James Blaede https://github.com/cassidyjames", "Corentin Noël https://github.com/tintou"};
             add_credit_section (_("Colaborators"), colaborators);
 
             response.connect (() => {

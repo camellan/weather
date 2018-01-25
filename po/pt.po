@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-08 15:31+0100\n"
+"PO-Revision-Date: 2017-12-17 13:39+0100\n"
+"Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
+"Language-Team: \n"
+"Language: pt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/Widgets/Apikey.vala:43
+msgid "<big>Enter your OpenWeatherMap API key</big>\n"
+msgstr "<big>Digite seu chave da API OpenWeatherMap</big>\n"
+
+#: src/Widgets/Apikey.vala:63
+msgid ""
+"<small>If you don't have it, please visit: <a href =\"https://home."
+"openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
+msgstr ""
+"<small>Se você não o tiver, por favor visite: <a href =\"https://home."
+"openweathermap.org/users/sign_up\">OpenWeatherMap</a> ou simplesmente :</"
+"small>"
+
+#: src/Widgets/About.vala:32
+msgid "A forecast application with OpenWeatherMap API"
+msgstr "Um aplicativo de previsão do tempo com a API de OpenWeatherMap"
+
+#: src/Widgets/Header.vala:34
+msgid "About Weather"
+msgstr "Sobre Weather"
+
+#: src/Widgets/City.vala:53 src/Widgets/City.vala:130 src/Widgets/City.vala:138
+msgid "At least of 3 characters are required!"
+msgstr "Em menos de 3 caracteres são necessários!"
+
+#: src/Widgets/Header.vala:56
+msgid "Change location"
+msgstr "Mudar localização"
+
+#: src/Widgets/Preferences.vala:160
+msgid "Close"
+msgstr "Fechar"
+
+#: src/Widgets/Today.vala:68
+msgid "Cloudiness :"
+msgstr "Nebulosidade:"
+
+#: src/Widgets/About.vala:45
+msgid "Colaborators"
+msgstr "Colaboradores"
+
+#: src/Widgets/Today.vala:37
+msgid "Coordinates :"
+msgstr "Coordenadas :"
+
+#: src/Widgets/Preferences.vala:42
+msgid "Dark theme:"
+msgstr "Tema escuro:"
+
+#: src/Widgets/Preferences.vala:116
+msgid "Find my location automatically:"
+msgstr "Encontrar minha localização automaticamente:"
+
+#: src/Widgets/Forecast.vala:51
+msgid "Forecast"
+msgstr "Previsão"
+
+#: src/Utils/GeoLocate.vala:69 src/Widgets/Apikey.vala:132
+#, c-format
+msgid "Found an error"
+msgstr "Encontrou um erro"
+
+#: src/Widgets/Preferences.vala:37
+msgid "General"
+msgstr "Geral"
+
+#: src/Widgets/Today.vala:56
+msgid "Humidity :"
+msgstr "Humidade :"
+
+#: src/Widgets/Preferences.vala:84
+msgid "Imperial System"
+msgstr "Sistema Imperial"
+
+#: src/Widgets/Preferences.vala:34
+msgid "Interface"
+msgstr "Interface"
+
+#: src/Widgets/Preferences.vala:83
+msgid "Metric System"
+msgstr "Sistema Métrico"
+
+#: src/Widgets/City.vala:121
+msgid "No data"
+msgstr "Não há dados"
+
+#: src/Widgets/Header.vala:49
+msgid "Options"
+msgstr "Opções"
+
+#: src/Widgets/Header.vala:33
+msgid "Preferences"
+msgstr "Preferências"
+
+#: src/Widgets/Today.vala:52
+msgid "Pressure :"
+msgstr "Pressão :"
+
+#: src/Widgets/Preferences.vala:100
+msgid "Restore API key:"
+msgstr "Restaurar a chave de API:"
+
+#: src/Widgets/Apikey.vala:52
+msgid "Save"
+msgstr "Salvar"
+
+#: src/Widgets/City.vala:40
+msgid "Search for new location:"
+msgstr "Pesquisa para um novo lugar:"
+
+#: src/Widgets/City.vala:91
+msgid "Select"
+msgstr "Selecionar"
+
+#: src/Widgets/Today.vala:70
+msgid "Sunrise :"
+msgstr "Amanhecer :"
+
+#: src/Widgets/Today.vala:74
+msgid "Sunset :"
+msgstr "Crespusculo :"
+
+#: src/Widgets/Preferences.vala:62
+msgid "Symbolic icons:"
+msgstr "Ícones simbolicos:"
+
+#: src/Widgets/Apikey.vala:110
+msgid "The API key cannot be empty."
+msgstr "A chave da API não pode estar vazia."
+
+#: src/Widgets/Today.vala:34
+msgid "Today"
+msgstr "Hoje"
+
+#: src/Widgets/Preferences.vala:80
+msgid "Units:"
+msgstr "Unidades:"
+
+#: src/Widgets/Header.vala:54
+msgid "Update"
+msgstr "Atualização"
+
+#: src/Widgets/Apikey.vala:68
+msgid "Use API key built-in"
+msgstr "Use chave de API interna"
+
+#: src/Widgets/Today.vala:64
+msgid "Wind dir :"
+msgstr "Direcção do vento"
+
+#: src/Widgets/Today.vala:60
+msgid "Wind speed :"
+msgstr "Velocidade do vento :"
+
+#: src/Widgets/Apikey.vala:104
+msgid "Wrong API Key. Please, try again."
+msgstr "Chave de API errada. Por favor, tente novamente."
+
+#: src/Widgets/About.vala:42
+msgid "website"
+msgstr "site"
