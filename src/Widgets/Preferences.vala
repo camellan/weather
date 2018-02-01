@@ -76,6 +76,74 @@ namespace  Weather.Widgets {
                 }
             });
 
+            //Select indicator
+            var ind_label = new Gtk.Label (_("Use System Tray Indicator:"));
+            ind_label.halign = Gtk.Align.END;
+            var ind = new Gtk.Switch ();
+            ind.halign = Gtk.Align.START;
+            if (setting.get_boolean ("indicator")) {
+                ind.active = true;
+            } else {
+                ind.active = false;
+            }
+            ind.notify["active"].connect (() => {
+                if (ind.get_active ()) {
+                    setting.set_boolean ("indicator", true);
+                    (window as Weather.MainWindow).create_indicator ();
+                } else {
+                    setting.set_boolean ("indicator", false);
+                    (window as Weather.MainWindow).hide_indicator ();
+                }
+            });
+
+            //Update interval
+            var update_lab = new Gtk.Label (_("Update conditions every :"));
+            update_lab.halign = Gtk.Align.END;
+            var update_box = new Gtk.ComboBoxText ();
+            update_box.append_text (_("2 hrs."));
+            update_box.append_text (_("6 hrs."));
+            update_box.append_text (_("12 hrs."));
+            update_box.append_text (_("24 hrs."));
+            int interval = setting.get_int ("interval");
+            switch (interval) {
+                case 7200:
+                    update_box.active = 0;
+                    break;
+                case 21600:
+                    update_box.active = 1;
+                    break;
+                case 43200:
+                    update_box.active = 2;
+                    break;
+                case 86400:
+                    update_box.active = 3;
+                    break;
+                default:
+                    update_box.active = 0;
+                    break;
+            }
+
+            update_box.changed.connect (() => {
+                switch (update_box.active) {
+                    case 0:
+                        interval = 7200;
+                        break;
+                    case 1:
+                        interval = 21600;
+                        break;
+                    case 2:
+                        interval = 43200;
+                        break;
+                    case 3:
+                        interval = 86400;
+                        break;
+                    default:
+                        interval = 7200;
+                        break;
+                }
+                setting.set_int ("interval", interval);
+            });
+
             //System units
             var unit_lab = new Gtk.Label (_("Units:"));
             unit_lab.halign = Gtk.Align.END;
@@ -143,13 +211,17 @@ namespace  Weather.Widgets {
             layout.attach (theme, 3, 1, 1, 1);
             layout.attach (icon_label, 2, 2, 1, 1);
             layout.attach (icon, 3, 2, 1, 1);
-            layout.attach (tit2_pref, 0, 3, 2, 1);
-            layout.attach (unit_lab, 2, 4, 1, 1);
-            layout.attach (unit_box, 3, 4, 2, 1);
-            layout.attach (api_lab, 2, 5, 1, 1);
-            layout.attach (api_entry, 3, 5, 1, 1);
-            layout.attach (loc_label, 2, 6, 1, 1);
-            layout.attach (loc, 3, 6, 1, 1);
+            layout.attach (ind_label, 2, 3, 1, 1);
+            layout.attach (ind, 3, 3, 1, 1);
+            layout.attach (tit2_pref, 0, 4, 2, 1);
+            layout.attach (unit_lab, 2, 5, 1, 1);
+            layout.attach (unit_box, 3, 5, 2, 1);
+            layout.attach (update_lab, 2, 6, 1, 1);
+            layout.attach (update_box, 3, 6, 2, 1);
+            layout.attach (api_lab, 2, 7, 1, 1);
+            layout.attach (api_entry, 3, 7, 1, 1);
+            layout.attach (loc_label, 2, 8, 1, 1);
+            layout.attach (loc, 3, 8, 1, 1);
 
             Gtk.Box content = this.get_content_area () as Gtk.Box;
             content.valign = Gtk.Align.START;

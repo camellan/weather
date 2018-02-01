@@ -24,6 +24,7 @@ namespace Weather.Widgets {
 
         public Gtk.Button upd_button;
         public Gtk.Button loc_button;
+        public signal void show_mapwindow ();
 
         public Header (Gtk.Window window, bool view) {
             show_close_button = true;
@@ -50,6 +51,7 @@ namespace Weather.Widgets {
             app_button.image = new Gtk.Image.from_icon_name ("open-menu-symbolic", Gtk.IconSize.BUTTON);
             menu.show_all ();
 
+            //Right buttons
             upd_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.BUTTON);
             upd_button.tooltip_text = _("Update");
             loc_button = new Gtk.Button.from_icon_name ("mark-location-symbolic", Gtk.IconSize.BUTTON);
@@ -71,6 +73,28 @@ namespace Weather.Widgets {
             pack_end (app_button);
             pack_end (upd_button);
             pack_end (loc_button);
+
+            //Left buttons
+            var data_but = new Gtk.RadioButton.with_label_from_widget (null, _("Data"));
+            var maps_but = new Gtk.RadioButton.with_label_from_widget (data_but, _("Maps"));
+            Gtk.RadioButton[] buttons = {data_but, maps_but};
+            var butbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
+            butbox.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+            butbox.homogeneous = true;
+            butbox.hexpand=true;
+            foreach (Gtk.Button button in buttons) {
+                (button as Gtk.ToggleButton).draw_indicator = false;
+                butbox.pack_start (button, false, true, 0);
+            }
+            data_but.toggled.connect (() => {
+                window.remove (window.get_child ());
+                window.add (new Weather.Widgets.Current (window, this));
+                window.show_all ();
+            });
+            maps_but.toggled.connect (() => {
+                this.show_mapwindow ();
+            });
+            pack_start (butbox);
         }
 
         public void change_visible (bool s) {

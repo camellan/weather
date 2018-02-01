@@ -30,13 +30,9 @@ Library Dependencies :
 
 For advanced users!
 
-	git clone https://github.com/bitseater/weather
-	cd weather
-	mkdir build
-	cd build
-	cmake -DCMAKE_INSTALL_PREFIX=/usr ../
-	make
-	sudo make install
+    git clone https://github.com/bitseater/weather
+    cd weather
+    ./quick.sh -b
 
 ----
 
@@ -49,8 +45,8 @@ For advanced users!
 - Fix visual issues in UI.
 - CSS support added.
 - Choose between realistic and symbolic icons.
-  
+
 Suggested by Cassidy James Blaede:
-  
+
 - New "find location" screen, with elegants maps.
 - Automatic location on start (Can disabled on preferences).

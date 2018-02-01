@@ -23,6 +23,7 @@ namespace Weather {
     public class MainWindow : Gtk.Window {
 
         public WeatherApp app;
+        public AppIndicator.Indicator indicator;
 
         public MainWindow (WeatherApp app) {
             this.app = app;
@@ -74,6 +75,22 @@ namespace Weather {
                 Gtk.Settings.get_default().set("gtk-application-prefer-dark-theme", false);
             }
 
+            //Create indicator and show if true:
+            create_indicator ();
+            if (setting.get_boolean ("indicator")) {
+                show_indicator ();
+            } else {
+                hide_indicator ();
+            }
+            this.delete_event.connect (() => {
+                 if (setting.get_boolean ("indicator")) {
+                    this.hide_on_delete ();
+                } else {
+                    (app as GLib.Application).quit ();
+                }
+                return true;
+            });
+
             // Set main content
             if (setting.get_string ("apiid") == "") {
                 var apikey = new Weather.Widgets.Apikey (this, header);
@@ -90,6 +107,42 @@ namespace Weather {
                 this.add (current);
             }
             this.show_all ();
+        }
+
+        public void set_icolabel (string icon, string label) {
+            this.indicator.set_icon_full (icon, icon);
+            this.indicator.label = label;
+        }
+
+        public void create_indicator () {
+            indicator = new AppIndicator.Indicator ("weather", "weather-few-clouds-symbolic",
+                                    AppIndicator.IndicatorCategory.APPLICATION_STATUS);
+            indicator.set_status(AppIndicator.IndicatorStatus.ACTIVE);
+
+            var menu = new Gtk.Menu();
+            var show_item = new Gtk.MenuItem.with_label (_("Show Weather"));
+            show_item.activate.connect(() => {
+                this.show_all ();
+            });
+            show_item.show();
+            menu.append(show_item);
+
+            var quit_item = new Gtk.MenuItem.with_label (_("Quit"));
+            quit_item.show();
+            quit_item.activate.connect(() => {
+                (app as GLib.Application).quit ();
+            });
+            menu.append(quit_item);
+            indicator.set_menu(menu);
+            indicator.set_secondary_activate_target(quit_item);
+        }
+
+        public void show_indicator () {
+            indicator.set_status(AppIndicator.IndicatorStatus.ACTIVE);
+        }
+
+        public void hide_indicator () {
+            indicator.set_status(AppIndicator.IndicatorStatus.PASSIVE);
         }
     }
 }

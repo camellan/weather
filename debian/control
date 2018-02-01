@@ -11,6 +11,7 @@ Build-Depends: cmake (>= 2.8),
                libclutter-1.0-dev,
                libclutter-gtk-1.0-dev,
                libchamplain-0.12-dev,
+               libwebkit2gtk-4.0-dev,
                valac-0.32 | valac (>= 0.32)
 Standards-Version: 3.9.7
 

@@ -33,7 +33,7 @@ namespace  Weather.Utils {
             pixel_size = size;
         }
 
-        private string get_icon (string code) {
+        public string get_icon (string code) {
             string str_icon = "";
             switch (code) {
                 case "01d":

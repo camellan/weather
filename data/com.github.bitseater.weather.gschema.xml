@@ -49,6 +49,18 @@
         <description>Use symbolic icons. Otherwise, application use realistic icons.</description>
     </key>
 
+    <key name="indicator" type="b">
+        <default>true</default>
+        <summary>Use indicator</summary>
+        <description>Mark to use app indicator and minimized to system tray.</description>
+    </key>
+
+    <key name="interval" type="i">
+        <default>7200</default>
+        <summary>Update interval</summary>
+        <description>Time in seconds to update weather conditions.</description>
+    </key>
+
     <key name="auto" type="b">
       <default>true</default>
       <summary>Autolocation</summary>

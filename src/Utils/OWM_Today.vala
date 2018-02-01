@@ -141,7 +141,10 @@ namespace  Weather.Utils {
                 var weather = root.get_array_member ("weather");
                 _wmain = weather.get_object_element (0).get_string_member ("main");
                 _wdescrip = weather.get_object_element (0).get_string_member ("description");
-                _wdescrip = _wdescrip.up (1) + _wdescrip.substring (1, -1);
+                //Fix problems with cyrilic characters
+                if (lang != "ru") {
+                    _wdescrip = _wdescrip.up (1) + _wdescrip.substring (1, -1);
+                }
                 _icon = weather.get_object_element (0).get_string_member ("icon");
                 var vmain = root.get_object_member ("main");
                 _temp = Weather.Utils.to_string0 (vmain.get_double_member ("temp")) + "\u00B0" + temp_un;
