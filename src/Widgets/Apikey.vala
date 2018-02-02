@@ -90,12 +90,12 @@ namespace  Weather.Widgets {
                         setting.set_string ("apiid", apientry.get_text ());
                         if (setting.get_boolean ("auto")){
                             Weather.Utils.geolocate ();
-                            window.remove (window.get_child ());
+                            (window.get_child () as Gtk.Widget).destroy ();
                             var current = new Weather.Widgets.Current (window, header);
                             window.add (current);
                             window.show_all ();
                         } else {
-                            window.remove (window.get_child ());
+                            (window.get_child () as Gtk.Widget).destroy ();
                             var city = new Weather.Widgets.City (window, header);
                             window.add (city);
                             window.show_all ();

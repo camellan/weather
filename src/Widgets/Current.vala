@@ -45,7 +45,7 @@ namespace Weather.Widgets {
 
             //Configure header nav
             header.show_mapwindow.connect (() => {
-                window.remove (window.get_child ());
+                (window.get_child () as Gtk.Widget).destroy ();
                 window.add (new Weather.Widgets.MapViewDS (window, header));
                 window.show_all ();
             });
@@ -53,7 +53,7 @@ namespace Weather.Widgets {
             //Update countdown
             var interval = setting.get_int ("interval");
             GLib.Timeout.add_seconds (interval, () => {
-                window.remove (window.get_child ());
+                (window.get_child () as Gtk.Widget).destroy ();
                 var current = new Weather.Widgets.Current (window, header);
                 window.add (current);
                 current.show_all ();

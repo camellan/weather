@@ -148,11 +148,11 @@ namespace Weather.Widgets {
             provider.active = 1;
             provider.changed.connect (() => {
                 if (provider.active == 1) {
-                    window.remove (window.get_child ());
+                    (window.get_child () as Gtk.Widget).destroy ();
                     window.add (new Weather.Widgets.MapViewOWM (window, header));
                     window.show_all ();
                 } else {
-                    window.remove (window.get_child ());
+                    (window.get_child () as Gtk.Widget).destroy ();
                     window.add (new Weather.Widgets.MapViewDS (window, header));
                     window.show_all ();
                 }

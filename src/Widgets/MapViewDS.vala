@@ -119,11 +119,11 @@ namespace Weather.Widgets {
             provider.active = 0;
             provider.changed.connect (() => {
                 if (provider.active == 1) {
-                    window.remove (window.get_child ());
+                    (window.get_child () as Gtk.Widget).destroy ();
                     window.add (new Weather.Widgets.MapViewOWM (window, header));
                     window.show_all ();
                 } else {
-                    window.remove (window.get_child ());
+                    (window.get_child () as Gtk.Widget).destroy ();
                     window.add (new Weather.Widgets.MapViewDS (window, header));
                     window.show_all ();
                 }
@@ -148,7 +148,7 @@ namespace Weather.Widgets {
         }
 
         private void show_map (Gtk.ScrolledWindow scroll, string url) {
-            scroll.remove (scroll.get_child ());
+            (scroll.get_child () as Gtk.Widget).destroy ();
             scroll.add (new Weather.Utils.MapLayer (url));
             scroll.show_all ();
         }
