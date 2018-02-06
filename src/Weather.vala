@@ -46,8 +46,8 @@ namespace Weather {
         }
 
         public static void main (string [] args) {
-            Clutter.init (ref args);
-            //GtkClutter.init (ref args);
+            //Clutter.init (ref args);
+            GtkClutter.init (ref args);
             var app = new Weather.WeatherApp ();
             app.run (args);
         }

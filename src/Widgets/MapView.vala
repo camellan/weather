@@ -20,9 +20,9 @@
 */
 namespace Weather.Widgets {
 
-    public class MapViewDS : Gtk.Box {
+    public class MapView : Gtk.Box {
 
-        public MapViewDS (Gtk.Window window, Weather.Widgets.Header header) {
+        public MapView (Gtk.Window window, Weather.Widgets.Header header) {
             orientation = Gtk.Orientation.VERTICAL;
 
             //Define latitude y longitude and units
@@ -77,80 +77,47 @@ namespace Weather.Widgets {
             string url_wspe = url_serv + "wind_speed," + lat + "," + lon + url_med + "wind_speed&defaultUnits=" + wspe_un;
 
             //Define switcher
-            var showmap = new Gtk.ScrolledWindow (null, null);
-            showmap.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
-            showmap.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
-            showmap.add (new Weather.Utils.MapLayer (url_temp));
-            var temp_but = new Gtk.RadioButton.with_label_from_widget (null, _("Temperature"));
-            var clou_but = new Gtk.RadioButton.with_label_from_widget (temp_but, _("Clouds"));
-            var prec_but = new Gtk.RadioButton.with_label_from_widget (temp_but, _("Precipitation"));
-            var pres_but = new Gtk.RadioButton.with_label_from_widget (temp_but, _("Pressure"));
-            var wspe_but = new Gtk.RadioButton.with_label_from_widget (temp_but,  _("Wind Speed"));
-            Gtk.RadioButton[] buttons = {temp_but, clou_but, prec_but, pres_but, wspe_but};
-            var switchmap = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            switchmap.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+            var showmap = new Gtk.Stack ();
+            showmap.transition_type = Gtk.StackTransitionType.CROSSFADE;
+            showmap.transition_duration = 1500;
+            var switchmap = new Gtk.StackSwitcher ();
+            switchmap.stack = showmap;
             switchmap.homogeneous = true;
-            switchmap.hexpand=true;
-            foreach (Gtk.Button button in buttons) {
-                (button as Gtk.ToggleButton).draw_indicator = false;
-                switchmap.pack_start (button, false, true, 0);
-            }
-            temp_but.toggled.connect (() => {
-                show_map (showmap, url_temp);
-            });
-            clou_but.toggled.connect (() => {
-                show_map (showmap, url_clou);
-            });
-            prec_but.toggled.connect (() => {
-                show_map (showmap, url_prec);
-            });
-            pres_but.toggled.connect (() => {
-                show_map (showmap, url_pres);
-            });
-            wspe_but.toggled.connect (() => {
-                show_map (showmap, url_wspe);
-            });
+
+            showmap.add_titled (new Weather.Utils.MapLayer (url_temp), "TEMP", _("Temperature"));
+            showmap.add_titled (new Weather.Utils.MapLayer (url_clou), "CLOU", _("Clouds"));
+            showmap.add_titled (new Weather.Utils.MapLayer (url_prec), "PREC", _("Precipitation"));
+            showmap.add_titled (new Weather.Utils.MapLayer (url_pres), "PRES", _("Pressure"));
+            showmap.add_titled (new Weather.Utils.MapLayer (url_wspe), "WSPE", _("Wind Speed"));
 
             //Define other elements
-            var provider = new Gtk.ComboBoxText ();
-            provider.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-            provider.append_text (_("Dark Sky"));
-            provider.append_text (_("OpenWeatherMap"));
-            provider.active = 0;
-            provider.changed.connect (() => {
-                if (provider.active == 1) {
+            string base_lab = _("Change to ");
+            var prov_lab = new Gtk.Label (_("\xc2\xa9 Dark Sky"));
+            var tos = new Gtk.LinkButton.with_label ("https://darksky.net/widgetterms", _("Terms of Service"));
+            tos.halign = Gtk.Align.END;
+            var mbutton = new Gtk.Button.with_label (base_lab + "OpenWeatherMap");
+            mbutton.clicked.connect (() => {
                     (window.get_child () as Gtk.Widget).destroy ();
                     window.add (new Weather.Widgets.MapViewOWM (window, header));
                     window.show_all ();
-                } else {
-                    (window.get_child () as Gtk.Widget).destroy ();
-                    window.add (new Weather.Widgets.MapViewDS (window, header));
-                    window.show_all ();
-                }
             });
-            var tos = new Gtk.LinkButton.with_label ("https://darksky.net/widgetterms", _("Terms of Service"));
-            tos.halign = Gtk.Align.END;
-            var prov_lab = new Gtk.Label (_("Provider by :"));
             //Pack combo to actionbar
             var prov_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
             prov_box.margin = 3;
-            prov_box.pack_start (prov_lab, false, false, 3);
-            prov_box.pack_start (provider, false, false, 3);
+            prov_box.pack_start (prov_lab , false, false, 3);
             prov_box.pack_end (tos, false, false, 3);
+            var map_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
+            map_box.margin = 3;
+            map_box.pack_end (mbutton, false, false, 3);
             var action_box = new Gtk.ActionBar ();
             action_box.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
             action_box.pack_start (prov_box);
+            action_box.pack_end (map_box);
 
             //Pack elementes
             pack_start (switchmap, false, false , 0);
             pack_start (showmap, true, true, 0);
             pack_end (action_box, false, false, 0);
-        }
-
-        private void show_map (Gtk.ScrolledWindow scroll, string url) {
-            (scroll.get_child () as Gtk.Widget).destroy ();
-            scroll.add (new Weather.Utils.MapLayer (url));
-            scroll.show_all ();
         }
     }
 }

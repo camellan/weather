@@ -22,7 +22,6 @@ namespace Weather.Widgets {
 
     public class Header : Gtk.HeaderBar {
 
-        public Gtk.Button upd_button;
         public Gtk.Button loc_button;
         public Gtk.RadioButton data_but;
         public Gtk.RadioButton maps_but;
@@ -54,8 +53,6 @@ namespace Weather.Widgets {
             menu.show_all ();
 
             //Right buttons
-            upd_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.BUTTON);
-            upd_button.tooltip_text = _("Update");
             loc_button = new Gtk.Button.from_icon_name ("mark-location-symbolic", Gtk.IconSize.BUTTON);
             loc_button.tooltip_text = _("Change location");
             change_visible (false);
@@ -65,15 +62,7 @@ namespace Weather.Widgets {
                 window.add (new Weather.Widgets.City (window, this));
                 window.show_all ();
             });
-
-            upd_button.clicked.connect (() =>{
-                (window.get_child () as Gtk.Widget).destroy ();
-                window.add (new Weather.Widgets.Current (window, this));
-                window.show_all ();
-            });
-
             pack_end (app_button);
-            pack_end (upd_button);
             pack_end (loc_button);
 
             //Left buttons
@@ -89,7 +78,9 @@ namespace Weather.Widgets {
                 butbox.pack_start (button, false, true, 0);
             }
             data_but.toggled.connect (() => {
-                (window.get_child () as Gtk.Widget).destroy ();
+                Gtk.Widget child = window.get_child ();
+                window.remove (child);
+                child.destroy ();
                 window.add (new Weather.Widgets.Current (window, this));
                 window.show_all ();
             });
@@ -100,7 +91,6 @@ namespace Weather.Widgets {
         }
 
         public void change_visible (bool s) {
-            this.upd_button.sensitive = s;
             this.loc_button.sensitive = s;
         }
 

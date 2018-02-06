@@ -26,8 +26,7 @@ namespace Weather.Widgets {
             orientation = Gtk.Orientation.VERTICAL;
             int w;
             int h;
-            window.get_default_size (out w, out h);
-            window.set_size_request (w, h);
+            window.get_size (out w, out h);
 
             //Define latitude y longitude
             double lat = 0;
@@ -78,16 +77,17 @@ namespace Weather.Widgets {
             embed.use_layout_size = true;
             var stage = (Clutter.Stage) embed.get_stage();
             var view = new Champlain.View ();
-            view.set_size (w, h-150);
             view.add_overlay_source (create_cached_source("TEMP", Champlain.MAP_SOURCE_OWM_TEMPERATURE, url_temp), 200);
             stage.add_child (view);
             view.reactive = true;
+            view.set_size (h, h-200);
             view.zoom_level = 8;
+            view.max_zoom_level = 12;
+            view.min_zoom_level = 2;
             view.kinetic_mode = true;
             view.center_on (lat, lon);
             stage.add_child (create_image (img_temp));
             showmap.add (embed);
-
 
             //Define maps switcher
             var temp_but = new Gtk.RadioButton.with_label_from_widget (null, _("Temperature"));
@@ -141,34 +141,28 @@ namespace Weather.Widgets {
             });
 
             //Define other elements
-            var provider = new Gtk.ComboBoxText ();
-            provider.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
-            provider.append_text (_("Dark Sky"));
-            provider.append_text (_("OpenWeatherMap"));
-            provider.active = 1;
-            provider.changed.connect (() => {
-                if (provider.active == 1) {
-                    (window.get_child () as Gtk.Widget).destroy ();
-                    window.add (new Weather.Widgets.MapViewOWM (window, header));
-                    window.show_all ();
-                } else {
-                    (window.get_child () as Gtk.Widget).destroy ();
-                    window.add (new Weather.Widgets.MapViewDS (window, header));
-                    window.show_all ();
-                }
-            });
+            string base_lab = _("Change to ");
+            var prov_lab = new Gtk.Label (_("\xc2\xa9 OpenWeatherMap"));
             var tos = new Gtk.LinkButton.with_label ("http://openweathermap.org/terms", _("Terms of Service"));
             tos.halign = Gtk.Align.END;
-            var prov_lab = new Gtk.Label (_("Provider by :"));
+            var mbutton = new Gtk.Button.with_label (base_lab + " Dark Sky");
+            mbutton.clicked.connect (() => {
+                    (window.get_child () as Gtk.Widget).destroy ();
+                    window.add (new Weather.Widgets.MapView (window, header));
+                    window.show_all ();
+            });
             //Pack combo to actionbar
             var prov_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
             prov_box.margin = 3;
-            prov_box.pack_start (prov_lab, false, false, 3);
-            prov_box.pack_start (provider, false, false, 3);
+            prov_box.pack_start (prov_lab , false, false, 3);
             prov_box.pack_end (tos, false, false, 3);
+            var map_box = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 3);
+            map_box.margin = 3;
+            map_box.pack_end (mbutton, false, false, 3);
             var action_box = new Gtk.ActionBar ();
             action_box.get_style_context ().add_class (Gtk.STYLE_CLASS_INLINE_TOOLBAR);
             action_box.pack_start (prov_box);
+            action_box.pack_end (map_box);
 
             //Pack elementes
             pack_start (switchmap, false, false , 0);
@@ -206,9 +200,9 @@ namespace Weather.Widgets {
                 map,
                 "CC BY-SA 4.0",
                 "http://openweathermap.org/terms",
-                0,
-                19,
-                200,
+                2,
+                12,
+                1920,
                 Champlain.MapProjection.MERCATOR,
                 url,
                 renderer);

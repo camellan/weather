@@ -232,7 +232,9 @@ namespace  Weather.Widgets {
             this.add_button (_("Close"), Gtk.ResponseType.CANCEL);
             this.response.connect (() => {
                 this.destroy ();
-                (window.get_child () as Gtk.Widget).destroy ();
+                Gtk.Widget child = window.get_child ();
+                window.remove (child);
+                child.destroy ();
                 if (setting.get_string ("apiid") == "") {
                     var apikey = new Weather.Widgets.Apikey (window, header);
                     window.add (apikey);

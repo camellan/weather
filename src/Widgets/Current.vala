@@ -45,15 +45,19 @@ namespace Weather.Widgets {
 
             //Configure header nav
             header.show_mapwindow.connect (() => {
-                (window.get_child () as Gtk.Widget).destroy ();
-                window.add (new Weather.Widgets.MapViewDS (window, header));
+                Gtk.Widget child = window.get_child ();
+                window.remove (child);
+                child.destroy ();
+                window.add (new Weather.Widgets.MapView (window, header));
                 window.show_all ();
             });
 
             //Update countdown
             var interval = setting.get_int ("interval");
             GLib.Timeout.add_seconds (interval, () => {
-                (window.get_child () as Gtk.Widget).destroy ();
+                Gtk.Widget child = window.get_child ();
+                window.remove (child);
+                child.destroy ();
                 var current = new Weather.Widgets.Current (window, header);
                 window.add (current);
                 current.show_all ();

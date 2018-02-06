@@ -97,11 +97,13 @@ namespace  Weather.Widgets {
                                     setting.set_string ("country", country);
                                     header.custom_title = null;
                                     header.title = town + ", " + state + " " + country;
-                                    (window.get_child () as Gtk.Widget).destroy ();
+                                    Gtk.Widget child = window.get_child ();
+                                    window.remove (child);
+                                    child.destroy ();
                                     header.restart_switcher ();
                                     var current = new Weather.Widgets.Current (window, header);
                                     window.add (current);
-                                    window.show_all ();
+                                    current.show_all ();
                                 });
                                 select.halign = Gtk.Align.END;
                                 select.valign = Gtk.Align.CENTER;
