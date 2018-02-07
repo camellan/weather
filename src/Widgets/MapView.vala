@@ -64,7 +64,7 @@ namespace Weather.Widgets {
                 lat = Weather.Utils.to_string2 (coord.get_double_member ("lat"));
                 lon = Weather.Utils.to_string2 (coord.get_double_member ("lon"));
             } catch (Error e) {
-                stdout.printf ("Hubo un error: %s\n", e.message);
+                stdout.printf (_("Found an error") + ": %s\n", e.message);
             }
 
             //Define maps URL's
@@ -92,7 +92,7 @@ namespace Weather.Widgets {
 
             //Define other elements
             string base_lab = _("Change to ");
-            var prov_lab = new Gtk.Label (_("\xc2\xa9 Dark Sky"));
+            var prov_lab = new Gtk.Label ("\xc2\xa9 Dark Sky");
             var tos = new Gtk.LinkButton.with_label ("https://darksky.net/widgetterms", _("Terms of Service"));
             tos.halign = Gtk.Align.END;
             var mbutton = new Gtk.Button.with_label (base_lab + "OpenWeatherMap");

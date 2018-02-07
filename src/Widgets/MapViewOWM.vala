@@ -52,7 +52,7 @@ namespace Weather.Widgets {
                 lat = coord.get_double_member ("lat");
                 lon = coord.get_double_member ("lon");
             } catch (Error e) {
-                stdout.printf ("Hubo un error: %s\n", e.message);
+                stdout.printf (_("Found an error") + " %s\n", e.message);
             }
 
             //Define maps URL's and scale images
@@ -142,7 +142,7 @@ namespace Weather.Widgets {
 
             //Define other elements
             string base_lab = _("Change to ");
-            var prov_lab = new Gtk.Label (_("\xc2\xa9 OpenWeatherMap"));
+            var prov_lab = new Gtk.Label ("\xc2\xa9 OpenWeatherMap");
             var tos = new Gtk.LinkButton.with_label ("http://openweathermap.org/terms", _("Terms of Service"));
             tos.halign = Gtk.Align.END;
             var mbutton = new Gtk.Button.with_label (base_lab + " Dark Sky");
@@ -186,7 +186,7 @@ namespace Weather.Widgets {
                 actor.content = image;
                 actor.set_size (pixbuf.width, pixbuf.height);
             } catch (Error e) {
-                stderr.printf ("Image not found");
+                stderr.printf (_("Image not found"));
             }
             return actor;
         }

@@ -6,7 +6,7 @@
 
 Developed with Vala & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
 
-![Screenshot](screenshot.png  "Weather")
+![Screenshot](./data/screens/screenshot_1.png  "Weather")
 
 ### Features:
 
@@ -15,6 +15,8 @@ Developed with Vala & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
 - Forecast for next five days.
 - Choose your units (metric or imperial).
 - Choose your city, with maps help.
+- Awesome maps with weather info.
+- System tray indicator.
 
 ### How To Build
 
@@ -26,7 +28,11 @@ Library Dependencies :
 - clutter-1.0
 - clutter-gtk-1.0
 - champlain-0.12
+- champlain-gtk-0.12
 - geocode-glib-1.0
+- webkit2gtk-4.0
+- appindicator3-0.1
+
 
 For advanced users!
 
@@ -36,17 +42,20 @@ For advanced users!
 
 ----
 
-#### New on release 0.4.1:
+#### New on release 0.5:
 
-- Add cmake support to other SO than elementaryOS.
-- Add lituanian and russian translations. Thx to welaq and camellan.
-- Fix gettext issue. Thx to Andrey Kultyapov.
-- Add support to Debian/Ubuntu.
-- Fix visual issues in UI.
-- CSS support added.
-- Choose between realistic and symbolic icons.
+- Add meson support to build/compile.
+- Add new translations.
+- Add Indicator to wingpanel with symbolic icons.
+- Add Weather Maps with temperatures, clouds, precipitation, pressure and wind speeds.
+- Add maps providers: *Dark Sky* and *OpenWeatherMaps*.
+----
+#### Other screenshots:
 
-Suggested by Cassidy James Blaede:
+**A map with temperatures by Dark Sky**
+![Screenshot](./data/screens/screenshot_2.png  "Weather")
+**A map with temperatures by OpenWeatherMap:**
+![Screenshot](./data/screens/screenshot_3.png  "Weather")
+**Indicator in wingpanel / system tray:**
 
-- New "find location" screen, with elegants maps.
-- Automatic location on start (Can disabled on preferences).
+![Screenshot](./data/screens/screenshot_4.png  "Weather")

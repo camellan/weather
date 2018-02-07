@@ -1,3 +1,12 @@
+com.github.bitseater.weather (0.5) xenial; urgency=medium
+
+    * Change to meson build.
+    * Add new translations.
+    * System tray indicator with weather icons.
+    * Weather Maps for temperature, clouds, rain, pressure and wind speed.
+
+ -- Carlos Suárez <bitseater@gmail.com>  Wed, 07 Feb 2018 01:48:00 +0100
+
 com.github.bitseater.weather (0.4.1) xenial; urgency=medium
 
   * Fix application icon issue.

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-08 15:31+0100\n"
+"POT-Creation-Date: 2018-02-07 01:54+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,22 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: src/Widgets/Preferences.vala:105
+msgid "12 hrs."
+msgstr ""
+
+#: src/Widgets/Preferences.vala:103
+msgid "2 hrs."
+msgstr ""
+
+#: src/Widgets/Preferences.vala:106
+msgid "24 hrs."
+msgstr ""
+
+#: src/Widgets/Preferences.vala:104
+msgid "6 hrs."
+msgstr ""
 
 #: src/Widgets/Apikey.vala:43
 msgid "<big>Enter your OpenWeatherMap API key</big>\n"
@@ -31,24 +47,32 @@ msgstr ""
 msgid "A forecast application with OpenWeatherMap API"
 msgstr ""
 
-#: src/Widgets/Header.vala:34
+#: src/Widgets/Header.vala:36
 msgid "About Weather"
 msgstr ""
 
-#: src/Widgets/City.vala:53 src/Widgets/City.vala:130 src/Widgets/City.vala:138
+#: src/Widgets/City.vala:53 src/Widgets/City.vala:133 src/Widgets/City.vala:141
 msgid "At least of 3 characters are required!"
 msgstr ""
 
-#: src/Widgets/Header.vala:56
+#: src/Widgets/Header.vala:57
 msgid "Change location"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:160
+#: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:94
+msgid "Change to "
+msgstr ""
+
+#: src/Widgets/Preferences.vala:232
 msgid "Close"
 msgstr ""
 
 #: src/Widgets/Today.vala:68
 msgid "Cloudiness :"
+msgstr ""
+
+#: src/Widgets/MapViewOWM.vala:94 src/Widgets/MapView.vala:88
+msgid "Clouds"
 msgstr ""
 
 #: src/Widgets/About.vala:45
@@ -63,7 +87,11 @@ msgstr ""
 msgid "Dark theme:"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:116
+#: src/Widgets/Header.vala:69
+msgid "Data"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:184
 msgid "Find my location automatically:"
 msgstr ""
 
@@ -71,7 +99,8 @@ msgstr ""
 msgid "Forecast"
 msgstr ""
 
-#: src/Utils/GeoLocate.vala:69 src/Widgets/Apikey.vala:132
+#: src/Widgets/MapViewOWM.vala:55 src/Widgets/Apikey.vala:132
+#: src/Widgets/MapView.vala:67 src/Utils/GeoLocate.vala:69
 #, c-format
 msgid "Found an error"
 msgstr ""
@@ -84,7 +113,11 @@ msgstr ""
 msgid "Humidity :"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:84
+#: src/Widgets/MapViewOWM.vala:189
+msgid "Image not found"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:152
 msgid "Imperial System"
 msgstr ""
 
@@ -92,27 +125,43 @@ msgstr ""
 msgid "Interface"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:83
+#: src/Widgets/Header.vala:70
+msgid "Maps"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:151
 msgid "Metric System"
 msgstr ""
 
-#: src/Widgets/City.vala:121
+#: src/Widgets/City.vala:124
 msgid "No data"
 msgstr ""
 
-#: src/Widgets/Header.vala:49
+#: src/Widgets/Header.vala:51
 msgid "Options"
 msgstr ""
 
-#: src/Widgets/Header.vala:33
+#: src/Widgets/MapViewOWM.vala:95 src/Widgets/MapView.vala:89
+msgid "Precipitation"
+msgstr ""
+
+#: src/Widgets/Header.vala:35
 msgid "Preferences"
+msgstr ""
+
+#: src/Widgets/MapViewOWM.vala:96 src/Widgets/MapView.vala:90
+msgid "Pressure"
 msgstr ""
 
 #: src/Widgets/Today.vala:52
 msgid "Pressure :"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:100
+#: src/MainWindow.vala:130
+msgid "Quit"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:168
 msgid "Restore API key:"
 msgstr ""
 
@@ -128,6 +177,10 @@ msgstr ""
 msgid "Select"
 msgstr ""
 
+#: src/MainWindow.vala:123
+msgid "Show Weather"
+msgstr ""
+
 #: src/Widgets/Today.vala:70
 msgid "Sunrise :"
 msgstr ""
@@ -140,6 +193,14 @@ msgstr ""
 msgid "Symbolic icons:"
 msgstr ""
 
+#: src/Widgets/MapViewOWM.vala:93 src/Widgets/MapView.vala:87
+msgid "Temperature"
+msgstr ""
+
+#: src/Widgets/MapViewOWM.vala:146 src/Widgets/MapView.vala:96
+msgid "Terms of Service"
+msgstr ""
+
 #: src/Widgets/Apikey.vala:110
 msgid "The API key cannot be empty."
 msgstr ""
@@ -148,16 +209,24 @@ msgstr ""
 msgid "Today"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:80
+#: src/Widgets/Preferences.vala:148
 msgid "Units:"
 msgstr ""
 
-#: src/Widgets/Header.vala:54
-msgid "Update"
+#: src/Widgets/Preferences.vala:100
+msgid "Update conditions every :"
 msgstr ""
 
 #: src/Widgets/Apikey.vala:68
 msgid "Use API key built-in"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:80
+msgid "Use System Tray Indicator:"
+msgstr ""
+
+#: src/Widgets/MapViewOWM.vala:97 src/Widgets/MapView.vala:91
+msgid "Wind Speed"
 msgstr ""
 
 #: src/Widgets/Today.vala:64
