@@ -54,8 +54,10 @@ For advanced users!
 
 **A map with temperatures by Dark Sky**
 ![Screenshot](./data/screens/screenshot_2.png  "Weather")
+
 **A map with temperatures by OpenWeatherMap:**
 ![Screenshot](./data/screens/screenshot_3.png  "Weather")
+
 **Indicator in wingpanel / system tray:**
 
 ![Screenshot](./data/screens/screenshot_4.png  "Weather")
