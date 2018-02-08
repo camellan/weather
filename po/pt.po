@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-07 01:54+0100\n"
 "PO-Revision-Date: 2018-02-07 02:05+0100\n"
-"Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
+"Last-Translator: Helder Bertoldo <helder.bertoldo@gmail.com>\n"
 "Language-Team: \n"
 "Language: pt\n"
 "MIME-Version: 1.0\n"
@@ -36,14 +36,14 @@ msgstr "6 hrs."
 
 #: src/Widgets/Apikey.vala:43
 msgid "<big>Enter your OpenWeatherMap API key</big>\n"
-msgstr "<big>Digite seu chave da API OpenWeatherMap</big>\n"
+msgstr "<big>Digite a sua chave da API OpenWeatherMap</big>\n"
 
 #: src/Widgets/Apikey.vala:63
 msgid ""
 "<small>If you don't have it, please visit: <a href =\"https://home."
 "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
 msgstr ""
-"<small>Se você não o tiver, por favor visite: <a href =\"https://home."
+"<small>Se você não tiver, por favor visite: <a href =\"https://home."
 "openweathermap.org/users/sign_up\">OpenWeatherMap</a> ou simplesmente :</"
 "small>"
 
@@ -57,7 +57,7 @@ msgstr "Sobre Weather"
 
 #: src/Widgets/City.vala:53 src/Widgets/City.vala:133 src/Widgets/City.vala:141
 msgid "At least of 3 characters are required!"
-msgstr "Em menos de 3 caracteres são necessários!"
+msgstr "Pelo menos 3 caracteres são necessários!"
 
 #: src/Widgets/Header.vala:57
 msgid "Change location"
@@ -65,7 +65,7 @@ msgstr "Mudar localização"
 
 #: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:94
 msgid "Change to "
-msgstr "Mudar pra"
+msgstr "Mudar para"
 
 #: src/Widgets/Preferences.vala:232
 msgid "Close"
@@ -93,7 +93,7 @@ msgstr "Tema escuro:"
 
 #: src/Widgets/Header.vala:69
 msgid "Data"
-msgstr "Datos"
+msgstr "Dados"
 
 #: src/Widgets/Preferences.vala:184
 msgid "Find my location automatically:"
@@ -107,7 +107,7 @@ msgstr "Previsão"
 #: src/Widgets/MapView.vala:67 src/Utils/GeoLocate.vala:69
 #, c-format
 msgid "Found an error"
-msgstr "Encontrou um erro"
+msgstr "Um erro foi encontrado"
 
 #: src/Widgets/Preferences.vala:37
 msgid "General"
@@ -167,7 +167,7 @@ msgstr "Fechar"
 
 #: src/Widgets/Preferences.vala:168
 msgid "Restore API key:"
-msgstr "Restaurar a chave de API:"
+msgstr "Restaurar a chave da API:"
 
 #: src/Widgets/Apikey.vala:52
 msgid "Save"
@@ -175,7 +175,7 @@ msgstr "Salvar"
 
 #: src/Widgets/City.vala:40
 msgid "Search for new location:"
-msgstr "Pesquisa para um novo lugar:"
+msgstr "Pesquisar nova localização:"
 
 #: src/Widgets/City.vala:91
 msgid "Select"
@@ -191,11 +191,11 @@ msgstr "Amanhecer :"
 
 #: src/Widgets/Today.vala:74
 msgid "Sunset :"
-msgstr "Crespusculo :"
+msgstr "Anoitecer :"
 
 #: src/Widgets/Preferences.vala:62
 msgid "Symbolic icons:"
-msgstr "Ícones simbolicos:"
+msgstr "Ícones simbólicos:"
 
 #: src/Widgets/MapViewOWM.vala:93 src/Widgets/MapView.vala:87
 msgid "Temperature"
@@ -219,15 +219,15 @@ msgstr "Unidades:"
 
 #: src/Widgets/Preferences.vala:100
 msgid "Update conditions every :"
-msgstr "Atualização de condições cada :"
+msgstr "Atualizar as condições a cada :"
 
 #: src/Widgets/Apikey.vala:68
 msgid "Use API key built-in"
-msgstr "Use chave de API interna"
+msgstr "Usar chave de API interna"
 
 #: src/Widgets/Preferences.vala:80
 msgid "Use System Tray Indicator:"
-msgstr "Use o Indicador da Bandeja de Sistema"
+msgstr "Usar o Indicador na Bandeja de Sistema"
 
 #: src/Widgets/MapViewOWM.vala:97 src/Widgets/MapView.vala:91
 msgid "Wind Speed"
@@ -235,7 +235,7 @@ msgstr "Velocidade do vento"
 
 #: src/Widgets/Today.vala:64
 msgid "Wind dir :"
-msgstr "Direcção do vento"
+msgstr "Direção do vento"
 
 #: src/Widgets/Today.vala:60
 msgid "Wind speed :"
