@@ -12,7 +12,8 @@ Build-Depends: debhelper (>= 8.0.0),
                libchamplain-0.12-dev,
                libwebkit2gtk-4.0-dev,
                libappindicator3-dev,
-               valac-0.32 | valac (>= 0.32)
+               valac-0.32 | valac (>= 0.32),
+               meson
 Standards-Version: 3.9.7
 
 Package: com.github.bitseater.weather
