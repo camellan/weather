@@ -28,7 +28,6 @@ Library Dependencies :
 - clutter-1.0
 - clutter-gtk-1.0
 - champlain-0.12
-- champlain-gtk-0.12
 - geocode-glib-1.0
 - webkit2gtk-4.0
 - appindicator3-0.1
@@ -43,7 +42,7 @@ For advanced users!
 
 ----
 
-#### New on release 0.5.1:
+#### New on release 0.5.2:
 
 - Add meson support to build/compile.
 - Add new translations.

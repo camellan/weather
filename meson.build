@@ -62,7 +62,6 @@ executable(
         dependency('json-glib-1.0'),
         dependency('clutter-1.0'),
         dependency('champlain-0.12'),
-        dependency('champlain-gtk-0.12'),
         dependency('clutter-gtk-1.0'),
         dependency('geocode-glib-1.0'),
         dependency('webkit2gtk-4.0'),
