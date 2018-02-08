@@ -42,7 +42,7 @@ For advanced users!
 
 ----
 
-#### New on release 0.5:
+#### New on release 0.5.0:
 
 - Add meson support to build/compile.
 - Add new translations.
