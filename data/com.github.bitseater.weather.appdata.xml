@@ -44,7 +44,7 @@
         <value key="x-appcenter-suggested-price">1</value>
     </custom>
   ​  <releases>
-        <release version="0.5.0" date="2018-02-08">
+        <release version="0.5.1" date="2018-02-08">
             <description>
         ​        <p>Changes to new release:
                     <li>Change to meson build.</li>

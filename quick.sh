@@ -1,4 +1,5 @@
 #!/bin/bash
+# Script for easy developing by Carlos Suárez (bitseater@gmail.com) - 2018
 # Define variables
 PACKAGE="com.github.bitseater.weather"
 TEMPLATE=po/$PACKAGE.pot

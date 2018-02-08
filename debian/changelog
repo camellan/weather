@@ -1,4 +1,4 @@
-com.github.bitseater.weather (0.5.0) xenial; urgency=medium
+com.github.bitseater.weather (0.5.1) xenial; urgency=medium
 
     * Change to meson build.
     * Add new translations.

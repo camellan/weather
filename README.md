@@ -32,6 +32,7 @@ Library Dependencies :
 - geocode-glib-1.0
 - webkit2gtk-4.0
 - appindicator3-0.1
+- meson
 
 
 For advanced users!
@@ -42,7 +43,7 @@ For advanced users!
 
 ----
 
-#### New on release 0.5.0:
+#### New on release 0.5.1:
 
 - Add meson support to build/compile.
 - Add new translations.
