@@ -22,7 +22,7 @@ namespace  Weather.Widgets {
 
     public class About : Gtk.AboutDialog {
 
-        public About (Gtk.Window window) {
+        public About (Weather.MainWindow window) {
             transient_for = window;
             modal = true;
             destroy_with_parent = true;

@@ -24,7 +24,7 @@ namespace  Weather.Widgets {
 
         private Settings setting;
 
-        public Apikey (Gtk.Window window, Weather.Widgets.Header header) {
+        public Apikey (Weather.MainWindow window, Weather.Widgets.Header header) {
             var grid = new Gtk.Grid ();
             grid.valign = Gtk.Align.CENTER;
             grid.halign = Gtk.Align.CENTER;

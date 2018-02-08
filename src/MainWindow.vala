@@ -122,6 +122,7 @@ namespace Weather {
             var menu = new Gtk.Menu();
             var show_item = new Gtk.MenuItem.with_label (_("Show Weather"));
             show_item.activate.connect(() => {
+                this.get_focus ();
                 this.show_all ();
             });
             show_item.show();

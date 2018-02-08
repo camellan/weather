@@ -22,7 +22,7 @@ namespace Weather.Widgets {
 
     public class MapViewOWM : Gtk.Box {
 
-        public MapViewOWM (Gtk.Window window, Weather.Widgets.Header header) {
+        public MapViewOWM (Weather.MainWindow window, Weather.Widgets.Header header) {
             orientation = Gtk.Orientation.VERTICAL;
             int w;
             int h;

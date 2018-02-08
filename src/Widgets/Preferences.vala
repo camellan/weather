@@ -22,7 +22,7 @@ namespace  Weather.Widgets {
 
     public class Preferences : Gtk.Dialog {
 
-        public Preferences (Gtk.Window window, Weather.Widgets.Header header) {
+        public Preferences (Weather.MainWindow window, Weather.Widgets.Header header) {
             this.resizable = false;
             this.deletable = true;
             this.transient_for = window;
@@ -240,7 +240,7 @@ namespace  Weather.Widgets {
                     window.add (apikey);
                 } else if (setting.get_boolean ("auto")) {
                     Weather.Utils.geolocate ();
-                    var current = new Weather.Widgets.Current (this, header);
+                    var current = new Weather.Widgets.Current (window, header);
                     window.add (current);
                 } else if (setting.get_string ("idplace") == "") {
                     var city = new Weather.Widgets.City (window, header);

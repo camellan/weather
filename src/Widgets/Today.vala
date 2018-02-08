@@ -22,7 +22,7 @@ namespace  Weather.Widgets {
 
     public class Today : Gtk.Grid {
 
-        public Today (string idplace, Gtk.Window window) {
+        public Today (string idplace, Weather.MainWindow window) {
             valign = Gtk.Align.START;
             halign = Gtk.Align.CENTER;
             row_spacing = 5;

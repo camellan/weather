@@ -27,7 +27,7 @@ namespace Weather.Widgets {
         public Gtk.RadioButton maps_but;
         public signal void show_mapwindow ();
 
-        public Header (Gtk.Window window, bool view) {
+        public Header (Weather.MainWindow window, bool view) {
             show_close_button = true;
 
             //Create menu
@@ -80,7 +80,6 @@ namespace Weather.Widgets {
             data_but.toggled.connect (() => {
                 Gtk.Widget child = window.get_child ();
                 window.remove (child);
-                child.destroy ();
                 window.add (new Weather.Widgets.Current (window, this));
                 window.show_all ();
             });

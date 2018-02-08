@@ -22,7 +22,7 @@ namespace Weather.Widgets {
 
     public class MapView : Gtk.Box {
 
-        public MapView (Gtk.Window window, Weather.Widgets.Header header) {
+        public MapView (Weather.MainWindow window, Weather.Widgets.Header header) {
             orientation = Gtk.Orientation.VERTICAL;
 
             //Define latitude y longitude and units

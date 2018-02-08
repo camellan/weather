@@ -22,7 +22,7 @@ namespace Weather.Widgets {
 
     public class Current : Gtk.Box {
 
-        public Current (Gtk.Window window, Weather.Widgets.Header header) {
+        public Current (Weather.MainWindow window, Weather.Widgets.Header header) {
             orientation = Gtk.Orientation.HORIZONTAL;
 
             var setting = new Settings ("com.github.bitseater.weather");
@@ -57,10 +57,9 @@ namespace Weather.Widgets {
             GLib.Timeout.add_seconds (interval, () => {
                 Gtk.Widget child = window.get_child ();
                 window.remove (child);
-                child.destroy ();
                 var current = new Weather.Widgets.Current (window, header);
                 window.add (current);
-                current.show_all ();
+                //window.show_all ();
                 return false;
             }, GLib.Priority.DEFAULT);
         }

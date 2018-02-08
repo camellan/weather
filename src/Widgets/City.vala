@@ -27,7 +27,7 @@ namespace  Weather.Widgets {
         private Gtk.ListBoxRow row;
         private Gtk.Box hbox;
 
-        public City (Gtk.Window window, Weather.Widgets.Header header) {
+        public City (Weather.MainWindow window, Weather.Widgets.Header header) {
             var scrollbox = new Gtk.ScrolledWindow (null, null);
             scrollbox.hscrollbar_policy = Gtk.PolicyType.NEVER;
             scrollbox.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
