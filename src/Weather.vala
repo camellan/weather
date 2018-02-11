@@ -32,7 +32,7 @@ namespace Weather {
             string package_name = Constants.GETTEXT_PACKAGE;
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.textdomain (package_name);
-            Intl.bindtextdomain (package_name, "./locale");
+            Intl.bindtextdomain (package_name, Constants.LOCALE_DIR);
             Intl.bind_textdomain_codeset (package_name, "UTF-8");
         }
 

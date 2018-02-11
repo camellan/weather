@@ -35,33 +35,9 @@ namespace Weather {
             this.set_titlebar (header);
 
             //Define style
-            string weather_css = """
-                .temp {
-                    font-size: 250%;
-                    font-weight: 500;
-                }
-                .weather {
-                    font-size: 170%;
-                }
-                .resumen {
-                    font-size: 110%;
-                }
-                .preferences {
-                    font-size: 110%;
-                    font-weight: 600;
-                }
-                .ticket {
-                    background-color: @text-color;
-                    color: @background_color;
-                    opacity: 0.5;
-                }
-                .ticket:hover {
-                    opacity: 1.0;
-                }
-            """;
             var provider = new Gtk.CssProvider();
             try {
-                provider.load_from_data (weather_css, -1);
+                provider.load_from_resource ("/com/github/bitseater/weather/application.css");
             } catch (GLib.Error e) {
                 GLib.error ("Failed to load css: %s", e.message);
             }
