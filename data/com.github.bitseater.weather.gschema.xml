@@ -55,6 +55,12 @@
         <description>Mark to use app indicator and minimized to system tray.</description>
     </key>
 
+    <key name="minimized" type="b">
+        <default>true</default>
+        <summary>Minimized on start</summary>
+        <description>When use indicator, start with minimized window.</description>
+    </key>
+
     <key name="interval" type="i">
         <default>7200</default>
         <summary>Update interval</summary>

@@ -51,12 +51,14 @@ namespace Weather {
             create_indicator ();
             if (setting.get_boolean ("indicator")) {
                 show_indicator ();
-                this.no_show_all = true;
+                if (setting.get_boolean ("minimized")) {
+                    this.no_show_all = true;
+                }
             } else {
                 hide_indicator ();
             }
             this.delete_event.connect (() => {
-                 if (setting.get_boolean ("indicator")) {
+                if (setting.get_boolean ("indicator")) {
                     this.hide_on_delete ();
                 } else {
                     (app as GLib.Application).quit ();

@@ -76,6 +76,24 @@ namespace  Weather.Widgets {
                 }
             });
 
+            //Select minimized on start
+            var minz_label = new Gtk.Label (_("Start minimized:"));
+            minz_label.halign = Gtk.Align.END;
+            var minz = new Gtk.Switch ();
+            minz.halign = Gtk.Align.START;
+            if (setting.get_boolean ("minimized")) {
+                minz.active = true;
+            } else {
+                minz.active = false;
+            }
+            minz.notify["active"].connect (() => {
+                if (minz.get_active ()) {
+                    setting.set_boolean ("minimized", true);
+                } else {
+                    setting.set_boolean ("minimized", false);
+                }
+            });
+
             //Select indicator
             var ind_label = new Gtk.Label (_("Use System Tray Indicator:"));
             ind_label.halign = Gtk.Align.END;
@@ -83,15 +101,20 @@ namespace  Weather.Widgets {
             ind.halign = Gtk.Align.START;
             if (setting.get_boolean ("indicator")) {
                 ind.active = true;
+                minz.sensitive = true;
             } else {
                 ind.active = false;
+                minz.sensitive = false;
             }
             ind.notify["active"].connect (() => {
                 if (ind.get_active ()) {
                     setting.set_boolean ("indicator", true);
+                    minz.sensitive = true;
                     (window as Weather.MainWindow).create_indicator ();
                 } else {
                     setting.set_boolean ("indicator", false);
+                    minz.active = false;
+                    minz.sensitive = false;
                     (window as Weather.MainWindow).hide_indicator ();
                 }
             });
@@ -213,15 +236,17 @@ namespace  Weather.Widgets {
             layout.attach (icon, 3, 2, 1, 1);
             layout.attach (ind_label, 2, 3, 1, 1);
             layout.attach (ind, 3, 3, 1, 1);
-            layout.attach (tit2_pref, 0, 4, 2, 1);
-            layout.attach (unit_lab, 2, 5, 1, 1);
-            layout.attach (unit_box, 3, 5, 2, 1);
-            layout.attach (update_lab, 2, 6, 1, 1);
-            layout.attach (update_box, 3, 6, 2, 1);
-            layout.attach (api_lab, 2, 7, 1, 1);
-            layout.attach (api_entry, 3, 7, 1, 1);
-            layout.attach (loc_label, 2, 8, 1, 1);
-            layout.attach (loc, 3, 8, 1, 1);
+            layout.attach (minz_label, 2, 4, 1, 1);
+            layout.attach (minz, 3, 4, 1, 1);
+            layout.attach (tit2_pref, 0, 5, 2, 1);
+            layout.attach (unit_lab, 2, 6, 1, 1);
+            layout.attach (unit_box, 3, 6, 2, 1);
+            layout.attach (update_lab, 2, 7, 1, 1);
+            layout.attach (update_box, 3, 7, 2, 1);
+            layout.attach (api_lab, 2, 8, 1, 1);
+            layout.attach (api_entry, 3, 8, 1, 1);
+            layout.attach (loc_label, 2, 9, 1, 1);
+            layout.attach (loc, 3, 9, 1, 1);
 
             Gtk.Box content = this.get_content_area () as Gtk.Box;
             content.valign = Gtk.Align.START;
