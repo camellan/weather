@@ -19,15 +19,16 @@
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace Constants {
-    public const string DATADIR = "/usr/share";
-    public const string PKGDATADIR = "/usr/share/com.github.bitseater.weather";
-    public const string GETTEXT_PACKAGE = "weather";
+    public const string DATADIR = Config.DATADIR;
+    public const string PKGDATADIR = Config.PKG_DATADIR;
+    public const string GETTEXT_PACKAGE = Config.GETTEXT_PACKAGE;
     public const string RELEASE_NAME = "Loki";
-    public const string VERSION = "0.5.3";
+    public const string VERSION = Config.VERSION;
     public const string VERSION_INFO = "Release";
-    public const string INSTALL_PREFIX = "/usr";
+    public const string INSTALL_PREFIX = Config.PREFIX;
     public const string APP_NAME = "Weather";
-    public const string EXEC_NAME = "com.github.bitseater.weather";
-    public const string ICON_NAME = "com.github.bitseater.weather";
+    public const string EXEC_NAME = Config.PACKAGE;
+    public const string ICON_NAME = Config.PACKAGE;
     public const string OWM_API_ADDR = "http://api.openweathermap.org/data/2.5/";
+    public const string LOCALE_DIR = Config.LOCALE_DIR;
 }
