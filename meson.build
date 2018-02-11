@@ -1,5 +1,5 @@
 # Project name-language-version
-project('com.github.bitseater.weather', ['vala', 'c'], version: '0.5.3')
+project('com.github.bitseater.weather', ['vala', 'c'], version: '0.5.4')
 
 # Main libraries
 gnome = import('gnome')
@@ -12,6 +12,13 @@ add_project_arguments(
     join_paths(meson.current_source_dir(), 'vapi')
   ],
   language: 'vala'
+)
+
+## Compile GResources
+asresources = gnome.compile_resources(
+    'as-resources', 'data/' + meson.project_name() + '.gresource.xml',
+    source_dir: 'data',
+    c_name: 'as'
 )
 
 # Add locale support

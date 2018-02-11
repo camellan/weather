@@ -27,21 +27,23 @@ namespace  Weather.Widgets {
             modal = true;
             destroy_with_parent = true;
 
-            artists = {"Carlos Suárez <bitseater@gmail.com>"};
+            artists = {"Carlos Suárez <bitseater@gmail.com>", "Paulo Galardi <lainsce@airmail.cc>"};
             authors = {"Carlos Suárez <bitseater@gmail.com>"};
             comments = _("A forecast application with OpenWeatherMap API");
             copyright = "Copyright \xc2\xa9 Carlos Suárez - 2017";
             license_type = Gtk.License.GPL_3_0;
             logo_icon_name = Constants.ICON_NAME;
             program_name = Constants.APP_NAME;
-            translator_credits = "(es, en, fr) Carlos Suárez <bitseater@gmail.com>
+            translator_credits = "(es, en) Carlos Suárez <bitseater@gmail.com>
+                                (pt) btd1337 <helder.bertoldo@gmail.com>
                                 (ru) Andrey Kultyapov <camellan@yandex.ru>
-                                (lt) welaq https://github.com/welaq";
+                                (lt) welaq https://github.com/welaq
+                                (fr) Corentin Noël https://github.com/tintou";
             version = Constants.VERSION;
             website = "https://github.com/bitseater/weather";
             website_label = _("website");
 
-            string[] colaborators = {"Paulo Galardi <lainsce@airmail.cc>", "Andrey Kultyapov <camellan@yandex.ru>", "Cassidy James Blaede https://github.com/cassidyjames", "Corentin Noël https://github.com/tintou"};
+            string[] colaborators = {"Bilal Elmoussaoui <bil.elmoussaoui@gmail.com>", "Andrey Kultyapov <camellan@yandex.ru>", "Cassidy James Blaede https://github.com/cassidyjames"};
             add_credit_section (_("Colaborators"), colaborators);
 
             response.connect (() => {

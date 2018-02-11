@@ -36,11 +36,7 @@ namespace Weather {
 
             //Define style
             var provider = new Gtk.CssProvider();
-            try {
-                provider.load_from_resource ("/com/github/bitseater/weather/application.css");
-            } catch (GLib.Error e) {
-                GLib.error ("Failed to load css: %s", e.message);
-            }
+            provider.load_from_resource ("/com/github/bitseater/weather/application.css");
             Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
 
             var setting = new Settings ("com.github.bitseater.weather");
@@ -55,6 +51,7 @@ namespace Weather {
             create_indicator ();
             if (setting.get_boolean ("indicator")) {
                 show_indicator ();
+                this.no_show_all = true;
             } else {
                 hide_indicator ();
             }
@@ -99,6 +96,7 @@ namespace Weather {
             var show_item = new Gtk.MenuItem.with_label (_("Show Weather"));
             show_item.activate.connect(() => {
                 this.get_focus ();
+                this.no_show_all = false;
                 this.show_all ();
             });
             show_item.show();
