@@ -23,7 +23,7 @@ config_h_dir = include_directories('.')
 
 # Arguments C - no gcc warnings
 c_args = [
-  '-w', '-DGETTEXT_PACKAGE="com.github.bitseater.weather"']
+  '-w', '-DGETTEXT_PACKAGE="' + meson.project_name() + '"']
 
 cc = meson.get_compiler('c')
 
@@ -74,9 +74,10 @@ executable(
     install : true
 )
 
-# Add post install script
-meson.add_install_script('meson/post_install.py')
-
 # Add subfolders
 subdir('data')
 subdir('po')
+
+
+# Add post install script
+meson.add_install_script('meson/post_install.py')

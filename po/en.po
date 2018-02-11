@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-07 01:54+0100\n"
+"POT-Creation-Date: 2018-02-11 14:57+0100\n"
 "PO-Revision-Date: 2018-02-07 01:57+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
@@ -18,25 +18,90 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Widgets/Preferences.vala:105
-msgid "12 hrs."
-msgstr "12 hrs."
+#: data/com.github.bitseater.weather.appdata.xml.in:8
+#: data/com.github.bitseater.weather.desktop.in:3
+#: data/com.github.bitseater.weather.desktop.in:7
+#, fuzzy
+msgid "Weather"
+msgstr "Show Weather"
 
-#: src/Widgets/Preferences.vala:103
-msgid "2 hrs."
-msgstr "2 hrs."
+#: data/com.github.bitseater.weather.appdata.xml.in:10
+msgid "Know the forecast of the next hours and days"
+msgstr ""
 
-#: src/Widgets/Preferences.vala:106
-msgid "24 hrs."
-msgstr "24 hrs."
+#: data/com.github.bitseater.weather.appdata.xml.in:17
+msgid "Forecast for next 18 hours."
+msgstr ""
 
-#: src/Widgets/Preferences.vala:104
-msgid "6 hrs."
-msgstr "6 hrs."
+#: data/com.github.bitseater.weather.appdata.xml.in:18
+msgid "Forecast for next five days."
+msgstr ""
+
+#: data/com.github.bitseater.weather.appdata.xml.in:19
+msgid "Choose your units (metric or imperial)."
+msgstr ""
+
+#: data/com.github.bitseater.weather.appdata.xml.in:20
+msgid "Choose your city with maps info."
+msgstr ""
+
+#: data/com.github.bitseater.weather.appdata.xml.in:21
+msgid "Watch awesome maps with weather info."
+msgstr ""
+
+#: data/com.github.bitseater.weather.appdata.xml.in:22
+#, fuzzy
+msgid "Now with System Tray Indicator."
+msgstr "Use System Tray Indicator:"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:43
+msgid "Carlos Suárez"
+msgstr ""
+
+#: data/com.github.bitseater.weather.desktop.in:11
+msgid "Forecast App for desktop"
+msgstr ""
+
+#: data/com.github.bitseater.weather.desktop.in:17
+msgid "com.github.bitseater.weather"
+msgstr ""
+
+#: data/com.github.bitseater.weather.desktop.in:21
+msgid "Weather;Forecast;Temperature;"
+msgstr ""
+
+#: src/MainWindow.vala:123
+msgid "Show Weather"
+msgstr "Show Weather"
+
+#: src/MainWindow.vala:131
+msgid "Quit"
+msgstr "Quit"
+
+#: src/Utils/GeoLocate.vala:69 src/Widgets/Apikey.vala:132
+#: src/Widgets/MapView.vala:67 src/Widgets/MapViewOWM.vala:55
+msgid "Found an error"
+msgstr "Found an error"
+
+#: src/Widgets/About.vala:32
+msgid "A forecast application with OpenWeatherMap API"
+msgstr "A forecast application with OpenWeatherMap API"
+
+#: src/Widgets/About.vala:42
+msgid "website"
+msgstr "website"
+
+#: src/Widgets/About.vala:45
+msgid "Colaborators"
+msgstr "Colaborators"
 
 #: src/Widgets/Apikey.vala:43
 msgid "<big>Enter your OpenWeatherMap API key</big>\n"
 msgstr "<big>Enter your OpenWeatherMap API key</big>\n"
+
+#: src/Widgets/Apikey.vala:52
+msgid "Save"
+msgstr "Save"
 
 #: src/Widgets/Apikey.vala:63
 msgid ""
@@ -46,143 +111,199 @@ msgstr ""
 "<small>If you don't have it, please visit: <a href =\"https://home."
 "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
 
-#: src/Widgets/About.vala:32
-msgid "A forecast application with OpenWeatherMap API"
-msgstr "A forecast application with OpenWeatherMap API"
+#: src/Widgets/Apikey.vala:68
+msgid "Use API key built-in"
+msgstr "Use API key built-in"
 
-#: src/Widgets/Header.vala:36
-msgid "About Weather"
-msgstr "About Weather"
+#: src/Widgets/Apikey.vala:104
+msgid "Wrong API Key. Please, try again."
+msgstr "Wrong API Key. Please, try again."
 
-#: src/Widgets/City.vala:53 src/Widgets/City.vala:133 src/Widgets/City.vala:141
-msgid "At least of 3 characters are required!"
-msgstr "At least of 3 characters are required!"
-
-#: src/Widgets/Header.vala:57
-msgid "Change location"
-msgstr "Cambiar ubicación"
-
-#: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:94
-msgid "Change to "
-msgstr "Change to "
-
-#: src/Widgets/Preferences.vala:232
-msgid "Close"
-msgstr "Close"
-
-#: src/Widgets/Today.vala:68
-msgid "Cloudiness :"
-msgstr "Cloudiness :"
-
-#: src/Widgets/MapViewOWM.vala:94 src/Widgets/MapView.vala:88
-msgid "Clouds"
-msgstr "Clouds"
-
-#: src/Widgets/About.vala:45
-msgid "Colaborators"
-msgstr "Colaborators"
-
-#: src/Widgets/Today.vala:37
-msgid "Coordinates :"
-msgstr "Coordinates :"
-
-#: src/Widgets/Preferences.vala:42
-msgid "Dark theme:"
-msgstr "Dark theme:"
-
-#: src/Widgets/Header.vala:69
-msgid "Data"
-msgstr "Data"
-
-#: src/Widgets/Preferences.vala:184
-msgid "Find my location automatically:"
-msgstr "Find my location automatically:"
-
-#: src/Widgets/Forecast.vala:51
-msgid "Forecast"
-msgstr "Forecast"
-
-#: src/Widgets/MapViewOWM.vala:55 src/Widgets/Apikey.vala:132
-#: src/Widgets/MapView.vala:67 src/Utils/GeoLocate.vala:69
-#, c-format
-msgid "Found an error"
-msgstr "Found an error"
-
-#: src/Widgets/Preferences.vala:37
-msgid "General"
-msgstr "General"
-
-#: src/Widgets/Today.vala:56
-msgid "Humidity :"
-msgstr "Humidity :"
-
-#: src/Widgets/MapViewOWM.vala:189
-msgid "Image not found"
-msgstr "Image not found"
-
-#: src/Widgets/Preferences.vala:152
-msgid "Imperial System"
-msgstr "Imperial System"
-
-#: src/Widgets/Preferences.vala:34
-msgid "Interface"
-msgstr "Interface"
-
-#: src/Widgets/Header.vala:70
-msgid "Maps"
-msgstr "Maps"
-
-#: src/Widgets/Preferences.vala:151
-msgid "Metric System"
-msgstr "Metric System"
-
-#: src/Widgets/City.vala:124
-msgid "No data"
-msgstr "No data"
-
-#: src/Widgets/Header.vala:51
-msgid "Options"
-msgstr "Opciones"
-
-#: src/Widgets/MapViewOWM.vala:95 src/Widgets/MapView.vala:89
-msgid "Precipitation"
-msgstr "Precipitation"
-
-#: src/Widgets/Header.vala:35
-msgid "Preferences"
-msgstr "Preferences"
-
-#: src/Widgets/MapViewOWM.vala:96 src/Widgets/MapView.vala:90
-msgid "Pressure"
-msgstr "Pressure"
-
-#: src/Widgets/Today.vala:52
-msgid "Pressure :"
-msgstr "Pressure :"
-
-#: src/MainWindow.vala:130
-msgid "Quit"
-msgstr "Quit"
-
-#: src/Widgets/Preferences.vala:168
-msgid "Restore API key:"
-msgstr "Restore API key:"
-
-#: src/Widgets/Apikey.vala:52
-msgid "Save"
-msgstr "Save"
+#: src/Widgets/Apikey.vala:110
+msgid "The API key cannot be empty."
+msgstr "The API key cannot be empty."
 
 #: src/Widgets/City.vala:40
 msgid "Search for new location:"
 msgstr "Search for new location:"
 
+#: src/Widgets/City.vala:53 src/Widgets/City.vala:133 src/Widgets/City.vala:141
+msgid "At least of 3 characters are required!"
+msgstr "At least of 3 characters are required!"
+
 #: src/Widgets/City.vala:91
 msgid "Select"
 msgstr "Select"
 
-#: src/MainWindow.vala:123
-msgid "Show Weather"
-msgstr "Show Weather"
+#: src/Widgets/City.vala:124
+msgid "No data"
+msgstr "No data"
+
+#: src/Widgets/Forecast.vala:51
+msgid "Forecast"
+msgstr "Forecast"
+
+#. Create menu
+#: src/Widgets/Header.vala:35
+msgid "Preferences"
+msgstr "Preferences"
+
+#: src/Widgets/Header.vala:36
+msgid "About Weather"
+msgstr "About Weather"
+
+#: src/Widgets/Header.vala:51
+msgid "Options"
+msgstr "Opciones"
+
+#. Right buttons
+#: src/Widgets/Header.vala:57
+msgid "Change location"
+msgstr "Cambiar ubicación"
+
+#. Left buttons
+#: src/Widgets/Header.vala:69
+msgid "Data"
+msgstr "Data"
+
+#: src/Widgets/Header.vala:70
+msgid "Maps"
+msgstr "Maps"
+
+#. Define maps switcher
+#: src/Widgets/MapView.vala:87 src/Widgets/MapViewOWM.vala:93
+msgid "Temperature"
+msgstr "Temperature"
+
+#: src/Widgets/MapView.vala:88 src/Widgets/MapViewOWM.vala:94
+msgid "Clouds"
+msgstr "Clouds"
+
+#: src/Widgets/MapView.vala:89 src/Widgets/MapViewOWM.vala:95
+msgid "Precipitation"
+msgstr "Precipitation"
+
+#: src/Widgets/MapView.vala:90 src/Widgets/MapViewOWM.vala:96
+msgid "Pressure"
+msgstr "Pressure"
+
+#: src/Widgets/MapView.vala:91 src/Widgets/MapViewOWM.vala:97
+msgid "Wind Speed"
+msgstr "Wind Speed"
+
+#. Define other elements
+#: src/Widgets/MapView.vala:94 src/Widgets/MapViewOWM.vala:144
+msgid "Change to "
+msgstr "Change to "
+
+#: src/Widgets/MapView.vala:96 src/Widgets/MapViewOWM.vala:146
+msgid "Terms of Service"
+msgstr "Terms of Service"
+
+#: src/Widgets/MapViewOWM.vala:189
+msgid "Image not found"
+msgstr "Image not found"
+
+#. Define sections
+#: src/Widgets/Preferences.vala:34
+msgid "Interface"
+msgstr "Interface"
+
+#: src/Widgets/Preferences.vala:37
+msgid "General"
+msgstr "General"
+
+#. Change to dark theme
+#: src/Widgets/Preferences.vala:42
+msgid "Dark theme:"
+msgstr "Dark theme:"
+
+#. Select type of icons:symbolic or realistic
+#: src/Widgets/Preferences.vala:62
+msgid "Symbolic icons:"
+msgstr "Symbolic icons:"
+
+#. Select indicator
+#: src/Widgets/Preferences.vala:80
+msgid "Use System Tray Indicator:"
+msgstr "Use System Tray Indicator:"
+
+#. Update interval
+#: src/Widgets/Preferences.vala:100
+msgid "Update conditions every :"
+msgstr "Update conditions every :"
+
+#: src/Widgets/Preferences.vala:103
+msgid "2 hrs."
+msgstr "2 hrs."
+
+#: src/Widgets/Preferences.vala:104
+msgid "6 hrs."
+msgstr "6 hrs."
+
+#: src/Widgets/Preferences.vala:105
+msgid "12 hrs."
+msgstr "12 hrs."
+
+#: src/Widgets/Preferences.vala:106
+msgid "24 hrs."
+msgstr "24 hrs."
+
+#. System units
+#: src/Widgets/Preferences.vala:148
+msgid "Units:"
+msgstr "Units:"
+
+#: src/Widgets/Preferences.vala:151
+msgid "Metric System"
+msgstr "Metric System"
+
+#: src/Widgets/Preferences.vala:152
+msgid "Imperial System"
+msgstr "Imperial System"
+
+#. Restore API
+#: src/Widgets/Preferences.vala:168
+msgid "Restore API key:"
+msgstr "Restore API key:"
+
+#. Automatic location
+#: src/Widgets/Preferences.vala:184
+msgid "Find my location automatically:"
+msgstr "Find my location automatically:"
+
+#. Actions
+#: src/Widgets/Preferences.vala:232
+msgid "Close"
+msgstr "Close"
+
+#: src/Widgets/Today.vala:34
+msgid "Today"
+msgstr "Today"
+
+#: src/Widgets/Today.vala:37
+msgid "Coordinates :"
+msgstr "Coordinates :"
+
+#: src/Widgets/Today.vala:52
+msgid "Pressure :"
+msgstr "Pressure :"
+
+#: src/Widgets/Today.vala:56
+msgid "Humidity :"
+msgstr "Humidity :"
+
+#: src/Widgets/Today.vala:60
+msgid "Wind speed :"
+msgstr "Wind speed :"
+
+#: src/Widgets/Today.vala:64
+msgid "Wind dir :"
+msgstr "Wind dir :"
+
+#: src/Widgets/Today.vala:68
+msgid "Cloudiness :"
+msgstr "Cloudiness :"
 
 #: src/Widgets/Today.vala:70
 msgid "Sunrise :"
@@ -191,62 +312,6 @@ msgstr "Sunrise :"
 #: src/Widgets/Today.vala:74
 msgid "Sunset :"
 msgstr "Sunset :"
-
-#: src/Widgets/Preferences.vala:62
-msgid "Symbolic icons:"
-msgstr "Symbolic icons:"
-
-#: src/Widgets/MapViewOWM.vala:93 src/Widgets/MapView.vala:87
-msgid "Temperature"
-msgstr "Temperature"
-
-#: src/Widgets/MapViewOWM.vala:146 src/Widgets/MapView.vala:96
-msgid "Terms of Service"
-msgstr "Terms of Service"
-
-#: src/Widgets/Apikey.vala:110
-msgid "The API key cannot be empty."
-msgstr "The API key cannot be empty."
-
-#: src/Widgets/Today.vala:34
-msgid "Today"
-msgstr "Today"
-
-#: src/Widgets/Preferences.vala:148
-msgid "Units:"
-msgstr "Units:"
-
-#: src/Widgets/Preferences.vala:100
-msgid "Update conditions every :"
-msgstr "Update conditions every :"
-
-#: src/Widgets/Apikey.vala:68
-msgid "Use API key built-in"
-msgstr "Use API key built-in"
-
-#: src/Widgets/Preferences.vala:80
-msgid "Use System Tray Indicator:"
-msgstr "Use System Tray Indicator:"
-
-#: src/Widgets/MapViewOWM.vala:97 src/Widgets/MapView.vala:91
-msgid "Wind Speed"
-msgstr "Wind Speed"
-
-#: src/Widgets/Today.vala:64
-msgid "Wind dir :"
-msgstr "Wind dir :"
-
-#: src/Widgets/Today.vala:60
-msgid "Wind speed :"
-msgstr "Wind speed :"
-
-#: src/Widgets/Apikey.vala:104
-msgid "Wrong API Key. Please, try again."
-msgstr "Wrong API Key. Please, try again."
-
-#: src/Widgets/About.vala:42
-msgid "website"
-msgstr "website"
 
 #~ msgid "Update"
 #~ msgstr "Actualizar"
