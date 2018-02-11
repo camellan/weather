@@ -10,4 +10,4 @@ if not os.environ.get('DESTDIR'):
     subprocess.call(['glib-compile-schemas', schemadir], shell=False)
 
     print('Rebuilding desktop icons cache...')
-    subprocess.call(['update-icon-caches', icondir], shell=False)
+    subprocess.call(['gtk-update-icon-cache', icondir], shell=False)
