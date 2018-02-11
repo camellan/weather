@@ -4,10 +4,15 @@
     <id>com.github.bitseater.weather.desktop</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>GPL-3.0+</project_license>
+    <update_contact>bitseater@gmail</update_contact>
     <name>Weather</name>
-    <summary>Know the forecast of the next hours and days.</summary>
+    <translation type="gettext">Weather</translation>
+    <summary>Know the forecast of the next hours and days</summary>
     <description>
-        <p>Current weather, with information about temperature, pressure, wind speed and direction, sunrise and sunset. Other features:
+        <p>Current weather, with information about temperature, pressure,
+        wind speed and direction, sunrise and sunset. Show awesome maps with
+        all the information. Switch between some maps distributors.
+        Other features:
         <ul>
             <li>Forecast for next 18 hours.</li>
             <li>Forecast for next five days.</li>
@@ -46,13 +51,14 @@
   ​  <releases>
         <release version="0.5.3" date="2018-02-10">
             <description>
-        ​        <p>Changes to new release:
+        ​        <p>We are working to improve our forecast application. New changes in this version are:
                     <li>Change to meson build.</li>
-                    <li>Add new translations.</li>
+                    <li>Add new translations: portuguese.</li>
                     <li>System tray indicator with weather icons.</li>
                     <li>Weather Maps: temperature, clouds, rain, pressure and wind speed.</li>
+                    <li>Added two maps providers: Dark Sky and OpenWeatherMap.</li>
                 </p>
-      ​      </description>
+            </description>
         </release>
     </releases>
 </component>
