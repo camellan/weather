@@ -11,7 +11,7 @@ if 'DESTDIR' not in os.environ:
 	
 
     print('Compiling gsettings schemas...')
-	schema_dir = os.path.join(datadir, 'glib-2.0/schemas')
+    schema_dir = os.path.join(datadir, 'glib-2.0/schemas')
     subprocess.call(['glib-compile-schemas', schema_dir])
 
     print('Updating icon cache...')
