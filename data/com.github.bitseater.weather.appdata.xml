@@ -28,16 +28,16 @@
     </provides>
     <screenshots>
         <screenshot type="default">
-            <image type="source" width="750" height="645">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_1.png</image>
+            <image type="source" width="750" height="650">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_1.png</image>
         </screenshot>
         <screenshot type="default">
-            <image type="source" width="750" height="645">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_2.png</image>
+            <image type="source" width="750" height="650">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_2.png</image>
         </screenshot>
         <screenshot type="default">
-            <image type="source" width="750" height="645">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_3.png</image>
+            <image type="source" width="750" height="650">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_3.png</image>
         </screenshot>
         <screenshot type="default">
-            <image type="source" width="620" height="200">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_4.png</image>
+            <image type="source" width="650" height="300">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_4.png</image>
         </screenshot>
     </screenshots>
     <developer_name>Carlos Suárez</developer_name>
