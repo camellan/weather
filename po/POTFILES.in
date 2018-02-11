@@ -1,6 +1,8 @@
 # List of source files containing translatable strings.
 # Copyright (C) 1995 Free Software Foundation, Inc
 #
+data/com.github.bitseater.weather.appdata.xml.in
+data/com.github.bitseater.weather.desktop.in
 src/Weather.vala
 src/MainWindow.vala
 src/Constants.vala

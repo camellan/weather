@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id="com.github.bitseater.weather" path="/com/github/bitseater/weather/" gettext-domain="weather">
+  <schema id="com.github.bitseater.weather" path="/com/github/bitseater/weather/" gettext-domain="com.github.bitseater.weather">
 
     <key name="dark" type="b">
       <default>false</default>
