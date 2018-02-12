@@ -137,9 +137,6 @@
                     "sha256": "d5907c1f98084acf28fd19593cb70672caa0ca1cf82d747ba6f4830d4cc3b49f"
                 },
                 {
-                    "type": "patch",
-                    "path": "no-python-appindicator.patch"
-                },                {
                     "type": "script",
                     "commands": [
                         "autoreconf -vfi"
@@ -155,7 +152,7 @@
             "sources": [{
                     "type": "archive",
                     "url": "https://github.com/bitseater/weather/archive/0.5.4.tar.gz",
-                    "sha256": "9fb26035fa372c651a3ed7c085fe0a9bf5cb0be333299f5b212336dc20e084d5"
+                    "sha256": "7ca18620ea5dde713c450be89e0d07c93bd16986a291dc93342f9504fee2ed48"
                 },
                 {
                     "type": "patch",
