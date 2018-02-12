@@ -30,7 +30,7 @@ namespace  Weather.Widgets {
             artists = {"Carlos Suárez <bitseater@gmail.com>", "Paulo Galardi <lainsce@airmail.cc>"};
             authors = {"Carlos Suárez <bitseater@gmail.com>"};
             comments = _("A forecast application with OpenWeatherMap API");
-            copyright = "Copyright \xc2\xa9 Carlos Suárez - 2017";
+            copyright = "Copyright \xc2\xa9 Carlos Suárez - 2017/2018";
             license_type = Gtk.License.GPL_3_0;
             logo_icon_name = Constants.ICON_NAME;
             program_name = Constants.APP_NAME;

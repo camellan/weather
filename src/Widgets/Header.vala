@@ -33,7 +33,7 @@ namespace Weather.Widgets {
             //Create menu
             var menu = new Gtk.Menu ();
             var pref_item = new Gtk.MenuItem.with_label (_("Preferences"));
-            var about_item = new Gtk.MenuItem.with_label (_("About Weather"));
+            var about_item = new Gtk.MenuItem.with_label (_("About Meteo"));
             menu.add (pref_item);
             menu.add (new Gtk.SeparatorMenuItem ());
             menu.add (about_item);

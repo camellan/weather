@@ -95,7 +95,7 @@ namespace Weather {
             indicator.set_status(AppIndicator.IndicatorStatus.ACTIVE);
 
             var menu = new Gtk.Menu();
-            var show_item = new Gtk.MenuItem.with_label (_("Show Weather"));
+            var show_item = new Gtk.MenuItem.with_label (_("Show Meteo"));
             show_item.activate.connect(() => {
                 this.get_focus ();
                 this.no_show_all = false;

@@ -1,6 +1,6 @@
 [Desktop Entry]
-Name=Weather
-GenericName=Weather
+Name=Meteo
+GenericName=Meteo
 Comment=Forecast App for desktop
 Categories=Utility;Education;Science;
 Exec=com.github.bitseater.weather

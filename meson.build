@@ -14,13 +14,6 @@ add_project_arguments(
   language: 'vala'
 )
 
-## Compile GResources
-asresources = gnome.compile_resources(
-    'as-resources', 'data/' + meson.project_name() + '.gresource.xml',
-    source_dir: 'data',
-    c_name: 'as'
-)
-
 # Add locale support
 conf = configuration_data()
 conf.set_quoted('GETTEXT_PACKAGE', meson.project_name())
@@ -44,6 +37,13 @@ c_args = [
 ]
 
 cc = meson.get_compiler('c')
+
+## Compile GResources
+asresources = gnome.compile_resources(
+    'as-resources', join_paths('data', meson.project_name() + '.gresource.xml'),
+    source_dir: 'data',
+    c_name: 'as'
+)
 
 # Add subfolders
 subdir('data')

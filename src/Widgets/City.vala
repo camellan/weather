@@ -99,7 +99,6 @@ namespace  Weather.Widgets {
                                     header.title = town + ", " + state + " " + country;
                                     Gtk.Widget child = window.get_child ();
                                     window.remove (child);
-                                    child.destroy ();
                                     header.restart_switcher ();
                                     var current = new Weather.Widgets.Current (window, header);
                                     window.add (current);
