@@ -149,13 +149,13 @@
             ]
         },
         {
-            "name": "weather",
+            "name": "Meteo",
             "buildsystem": "meson",
             "config-opts": ["--buildtype=release"],
             "sources": [{
                     "type": "archive",
                     "url": "https://github.com/bitseater/weather/archive/0.5.4.tar.gz",
-                    "sha256": "36849f4220e75296610ebb469df243db3e36a1549dd184e4364e9b92282921f8"
+                    "sha256": "9fb26035fa372c651a3ed7c085fe0a9bf5cb0be333299f5b212336dc20e084d5"
                 },
                 {
                     "type": "patch",
