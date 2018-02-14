@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-11 14:57+0100\n"
-"PO-Revision-Date: 2017-12-04 14:49+0200\n"
+"PO-Revision-Date: 2018-02-14 23:37+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
 "Language: lt\n"
@@ -22,62 +22,60 @@ msgstr ""
 #: data/com.github.bitseater.weather.appdata.xml.in:8
 #: data/com.github.bitseater.weather.desktop.in:3
 #: data/com.github.bitseater.weather.desktop.in:7
-#, fuzzy
 msgid "Weather"
-msgstr "Apie Orus"
+msgstr "Orai"
 
 #: data/com.github.bitseater.weather.appdata.xml.in:10
 msgid "Know the forecast of the next hours and days"
-msgstr ""
+msgstr "Žinokite ateinančių valandų ir dienų orų prognozę"
 
 #: data/com.github.bitseater.weather.appdata.xml.in:17
 msgid "Forecast for next 18 hours."
-msgstr ""
+msgstr "Orų prognozė ateinančioms 18 valandoms."
 
 #: data/com.github.bitseater.weather.appdata.xml.in:18
 msgid "Forecast for next five days."
-msgstr ""
+msgstr "Orų prognozė ateinančioms 5 dienoms."
 
 #: data/com.github.bitseater.weather.appdata.xml.in:19
 msgid "Choose your units (metric or imperial)."
-msgstr ""
+msgstr "Pasirinkite savo vienetus (metrinius ar imperinius)."
 
 #: data/com.github.bitseater.weather.appdata.xml.in:20
 msgid "Choose your city with maps info."
-msgstr ""
+msgstr "Pasirinkite savo miestą su žemėlapių informacija."
 
 #: data/com.github.bitseater.weather.appdata.xml.in:21
 msgid "Watch awesome maps with weather info."
-msgstr ""
+msgstr "Stebėkite įspūdingus žemėlapius su orų informacija."
 
 #: data/com.github.bitseater.weather.appdata.xml.in:22
 msgid "Now with System Tray Indicator."
-msgstr ""
+msgstr "Dabar su sistemos dėklo indikatoriumi."
 
 #: data/com.github.bitseater.weather.appdata.xml.in:43
 msgid "Carlos Suárez"
-msgstr ""
+msgstr "Carlos Suárez"
 
 #: data/com.github.bitseater.weather.desktop.in:11
 msgid "Forecast App for desktop"
-msgstr ""
+msgstr "Orų prognozės programa darbalaukiui"
 
 #: data/com.github.bitseater.weather.desktop.in:17
 msgid "com.github.bitseater.weather"
-msgstr ""
+msgstr "com.github.bitseater.weather"
 
 #: data/com.github.bitseater.weather.desktop.in:21
 msgid "Weather;Forecast;Temperature;"
-msgstr ""
+msgstr "Orai;Prognozė;Temperatūra;"
 
 #: src/MainWindow.vala:123
-#, fuzzy
 msgid "Show Weather"
-msgstr "Apie Orus"
+msgstr "Rodyti orus"
 
 #: src/MainWindow.vala:131
 msgid "Quit"
-msgstr ""
+msgstr "Išeiti"
 
 #: src/Utils/GeoLocate.vala:69 src/Widgets/Apikey.vala:132
 #: src/Widgets/MapView.vala:67 src/Widgets/MapViewOWM.vala:55
@@ -166,49 +164,45 @@ msgstr "Keisti vietą"
 #. Left buttons
 #: src/Widgets/Header.vala:69
 msgid "Data"
-msgstr ""
+msgstr "Duomenys"
 
 #: src/Widgets/Header.vala:70
 msgid "Maps"
-msgstr ""
+msgstr "Žemėlapiai"
 
 #. Define maps switcher
 #: src/Widgets/MapView.vala:87 src/Widgets/MapViewOWM.vala:93
 msgid "Temperature"
-msgstr ""
+msgstr "Temperatūra"
 
 #: src/Widgets/MapView.vala:88 src/Widgets/MapViewOWM.vala:94
-#, fuzzy
 msgid "Clouds"
-msgstr "Debesuotumas :"
+msgstr "Debesys"
 
 #: src/Widgets/MapView.vala:89 src/Widgets/MapViewOWM.vala:95
 msgid "Precipitation"
-msgstr ""
+msgstr "Krituliai"
 
 #: src/Widgets/MapView.vala:90 src/Widgets/MapViewOWM.vala:96
-#, fuzzy
 msgid "Pressure"
-msgstr "Slėgis :"
+msgstr "Slėgis"
 
 #: src/Widgets/MapView.vala:91 src/Widgets/MapViewOWM.vala:97
-#, fuzzy
 msgid "Wind Speed"
-msgstr "Vėjo greitis :"
+msgstr "Vėjo greitis"
 
 #. Define other elements
 #: src/Widgets/MapView.vala:94 src/Widgets/MapViewOWM.vala:144
-#, fuzzy
 msgid "Change to "
-msgstr "Keisti vietą"
+msgstr "Keisti į "
 
 #: src/Widgets/MapView.vala:96 src/Widgets/MapViewOWM.vala:146
 msgid "Terms of Service"
-msgstr ""
+msgstr "Naudojimosi sąlygos"
 
 #: src/Widgets/MapViewOWM.vala:189
 msgid "Image not found"
-msgstr ""
+msgstr "Paveikslas nerastas"
 
 #. Define sections
 #: src/Widgets/Preferences.vala:34
@@ -232,28 +226,28 @@ msgstr "Simbolinės piktogramos:"
 #. Select indicator
 #: src/Widgets/Preferences.vala:80
 msgid "Use System Tray Indicator:"
-msgstr ""
+msgstr "Naudoti sistemos dėklo indikatorių:"
 
 #. Update interval
 #: src/Widgets/Preferences.vala:100
 msgid "Update conditions every :"
-msgstr ""
+msgstr "Atnaujinti orų sąlygas kas :"
 
 #: src/Widgets/Preferences.vala:103
 msgid "2 hrs."
-msgstr ""
+msgstr "2 val."
 
 #: src/Widgets/Preferences.vala:104
 msgid "6 hrs."
-msgstr ""
+msgstr "6 val."
 
 #: src/Widgets/Preferences.vala:105
 msgid "12 hrs."
-msgstr ""
+msgstr "12 val."
 
 #: src/Widgets/Preferences.vala:106
 msgid "24 hrs."
-msgstr ""
+msgstr "24 val."
 
 #. System units
 #: src/Widgets/Preferences.vala:148
