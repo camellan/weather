@@ -47,6 +47,9 @@ namespace  Weather.Utils {
             case "my_MM":
                 units = "imperial";
                 break;
+            case "en_GB":
+                units = "british";
+                break;
             default:
                 units = "metric";
                 break;

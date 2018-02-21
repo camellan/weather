@@ -23,6 +23,7 @@ namespace Weather.Widgets {
     public class Header : Gtk.HeaderBar {
 
         public Gtk.Button loc_button;
+        public Gtk.Button upd_button;
         public Gtk.RadioButton data_but;
         public Gtk.RadioButton maps_but;
         public signal void show_mapwindow ();
@@ -33,13 +34,19 @@ namespace Weather.Widgets {
             //Create menu
             var menu = new Gtk.Menu ();
             var pref_item = new Gtk.MenuItem.with_label (_("Preferences"));
+            var show_item = new Gtk.MenuItem.with_label (_("View weather data"));
             var about_item = new Gtk.MenuItem.with_label (_("About Meteo"));
             menu.add (pref_item);
+            menu.add (show_item);
             menu.add (new Gtk.SeparatorMenuItem ());
             menu.add (about_item);
             pref_item.activate.connect (() => {
                 var preferences = new Weather.Widgets.Preferences (window, this);
                 preferences.run ();
+            });
+            show_item.activate.connect (() => {
+                var jsonfile = new Weather.Widgets.ViewFile (window);
+                jsonfile.run ();
             });
             about_item.activate.connect (() => {
                 var about = new Weather.Widgets.About (window);
@@ -55,15 +62,24 @@ namespace Weather.Widgets {
             //Right buttons
             loc_button = new Gtk.Button.from_icon_name ("mark-location-symbolic", Gtk.IconSize.BUTTON);
             loc_button.tooltip_text = _("Change location");
+            upd_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.BUTTON);
+            upd_button.tooltip_text = _("Update conditions");
+            upd_button.sensitive = false;
             change_visible (false);
 
-            loc_button.clicked.connect (() =>{
+            loc_button.clicked.connect (() => {
                 (window.get_child () as Gtk.Widget).destroy ();
                 window.add (new Weather.Widgets.City (window, this));
                 window.show_all ();
             });
+            upd_button.clicked.connect (() => {
+                (window.get_child () as Gtk.Widget).destroy ();
+                window.add (new Weather.Widgets.Current (window, this));
+                window.show_all ();
+            });
             pack_end (app_button);
             pack_end (loc_button);
+            pack_end (upd_button);
 
             //Left buttons
             data_but = new Gtk.RadioButton.with_label_from_widget (null, _("Data"));
@@ -78,8 +94,7 @@ namespace Weather.Widgets {
                 butbox.pack_start (button, false, true, 0);
             }
             data_but.toggled.connect (() => {
-                Gtk.Widget child = window.get_child ();
-                window.remove (child);
+                window.remove (window.get_child ());
                 window.add (new Weather.Widgets.Current (window, this));
                 window.show_all ();
             });

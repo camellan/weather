@@ -29,15 +29,9 @@ namespace Weather.Widgets {
             header.custom_title = null;
             header.set_title (setting.get_string ("location") + ", " + setting.get_string ("state") + " " + setting.get_string ("country"));
             header.change_visible (true);
-
-            string lang = Gtk.get_default_language ().to_string ().substring (0, 2);
             string idplace = setting.get_string ("idplace");
-            string apiid = setting.get_string ("apiid");
-            string units = setting.get_string ("units");
-            string uri = idplace + "&APPID=" + apiid + "&units=" + units + "&lang=" + lang;
-
-            var today = new Weather.Widgets.Today (setting.get_string ("idplace"), window);
-            var forecast = new Weather.Widgets.Forecast (uri);
+            var today = new Weather.Widgets.Today (idplace, window);
+            var forecast = new Weather.Widgets.Forecast (idplace);
             var separator = new Gtk.Separator (Gtk.Orientation.VERTICAL);
             pack_start (today, true, true, 0);
             pack_start (separator, false, true, 0);
@@ -45,18 +39,18 @@ namespace Weather.Widgets {
 
             //Configure header nav
             header.show_mapwindow.connect (() => {
-                Gtk.Widget child = window.get_child ();
-                window.remove (child);
-                child.destroy ();
+                (window.get_child ()).destroy ();
                 window.add (new Weather.Widgets.MapView (window, header));
                 window.show_all ();
             });
+            if (setting.get_string ("apiid") != Constants.API_KEY) {
+                header.upd_button.sensitive = true;
+            }
 
             //Update countdown
             var interval = setting.get_int ("interval");
             GLib.Timeout.add_seconds (interval, () => {
-                Gtk.Widget child = window.get_child ();
-                window.remove (child);
+                (window.get_child ()).destroy ();
                 var current = new Weather.Widgets.Current (window, header);
                 window.add (current);
                 //window.show_all ();

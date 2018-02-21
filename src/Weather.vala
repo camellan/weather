@@ -20,20 +20,28 @@
 */
 namespace Weather {
 
-    public class WeatherApp : Gtk.Application {
+    public class WeatherApp : Granite.Application {
 
         public MainWindow window;
+
+        construct {
+            program_name = Constants.APP_NAME;
+            build_version = Constants.VERSION;
+        }
 
         public WeatherApp () {
             application_id = "com.github.bitseater.weather";
             flags |= GLib.ApplicationFlags.FLAGS_NONE;
 
-            // localization
+            // Localization
             string package_name = Constants.GETTEXT_PACKAGE;
             Intl.setlocale (LocaleCategory.ALL, "");
             Intl.textdomain (package_name);
             Intl.bindtextdomain (package_name, Constants.LOCALE_DIR);
             Intl.bind_textdomain_codeset (package_name, "UTF-8");
+
+            //Debug mode
+            Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
         }
 
         public override void activate () {
@@ -46,7 +54,6 @@ namespace Weather {
         }
 
         public static void main (string [] args) {
-            //Clutter.init (ref args);
             GtkClutter.init (ref args);
             var app = new Weather.WeatherApp ();
             app.run (args);

@@ -25,11 +25,12 @@ EOF
 # Search strings to translate and update po files
 translate()
 {
-    MYVAR=$(find . -type f -name *vala)
-    xgettext --language=C --keyword=_ --escape --sort-output -o $TEMPLATE $MYVAR
+    MYVAR=$(find . -type f -name *vala -or -name *appdata.xml.in -or -name *desktop.in)
+    xgettext --keyword=_ --escape --sort-output -o $TEMPLATE $MYVAR
     for f in $FILES
 	    do
 		    msgmerge -v $f $TEMPLATE --update
+		    echo $f "updated."
 	    done
 }
 # Compile with meson / ninja
@@ -48,8 +49,12 @@ build(){
 uninstall(){
     ninja -v -C build
     sudo ninja -C build uninstall
+    echo "Removing glib settings..."
     dconf reset -f /com/github/bitseater/weather/
+    echo "Done."
+    echo "Updating icon cache..."
     sudo update-icon-caches /usr/share/icons/hicolor/
+    echo "Done."
 }
 
 # List sources files alphabetically

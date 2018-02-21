@@ -73,7 +73,7 @@ namespace  Weather.Widgets {
                 // Button is checked
                 apibutton.sensitive = true;
                 apientry.visibility = false;
-                apientry.set_text ("936b1aed9a541e3446cafb8be2c70e62");
+                apientry.set_text (Constants.API_KEY);
                 apientry.sensitive = false;
                 } else {
                 // Button is not checked
@@ -88,7 +88,7 @@ namespace  Weather.Widgets {
                     string uri = Constants.OWM_API_ADDR + "weather?id=2643743&appid=" + apientry.get_text ();
                     if (check_apikey (uri)) {
                         setting.set_string ("apiid", apientry.get_text ());
-                        if (setting.get_boolean ("auto")){
+                        if (setting.get_boolean ("auto")) {
                             Weather.Utils.geolocate ();
                             (window.get_child () as Gtk.Widget).destroy ();
                             var current = new Weather.Widgets.Current (window, header);

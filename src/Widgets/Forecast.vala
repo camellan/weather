@@ -22,7 +22,7 @@ namespace  Weather.Widgets {
 
     public class Forecast : Gtk.Grid {
 
-        public Forecast (string uri_end) {
+        public Forecast (string idplace) {
             valign = Gtk.Align.START;
             halign = Gtk.Align.CENTER;
             row_spacing = 5;
@@ -30,17 +30,33 @@ namespace  Weather.Widgets {
             column_homogeneous = true;
             margin = 15;
 
-            string uri = Constants.OWM_API_ADDR + "forecast?id=" + uri_end;
-
             var setting = new Settings ("com.github.bitseater.weather");
-            var units = setting.get_string ("units");
+            string apiid = setting.get_string ("apiid");
+            string lang = Gtk.get_default_language ().to_string ().substring (0, 2);
+            string unit = setting.get_string ("units");
+            string units = "";
             string temp_un = "";
-            if (units != "metric") {
-                temp_un = "F";
-            } else {
-                temp_un = "C";
+            switch (unit) {
+                case "metric":
+                    temp_un = "C";
+                    units = "metric";
+                    break;
+                case "imperial":
+                    temp_un = "F";
+                    units = "imperial";
+                    break;
+                case "british":
+                    temp_un = "C";
+                    units = "imperial";
+                    break;
+                default:
+                    temp_un = "C";
+                    units = "metric";
+                    break;
             }
 
+            string uri_end = idplace + "&APPID=" + apiid + "&units=" + units + "&lang=" + lang;
+            string uri = Constants.OWM_API_ADDR + "forecast?id=" + uri_end;
             var session = new Soup.Session ();
             var message = new Soup.Message ("GET", uri);
             session.send_message (message);
@@ -57,7 +73,18 @@ namespace  Weather.Widgets {
                 for (int a = 0; a < 5; a++) {
                     var time = new Gtk.Label (time_format (new DateTime.from_unix_local (list.get_object_element (a).get_int_member ("dt"))));
                     var icon = new Weather.Utils.Iconame (list.get_object_element(a).get_array_member ("weather").get_object_element (0).get_string_member ("icon"), 36);
-                    var temp = new Gtk.Label (Weather.Utils.to_string0 (list.get_object_element(a).get_object_member ("main").get_double_member ("temp")) + "\u00B0" + temp_un);
+                    double temp_n = list.get_object_element(a).get_object_member ("main").get_double_member ("temp");
+                    var temp = new Gtk.Label ("");
+                    switch (unit) {
+                            case "british":
+                                temp.label = Weather.Utils.to_string0 (((temp_n - 32)*5)/9) + "\u00B0" + temp_un;
+                                break;
+                            case "metric":
+                            case "imperial":
+                            default:
+                                temp.label = Weather.Utils.to_string0 (temp_n) + "\u00B0" + temp_un;
+                                break;
+                        }
                     attach (time, a, 1, 1, 1);
                     attach (icon, a, 2, 1, 1);
                     attach (temp, a, 3, 1, 1);
@@ -67,7 +94,18 @@ namespace  Weather.Widgets {
                 for (int b = 0; b < 5; b++) {
                     var time = new Gtk.Label (new DateTime.from_unix_local (list.get_object_element (b*8+cnt).get_int_member ("dt")).format ("%a %H:%M"));
                     var icon = new Weather.Utils.Iconame (list.get_object_element(b*8+cnt).get_array_member ("weather").get_object_element (0).get_string_member ("icon"), 36);
-                    var temp = new Gtk.Label (Weather.Utils.to_string0 (list.get_object_element(b*8+cnt).get_object_member ("main").get_double_member ("temp")) + "\u00B0" + temp_un);
+                    double temp_n = list.get_object_element(b*8+cnt).get_object_member ("main").get_double_member ("temp");
+                    var temp = new Gtk.Label ("");
+                    switch (unit) {
+                            case "british":
+                                temp.label = Weather.Utils.to_string0 (((temp_n - 32)*5)/9) + "\u00B0" + temp_un;
+                                break;
+                            case "metric":
+                            case "imperial":
+                            default:
+                                temp.label = Weather.Utils.to_string0 (temp_n) + "\u00B0" + temp_un;
+                                break;
+                        }
                     attach (time, 0, 5+b, 2, 1);
                     attach (icon, 2, 5+b, 1, 1);
                     attach (temp, 3, 5+b, 2, 1);

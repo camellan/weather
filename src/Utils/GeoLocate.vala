@@ -36,11 +36,13 @@ namespace  Weather.Utils {
 
         try {
             Geocode.Place mycity = reverse.resolve ();
-            string uri = uri1 + mycoords.lat.to_string () + "&lon=" + mycoords.lon.to_string () + uri2;
-            setting.set_string ("idplace", update_id (uri).to_string());
-            setting.set_string ("location", mycity.town);
-            setting.set_string ("state", mycity.state);
-            setting.set_string ("country", mycity.country_code);
+            if (mycity != null) {
+                string uri = uri1 + mycoords.lat.to_string () + "&lon=" + mycoords.lon.to_string () + uri2;
+                setting.set_string ("idplace", update_id (uri).to_string());
+                setting.set_string ("location", mycity.town);
+                setting.set_string ("state", mycity.state);
+                setting.set_string ("country", mycity.country_code);
+            }
         } catch (Error e) {
             debug (e.message);
         }

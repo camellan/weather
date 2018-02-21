@@ -7,19 +7,19 @@
     <update_contact>bitseater@gmail</update_contact>
     <name>Meteo</name>
     <translation type="gettext">com.github.bitseater.weather</translation>
-    <summary>Know the forecast of the next hours and days</summary>
+    <summary>Know the forecast of the next hours and days with data and maps</summary>
     <description>
         <p>Current weather, with information about temperature, pressure,
         wind speed and direction, sunrise and sunset. Show awesome maps with
         all the information. Switch between some maps distributors.
         Other features:
         <ul>
-            <li>Forecast for next 18 hours.</li>
-            <li>Forecast for next five days.</li>
-            <li>Choose your units (metric or imperial).</li>
-            <li>Choose your city with maps info.</li>
-            <li>Watch awesome maps with weather info.</li>
-            <li>Now with System Tray Indicator.</li>
+            <_li>Forecast for next 18 hours.</_li>
+            <_li>Forecast for next five days.</_li>
+            <_li>Choose your units (metric, imperial or british).</_li>
+            <_li>Choose your city with maps info.</_li>
+            <_li>Watch awesome maps with weather info.</_li>
+            <_li>Now with System Tray Indicator.</_li>
         </ul>
         </p>
     </description>
@@ -49,14 +49,23 @@
         <value key="x-appcenter-suggested-price">1</value>
     </custom>
   ​  <releases>
-        <release version="0.5.3" date="2018-02-10">
+        <release version="0.6.0" date="2018-02-21">
             <description>
-        ​        <p>We are working to improve our forecast application. New changes in this version are:
-                    <li>Change to meson build.</li>
-                    <li>Add new translations: portuguese.</li>
-                    <li>System tray indicator with weather icons.</li>
-                    <li>Weather Maps: temperature, clouds, rain, pressure and wind speed.</li>
-                    <li>Added two maps providers: Dark Sky and OpenWeatherMap.</li>
+        ​        <p>New in this version are:
+                    <li>Change appname to METEO</li>
+                    <li>Save currenta data to cache file</li>
+                    <li>Show cache file in text format</li>
+                    <li>Add new translations: pt_PT and pt_BR</li>
+                    <li>Reload button when own API key</li>
+                </p>
+                <p>Fixed issues:
+                    <li>#34: Indicator on startup</li>
+                    <li>#39: Setting a NULL value as string</li>
+                    <li>#29: UK Setting, new units</li>
+                    <li>#36 and #47: Publish on Flathub</li>
+                    <li>#44: Reload/update</li>
+                    <li>#28: Use local cache</li>
+                    <li>#46 and #48: Separate pt_PT and pt_BR</li>
                 </p>
             </description>
         </release>

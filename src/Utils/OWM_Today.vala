@@ -105,18 +105,35 @@ namespace  Weather.Utils {
             var setting = new Settings ("com.github.bitseater.weather");
             string lang = Gtk.get_default_language ().to_string ().substring (0, 2);
             string apiid = setting.get_string ("apiid");
-            string units = setting.get_string ("units");
-            string uriend = "&APPID=" + apiid + "&units=" + units + "&lang=" + lang;
-            string uri = Constants.OWM_API_ADDR + "weather?id=" + idplace + uriend;
+            string unit = setting.get_string ("units");
             string temp_un = "";
             string speed_un = "";
-            if (units != "metric") {
-                temp_un = "F";
-                speed_un = " mph";
-            } else {
-                temp_un = "C";
-                speed_un = " m/s";
+            string units = "";
+            switch (unit) {
+                case "metric":
+                    temp_un = "C";
+                    speed_un = " m/s";
+                    units = "metric";
+                    break;
+                case "imperial":
+                    temp_un = "F";
+                    speed_un = " mph";
+                    units = "imperial";
+                    break;
+                case "british":
+                    temp_un = "C";
+                    speed_un = " mph";
+                    units = "imperial";
+                    break;
+                default:
+                    temp_un = "C";
+                    speed_un = " m/s";
+                    units = "metric";
+                    break;
             }
+
+            string uriend = "&APPID=" + apiid + "&units=" + units + "&lang=" + lang;
+            string uri = Constants.OWM_API_ADDR + "weather?id=" + idplace + uriend;
 
             var session = new Soup.Session ();
             var message = new Soup.Message ("GET", uri);
@@ -124,7 +141,8 @@ namespace  Weather.Utils {
 
             try {
                 var parser = new Json.Parser ();
-                parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+                string text = (string) message.response_body.flatten ().data;
+                parser.load_from_data (text, -1);
 
                 var root = parser.get_root ().get_object ();
                 var coord = root.get_object_member ("coord");
@@ -147,7 +165,17 @@ namespace  Weather.Utils {
                 }
                 _icon = weather.get_object_element (0).get_string_member ("icon");
                 var vmain = root.get_object_member ("main");
-                _temp = Weather.Utils.to_string0 (vmain.get_double_member ("temp")) + "\u00B0" + temp_un;
+                double temp_n = vmain.get_double_member ("temp");
+                switch (unit) {
+                    case "british":
+                        _temp = Weather.Utils.to_string0 (((temp_n - 32)*5)/9) + "\u00B0" + temp_un;
+                        break;
+                    case "metric":
+                    case "imperial":
+                    default:
+                        _temp = Weather.Utils.to_string0 (temp_n) + "\u00B0" + temp_un;
+                        break;
+                }
                 _pressure = vmain.get_int_member ("pressure").to_string() + " hPa";
                 _humidity = vmain.get_int_member ("humidity").to_string () + " %";
                 var wind = root.get_object_member ("wind");
@@ -160,8 +188,34 @@ namespace  Weather.Utils {
                 var suns = new DateTime.from_unix_local (root.get_object_member ("sys").get_int_member ("sunset"));
                 _sunset = time_format (suns);
 
+                //Create today file
+                var file = File.new_for_path (Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME + "/current.json");
+                if (file.query_exists ()) {
+                    file.delete ();
+                }
+                var dos = new DataOutputStream (file.create (FileCreateFlags.REPLACE_DESTINATION));
+                dos.put_string ("Language: " + lang + "\n");
+                dos.put_string ("API key: " + apiid + "\n");
+                dos.put_string ("Units: " + unit + "\n");
+                dos.put_string ("ID place: " + idplace + "\n");
+                dos.put_string ("Coord. lon: " + _coor_lon + "\n");
+                dos.put_string ("Coord. lat: " + _coor_lat + "\n");
+                dos.put_string ("Location: " + setting.get_string ("location") + "\n");
+                dos.put_string ("State: " + setting.get_string ("state") + "\n");
+                dos.put_string ("Country: " + setting.get_string ("country") + "\n");
+                dos.put_string ("Weather: " + _wmain + "\n");
+                dos.put_string ("Description: " + _wdescrip + "\n");
+                dos.put_string ("Icon file: " + _icon + "\n");
+                dos.put_string ("Temperature: " + _temp + "\n");
+                dos.put_string ("Pressure: " + _pressure + "\n");
+                dos.put_string ("Humidity: " + _humidity + "\n");
+                dos.put_string ("Wind speed: " + _windspeed + "\n");
+                dos.put_string ("Wind dir: " + _winddir + "\n");
+                dos.put_string ("Clouds: " + _clouds + "\n");
+                dos.put_string ("Sunrise: " + _sunrise + "\n");
+                dos.put_string ("Sunset: " + _sunset + "\n");
             } catch (Error e) {
-                stdout.printf ("Hubo un error: %s\n", e.message);
+                debug (e.message);
             }
         }
 

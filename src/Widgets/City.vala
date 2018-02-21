@@ -92,17 +92,21 @@ namespace  Weather.Widgets {
                                 select.clicked.connect (() => {
                                     string uri = uri1 + lat.to_string () + "&lon=" + lon.to_string () + uri2;
                                     setting.set_string ("idplace", update_id (uri).to_string());
-                                    setting.set_string ("location", town);
+                                    if (town != null) {
+                                        setting.set_string ("location", town);
+                                    } else {
+                                        setting.set_string ("location", "");
+                                    }
                                     setting.set_string ("state", state);
                                     setting.set_string ("country", country);
                                     header.custom_title = null;
                                     header.title = town + ", " + state + " " + country;
-                                    Gtk.Widget child = window.get_child ();
-                                    window.remove (child);
                                     header.restart_switcher ();
+                                    (window.get_child ()).destroy ();
                                     var current = new Weather.Widgets.Current (window, header);
                                     window.add (current);
                                     current.show_all ();
+
                                 });
                                 select.halign = Gtk.Align.END;
                                 select.valign = Gtk.Align.CENTER;

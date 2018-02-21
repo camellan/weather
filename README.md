@@ -1,4 +1,4 @@
-# Weather
+# METEO
 
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bitseater.weather)﻿
 
@@ -13,7 +13,7 @@ Developed with Vala & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
 - Current weather, with information about temperature, pressure, wind speed and direction, sunrise & sunset.
 - Forecast for next 18 hours.
 - Forecast for next five days.
-- Choose your units (metric or imperial).
+- Choose your units (metric, imperial or british).
 - Choose your city, with maps help.
 - Awesome maps with weather info.
 - System tray indicator.
@@ -42,13 +42,16 @@ For advanced users!
 
 ----
 
-#### New on release 0.5.3:
+#### New on release 0.6.0:
 
-- Add meson support to build/compile.
-- Add new translations.
-- Add Indicator to wingpanel with symbolic icons.
-- Add Weather Maps with temperatures, clouds, precipitation, pressure and wind speeds.
-- Add maps providers: *Dark Sky* and *OpenWeatherMaps*.
+- Change appname to METEO.
+- Save currenta data to cache file.
+- Show cache file in text format.
+- Add new translations: pt_PT and pt_BR.
+- Reload button when own API key.
+
+Fixed issues: #28 #29 #34 #36 #39 #44 #46 #47 #48
+
 ----
 #### Other screenshots:
 

@@ -18,7 +18,7 @@
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
-namespace  Weather.Widgets {
+namespace Weather.Widgets {
 
     public class Preferences : Gtk.Dialog {
 
@@ -171,19 +171,23 @@ namespace  Weather.Widgets {
             var unit_lab = new Gtk.Label (_("Units:"));
             unit_lab.halign = Gtk.Align.END;
             var unit_box = new Gtk.ComboBoxText ();
-            unit_box.append_text (_("Metric System"));
-            unit_box.append_text (_("Imperial System"));
-            if (setting.get_string ("units") != "metric") {
-                unit_box.active = 1;
-            } else {
+            unit_box.append_text (_("Metric System") + "  (\u00B0" + "C - m/s)");
+            unit_box.append_text (_("Imperial System") + "  (\u00B0" + "F - mph)");
+            unit_box.append_text (_("UK System") + "  (\u00B0" + "C - mph)");
+            if (setting.get_string ("units") == "metric") {
                 unit_box.active = 0;
+            } else if (setting.get_string ("units") == "imperial") {
+                unit_box.active = 1;
+            } else  {
+                unit_box.active = 2;
             }
-
             unit_box.changed.connect (() => {
                 if (unit_box.active == 0) {
                     setting.set_string ("units", "metric");
-                } else {
+                } else if (unit_box.active == 1) {
                     setting.set_string ("units", "imperial");
+                } else {
+                    setting.set_string ("units", "british");
                 }
             });
 
@@ -256,10 +260,7 @@ namespace  Weather.Widgets {
             //Actions
             this.add_button (_("Close"), Gtk.ResponseType.CANCEL);
             this.response.connect (() => {
-                this.destroy ();
-                Gtk.Widget child = window.get_child ();
-                window.remove (child);
-                child.destroy ();
+                (window.get_child ()).destroy ();
                 if (setting.get_string ("apiid") == "") {
                     var apikey = new Weather.Widgets.Apikey (window, header);
                     window.add (apikey);
@@ -275,6 +276,8 @@ namespace  Weather.Widgets {
                     window.add (current);
                 }
                 window.show_all ();
+                header.restart_switcher ();
+                destroy ();
             });
 
             this.show_all ();

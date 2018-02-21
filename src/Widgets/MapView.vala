@@ -29,26 +29,39 @@ namespace Weather.Widgets {
             string lat = "";
             string lon = "";
             var setting = new Settings ("com.github.bitseater.weather");
-            string lang = Gtk.get_default_language ().to_string ().substring (0, 2);
             string apiid = setting.get_string ("apiid");
             string units = setting.get_string ("units");
             string idplace = setting.get_string ("idplace");
-            string uriend = "&APPID=" + apiid + "&units=" + units + "&lang=" + lang;
-            string uri = Constants.OWM_API_ADDR + "weather?id=" + idplace + uriend;
+            string uri = Constants.OWM_API_ADDR + "weather?id=" + idplace + "&APPID=" + apiid;
             string temp_un = "";
             string prec_un = "";
             string pres_un = "";
             string wspe_un = "";
-            if (units != "metric") {
-                temp_un = "_f";
-                prec_un = "_inph";
-                pres_un = "_inhg";
-                wspe_un = "_mph";
-            } else {
-                temp_un = "_c";
-                prec_un = "_mmph";
-                pres_un = "_hpa";
-                wspe_un = "_kmph";
+            switch (units) {
+                case "metric":
+                    temp_un = "_c";
+                    prec_un = "_mmph";
+                    pres_un = "_hpa";
+                    wspe_un = "_kmph";
+                    break;
+                case "imperial":
+                    temp_un = "_f";
+                    prec_un = "_inph";
+                    pres_un = "_inhg";
+                    wspe_un = "_mph";
+                    break;
+                case "british":
+                    temp_un = "_c";
+                    prec_un = "_inph";
+                    pres_un = "_hpa";
+                    wspe_un = "_mph";
+                    break;
+                default:
+                    temp_un = "_c";
+                    prec_un = "_mmph";
+                    pres_un = "_hpa";
+                    wspe_un = "_kmph";
+                    break;
             }
 
             var session = new Soup.Session ();
@@ -79,7 +92,7 @@ namespace Weather.Widgets {
             //Define switcher
             var showmap = new Gtk.Stack ();
             showmap.transition_type = Gtk.StackTransitionType.CROSSFADE;
-            showmap.transition_duration = 1500;
+            showmap.transition_duration = 1000;
             var switchmap = new Gtk.StackSwitcher ();
             switchmap.stack = showmap;
             switchmap.homogeneous = true;

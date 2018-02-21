@@ -50,13 +50,13 @@
     </key>
 
     <key name="indicator" type="b">
-        <default>true</default>
+        <default>false</default>
         <summary>Use indicator</summary>
         <description>Mark to use app indicator and minimized to system tray.</description>
     </key>
 
     <key name="minimized" type="b">
-        <default>true</default>
+        <default>false</default>
         <summary>Minimized on start</summary>
         <description>When use indicator, start with minimized window.</description>
     </key>

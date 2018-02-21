@@ -1,3 +1,13 @@
+com.github.bitseater.weather (0.6.0) xenial; urgency=medium
+
+    * Change appname to METEO.
+    * Save currenta data to cache file.
+    * Show cache file in text format.
+    * Add new translations: pt_PT and pt_BR.
+    * Reload button when own API key.
+
+ -- Carlos Suárez <bitseater@gmail.com>  Wed, 21 Feb 2018 01:30:00 +0100
+
 com.github.bitseater.weather (0.5.3) xenial; urgency=medium
 
     * Change to meson build.

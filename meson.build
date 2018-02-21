@@ -1,5 +1,5 @@
 # Project name-language-version
-project('com.github.bitseater.weather', ['vala', 'c'], version: '0.5.4')
+project('com.github.bitseater.weather', ['vala', 'c'], version: '0.6.0')
 
 # Main libraries
 gnome = import('gnome')
@@ -73,6 +73,7 @@ executable(
     'src/Widgets/Preferences.vala',
     'src/Widgets/Ticket.vala',
     'src/Widgets/Today.vala',
+    'src/Widgets/ViewFile.vala',
     asresources,
     c_args: c_args,
     dependencies: [
@@ -80,6 +81,7 @@ executable(
         dependency('gobject-2.0'),
         dependency('glib-2.0'),
         dependency('gtk+-3.0'),
+        dependency('granite'),
         dependency('libsoup-2.4'),
         dependency('json-glib-1.0'),
         dependency('clutter-1.0'),
