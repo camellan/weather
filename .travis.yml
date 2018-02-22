@@ -1,12 +1,20 @@
 sudo: required
 language: generic
-
 services:
-    - docker
-
+- docker
 script:
-    - wget -O- https://raw.githubusercontent.com/harisvsulaiman/element-build/master/script.sh | sh -
-
+- wget -O- https://raw.githubusercontent.com/harisvsulaiman/element-build/master/script.sh
+  | sh -
 branches:
-    except:
-        - /^debian\/\d/
+  except:
+  - /^debian\/\d/
+after_success:
+- openssl aes-256-cbc -K $encrypted_ba0806396865_key -iv $encrypted_ba0806396865_iv
+  -in .snapcraft/travis_snapcraft.cfg -out .snapcraft/snapcraft.cfg -d
+deploy:
+  'on':
+    branch: master
+  provider: script
+  script: docker run -v $(pwd):$(pwd) -t snapcore/snapcraft sh -c "apt update -qq
+    && cd $(pwd) && snapcraft && snapcraft push *.snap --release edge"
+  skip_cleanup: true
