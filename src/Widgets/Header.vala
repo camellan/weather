@@ -65,7 +65,6 @@ namespace Weather.Widgets {
             upd_button = new Gtk.Button.from_icon_name ("view-refresh-symbolic", Gtk.IconSize.BUTTON);
             upd_button.tooltip_text = _("Update conditions");
             upd_button.sensitive = false;
-            change_visible (false);
 
             loc_button.clicked.connect (() => {
                 (window.get_child () as Gtk.Widget).destroy ();
@@ -91,6 +90,7 @@ namespace Weather.Widgets {
             butbox.hexpand=false;
             foreach (Gtk.Button button in buttons) {
                 (button as Gtk.ToggleButton).draw_indicator = false;
+                (button as Gtk.Widget).sensitive = false;
                 butbox.pack_start (button, false, true, 0);
             }
             data_but.toggled.connect (() => {
@@ -102,10 +102,13 @@ namespace Weather.Widgets {
                 this.show_mapwindow ();
             });
             pack_start (butbox);
+            change_visible (false);
         }
 
         public void change_visible (bool s) {
             this.loc_button.sensitive = s;
+            this.maps_but.sensitive = s;
+            this.data_but.sensitive = s;
         }
 
         public void restart_switcher () {
