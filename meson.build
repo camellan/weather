@@ -81,7 +81,6 @@ executable(
         dependency('gobject-2.0'),
         dependency('glib-2.0'),
         dependency('gtk+-3.0'),
-        dependency('granite'),
         dependency('libsoup-2.4'),
         dependency('json-glib-1.0'),
         dependency('clutter-1.0'),

@@ -30,7 +30,7 @@ namespace Weather.Widgets {
             modal = true;
 
             var filelabel = new Gtk.Label (_("Current Weather Data"));
-            filelabel.get_style_context ().add_class (Granite.STYLE_CLASS_H4_LABEL);
+            filelabel.get_style_context ().add_class ("preferences");
             filelabel.halign = Gtk.Align.START;
 
             var scrolled = new Gtk.ScrolledWindow (null, null);

@@ -20,14 +20,9 @@
 */
 namespace Weather {
 
-    public class WeatherApp : Granite.Application {
+    public class WeatherApp : Gtk.Application {
 
         public MainWindow window;
-
-        construct {
-            program_name = Constants.APP_NAME;
-            build_version = Constants.VERSION;
-        }
 
         public WeatherApp () {
             application_id = "com.github.bitseater.weather";
@@ -39,9 +34,6 @@ namespace Weather {
             Intl.textdomain (package_name);
             Intl.bindtextdomain (package_name, Constants.LOCALE_DIR);
             Intl.bind_textdomain_codeset (package_name, "UTF-8");
-
-            //Debug mode
-            Granite.Services.Logger.DisplayLevel = Granite.Services.LogLevel.DEBUG;
         }
 
         public override void activate () {
