@@ -2,7 +2,8 @@
 
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bitseater.weather)﻿ 
 
-![Release 0.6.1](./data/readme/release-0.6.1-orange.svg) 
+[![Release 0.6.1](https://img.shields.io/badge/Release-0.6.1-orange.svg)](https://github.com/bitseater/weather/releases) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+
 
 ### Know the forecast of the next hours & days.
 
