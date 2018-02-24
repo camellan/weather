@@ -1,6 +1,7 @@
 # METEO
 
-[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bitseater.weather)﻿
+[![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bitseater.weather)﻿ 
+![Release 0.6.0](./data/readme/release-0.6.0-orange.svg) 
 
 ### Know the forecast of the next hours & days.
 
