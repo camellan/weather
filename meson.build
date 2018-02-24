@@ -1,5 +1,5 @@
 # Project name-language-version
-project('com.github.bitseater.weather', ['vala', 'c'], version: '0.6.0')
+project('com.github.bitseater.weather', ['vala', 'c'], version: '0.6.1')
 
 # Main libraries
 gnome = import('gnome')

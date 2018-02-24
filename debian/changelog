@@ -1,4 +1,4 @@
-com.github.bitseater.weather (0.6.0) xenial; urgency=medium
+com.github.bitseater.weather (0.6.1) xenial; urgency=medium
 
     * Change appname to METEO.
     * Save currenta data to cache file.

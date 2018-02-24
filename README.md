@@ -1,7 +1,8 @@
 # METEO
 
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bitseater.weather)﻿ 
-![Release 0.6.0](./data/readme/release-0.6.0-orange.svg) 
+
+![Release 0.6.1](./data/readme/release-0.6.1-orange.svg) 
 
 ### Know the forecast of the next hours & days.
 
@@ -43,7 +44,7 @@ For advanced users!
 
 ----
 
-#### New on release 0.6.0:
+#### New on release 0.6.1:
 
 - Change appname to METEO.
 - Save currenta data to cache file.
@@ -51,7 +52,7 @@ For advanced users!
 - Add new translations: pt_PT and pt_BR.
 - Reload button when own API key.
 
-Fixed issues: #28 #29 #34 #36 #39 #44 #46 #47 #48
+Fixed issues: #28 #29 #34 #36 #39 #44 #46 #47 #48 #54
 
 ----
 #### Other screenshots:
