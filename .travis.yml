@@ -4,9 +4,11 @@ language: generic
 services:
     - docker
 
+skip_cleanup: true
+
 script:
     - wget -O- https://raw.githubusercontent.com/harisvsulaiman/element-build/master/script.sh | sh -
-    - bash -ex builders/appimage.sh || true
+    - bash -ex data/appimage.sh || true
 
 branches:
 except:
