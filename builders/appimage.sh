@@ -8,8 +8,8 @@ set -e
 ########################################################################
 echo "Starting AppImage process"
 
-cd "$TRAVIS_BUILD_DIR/build"
-OUTDIR="$TRAVIS_BUILD_DIR/deploy"
+cd "/build"
+OUTDIR="/deploy"
 
 APP="fltk-dash"
 # this variable is used in the sourced functions below

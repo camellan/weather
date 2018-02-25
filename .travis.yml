@@ -6,7 +6,7 @@ services:
 
 script:
     - wget -O- https://raw.githubusercontent.com/harisvsulaiman/element-build/master/script.sh | sh -
-    - bash -ex appimage/appimage.sh || true
+    - bash -ex builders/appimage.sh || true
 
 branches:
 except:
