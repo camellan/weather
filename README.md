@@ -2,7 +2,8 @@
 
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bitseater.weather)﻿ 
 
-[![Release 0.6.1](https://img.shields.io/badge/Release-0.6.1-orange.svg)](https://github.com/bitseater/weather/releases) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) ![Travis CI](https://travis-ci.org/bitseater/weather.svg?branch=master) 
+[![Release 0.6.1](https://img.shields.io/badge/Release-0.6.1-orange.svg)](https://github.com/bitseater/weather/releases) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Travis CI](https://travis-ci.org/bitseater/weather.svg?branch=master)](https://travis-ci.org/bitseater/weather/builds/) [![Flatpak](
+https://img.shields.io/badge/flatpak-download-brightgreen.svg)](https://flathub.org/repo/appstream/com.github.bitseater.weather.flatpakref)
 
 
 ### Know the forecast of the next hours & days.
@@ -48,7 +49,7 @@ For advanced users!
 #### New on release 0.6.1:
 
 - Change appname to METEO.
-- Save currenta data to cache file.
+- Save current data to cache file.
 - Show cache file in text format.
 - Add new translations: pt_PT and pt_BR.
 - Reload button when own API key.
@@ -65,5 +66,4 @@ Fixed issues: #28 #29 #34 #36 #39 #44 #46 #47 #48 #54
 ![Screenshot](./data/screens/screenshot_3.png  "Weather")
 
 **Indicator in wingpanel / system tray:**
-
 ![Screenshot](./data/screens/screenshot_4.png  "Weather")
