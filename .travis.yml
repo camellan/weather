@@ -4,7 +4,8 @@ language: generic
 services:
     - docker
 
-skip_cleanup: true
+deploy:
+  skip_cleanup: true
 
 script:
     - wget -O- https://raw.githubusercontent.com/harisvsulaiman/element-build/master/script.sh | sh -
