@@ -51,6 +51,7 @@ parts:
     elementary:
         plugin: nil
         prepare: |
+            apt install software-properties-common
             add-apt-repository -y ppa:elementary-os/stable
             add-apt-repository -y ppa:elementary-os/os-patches
             echo "Package: *" > /etc/apt/preferences.d/elementary-stable
@@ -69,6 +70,7 @@ parts:
         plugin: meson
         meson-parameters: [--prefix=/usr]
         build-packages:
+            - appstream
             - desktop-file-utils
             - build-essential
             - gettext
