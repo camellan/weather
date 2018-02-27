@@ -24,6 +24,7 @@ deploy:
     - $APP_NAME_$VERSION_$ARCH.deb
     - $APP_NAME_$VERSION_$ARCH.rpm
     - $APP_NAME_$VERSION_$ARCH.AppImage
+    - $APP_NAME_$VERSION_$ARCH.snap
   skip_cleanup: true
   on:
     tags: true

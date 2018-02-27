@@ -51,16 +51,16 @@ parts:
     elementary:
         plugin: nil
         prepare: |
-            sudo add-apt-repository -y ppa:elementary-os/stable
-            sudo add-apt-repository -y ppa:elementary-os/os-patches
-            echo "Package: *" > sudo /etc/apt/preferences.d/elementary-stable
-            echo "Pin: release o=LP-PPA-elementary-os-stable" >> sudo /etc/apt/preferences.d/elementary-stable
-            echo "Pin-Priority: 1000" >> sudo /etc/apt/preferences.d/elementary-stable
-            echo "Package: *" > sudo /etc/apt/preferences.d/elementary-patches
-            echo "Pin: release o=LP-PPA-elementary-os-os-patches" >> sudo /etc/apt/preferences.d/elementary-patches
-            echo "Pin-Priority: 1000" >> sudo /etc/apt/preferences.d/elementary-patches
-            sudo apt update
-            sudo apt dist-upgrade -y
+            add-apt-repository -y ppa:elementary-os/stable
+            add-apt-repository -y ppa:elementary-os/os-patches
+            echo "Package: *" > /etc/apt/preferences.d/elementary-stable
+            echo "Pin: release o=LP-PPA-elementary-os-stable" >> /etc/apt/preferences.d/elementary-stable
+            echo "Pin-Priority: 1000" >> /etc/apt/preferences.d/elementary-stable
+            echo "Package: *" > /etc/apt/preferences.d/elementary-patches
+            echo "Pin: release o=LP-PPA-elementary-os-os-patches" >> /etc/apt/preferences.d/elementary-patches
+            echo "Pin-Priority: 1000" >> /etc/apt/preferences.d/elementary-patches
+            apt update
+            apt dist-upgrade -y
 
     meteo:
         after: [granite, elementary, desktop-gtk3, snapcraft-preload]
