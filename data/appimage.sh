@@ -7,24 +7,30 @@ set -e
 # For more information, see http://appimage.org/
 ########################################################################
 echo "Starting AppImage process"
+get_desktopintegration(){
+REALBIN=$(grep -o "^Exec=.*" *.desktop | sed -e 's|Exec=||g' | cut -d " " -f 1 | head -n 1)
+cat_file_from_url https://raw.githubusercontent.com/AppImage/AppImageKit/master/desktopintegration > ./usr/bin/$REALBIN.wrapper
+chmod a+x ./usr/bin/$REALBIN.wrapper
 
-cd "/build"
-OUTDIR="/deploy"
+sed -i -e "s|^Exec=$REALBIN|Exec=$REALBIN.wrapper|g" $1.desktop
+}
+cd "$TRAVIS_BUILD_DIR/build"
+OUTDIR="$TRAVIS_BUILD_DIR/deploy"
 
-APP="fltk-dash"
+APP="meteo"
 # this variable is used in the sourced functions below
 LOWERAPP="${APP}"
 RELEASE=''
 if [ -n "$TRAVIS_TAG" ]
 then
-  VERSION="$TRAVIS_TAG"
-  RELEASE="$TRAVIS_TAG"
+VERSION="$TRAVIS_TAG"
+RELEASE="$TRAVIS_TAG"
 else
-  VERSION="$TRAVIS_COMMIT"
+VERSION="$TRAVIS_COMMIT"
 fi
 if [ -z "$RELEASE" ]
 then
-  RELEASE="$VERSION"
+RELEASE="$VERSION"
 fi
 APPDIR="/tmp/$APP/$APP.AppDir"
 export ARCH=$(arch)
@@ -58,8 +64,8 @@ delete_blacklisted
 
 if [ -d usr/lib/$ARCH-linux-gnu ]
 then
-  mv usr/lib/$ARCH-linux-gnu/* usr/lib/
-  rmdir usr/lib/$ARCH-linux-gnu
+mv usr/lib/$ARCH-linux-gnu/* usr/lib/
+rmdir usr/lib/$ARCH-linux-gnu
 fi
 
 rm -rf usr/include || true
@@ -71,7 +77,7 @@ rmdir usr/lib/mesa || true
 
 find . -name *.so -or -name *.so.* -exec strip {} \;
 for f in $(find . -type f -executable -exec file -- {} \; | grep ELF | cut -d: -f1); do
-  strip "$f"
+strip "$f"
 done
 
 ########################################################################

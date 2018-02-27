@@ -4,13 +4,17 @@ language: generic
 services:
     - docker
 
-deploy:
-  skip_cleanup: true
+branches:
+  except:
+    - /^debian\/\d/
 
 script:
     - wget -O- https://raw.githubusercontent.com/harisvsulaiman/element-build/master/script.sh | sh -
+
+after_success:
     - bash -ex data/appimage.sh || true
 
-branches:
-except:
-    - /^debian\/\d/
+deploy:
+  skip_cleanup: true
+
+
