@@ -8,7 +8,7 @@ description: |
 grade: devel
 confinement: devmode
 
-icon: gui/meteo.svg
+icon: data/com.github.bitseater.weather.svg
 
 plugs:
     elementary-platform-loki:
