@@ -21,6 +21,30 @@ Developed with Vala & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
 - Awesome maps with weather info.
 - System tray indicator.
 
+### How To Install
+
+#### For elementary OS:
+
+You can get it on [AppCenter](https://appcenter.elementary.io/com.github.bitseater.weather).
+
+#### For Ubuntu and derivates:
+
+You can add my ppa at Launchpad.net:
+
+	sudo add-apt-repository ppa:bitseater/ppa
+	sudo apt update
+	sudo apt install com.github.bitseater.weather
+
+#### For Debian and derivates:
+
+You can download the last signed .deb package from [Releases](https://github.com/bitseater/weather/releases) page.
+
+#### Flatpak package:
+
+Also, you can install the flatpak package:
+
+	flatpak install --from https://flathub.org/repo/appstream/com.github.bitseater.weather.flatpakref
+
 ### How To Build
 
 Library Dependencies :

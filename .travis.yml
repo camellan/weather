@@ -2,29 +2,10 @@ sudo: required
 language: generic
 services:
     - docker
-branches:
-  except:
-  - "/^debian\\/\\d/"
-
-env:
-  global:
-    - VERSION=0.6.1
-    - APP_NAME=com.github.bitseater.weather
-    - ARCH=amd64
-
 script:
-  - wget -O- https://raw.githubusercontent.com/harisvsulaiman/element-build/master/script.sh | sh -
-  - bash -ex appimage/appimage.sh || true
+    - wget -O- https://raw.githubusercontent.com/harisvsulaiman/element-build/master/script.sh | sh -
 
-deploy:
-  provider: releases
-  api-key:
-    secure: BqOX6vWDXZJe4jMKaZ41kG/BKDY74dmezvv5tuY47tdtZe71fLCn3543oOwmAF7sSSA266yZaDiZsIIrKCqbeCfQPYCGKFR0qqvuUKhpUohAow8TjK2UrLCZ0DTM5tj1TQo9411LfpBthwJtCvJk5iaRVjHrQIz3esOsZIo9FQb+x7ZLppyRFQgyK6ExPu+sjF8jtiHQQDE+24J4L1ew+b1gcswWNkSaxtsZZpyOmj3yLeC2R/epjS93OWtA74oNN+tVe55Co7pWZrARjoA01v/ckz5UPiRRj/2KOVDoJZ6rZBymW91TGknxnsQBaAx8X8XDEaj7LTgc9e51FhXEDCAKWbiggAbjUyTjrHmcQPugVZUaQ+oFHA7Wn6ueClxWMDYbJ+3/5nLcl0gTTk/x1gUytpVXDrr++KckELQe2tQUY/wr+Qq3WFEQ2nUNTi494UVVPWW2d59Ai1yiC5ptBtqs+vZ2ksHzWuyBENTFxI7ZGpTa/FWmDyQT6neeMEXYOOeKNb4E0NKQ44zgotVGA9kFFnq2GPu5IAkJP8VXbvJh1Cht5swfP6uyi1FwhoeQc+jbH1tcZ0O7L/hR8L3oXbKchsg0BnyQLt5EdciPCwemIzEdSrQQ6Qr2WdAiu/v9rgIZ4bUKCnz/cqR68sdrMgDMfo/uVdB6h8f/9l+e3/8=
-  file_glob: true
-  file:
-    - *.AppImage
-  skip_cleanup: true
-  on:
-    tags: true
-    repo: bitseater/weather
-    branch: master
+branches: master
+
+except:
+    - /^debian\/\d/
