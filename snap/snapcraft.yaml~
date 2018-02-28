@@ -46,7 +46,7 @@ parts:
             - build-essential
             - valac
         stage-packages:
-            - valac-0.36-vapi
+            - valac-0.30-vapi
 
     elementary:
         plugin: nil
