@@ -64,7 +64,7 @@ parts:
             apt dist-upgrade -y
 
     meteo:
-        after: [granite, elementary, desktop-gtk3, snapcraft-preload]
+        after: [elementary, desktop-gtk3, snapcraft-preload]
         source: https://github.com/bitseater/weather.git
         source-type: git
         plugin: meson
