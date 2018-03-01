@@ -18,7 +18,7 @@ plugs:
 
 apps:
   meteo:
-    command: $SNAP/bin/desktop-launch $SNAP/bin/snapcraft-preload $SNAP/usr/bin/com.github.bitseater.weather
+    command: bin/desktop-launch bin/snapcraft-preload $SNAP/usr/bin/com.github.bitseater.weather
     plugs:
         - x11
         - desktop
