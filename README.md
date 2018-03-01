@@ -2,7 +2,7 @@
 
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bitseater.weather)﻿ 
 
-[![Release 0.6.1](https://img.shields.io/badge/Release-0.6.1-orange.svg)](https://github.com/bitseater/weather/releases) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Travis CI](https://travis-ci.org/bitseater/weather.svg?branch=master)](https://travis-ci.org/bitseater/weather/builds/) [![Flatpak](https://img.shields.io/badge/flatpak-download-lightgrey.svg)](https://flathub.org/repo/appstream/com.github.bitseater.weather.flatpakref) [![Snap Status](https://build.snapcraft.io/badge/bitseater/weather.svg?Built%20and%20released)](https://build.snapcraft.io/user/bitseater/weather)
+[![Release 0.6.1](https://img.shields.io/badge/Release-0.6.1-orange.svg)](https://github.com/bitseater/weather/releases) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Travis CI](https://travis-ci.org/bitseater/weather.svg?branch=master)](https://travis-ci.org/bitseater/weather/builds/) [![Flatpak](https://img.shields.io/badge/flatpak-download-lightgrey.svg)](https://flathub.org/repo/appstream/com.github.bitseater.weather.flatpakref) [![Snap Status](https://build.snapcraft.io/badge/bitseater/weather.svg)](https://build.snapcraft.io/user/bitseater/weather)
 
 
 ### Know the forecast of the next hours & days.
@@ -20,6 +20,8 @@ Developed with Vala & Gtk,using OpenWeatherMap API (https://openweathermap.org/)
 - Choose your city, with maps help.
 - Awesome maps with weather info.
 - System tray indicator.
+
+----
 
 ### How To Install
 
@@ -47,7 +49,9 @@ Also, you can install the flatpak package:
 
 #### Snap package:
 
-Snap package will be available soon. You can see the progress build line at [Snapcraft.io](https://build.snapcraft.io/user/bitseater/weather) 
+Snap package will be available soon. You can see the build progress at [snapcraft.io](https://build.snapcraft.io/user/bitseater/weather) 
+
+----
 
 ### How To Build
 
@@ -84,7 +88,7 @@ For advanced users!
 Fixed issues: #28 #29 #34 #36 #39 #44 #46 #47 #48 #54
 
 ----
-#### Other screenshots:
+### Other screenshots:
 
 **A map with temperatures by Dark Sky**
 ![Screenshot](./data/screens/screenshot_2.png  "Weather")
