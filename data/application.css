@@ -20,3 +20,6 @@
 .ticket:hover {
     opacity: 1.0;
 }
+.comment {
+    font-size: 90%;
+}

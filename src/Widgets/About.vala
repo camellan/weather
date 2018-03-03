@@ -31,6 +31,7 @@ namespace  Weather.Widgets {
             authors = {"Carlos Suárez <bitseater@gmail.com>"};
             comments = _("A forecast application with OpenWeatherMap API");
             copyright = "Copyright \xc2\xa9 Carlos Suárez - 2017/2018";
+            documenters = authors;
             license_type = Gtk.License.GPL_3_0;
             logo_icon_name = Constants.ICON_NAME;
             program_name = Constants.APP_NAME;
@@ -46,8 +47,10 @@ namespace  Weather.Widgets {
             string[] colaborators = {"Andrey Kultyapov <camellan@yandex.ru>",
                                     "Cassidy James Blaede https://github.com/cassidyjames"};
             string[] special_thx = {"Bilal Elmoussaoui <bil.elmoussaoui@gmail.com>"};
+            string[] based = {"Sam Hewitt <sam@snwh.org>"};
             add_credit_section (_("Colaborators"), colaborators);
             add_credit_section (_("Special Thanks to"), special_thx);
+            add_credit_section (_("Based in a mockup by"), based);
 
             response.connect (() => {
                     destroy ();

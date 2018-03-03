@@ -23,8 +23,10 @@ namespace  Weather.Widgets {
     public class Apikey : Gtk.Overlay {
 
         private Settings setting;
+        private Weather.MainWindow window;
 
         public Apikey (Weather.MainWindow window, Weather.Widgets.Header header) {
+            this.window = window;
             var grid = new Gtk.Grid ();
             grid.valign = Gtk.Align.CENTER;
             grid.halign = Gtk.Align.CENTER;
@@ -40,8 +42,8 @@ namespace  Weather.Widgets {
             var apilogo = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.DIALOG);
             apilogo.halign = Gtk.Align.CENTER;
             grid.attach (apilogo, 0, 0, 1, 1);
-            var apilabel = new Gtk.Label (_("<big>Enter your OpenWeatherMap API key</big>\n"));
-            apilabel.use_markup = true;
+            var apilabel = new Gtk.Label (_("Enter your OpenWeatherMap API key"));
+            apilabel.get_style_context ().add_class ("resumen");
             apilabel.halign = Gtk.Align.CENTER;
             grid.attach (apilabel, 0, 1, 1, 1);
             var apibox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
@@ -60,8 +62,9 @@ namespace  Weather.Widgets {
             apibox.pack_start (apibutton, false, false, 0);
             grid.attach (apibox, 0, 2, 1, 1);
             var apilink = new Gtk.Label ("");
-            apilink.label = _("<small>If you don't have it, please visit: <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>");
+            apilink.label = _("If you don't have it, please visit:") + "  <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a>  " + _("or just :");
             apilink.use_markup = true;
+            apilink.get_style_context ().add_class ("comment");
             apilink.halign = Gtk.Align.CENTER;
             grid.attach (new Gtk.Label (" "), 0, 3, 1, 1);
             grid.attach (apilink, 0, 4, 1, 1);
@@ -70,17 +73,18 @@ namespace  Weather.Widgets {
             grid.attach (apibuild, 0, 5, 1, 1);
             apibuild.toggled.connect (() => {
                 if (apibuild.active) {
-                // Button is checked
-                apibutton.sensitive = true;
-                apientry.visibility = false;
-                apientry.set_text (Constants.API_KEY);
-                apientry.sensitive = false;
+                    // Button is checked
+                    apibutton.sensitive = true;
+                    apientry.visibility = false;
+                    apientry.set_text (Constants.API_KEY);
+                    apientry.sensitive = false;
+                    on_select_key ();
                 } else {
-                // Button is not checked
-                apientry.visibility = true;
-                apientry.set_text ("");
-                apientry.sensitive = true;
-                apibutton.sensitive = false;
+                    // Button is not checked
+                    apientry.visibility = true;
+                    apientry.set_text ("");
+                    apientry.sensitive = true;
+                    apibutton.sensitive = false;
                 }
             });
             apibutton.clicked.connect (() => {
@@ -129,9 +133,49 @@ namespace  Weather.Widgets {
                     return true;
                 }
             } catch (Error e) {
-                stderr.printf (_("Found an error"));
+                debug (e.message);
                 return false;
             }
+        }
+
+        private void on_select_key () {
+            var msg = new Gtk.Dialog ();
+            msg.resizable = false;
+            msg.deletable = false;
+            msg.set_transient_for (window);
+            var header = new Gtk.Label (_("Using built-in API key:"));
+            header.halign = Gtk.Align.START;
+            header.get_style_context ().add_class ("preferences");
+            var lab1 = new Gtk.Label (_("- You'll have limited access to API"));
+            lab1.halign = Gtk.Align.START;
+            var lab2 = new Gtk.Label (_("- You can't use the update button"));
+            lab2.halign = Gtk.Align.START;
+            var lab3 = new Gtk.Label (_("- Use only to try this application"));
+            lab3.halign = Gtk.Align.START;
+            var msgico = new Gtk.Image.from_icon_name ("dialog-information", Gtk.IconSize.DIALOG);
+            msgico.valign = Gtk.Align.START;
+            var content = new Gtk.Grid ();
+            content.margin_start = 12;
+            content.margin_end = 24;
+            content.row_spacing = 6;
+            content.column_spacing = 12;
+            content.attach (msgico, 0, 0, 1, 4);
+            content.attach (header, 1, 0, 1, 1);
+            content.attach (lab1, 1, 1, 1, 1);
+            content.attach (lab2, 1, 2, 1, 1);
+            content.attach (lab3, 1, 3, 1, 1);
+            content.show_all ();
+            var msgbutton = new Gtk.Button.with_label (_("Close"));
+            msgbutton.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            msg.get_content_area ().add (content);
+            msg.get_action_area ().margin = 6;
+            msg.get_action_area ().margin_top = 12;
+            msg.add_action_widget (msgbutton, Gtk.ResponseType.CLOSE);
+            msg.get_action_area ().show_all ();
+            msg.response.connect (() => {
+                msg.destroy ();
+            });
+            msg.show ();
         }
     }
 }
