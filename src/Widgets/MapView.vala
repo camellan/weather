@@ -108,8 +108,7 @@ namespace Weather.Widgets {
             tos.halign = Gtk.Align.END;
             var mbutton = new Gtk.Button.with_label (base_lab + "OpenWeatherMap");
             mbutton.clicked.connect (() => {
-                    (window.get_child () as Gtk.Widget).destroy ();
-                    window.add (new Weather.Widgets.MapViewOWM (window, header));
+                    window.change_view (new Weather.Widgets.MapViewOWM (window, header));
                     window.show_all ();
             });
             //Pack combo to actionbar

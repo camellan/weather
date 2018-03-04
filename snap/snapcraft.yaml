@@ -69,4 +69,5 @@ parts:
             - libappindicator3-1
             - libcanberra-gtk3-module
         install: |
+            apt install -y python3-setuptools
             glib-compile-schemas $SNAP/usr/share/glib-2.0/schemas

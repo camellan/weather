@@ -107,6 +107,13 @@ namespace  Weather.Widgets {
                     attach (time, 0, 5+b, 2, 1);
                     attach (icon, 2, 5+b, 1, 1);
                     attach (temp, 3, 5+b, 2, 1);
+
+                    //Record data
+                    var file = new File.new_for_path (Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME + "/" + "forecast.json");
+                    if (file.query_exists ()) {
+                        file.delete ();
+                    }
+
                 }
             } catch (Error e) {
                 debug (e.message);
