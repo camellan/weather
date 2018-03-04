@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
+* Copyright (c) 2017-2018 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
 * License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
+* version 3 of the License, or (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -12,40 +12,34 @@
 * General Public License for more details.
 *
 * You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-* Boston, MA 02111-1307, USA.
+* License along with this program; If not, see <http://www.gnu.org/licenses/>.
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace  Weather.Widgets {
 
-    public class Apikey : Gtk.Overlay {
+    public class Apikey : Gtk.Grid {
 
         private Settings setting;
         private Weather.MainWindow window;
 
         public Apikey (Weather.MainWindow window, Weather.Widgets.Header header) {
             this.window = window;
-            var grid = new Gtk.Grid ();
-            grid.valign = Gtk.Align.CENTER;
-            grid.halign = Gtk.Align.CENTER;
-            grid.row_spacing = 10;
-            grid.column_spacing = 10;
-            add_overlay (grid);
+            valign = Gtk.Align.CENTER;
+            halign = Gtk.Align.CENTER;
+            row_spacing = 10;
+            column_spacing = 10;
 
             setting = new Settings ("com.github.bitseater.weather");
             var units = Weather.Utils.get_units ();
             setting.set_string ("units", units);
-            var ticket = new Weather.Widgets.Ticket ("");
-            add_overlay (ticket);
             var apilogo = new Gtk.Image.from_icon_name ("avatar-default", Gtk.IconSize.DIALOG);
             apilogo.halign = Gtk.Align.CENTER;
-            grid.attach (apilogo, 0, 0, 1, 1);
+            attach (apilogo, 0, 0, 1, 1);
             var apilabel = new Gtk.Label (_("Enter your OpenWeatherMap API key"));
             apilabel.get_style_context ().add_class ("resumen");
             apilabel.halign = Gtk.Align.CENTER;
-            grid.attach (apilabel, 0, 1, 1, 1);
+            attach (apilabel, 0, 1, 1, 1);
             var apibox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
             var apientry = new Gtk.Entry ();
             apientry.width_chars = 35;
@@ -60,17 +54,17 @@ namespace  Weather.Widgets {
             });
             apibox.pack_start (apientry, true, false, 0);
             apibox.pack_start (apibutton, false, false, 0);
-            grid.attach (apibox, 0, 2, 1, 1);
+            attach (apibox, 0, 2, 1, 1);
             var apilink = new Gtk.Label ("");
             apilink.label = _("If you don't have it, please visit:") + "  <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a>  " + _("or just :");
             apilink.use_markup = true;
             apilink.get_style_context ().add_class ("comment");
             apilink.halign = Gtk.Align.CENTER;
-            grid.attach (new Gtk.Label (" "), 0, 3, 1, 1);
-            grid.attach (apilink, 0, 4, 1, 1);
+            attach (new Gtk.Label (" "), 0, 3, 1, 1);
+            attach (apilink, 0, 4, 1, 1);
             var apibuild = new Gtk.CheckButton.with_label (_("Use API key built-in"));
             apibuild.halign = Gtk.Align.CENTER;
-            grid.attach (apibuild, 0, 5, 1, 1);
+            attach (apibuild, 0, 5, 1, 1);
             apibuild.toggled.connect (() => {
                 if (apibuild.active) {
                     // Button is checked
@@ -94,25 +88,23 @@ namespace  Weather.Widgets {
                         setting.set_string ("apiid", apientry.get_text ());
                         if (setting.get_boolean ("auto")) {
                             Weather.Utils.geolocate ();
-                            (window.get_child () as Gtk.Widget).destroy ();
                             var current = new Weather.Widgets.Current (window, header);
-                            window.add (current);
+                            window.change_view (current);
                             window.show_all ();
                         } else {
-                            (window.get_child () as Gtk.Widget).destroy ();
                             var city = new Weather.Widgets.City (window, header);
-                            window.add (city);
+                            window.change_view (city);
                             window.show_all ();
                         }
                     } else {
-                        ticket.set_text (_("Wrong API Key. Please, try again."));
-                        ticket.reveal_child = true;
+                        window.ticket.set_text (_("Wrong API Key. Please, try again."));
+                        window.ticket.reveal_child = true;
                         apientry.set_text ("");
                         apibutton.sensitive = false;
                     }
                 } else {
-                    ticket.set_text (_("The API key cannot be empty."));
-                    ticket.reveal_child = true;
+                    window.ticket.set_text (_("The API key cannot be empty."));
+                    window.ticket.reveal_child = true;
                 }
             });
         }

@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
+* Copyright (c) 2017-2018 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
 * License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
+* version 3 of the License, or (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -12,9 +12,7 @@
 * General Public License for more details.
 *
 * You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-* Boston, MA 02111-1307, USA.
+* License along with this program; If not, see <http://www.gnu.org/licenses/>.
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
@@ -67,13 +65,11 @@ namespace Weather.Widgets {
             upd_button.sensitive = false;
 
             loc_button.clicked.connect (() => {
-                (window.get_child () as Gtk.Widget).destroy ();
-                window.add (new Weather.Widgets.City (window, this));
+                window.change_view (new Weather.Widgets.City (window, this));
                 window.show_all ();
             });
             upd_button.clicked.connect (() => {
-                (window.get_child () as Gtk.Widget).destroy ();
-                window.add (new Weather.Widgets.Current (window, this));
+                window.change_view (new Weather.Widgets.Current (window, this));
                 window.show_all ();
             });
             pack_end (app_button);
@@ -94,8 +90,7 @@ namespace Weather.Widgets {
                 butbox.pack_start (button, false, true, 0);
             }
             data_but.toggled.connect (() => {
-                window.remove (window.get_child ());
-                window.add (new Weather.Widgets.Current (window, this));
+                window.change_view (new Weather.Widgets.Current (window, this));
                 window.show_all ();
             });
             maps_but.toggled.connect (() => {

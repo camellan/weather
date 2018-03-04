@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
+* Copyright (c) 2017-2018 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
 * License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
+* version 3 of the License, or (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -12,9 +12,7 @@
 * General Public License for more details.
 *
 * You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-* Boston, MA 02111-1307, USA.
+* License along with this program; If not, see <http://www.gnu.org/licenses/>.
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
@@ -24,6 +22,8 @@ namespace Weather {
 
         public WeatherApp app;
         public AppIndicator.Indicator indicator;
+        private Gtk.Grid view;
+        public Weather.Widgets.Ticket ticket;
 
         public MainWindow (WeatherApp app) {
             this.app = app;
@@ -66,27 +66,46 @@ namespace Weather {
                 return true;
             });
 
+            //create main view
+            var overlay = new Gtk.Overlay ();
+            view = new Gtk.Grid ();
+            view.expand = true;
+            view.halign = Gtk.Align.FILL;
+            view.valign = Gtk.Align.FILL;
+            view.attach (new Gtk.Label("Loading ..."), 0, 0, 1, 1);
+            overlay.add_overlay (view);
+            ticket = new Weather.Widgets.Ticket ("");
+            overlay.add_overlay (ticket);
+
             // Set main content
             if (setting.get_string ("apiid") == "") {
                 var apikey = new Weather.Widgets.Apikey (this, header);
-                this.add (apikey);
+                change_view (apikey);
             } else if (setting.get_boolean ("auto")) {
                 Weather.Utils.geolocate ();
                 var current = new Weather.Widgets.Current (this, header);
-                this.add (current);
+                change_view (current);
             } else if (setting.get_string ("idplace") == "") {
                 var city = new Weather.Widgets.City (this, header);
-                this.add (city);
+                change_view (city);
             } else {
                 var current = new Weather.Widgets.Current (this, header);
-                this.add (current);
+                change_view (current);
             }
+            add (overlay);
             this.show_all ();
         }
 
         public void set_icolabel (string icon, string label) {
             this.indicator.set_icon_full (icon, icon);
             this.indicator.label = label;
+        }
+
+        public void change_view (Gtk.Widget widget) {
+            this.view.get_child_at (0,0).destroy ();
+            widget.expand = true;
+            this.view.attach (widget, 0, 0, 1, 1);
+            widget.show_all ();
         }
 
         public void create_indicator () {

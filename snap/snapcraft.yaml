@@ -38,7 +38,8 @@ parts:
         plugin: meson
         meson-parameters: [--prefix=/usr]
         prepare: |
-             pip3 install meson
+           apt-get install -y python-setuptools
+           pip3 install meson
         build-packages:
             - desktop-file-utils
             - python3-pip

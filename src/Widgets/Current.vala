@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
+* Copyright (c) 2017-2018 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
 * License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
+* version 3 of the License, or (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -12,9 +12,7 @@
 * General Public License for more details.
 *
 * You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-* Boston, MA 02111-1307, USA.
+* License along with this program; If not, see <http://www.gnu.org/licenses/>.
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
@@ -39,8 +37,7 @@ namespace Weather.Widgets {
 
             //Configure header nav
             header.show_mapwindow.connect (() => {
-                (window.get_child ()).destroy ();
-                window.add (new Weather.Widgets.MapView (window, header));
+                window.change_view (new Weather.Widgets.MapView (window, header));
                 window.show_all ();
             });
             if (setting.get_string ("apiid") != Constants.API_KEY) {
@@ -50,10 +47,8 @@ namespace Weather.Widgets {
             //Update countdown
             var interval = setting.get_int ("interval");
             GLib.Timeout.add_seconds (interval, () => {
-                (window.get_child ()).destroy ();
                 var current = new Weather.Widgets.Current (window, header);
-                window.add (current);
-                //window.show_all ();
+                window.change_view (current);
                 return false;
             }, GLib.Priority.DEFAULT);
         }

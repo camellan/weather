@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
+* Copyright (c) 2017-2018 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
 * License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
+* version 3 of the License, or (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -12,15 +12,13 @@
 * General Public License for more details.
 *
 * You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-* Boston, MA 02111-1307, USA.
+* License along with this program; If not, see <http://www.gnu.org/licenses/>.
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace  Weather.Widgets {
 
-    public class City : Gtk.Overlay {
+    public class City : Gtk.ScrolledWindow {
 
         private Settings setting;
         private Weather.Utils.MapCity mapcity;
@@ -28,12 +26,8 @@ namespace  Weather.Widgets {
         private Gtk.Box hbox;
 
         public City (Weather.MainWindow window, Weather.Widgets.Header header) {
-            var scrollbox = new Gtk.ScrolledWindow (null, null);
-            scrollbox.hscrollbar_policy = Gtk.PolicyType.NEVER;
-            scrollbox.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
-            var ticket = new Weather.Widgets.Ticket ("");
-            add_overlay (scrollbox);
-            add_overlay (ticket);
+            hscrollbar_policy = Gtk.PolicyType.NEVER;
+            vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
 
             header.change_visible (false);
             var entry = new Gtk.SearchEntry ();
@@ -50,9 +44,9 @@ namespace  Weather.Widgets {
             entry.activate.connect (() => {
                 box.forall ((row) => box.remove (row));
                 if (entry.get_text_length () < 3) {
-                    ticket.set_text (_("At least of 3 characters are required!"));
-                    ticket.reveal_child = true;
-                    ticket.showtime (1500);
+                    window.ticket.set_text (_("At least of 3 characters are required!"));
+                    window.ticket.reveal_child = true;
+                    window.ticket.showtime (1500);
                 } else {
                     var busqueda = new Geocode.Forward.for_string (entry.get_text ());
                     try {
@@ -102,10 +96,9 @@ namespace  Weather.Widgets {
                                     header.custom_title = null;
                                     header.title = town + ", " + state + " " + country;
                                     header.restart_switcher ();
-                                    (window.get_child ()).destroy ();
                                     var current = new Weather.Widgets.Current (window, header);
-                                    window.add (current);
-                                    current.show_all ();
+                                    window.change_view (current);
+                                    window.show_all ();
 
                                 });
                                 select.halign = Gtk.Align.END;
@@ -124,30 +117,29 @@ namespace  Weather.Widgets {
                             }
                         }
                     } catch (Error error) {
-                        ticket.set_text (_("No data"));
-                        ticket.reveal_child = true;
-                        ticket.showtime (1500);
+                        window.ticket.set_text (_("No data"));
+                        window.ticket.reveal_child = true;
+                        window.ticket.showtime (1500);
                     }
                 }
             });
             entry.backspace.connect (() => {
                 box.forall ((row) => box.remove (row));
                 if (entry.get_text_length () < 3) {
-                    ticket.set_text (_("At least of 3 characters are required!"));
-                    ticket.reveal_child = true;
-                    ticket.showtime (1500);
+                    window.ticket.set_text (_("At least of 3 characters are required!"));
+                    window.ticket.reveal_child = true;
+                    window.ticket.showtime (1500);
                 }
             });
             entry.icon_press.connect ((pos, event) => {
                     if (pos == Gtk.EntryIconPosition.SECONDARY) {
                         box.forall ((row) => box.remove (row));
-                        ticket.set_text (_("At least of 3 characters are required!"));
-                        ticket.reveal_child = true;
-                        ticket.showtime (1500);
+                        window.ticket.set_text (_("At least of 3 characters are required!"));
+                        window.ticket.reveal_child = true;
+                        window.ticket.showtime (1500);
                     }
             });
-
-            scrollbox.add (box);
+            add (box);
         }
 
         private static int64 update_id (string uri) {
