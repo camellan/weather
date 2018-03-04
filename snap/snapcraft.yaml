@@ -38,7 +38,7 @@ parts:
         plugin: meson
         meson-parameters: [--prefix=/usr]
         prepare: |
-           apt-get install -y python-setuptools
+           apt-get install -y python3-setuptools
            pip3 install meson
         build-packages:
             - desktop-file-utils
@@ -69,5 +69,4 @@ parts:
             - libappindicator3-1
             - libcanberra-gtk3-module
         install: |
-            apt install -y python3-setuptools
             glib-compile-schemas $SNAP/usr/share/glib-2.0/schemas

@@ -167,7 +167,7 @@ namespace  Weather.Widgets {
             msg.response.connect (() => {
                 msg.destroy ();
             });
-            msg.show ();
+            msg.show_all ();
         }
     }
 }
