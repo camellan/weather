@@ -28,11 +28,12 @@ translate()
     MYVAR=$(find . -type f -name *vala -or -name *appdata.xml.in -or -name *desktop.in)
     xgettext --keyword=_ --escape --sort-output -o $TEMPLATE $MYVAR
     for f in $FILES
-	    do
-		    msgmerge -v $f $TEMPLATE --update
-		    echo $f "updated."
-	    done
+        do
+            msgmerge -v $f $TEMPLATE --update
+            echo $f "updated."
+        done
 }
+
 # Compile with meson / ninja
 compile()
 {

@@ -23,7 +23,7 @@ namespace Weather {
         public WeatherApp app;
         public AppIndicator.Indicator indicator;
         private Gtk.Grid view;
-        public Weather.Widgets.Ticket ticket;
+        public Granite.Widgets.Toast ticket;
 
         public MainWindow (WeatherApp app) {
             this.app = app;
@@ -74,7 +74,7 @@ namespace Weather {
             view.valign = Gtk.Align.FILL;
             view.attach (new Gtk.Label("Loading ..."), 0, 0, 1, 1);
             overlay.add_overlay (view);
-            ticket = new Weather.Widgets.Ticket ("");
+            ticket = new Granite.Widgets.Toast ("");
             overlay.add_overlay (ticket);
 
             // Set main content

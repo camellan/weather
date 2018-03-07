@@ -78,7 +78,7 @@ namespace Weather.Widgets {
             view.add_overlay_source (create_cached_source("TEMP", Champlain.MAP_SOURCE_OWM_TEMPERATURE, url_temp), 200);
             stage.add_child (view);
             view.reactive = true;
-            view.set_size (h, h-200);
+            view.set_size (h, h-325);
             view.zoom_level = 8;
             view.max_zoom_level = 12;
             view.min_zoom_level = 2;

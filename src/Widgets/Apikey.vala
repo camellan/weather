@@ -97,14 +97,14 @@ namespace  Weather.Widgets {
                             window.show_all ();
                         }
                     } else {
-                        window.ticket.set_text (_("Wrong API Key. Please, try again."));
-                        window.ticket.reveal_child = true;
+                        window.ticket.title = _("Wrong API Key. Please, try again.");
+                        window.ticket.send_notification ();
                         apientry.set_text ("");
                         apibutton.sensitive = false;
                     }
                 } else {
-                    window.ticket.set_text (_("The API key cannot be empty."));
-                    window.ticket.reveal_child = true;
+                    window.ticket.title = _("The API key cannot be empty.");
+                    window.ticket.send_notification ();
                 }
             });
         }
@@ -131,39 +131,13 @@ namespace  Weather.Widgets {
         }
 
         private void on_select_key () {
-            var msg = new Gtk.Dialog ();
-            msg.resizable = false;
-            msg.deletable = false;
+            var msg = new Granite.MessageDialog.with_image_from_icon_name (_("Using built-in API key:"), "", "dialog-information", Gtk.ButtonsType.NONE);
             msg.set_transient_for (window);
-            var header = new Gtk.Label (_("Using built-in API key:"));
-            header.halign = Gtk.Align.START;
-            header.get_style_context ().add_class ("preferences");
-            var lab1 = new Gtk.Label (_("- You'll have limited access to API"));
-            lab1.halign = Gtk.Align.START;
-            var lab2 = new Gtk.Label (_("- You can't use the update button"));
-            lab2.halign = Gtk.Align.START;
-            var lab3 = new Gtk.Label (_("- Use only to try this application"));
-            lab3.halign = Gtk.Align.START;
-            var msgico = new Gtk.Image.from_icon_name ("dialog-information", Gtk.IconSize.DIALOG);
-            msgico.valign = Gtk.Align.START;
-            var content = new Gtk.Grid ();
-            content.margin_start = 12;
-            content.margin_end = 24;
-            content.row_spacing = 6;
-            content.column_spacing = 12;
-            content.attach (msgico, 0, 0, 1, 4);
-            content.attach (header, 1, 0, 1, 1);
-            content.attach (lab1, 1, 1, 1, 1);
-            content.attach (lab2, 1, 2, 1, 1);
-            content.attach (lab3, 1, 3, 1, 1);
-            content.show_all ();
-            var msgbutton = new Gtk.Button.with_label (_("Close"));
-            msgbutton.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
-            msg.get_content_area ().add (content);
-            msg.get_action_area ().margin = 6;
-            msg.get_action_area ().margin_top = 12;
-            msg.add_action_widget (msgbutton, Gtk.ResponseType.CLOSE);
-            msg.get_action_area ().show_all ();
+            string lab1 = ("- " + _("You'll have limited access to API") + "\n- " + _("You can't use the update button") + "\n- " + _("Use only to try this application"));
+            msg.secondary_label.label = lab1;
+            var closeb = new Gtk.Button.with_label ("Close");
+            closeb.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
+            msg.add_action_widget (closeb, Gtk.ResponseType.CLOSE);
             msg.response.connect (() => {
                 msg.destroy ();
             });

@@ -26,6 +26,5 @@ src/Widgets/Header.vala
 src/Widgets/MapView.vala
 src/Widgets/MapViewOWM.vala
 src/Widgets/Preferences.vala
-src/Widgets/Ticket.vala
 src/Widgets/Today.vala
 src/Widgets/ViewFile.vala
