@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-02-21 20:41+0100\n"
-"PO-Revision-Date: 2018-02-21 01:15+0100\n"
-"Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
+"PO-Revision-Date: 2018-03-06 12:02+0200\n"
+"Last-Translator: Moo\n"
 "Language-Team: \n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
@@ -53,9 +53,8 @@ msgid "A forecast application with OpenWeatherMap API"
 msgstr "Orų prognozės programa su OpenWeatherMap API"
 
 #: src/Widgets/Header.vala:38
-#, fuzzy
 msgid "About Meteo"
-msgstr "Apie Orus"
+msgstr "Apie Meteo"
 
 #: src/Widgets/City.vala:53 src/Widgets/City.vala:136 src/Widgets/City.vala:144
 msgid "At least of 3 characters are required!"
@@ -78,9 +77,8 @@ msgid "Choose your city with maps info."
 msgstr "Pasirinkite savo miestą su žemėlapių informacija."
 
 #: data/com.github.bitseater.weather.appdata.xml.in:19
-#, fuzzy
 msgid "Choose your units (metric, imperial or british)."
-msgstr "Pasirinkite savo vienetus (metrinius ar imperinius)."
+msgstr "Pasirinkite savo vienetus (metrinius, imperinius ar britiškus)."
 
 #: src/Widgets/Preferences.vala:261 src/Widgets/ViewFile.vala:66
 msgid "Close"
@@ -103,9 +101,8 @@ msgid "Coordinates :"
 msgstr "Koordinatės :"
 
 #: src/Widgets/ViewFile.vala:32
-#, fuzzy
 msgid "Current Weather Data"
-msgstr "Apie Orus"
+msgstr "Dabartinių orų duomenys"
 
 #: src/Widgets/Preferences.vala:42
 msgid "Dark theme:"
@@ -116,9 +113,8 @@ msgid "Data"
 msgstr "Duomenys"
 
 #: src/Widgets/ViewFile.vala:52
-#, fuzzy
 msgid "Data file not found"
-msgstr "Paveikslas nerastas"
+msgstr "Duomenų failas nerastas"
 
 #: src/Widgets/Preferences.vala:211
 msgid "Find my location automatically:"
@@ -158,7 +154,6 @@ msgid "Image not found"
 msgstr "Paveikslas nerastas"
 
 #: src/Widgets/Preferences.vala:175
-#, fuzzy
 msgid "Imperial System"
 msgstr "Imperinė sistema"
 
@@ -167,9 +162,10 @@ msgid "Interface"
 msgstr "Sąsaja"
 
 #: data/com.github.bitseater.weather.appdata.xml.in:10
-#, fuzzy
 msgid "Know the forecast of the next hours and days with data and maps"
-msgstr "Žinokite ateinančių valandų ir dienų orų prognozę"
+msgstr ""
+"Žinokite ateinančių valandų ir dienų orų prognozę su duomenimis ir "
+"žemėlapiais"
 
 #: src/Widgets/Header.vala:86
 msgid "Maps"
@@ -178,12 +174,10 @@ msgstr "Žemėlapiai"
 #: data/com.github.bitseater.weather.appdata.xml.in:8
 #: data/com.github.bitseater.weather.desktop.in:3
 #: data/com.github.bitseater.weather.desktop.in:4
-#, fuzzy
 msgid "Meteo"
-msgstr "Rodyti orus"
+msgstr "Meteo"
 
 #: src/Widgets/Preferences.vala:174
-#, fuzzy
 msgid "Metric System"
 msgstr "Metrinė sistema"
 
@@ -236,17 +230,16 @@ msgid "Select"
 msgstr "Pasirinkti"
 
 #: src/MainWindow.vala:98
-#, fuzzy
 msgid "Show Meteo"
-msgstr "Rodyti orus"
+msgstr "Rodyti Meteo"
 
 #: src/Widgets/About.vala:50
 msgid "Special Thanks to"
-msgstr ""
+msgstr "Ypatinga padėka"
 
 #: src/Widgets/Preferences.vala:80
 msgid "Start minimized:"
-msgstr ""
+msgstr "Paleisti suskleistą:"
 
 #: src/Widgets/Today.vala:70
 msgid "Sunrise :"
@@ -277,18 +270,16 @@ msgid "Today"
 msgstr "Šiandien"
 
 #: src/Widgets/Preferences.vala:176
-#, fuzzy
 msgid "UK System"
-msgstr "Metrinė sistema"
+msgstr "JK sistema"
 
 #: src/Widgets/Preferences.vala:171
 msgid "Units:"
 msgstr "Vienetai:"
 
 #: src/Widgets/Header.vala:66
-#, fuzzy
 msgid "Update conditions"
-msgstr "Atnaujinti orų sąlygas kas :"
+msgstr "Atnaujinti orų sąlygas"
 
 #: src/Widgets/Preferences.vala:123
 msgid "Update conditions every :"
@@ -304,16 +295,15 @@ msgstr "Naudoti sistemos dėklo indikatorių:"
 
 #: src/Widgets/Header.vala:37
 msgid "View weather data"
-msgstr ""
+msgstr "Rodyti orų duomenis"
 
 #: data/com.github.bitseater.weather.appdata.xml.in:21
 msgid "Watch awesome maps with weather info."
 msgstr "Stebėkite įspūdingus žemėlapius su orų informacija."
 
 #: data/com.github.bitseater.weather.desktop.in:12
-#, fuzzy
 msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
-msgstr "Orai;Prognozė;Temperatūra;"
+msgstr "Orai;Prognozė;Temperatūra;Vėjas;Oras;Sniegas;Lietus;"
 
 #: src/Widgets/MapViewOWM.vala:97 src/Widgets/MapView.vala:104
 msgid "Wind Speed"
