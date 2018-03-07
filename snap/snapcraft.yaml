@@ -39,6 +39,7 @@ parts:
         build-packages:
             - build-essential
             - valac
+            - libgirepository1.0-dev
 
     meteo:
         after: [granite, desktop-gtk3, snapcraft-preload]
