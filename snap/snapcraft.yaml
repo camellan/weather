@@ -10,12 +10,6 @@ confinement: devmode
 
 icon: data/com.github.bitseater.weather.svg
 
-plugs:
-    elementary-platform-loki:
-        interface: content
-        target: $SNAP/gnome-platform
-        default-provider: elementary-platform-loki:elementary-platform-loki
-
 apps:
   meteo:
     command: bin/desktop-launch bin/snapcraft-preload $SNAP/usr/bin/com.github.bitseater.weather
@@ -37,36 +31,17 @@ apps:
         LD_LIBRARY_PATH: $SNAP/usr/lib/*/webkit2gtk-4.0/:$LD_LIBRARY_PATH
 
 parts:
-    elementary:
-        plugin: nil
-        prepare: |
-            apt install -y software-properties-common
-            add-apt-repository -y ppa:elementary-os/stable
-            add-apt-repository -y ppa:elementary-os/os-patches
-            echo "Package: *" > /etc/apt/preferences.d/elementary-stable
-            echo "Pin: release o=LP-PPA-elementary-os-stable" >> /etc/apt/preferences.d/elementary-stable
-            echo "Pin-Priority: 1000" >> /etc/apt/preferences.d/elementary-stable
-            echo "Package: *" > /etc/apt/preferences.d/elementary-patches
-            echo "Pin: release o=LP-PPA-elementary-os-os-patches" >> /etc/apt/preferences.d/elementary-patches
-            echo "Pin-Priority: 1000" >> /etc/apt/preferences.d/elementary-patches
-            apt update
-            apt dist-upgrade -y --allow-downgrades
-            apt install -y meson
-            apt install -y valac
-
     granite:
         plugin: cmake
-        source: https://github.com/elementary/granite/archive/0.4.1.tar.gz
+        source: https://github.com/elementary/granite/archive/0.5.tar.gz
         source-type: tar
         configflags: [-DCMAKE_BUILD_TYPE=Release, -DCMAKE_INSTALL_PREFIX=/usr, -DCMAKE_INSTALL_LIBDIR=/usr/lib]
         build-packages:
             - build-essential
             - valac
-        stage-packages:
-            - valac-0.30-vapi
 
     meteo:
-        after: [elementary, granite, desktop-gtk3, snapcraft-preload]
+        after: [granite, desktop-gtk3, snapcraft-preload]
         source: https://github.com/bitseater/weather.git
         source-type: git
         plugin: meson
@@ -97,21 +72,3 @@ parts:
             - libwebkit2gtk-4.0-37
             - libappindicator3-1
             - libcanberra-gtk3-module
-        filesets:
-            exclude:
-                - -lib/*/libglib-2.0.so.0.4800.2
-                - -usr/lib/*/glib-2.0/gio-querymodules
-                - -usr/lib/*/glib-2.0/glib-compile-resources
-                - -usr/lib/*/glib-2.0/glib-compile-schemas
-                - -usr/lib/*/libgio-2.0.so.0.4800.2
-                - -usr/lib/*/libgmodule-2.0.so.0.4800.2
-                - -usr/lib/*/libgobject-2.0.so.0.4800.2
-                - -usr/lib/*/libgthread-2.0.so.0.4800.2
-                - -usr/share/doc/hicolor-icon-theme/NEWS.gz
-                - -usr/share/doc/hicolor-icon-theme/changelog.Debian.gz
-                - -usr/share/doc/libglib2.0-0/changelog.Debian.gz
-                - -usr/share/icons/hicolor/index.theme
-        stage:
-            - $exclude
-
-
