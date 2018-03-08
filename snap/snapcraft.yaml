@@ -79,7 +79,6 @@ parts:
       - gettext
       - libgee-0.8-dev
       - libgtk-3-dev
-      - libglib2.0-dev
       - valac
       - libjson-glib-dev
       - meson
