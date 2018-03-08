@@ -23,27 +23,32 @@ namespace  Weather.Utils {
         double lon;
     }
 
-    public void geolocate () {
+    public static bool geolocate () {
         var setting = new Settings ("com.github.bitseater.weather");
         var uri1 = Constants.OWM_API_ADDR + "weather?lat=";
         var uri2 = "&APPID=" + setting.get_string ("apiid");
 
         Coord mycoords = get_location ();
-        var location = new Geocode.Location (mycoords.lat, mycoords.lon);
-        var reverse = new Geocode.Reverse.for_location (location);
-
-        try {
-            Geocode.Place mycity = reverse.resolve ();
-            if (mycity != null) {
-                string uri = uri1 + mycoords.lat.to_string () + "&lon=" + mycoords.lon.to_string () + uri2;
-                setting.set_string ("idplace", update_id (uri).to_string());
-                setting.set_string ("location", mycity.town);
-                setting.set_string ("state", mycity.state);
-                setting.set_string ("country", mycity.country_code);
+        if (mycoords.lat != 0 || mycoords.lon != 0) {
+            var location = new Geocode.Location (mycoords.lat, mycoords.lon);
+            var reverse = new Geocode.Reverse.for_location (location);
+            try {
+                Geocode.Place mycity = reverse.resolve ();
+                if (mycity != null) {
+                    string uri = uri1 + mycoords.lat.to_string () + "&lon=" + mycoords.lon.to_string () + uri2;
+                    setting.set_string ("idplace", update_id (uri).to_string());
+                    setting.set_string ("location", mycity.town);
+                    setting.set_string ("state", mycity.state);
+                    setting.set_string ("country", mycity.country_code);
+                    return true;
+                }
+            } catch (Error e) {
+                debug (e.message);
             }
-        } catch (Error e) {
-            debug (e.message);
+        } else {
+            return false;
         }
+        return false;
     }
 
     private static Coord get_location () {
@@ -56,18 +61,25 @@ namespace  Weather.Utils {
         try {
             var parser = new Json.Parser ();
             parser.load_from_data ((string) message.response_body.flatten ().data, -1);
-
-            var root = parser.get_root ().get_object ();
-
-            foreach (string name in root.get_members ()) {
-                if (name == "location") {
-                    var mycoords = root.get_object_member ("location");
-                    coord.lat = mycoords.get_double_member ("lat");
-                    coord.lon = mycoords.get_double_member ("lng");
-                    break;
-                } else {
-                    stdout.printf (_("Found an error"));
+            Json.Node? node = parser.get_root ();
+            if (node != null) {
+                var root = parser.get_root ().get_object ();
+                foreach (string name in root.get_members ()) {
+                    if (name == "location") {
+                        var mycoords = root.get_object_member ("location");
+                        coord.lat = mycoords.get_double_member ("lat");
+                        coord.lon = mycoords.get_double_member ("lng");
+                        break;
+                    } else {
+                        stdout.printf (_("Found an error"));
+                        coord.lat = 0;
+                        coord.lon = 0;
+                    }
                 }
+            } else {
+                stdout.printf (_("Found an error"));
+                coord.lat = 0;
+                coord.lon = 0;
             }
         } catch (Error e) {
             debug (e.message);

@@ -82,9 +82,15 @@ namespace Weather {
                 var apikey = new Weather.Widgets.Apikey (this, header);
                 change_view (apikey);
             } else if (setting.get_boolean ("auto")) {
-                Weather.Utils.geolocate ();
-                var current = new Weather.Widgets.Current (this, header);
-                change_view (current);
+                if (Weather.Utils.geolocate ()) {
+                    var view = new Weather.Widgets.Current (this, header);
+                    change_view (view);
+                } else {
+                    var view = new Weather.Widgets.City (this, header);
+                    change_view (view);
+                    ticket.title = _("Unable to geolocalize you. Search for a location");
+                    ticket.send_notification ();
+                }
             } else if (setting.get_string ("idplace") == "") {
                 var city = new Weather.Widgets.City (this, header);
                 change_view (city);
