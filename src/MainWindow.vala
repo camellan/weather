@@ -23,7 +23,7 @@ namespace Weather {
         public WeatherApp app;
         public AppIndicator.Indicator indicator;
         private Gtk.Grid view;
-        public Granite.Widgets.Toast ticket;
+        public Weather.Widgets.Ticket ticket;
 
         public MainWindow (WeatherApp app) {
             this.app = app;
@@ -74,7 +74,7 @@ namespace Weather {
             view.valign = Gtk.Align.FILL;
             view.attach (new Gtk.Label("Loading ..."), 0, 0, 1, 1);
             overlay.add_overlay (view);
-            ticket = new Granite.Widgets.Toast ("");
+            ticket = new Weather.Widgets.Ticket ("");
             overlay.add_overlay (ticket);
 
             // Set main content
@@ -88,8 +88,8 @@ namespace Weather {
                 } else {
                     var view = new Weather.Widgets.City (this, header);
                     change_view (view);
-                    ticket.title = _("Unable to geolocalize you. Search for a location");
-                    ticket.send_notification ();
+                    ticket.set_text (_("Unable to geolocalize you. Search for a location"));
+                    ticket.reveal_child = true;
                 }
             } else if (setting.get_string ("idplace") == "") {
                 var city = new Weather.Widgets.City (this, header);

@@ -44,8 +44,8 @@ namespace  Weather.Widgets {
             entry.activate.connect (() => {
                 box.forall ((row) => box.remove (row));
                 if (entry.get_text_length () < 3) {
-                    window.ticket.title = _("At least of 3 characters are required!");
-                    window.ticket.send_notification ();
+                    window.ticket.set_text (_("At least of 3 characters are required!"));
+                    window.ticket.reveal_child = true;
                 } else {
                     var busqueda = new Geocode.Forward.for_string (entry.get_text ());
                     try {
@@ -116,23 +116,23 @@ namespace  Weather.Widgets {
                             }
                         }
                     } catch (Error error) {
-                        window.ticket.title = _("No data");
-                        window.ticket.send_notification ();
+                        window.ticket.set_text (_("No data"));
+                        window.ticket.reveal_child = true;
                     }
                 }
             });
             entry.backspace.connect (() => {
                 box.forall ((row) => box.remove (row));
                 if (entry.get_text_length () < 3) {
-                    window.ticket.title = _("At least of 3 characters are required!");
-                    window.ticket.send_notification ();
+                    window.ticket.set_text (_("At least of 3 characters are required!"));
+                    window.ticket.reveal_child = true;
                 }
             });
             entry.icon_press.connect ((pos, event) => {
                     if (pos == Gtk.EntryIconPosition.SECONDARY) {
                         box.forall ((row) => box.remove (row));
-                        window.ticket.title = _("At least of 3 characters are required!");
-                        window.ticket.send_notification ();
+                        window.ticket.set_text (_("At least of 3 characters are required!"));
+                        window.ticket.reveal_child = true;
                     }
             });
             add (box);

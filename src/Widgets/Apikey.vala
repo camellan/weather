@@ -97,14 +97,14 @@ namespace  Weather.Widgets {
                             window.show_all ();
                         }
                     } else {
-                        window.ticket.title = _("Wrong API Key. Please, try again.");
-                        window.ticket.send_notification ();
+                        window.ticket.set_text (_("Wrong API Key. Please, try again."));
+                        window.ticket.reveal_child = true;
                         apientry.set_text ("");
                         apibutton.sensitive = false;
                     }
                 } else {
-                    window.ticket.title = _("The API key cannot be empty.");
-                    window.ticket.send_notification ();
+                    window.ticket.set_text (_("The API key cannot be empty."));
+                    window.ticket.reveal_child = true;
                 }
             });
         }

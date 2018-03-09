@@ -4,7 +4,6 @@ Priority: extra
 Maintainer: Carlos Suárez <bitseater@gmail.com>
 Build-Depends: debhelper,
                libgtk-3-dev,
-               libgranite-dev,
                valac,
                meson,
                libsoup2.4-dev,
