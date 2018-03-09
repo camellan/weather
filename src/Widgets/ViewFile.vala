@@ -42,7 +42,7 @@ namespace Weather.Widgets {
             file_view.set_wrap_mode (Gtk.WrapMode.WORD);
             string text;
             try {
-                var file = File.new_for_path (Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME + "/current.json");
+                var file = File.new_for_path (Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME + "/current.txt");
                 if (file.query_exists ()) {
                     FileUtils.get_contents (file.get_path (), out text);
                     file_view.buffer.text = text;

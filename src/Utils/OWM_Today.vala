@@ -192,7 +192,13 @@ namespace  Weather.Utils {
                     _sunset = time_format (suns);
 
                     //Create today file
-                    var file = File.new_for_path (Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME + "/current.json");
+                    string path = Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME;
+                    var file = File.new_for_path (path);
+                    if (!file.query_exists ()) {
+                        file.make_directory ();
+                    }
+                    path = path + "/current.txt";
+                    file = File.new_for_path (path);
                     if (file.query_exists ()) {
                         file.delete ();
                     }
