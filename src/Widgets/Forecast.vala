@@ -55,18 +55,45 @@ namespace  Weather.Widgets {
 
             string uri_end = idplace + "&APPID=" + apiid + "&units=" + units + "&lang=" + lang;
             string uri = Constants.OWM_API_ADDR + "forecast?id=" + uri_end;
+            string path = Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME;
+            bool save = true;
+
             var session = new Soup.Session ();
             var message = new Soup.Message ("GET", uri);
             session.send_message (message);
             try {
                 var parser = new Json.Parser ();
-                parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+                string text = (string) message.response_body.flatten ().data;
+                parser.load_from_data (text, -1);
+
+                //Check response: Null response
+                Json.Node? node = parser.get_root ();
+                var root = new Json.Object ();
+                if (node != null) {
+                    root = parser.get_root ().get_object ();
+                    var cod = root.get_string_member ("cod");
+                    switch (cod) {
+                        case "200":
+                            save = true;
+                            break;
+                        default:
+                            save = false;
+                            string cache_json = path + "/forecast.json";
+                            parser.load_from_file (cache_json);
+                            root = parser.get_root ().get_object ();
+                            break;
+                    }
+                } else {
+                    save = false;
+                    string cache_json = path + "/forecast.json";
+                    parser.load_from_file (cache_json);
+                    root = parser.get_root ().get_object ();
+                }
 
                 var forecast = new Gtk.Label (_("Forecast"));
                 forecast.get_style_context ().add_class ("weather");
                 forecast.halign = Gtk.Align.START;
                 attach (forecast, 0, 0, 2, 1);
-                var root = parser.get_root ().get_object ();
                 var list = root.get_array_member ("list");
                 for (int a = 0; a < 5; a++) {
                     var time = new Gtk.Label (time_format (new DateTime.from_unix_local (list.get_object_element (a).get_int_member ("dt"))));
@@ -109,11 +136,15 @@ namespace  Weather.Widgets {
                     attach (temp, 3, 5+b, 2, 1);
 
                     //Record data
-                    var file = File.new_for_path (Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME + "/" + "forecast.json");
-                    if (file.query_exists ()) {
-                        file.delete ();
+                    if (save) {
+                        string fcson = path + "/forecast.json";
+                        var fcjson = File.new_for_path (fcson);
+                        if (fcjson.query_exists ()) {
+                            fcjson.delete ();
+                        }
+                        var fcjos = new DataOutputStream (fcjson.create (FileCreateFlags.REPLACE_DESTINATION));
+                        fcjos.put_string (text);
                     }
-
                 }
             } catch (Error e) {
                 debug (e.message);

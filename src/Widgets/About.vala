@@ -37,7 +37,8 @@ namespace  Weather.Widgets {
                                 (pt) btd1337 <helder.bertoldo@gmail.com>
                                 (ru) Andrey Kultyapov <camellan@yandex.ru>
                                 (lt) welaq https://github.com/welaq
-                                (fr) Corentin Noël https://github.com/tintou";
+                                (fr) Corentin Noël https://github.com/tintou
+                                (de) BeatriceFendt https://github.com/BeatriceFendt";
             version = Constants.VERSION;
             website = "https://github.com/bitseater/weather";
             website_label = _("website");

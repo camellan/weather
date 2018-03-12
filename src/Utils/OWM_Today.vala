@@ -33,7 +33,7 @@ namespace  Weather.Utils {
         private string _clouds;
         private string _sunrise;
         private string _sunset;
-        private bool _update;
+        private string _update;
 
         public string coor_lon {
             get{return _coor_lon;}
@@ -100,7 +100,7 @@ namespace  Weather.Utils {
             set{_sunset = value;}
         }
 
-        public bool update {
+        public string update {
             get{return _update;}
             set{_update = value;}
         }
@@ -138,6 +138,8 @@ namespace  Weather.Utils {
 
             string uriend = "&APPID=" + apiid + "&units=" + units + "&lang=" + lang;
             string uri = Constants.OWM_API_ADDR + "weather?id=" + idplace + uriend;
+            string path = Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME;
+            bool save = true;
 
             var session = new Soup.Session ();
             var message = new Soup.Message ("GET", uri);
@@ -149,56 +151,76 @@ namespace  Weather.Utils {
 
                 //Check response: Null response
                 Json.Node? node = parser.get_root ();
+                var root = new Json.Object ();
                 if (node != null) {
-                    _update = true;
-                    var root = parser.get_root ().get_object ();
-                    var coord = root.get_object_member ("coord");
-                    if(coord.get_double_member ("lon") > 0) {
-                        _coor_lon = Weather.Utils.to_string2 (coord.get_double_member ("lon")) + "W";
-                    } else {
-                        _coor_lon = Weather.Utils.to_string2 ((coord.get_double_member ("lon"))*-1) + "E";
-                    }
-                    if(coord.get_double_member ("lat") > 0) {
-                        _coor_lat = Weather.Utils.to_string2 (coord.get_double_member ("lat")) + "N";
-                    } else {
-                        _coor_lat = Weather.Utils.to_string2 ((coord.get_double_member ("lat"))*-1) + "S";
-                    }
-                    var weather = root.get_array_member ("weather");
-                    _wmain = weather.get_object_element (0).get_string_member ("main");
-                    _wdescrip = weather.get_object_element (0).get_string_member ("description");
-                    _icon = weather.get_object_element (0).get_string_member ("icon");
-                    var vmain = root.get_object_member ("main");
-                    double temp_n = vmain.get_double_member ("temp");
-                    switch (unit) {
-                        case "british":
-                            _temp = Weather.Utils.to_string0 (((temp_n - 32)*5)/9) + "\u00B0" + temp_un;
+                    root = parser.get_root ().get_object ();
+                    var cod = root.get_int_member ("cod");
+                    switch (cod) {
+                        case 200:
+                            _update = "";
                             break;
-                        case "metric":
-                        case "imperial":
                         default:
-                            _temp = Weather.Utils.to_string0 (temp_n) + "\u00B0" + temp_un;
+                            _update = "Error " + cod.to_string () + ": Loading cache data";
+                            save = false;
+                            string cachefile = path + "/current.json";
+                            parser.load_from_file (cachefile);
+                            root = parser.get_root ().get_object ();
                             break;
                     }
-                    _pressure = vmain.get_int_member ("pressure").to_string() + " hPa";
-                    _humidity = vmain.get_int_member ("humidity").to_string () + " %";
-                    var wind = root.get_object_member ("wind");
-                    _windspeed = Weather.Utils.to_string0 (wind.get_double_member ("speed")) + speed_un;
-                    _winddir = cardinal (wind.get_double_member ("deg"));
-                    var clouds = root.get_object_member ("clouds");
-                    _clouds = clouds.get_int_member ("all").to_string () + " %";
-                    var sunr = new DateTime.from_unix_local (root.get_object_member ("sys").get_int_member ("sunrise"));
-                    _sunrise = time_format (sunr);
-                    var suns = new DateTime.from_unix_local (root.get_object_member ("sys").get_int_member ("sunset"));
-                    _sunset = time_format (suns);
+                } else {
+                    _update = "No data received, loading cache. Are you connected?";
+                    save = false;
+                    string cache_json = path + "/current.json";
+                    parser.load_from_file (cache_json);
+                    root = parser.get_root ().get_object ();
+                }
+                var coord = root.get_object_member ("coord");
+                if(coord.get_double_member ("lon") > 0) {
+                    _coor_lon = Weather.Utils.to_string2 (coord.get_double_member ("lon")) + "W";
+                } else {
+                    _coor_lon = Weather.Utils.to_string2 ((coord.get_double_member ("lon"))*-1) + "E";
+                }
+                if(coord.get_double_member ("lat") > 0) {
+                    _coor_lat = Weather.Utils.to_string2 (coord.get_double_member ("lat")) + "N";
+                } else {
+                    _coor_lat = Weather.Utils.to_string2 ((coord.get_double_member ("lat"))*-1) + "S";
+                }
+                var weather = root.get_array_member ("weather");
+                _wmain = weather.get_object_element (0).get_string_member ("main");
+                _wdescrip = weather.get_object_element (0).get_string_member ("description");
+                _icon = weather.get_object_element (0).get_string_member ("icon");
+                var vmain = root.get_object_member ("main");
+                double temp_n = vmain.get_double_member ("temp");
+                switch (unit) {
+                    case "british":
+                        _temp = Weather.Utils.to_string0 (((temp_n - 32)*5)/9) + "\u00B0" + temp_un;
+                        break;
+                    case "metric":
+                    case "imperial":
+                    default:
+                        _temp = Weather.Utils.to_string0 (temp_n) + "\u00B0" + temp_un;
+                        break;
+                }
+                _pressure = vmain.get_int_member ("pressure").to_string() + " hPa";
+                _humidity = vmain.get_int_member ("humidity").to_string () + " %";
+                var wind = root.get_object_member ("wind");
+                _windspeed = Weather.Utils.to_string0 (wind.get_double_member ("speed")) + speed_un;
+                _winddir = cardinal (wind.get_double_member ("deg"));
+                var clouds = root.get_object_member ("clouds");
+                _clouds = clouds.get_int_member ("all").to_string () + " %";
+                var sunr = new DateTime.from_unix_local (root.get_object_member ("sys").get_int_member ("sunrise"));
+                _sunrise = time_format (sunr);
+                var suns = new DateTime.from_unix_local (root.get_object_member ("sys").get_int_member ("sunset"));
+                _sunset = time_format (suns);
 
-                    //Create today file
-                    string path = Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME;
+                if (save) {
+                    //Create today files
                     var file = File.new_for_path (path);
                     if (!file.query_exists ()) {
                         file.make_directory ();
                     }
-                    path = path + "/current.txt";
-                    file = File.new_for_path (path);
+                    string ftxt = path + "/current.txt";
+                    file = File.new_for_path (ftxt);
                     if (file.query_exists ()) {
                         file.delete ();
                     }
@@ -223,8 +245,13 @@ namespace  Weather.Utils {
                     dos.put_string ("Clouds: " + _clouds + "\n");
                     dos.put_string ("Sunrise: " + _sunrise + "\n");
                     dos.put_string ("Sunset: " + _sunset + "\n");
-                } else {
-                    _update = false;
+                    string fson = path + "/current.json";
+                    var fjson = File.new_for_path (fson);
+                    if (fjson.query_exists ()) {
+                        fjson.delete ();
+                    }
+                    var jos = new DataOutputStream (fjson.create (FileCreateFlags.REPLACE_DESTINATION));
+                    jos.put_string (text);
                 }
             } catch (Error e) {
                 debug (e.message);

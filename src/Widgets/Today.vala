@@ -29,6 +29,10 @@ namespace  Weather.Widgets {
 
             var today = new Weather.Utils.OWM_Today (idplace);
 
+            if (today.update != "") {
+                window.ticket.set_text (today.update);
+                window.ticket.reveal_child = true;
+            }
             var title = new Gtk.Label (_("Today"));
             title.get_style_context ().add_class ("weather");
             title.halign = Gtk.Align.START;
