@@ -14,6 +14,7 @@ usage: $0 options
 OPTIONS:
    -b Build
    -c Compile
+   -d Debug
    -h Show this message
    -l List sources files
    -r Registre schemas
@@ -46,6 +47,11 @@ build(){
     sudo ninja -C build install
 }
 
+# Debug mode
+debug(){
+    G_MESSAGES_DEBUG=all ./build/$PACKAGE
+}
+
 # Uninstall
 uninstall(){
     ninja -v -C build
@@ -70,7 +76,7 @@ registre(){
 }
 
 # Menu options
-while getopts “bchlrtu” OPTION
+while getopts “bcdhlrtu” OPTION
 do
     case $OPTION in
         b)
@@ -80,6 +86,10 @@ do
             ;;
         c)
             compile
+            exit 1
+            ;;
+        d)
+            debug
             exit 1
             ;;
         h)

@@ -99,7 +99,9 @@ namespace  Weather.Widgets {
             attach (sunrise, 3, 10, 2, 1);
             attach (sun_s, 1, 11, 2, 1);
             attach (sunset, 3, 11, 2, 1);
-            (window as Weather.MainWindow).set_icolabel (icon.get_icon (today.icon) + "-symbolic", today.temp);
+
+            window.set_icolabel (icon.get_icon (today.icon) + "-symbolic", today.temp);
+            window.set_indicatormenu (today.humidity, today.pressure, today.windspeed, today.winddir, today.clouds, today.sunrise, today.sunset);
         }
     }
 }
