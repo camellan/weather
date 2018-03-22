@@ -23,20 +23,18 @@ namespace Weather.Utils {
         private Champlain.View view;
         private Clutter.Stage stage;
 
-        public MiniMap (double lat, double lon) {
+        public MiniMap (double lat, double lon, int size) {
             var popbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 0);
-            popbox.width_request = 50;
-            popbox.height_request = 50;
+            popbox.width_request = size;
+            popbox.height_request = size;
             var embed = new GtkClutter.Embed();
             stage = (Clutter.Stage) embed.get_stage();
-            stage.set_size (50, 50);
+            stage.set_size (size, size);
             //Map view
             view = new Champlain.View ();
-            view.set_size (50, 50);
+            view.set_size (size, size);
             stage.add_child (view);
-            view.reactive = false;
-            view.zoom_level = 1;
-            view.kinetic_mode = false;
+            view.zoom_level = 8;
             view.center_on (lat, lon);
             popbox.add (embed);
             add (popbox);

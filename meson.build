@@ -1,5 +1,5 @@
 # Project name-language-version
-project('com.github.bitseater.weather', ['vala', 'c'], version: '0.6.1')
+project('com.github.bitseater.weather', ['vala', 'c'], version: '0.7.0')
 
 # Main libraries
 gnome = import('gnome')
@@ -89,6 +89,7 @@ executable(
         dependency('geocode-glib-1.0'),
         dependency('webkit2gtk-4.0'),
         dependency('appindicator3-0.1'),
+        dependency('libgeoclue-2.0'),
     ],
 
     vala_args: [

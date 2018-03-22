@@ -56,10 +56,13 @@ debug(){
 uninstall(){
     ninja -v -C build
     sudo ninja -C build uninstall
-    echo "Removing glib settings..."
+    echo "Removing cache files ..."
+    rm -rv $HOME/.cache/$PACKAGE
+    echo "Done."
+    echo "Removing glib settings ..."
     dconf reset -f /com/github/bitseater/weather/
     echo "Done."
-    echo "Updating icon cache..."
+    echo "Updating icon cache ..."
     sudo update-icon-caches /usr/share/icons/hicolor/
     echo "Done."
 }

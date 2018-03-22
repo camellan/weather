@@ -1,6 +1,6 @@
 Source: com.github.bitseater.weather
 Section: x11
-Priority: extra
+Priority: optional
 Maintainer: Carlos Suárez <bitseater@gmail.com>
 Build-Depends: debhelper,
                libgtk-3-dev,
@@ -14,6 +14,7 @@ Build-Depends: debhelper,
                libchamplain-0.12-dev,
                libwebkit2gtk-4.0-dev,
                libappindicator3-dev,
+               libgeoclue-2-dev
 Standards-Version: 3.9.7
 
 Package: com.github.bitseater.weather

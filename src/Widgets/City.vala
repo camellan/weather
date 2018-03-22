@@ -66,7 +66,7 @@ namespace  Weather.Widgets {
                                 icon.relief = Gtk.ReliefStyle.NONE;
                                 icon.halign = Gtk.Align.START;
                                 icon.valign = Gtk.Align.CENTER;
-                                var minimap = new Weather.Utils.MiniMap (lat, lon);
+                                var minimap = new Weather.Utils.MiniMap (lat, lon, 50);
                                 icon.image = minimap;
                                 minimap.show_all ();
                                 icon.button_press_event.connect (() => {
@@ -90,8 +90,16 @@ namespace  Weather.Widgets {
                                     } else {
                                         setting.set_string ("location", "");
                                     }
-                                    setting.set_string ("state", state);
-                                    setting.set_string ("country", country);
+                                    if (state != null) {
+                                        setting.set_string ("state", state);
+                                    } else {
+                                        setting.set_string ("state", "");
+                                    }
+                                    if (country != null) {
+                                        setting.set_string ("country", country);
+                                    } else {
+                                        setting.set_string ("country", "");
+                                    }
                                     header.custom_title = null;
                                     header.title = town + ", " + state + " " + country;
                                     header.restart_switcher ();

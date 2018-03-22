@@ -49,24 +49,24 @@
         <value key="x-appcenter-suggested-price">1</value>
     </custom>
   ​  <releases>
-        <release version="0.6.1" date="2018-02-24">
+        <release version="0.7.0" date="2018-03-22">
             <description>
         ​        <p>New in this version are:
-                    <li>Change appname to METEO</li>
-                    <li>Save currenta data to cache file</li>
-                    <li>Show cache file in text format</li>
-                    <li>Add new translations: pt_PT and pt_BR</li>
-                    <li>Reload button when own API key</li>
+                    <li>Load data from cache file when no connect</li>
+                    <li>Add some comments when user select built-in API key</li>
+                    <li>Add more information to indicator</li>
+                    <li>Add new translations</li>
+                    <li>Use GeoClue2 to get location, for Juno support</li>
                 </p>
                 <p>Fixed issues:
-                    <li>#34: Indicator on startup</li>
-                    <li>#39: Setting a NULL value as string</li>
-                    <li>#29: UK Setting, new units</li>
-                    <li>#36 and #47: Publish on Flathub</li>
-                    <li>#44: Reload/update</li>
-                    <li>#28: Use local cache</li>
-                    <li>#46 and #48: Separate pt_PT and pt_BR</li>
-                    <li>#54: New screenshots.</li>
+                    <li>#49: wind speed map disappears in Dark Sky mode in flatpak</li>
+                    <li>#50: Load from cache when no connect</li>
+                    <li>#52: Clicking "Maps" before entering API key breaks the app</li>
+                    <li>#53: API key prompt is never explained</li>
+                    <li>#57: Please add some of the weather data into the indicator icon</li>
+                    <li>#58: Encoding</li>
+                    <li>#60: Error saving location to GSettings</li>
+                    <li>#61: Use GeoClue2 to get location</li>
                 </p>
             </description>
         </release>

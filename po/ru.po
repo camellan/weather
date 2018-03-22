@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-21 20:41+0100\n"
+"POT-Creation-Date: 2018-03-22 21:48+0100\n"
 "PO-Revision-Date: 2018-02-21 01:16+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
@@ -23,56 +23,60 @@ msgstr ""
 "X-Poedit-SearchPath-1: Utils\n"
 "X-Poedit-SearchPath-2: Widgets\n"
 
-#: src/Widgets/Preferences.vala:128
-msgid "12 hrs."
+#: src/Widgets/Apikey.vala:142
+msgid "- Use only to try this application"
+msgstr ""
+
+#: src/Widgets/Apikey.vala:140
+msgid "- You can't use the update button"
+msgstr ""
+
+#: src/Widgets/Apikey.vala:138
+msgid "- You'll have limited access to API"
 msgstr ""
 
 #: src/Widgets/Preferences.vala:126
+msgid "12 hrs."
+msgstr ""
+
+#: src/Widgets/Preferences.vala:124
 msgid "2 hrs."
 msgstr ""
 
-#: src/Widgets/Preferences.vala:129
+#: src/Widgets/Preferences.vala:127
 msgid "24 hrs."
 msgstr ""
 
-#: src/Widgets/Preferences.vala:127
+#: src/Widgets/Preferences.vala:125
 msgid "6 hrs."
 msgstr ""
 
-#: src/Widgets/Apikey.vala:43
-msgid "<big>Enter your OpenWeatherMap API key</big>\n"
-msgstr "<big>Введите ключ API OpenWeatherMap</big>\n"
-
-#: src/Widgets/Apikey.vala:63
-msgid ""
-"<small>If you don't have it, please visit: <a href =\"https://home."
-"openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
-msgstr ""
-"<small>Если у вас его нет, посетите: <a href =\"https://home.openweathermap."
-"org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
-
-#: src/Widgets/About.vala:32
+#: src/Widgets/About.vala:30
 msgid "A forecast application with OpenWeatherMap API"
 msgstr "Приложение для прогноза погоды использующее API OpenWeatherMap"
 
-#: src/Widgets/Header.vala:38
+#: src/Widgets/Header.vala:36
 #, fuzzy
 msgid "About Meteo"
 msgstr "О Weather"
 
-#: src/Widgets/City.vala:53 src/Widgets/City.vala:136 src/Widgets/City.vala:144
+#: src/Widgets/City.vala:47 src/Widgets/City.vala:135 src/Widgets/City.vala:142
 msgid "At least of 3 characters are required!"
 msgstr "Требуется не менее 3 символов!"
+
+#: src/Widgets/About.vala:53
+msgid "Based in a mockup by"
+msgstr ""
 
 #: data/com.github.bitseater.weather.appdata.xml.in:43
 msgid "Carlos Suárez"
 msgstr ""
 
-#: src/Widgets/Header.vala:64
+#: src/Widgets/Header.vala:62
 msgid "Change location"
 msgstr "Выбрать местоположение"
 
-#: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
+#: src/Widgets/MapViewOWM.vala:142 src/Widgets/MapView.vala:105
 #, fuzzy
 msgid "Change to "
 msgstr "Выбрать местоположение"
@@ -85,49 +89,55 @@ msgstr ""
 msgid "Choose your units (metric, imperial or british)."
 msgstr ""
 
-#: src/Widgets/Preferences.vala:261 src/Widgets/ViewFile.vala:66
+#: src/Widgets/Preferences.vala:259 src/Widgets/ViewFile.vala:64
+#: src/Widgets/Apikey.vala:157
 msgid "Close"
 msgstr "Закрыть"
 
-#: src/Widgets/Today.vala:68
+#: src/Widgets/Today.vala:70
 msgid "Cloudiness :"
 msgstr "Облачность :"
 
-#: src/Widgets/MapViewOWM.vala:94 src/Widgets/MapView.vala:101
+#: src/Widgets/MapViewOWM.vala:92 src/Widgets/MapView.vala:99
 #, fuzzy
 msgid "Clouds"
 msgstr "Облачность :"
 
-#: src/Widgets/About.vala:49
+#: src/Widgets/About.vala:51
 msgid "Colaborators"
 msgstr ""
 
-#: src/Widgets/Today.vala:37
+#: src/Widgets/Today.vala:39
 msgid "Coordinates :"
 msgstr "Координаты :"
 
-#: src/Widgets/ViewFile.vala:32
+#: src/Widgets/ViewFile.vala:30
 #, fuzzy
 msgid "Current Weather Data"
 msgstr "О Weather"
 
-#: src/Widgets/Preferences.vala:42
+#: src/Widgets/Preferences.vala:40
 msgid "Dark theme:"
 msgstr "Тёмная тема :"
 
-#: src/Widgets/Header.vala:85
+#: src/Widgets/Header.vala:80
 msgid "Data"
 msgstr ""
 
-#: src/Widgets/ViewFile.vala:52
+#: src/Widgets/ViewFile.vala:50
 msgid "Data file not found"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:211
+#: src/Widgets/Apikey.vala:39
+#, fuzzy
+msgid "Enter your OpenWeatherMap API key"
+msgstr "<big>Введите ключ API OpenWeatherMap</big>\n"
+
+#: src/Widgets/Preferences.vala:209
 msgid "Find my location automatically:"
 msgstr ""
 
-#: src/Widgets/Forecast.vala:67
+#: src/Widgets/Forecast.vala:93
 msgid "Forecast"
 msgstr "Прогноз погоды"
 
@@ -143,29 +153,32 @@ msgstr ""
 msgid "Forecast for next five days."
 msgstr ""
 
-#: src/Widgets/MapViewOWM.vala:55 src/Widgets/Apikey.vala:132
-#: src/Widgets/MapView.vala:80 src/Utils/GeoLocate.vala:71
+#: src/Widgets/MapViewOWM.vala:53 src/Widgets/MapView.vala:78
 msgid "Found an error"
 msgstr "Обнаружена ошибка"
 
-#: src/Widgets/Preferences.vala:37
+#: src/Widgets/Preferences.vala:35
 msgid "General"
 msgstr ""
 
-#: src/Widgets/Today.vala:56
+#: src/Widgets/Today.vala:58
 msgid "Humidity :"
 msgstr "Влажность :"
 
-#: src/Widgets/MapViewOWM.vala:189
+#: src/Widgets/Apikey.vala:59
+msgid "If you don't have it, please visit:"
+msgstr ""
+
+#: src/Widgets/MapViewOWM.vala:186
 msgid "Image not found"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:175
+#: src/Widgets/Preferences.vala:173
 #, fuzzy
 msgid "Imperial System"
 msgstr "Имперская система"
 
-#: src/Widgets/Preferences.vala:34
+#: src/Widgets/Preferences.vala:32
 msgid "Interface"
 msgstr ""
 
@@ -173,7 +186,7 @@ msgstr ""
 msgid "Know the forecast of the next hours and days with data and maps"
 msgstr ""
 
-#: src/Widgets/Header.vala:86
+#: src/Widgets/Header.vala:81
 msgid "Maps"
 msgstr ""
 
@@ -184,7 +197,7 @@ msgstr ""
 msgid "Meteo"
 msgstr "О Weather"
 
-#: src/Widgets/Preferences.vala:174
+#: src/Widgets/Preferences.vala:172
 #, fuzzy
 msgid "Metric System"
 msgstr "Метрическая система"
@@ -197,114 +210,118 @@ msgstr "Нет данных"
 msgid "Now with System Tray Indicator."
 msgstr ""
 
-#: src/Widgets/Header.vala:58
+#: src/Widgets/Header.vala:56
 msgid "Options"
 msgstr "Опции"
 
-#: src/Widgets/MapViewOWM.vala:95 src/Widgets/MapView.vala:102
+#: src/Widgets/MapViewOWM.vala:93 src/Widgets/MapView.vala:100
 msgid "Precipitation"
 msgstr ""
 
-#: src/Widgets/Header.vala:36
+#: src/Widgets/Header.vala:34
 msgid "Preferences"
 msgstr "Настройки"
 
-#: src/Widgets/MapViewOWM.vala:96 src/Widgets/MapView.vala:103
+#: src/Widgets/MapViewOWM.vala:94 src/Widgets/MapView.vala:101
 #, fuzzy
 msgid "Pressure"
 msgstr "Давление :"
 
-#: src/Widgets/Today.vala:52
+#: src/Widgets/Today.vala:54
 msgid "Pressure :"
 msgstr "Давление :"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:177
 msgid "Quit"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:195
+#: src/Widgets/Preferences.vala:193
 msgid "Restore API key:"
 msgstr "Восстановить ключ API:"
 
-#: src/Widgets/Apikey.vala:52
+#: src/Widgets/Apikey.vala:48
 msgid "Save"
 msgstr "Сохранить"
 
-#: src/Widgets/City.vala:40
+#: src/Widgets/City.vala:34
 msgid "Search for new location:"
 msgstr "Поиск для нового местоположения:"
 
-#: src/Widgets/City.vala:91
+#: src/Widgets/City.vala:84
 msgid "Select"
 msgstr ""
 
-#: src/MainWindow.vala:98
+#: src/MainWindow.vala:168
 #, fuzzy
 msgid "Show Meteo"
 msgstr "О Weather"
 
-#: src/Widgets/About.vala:50
+#: src/Widgets/About.vala:52
 msgid "Special Thanks to"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:80
+#: src/Widgets/Preferences.vala:78
 msgid "Start minimized:"
 msgstr ""
 
-#: src/Widgets/Today.vala:70
+#: src/Widgets/Today.vala:72
 msgid "Sunrise :"
 msgstr "Восход :"
 
-#: src/Widgets/Today.vala:74
+#: src/Widgets/Today.vala:76
 msgid "Sunset :"
 msgstr "Закат :"
 
-#: src/Widgets/Preferences.vala:62
+#: src/Widgets/Preferences.vala:60
 msgid "Symbolic icons:"
 msgstr ""
 
-#: src/Widgets/MapViewOWM.vala:93 src/Widgets/MapView.vala:100
+#: src/Widgets/MapViewOWM.vala:91 src/Widgets/MapView.vala:98
 msgid "Temperature"
 msgstr ""
 
-#: src/Widgets/MapViewOWM.vala:146 src/Widgets/MapView.vala:109
+#: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
 msgid "Terms of Service"
 msgstr ""
 
-#: src/Widgets/Apikey.vala:110
+#: src/Widgets/Apikey.vala:103
 msgid "The API key cannot be empty."
 msgstr "Ключ API не может быть пустым."
 
-#: src/Widgets/Today.vala:34
+#: src/Widgets/Today.vala:36
 msgid "Today"
 msgstr "Cегодня"
 
-#: src/Widgets/Preferences.vala:176
+#: src/Widgets/Preferences.vala:174
 #, fuzzy
 msgid "UK System"
 msgstr "Метрическая система"
 
-#: src/Widgets/Preferences.vala:171
+#: src/Widgets/Preferences.vala:169
 msgid "Units:"
 msgstr "Единицы:"
 
-#: src/Widgets/Header.vala:66
+#: src/Widgets/Header.vala:64
 msgid "Update conditions"
 msgstr ""
 
-#: src/Widgets/Preferences.vala:123
+#: src/Widgets/Preferences.vala:121
 msgid "Update conditions every :"
 msgstr ""
 
-#: src/Widgets/Apikey.vala:68
+#: src/Widgets/Apikey.vala:65
 msgid "Use API key built-in"
 msgstr "Использовать встроенный ключ API"
 
-#: src/Widgets/Preferences.vala:98
+#: src/Widgets/Preferences.vala:96
 msgid "Use System Tray Indicator:"
 msgstr ""
 
-#: src/Widgets/Header.vala:37
+#: src/Widgets/Apikey.vala:135
+msgid "Using built-in API key:"
+msgstr ""
+
+#: src/Widgets/Header.vala:35
 msgid "View weather data"
 msgstr ""
 
@@ -312,24 +329,24 @@ msgstr ""
 msgid "Watch awesome maps with weather info."
 msgstr ""
 
-#: data/com.github.bitseater.weather.desktop.in:12
+#: data/com.github.bitseater.weather.desktop.in:13
 msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
 msgstr ""
 
-#: src/Widgets/MapViewOWM.vala:97 src/Widgets/MapView.vala:104
+#: src/Widgets/MapViewOWM.vala:95 src/Widgets/MapView.vala:102
 #, fuzzy
 msgid "Wind Speed"
 msgstr "Скорость ветра :"
 
-#: src/Widgets/Today.vala:64
+#: src/Widgets/Today.vala:66
 msgid "Wind dir :"
 msgstr "Ветер :"
 
-#: src/Widgets/Today.vala:60
+#: src/Widgets/Today.vala:62
 msgid "Wind speed :"
 msgstr "Скорость ветра :"
 
-#: src/Widgets/Apikey.vala:104
+#: src/Widgets/Apikey.vala:97
 msgid "Wrong API Key. Please, try again."
 msgstr "Неверный ключ API. Пожалуйста, попробуйте еще раз."
 
@@ -337,9 +354,20 @@ msgstr "Неверный ключ API. Пожалуйста, попробуйт�
 msgid "com.github.bitseater.weather"
 msgstr ""
 
-#: src/Widgets/About.vala:44
+#: src/Widgets/Apikey.vala:59
+msgid "or just :"
+msgstr ""
+
+#: src/Widgets/About.vala:45
 msgid "website"
 msgstr "вебсайт"
+
+#~ msgid ""
+#~ "<small>If you don't have it, please visit: <a href =\"https://home."
+#~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
+#~ msgstr ""
+#~ "<small>Если у вас его нет, посетите: <a href =\"https://home."
+#~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
 
 #, fuzzy
 #~ msgid "Weather"

@@ -21,10 +21,10 @@ namespace Weather.Widgets {
     public class Preferences : Gtk.Dialog {
 
         public Preferences (Weather.MainWindow window, Weather.Widgets.Header header) {
-            this.resizable = false;
-            this.deletable = true;
-            this.transient_for = window;
-            this.modal = true;
+            resizable = false;
+            deletable = true;
+            transient_for = window;
+            modal = true;
 
             var setting = new Settings ("com.github.bitseater.weather");
 
@@ -256,15 +256,13 @@ namespace Weather.Widgets {
             content.add (layout);
 
             //Actions
-            this.add_button (_("Close"), Gtk.ResponseType.CANCEL);
-            this.response.connect (() => {
+            add_button (_("Close"), Gtk.ResponseType.CANCEL);
+            response.connect (() => {
                 if (setting.get_string ("apiid") == "") {
                     var apikey = new Weather.Widgets.Apikey (window, header);
                     window.change_view (apikey);
                 } else if (setting.get_boolean ("auto")) {
-                    Weather.Utils.geolocate ();
-                    var current = new Weather.Widgets.Current (window, header);
-                    window.change_view (current);
+                    Weather.Utils.get_location.begin (window, header);
                 } else if (setting.get_string ("idplace") == "") {
                     var city = new Weather.Widgets.City (window, header);
                     window.change_view (city);
@@ -276,8 +274,7 @@ namespace Weather.Widgets {
                 header.restart_switcher ();
                 destroy ();
             });
-
-            this.show_all ();
+            show_all ();
         }
     }
 }

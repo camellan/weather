@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-21 20:41+0100\n"
+"POT-Creation-Date: 2018-03-22 21:48+0100\n"
 "PO-Revision-Date: 2018-03-06 12:02+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
@@ -19,56 +19,59 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: src/Widgets/Preferences.vala:128
+#: src/Widgets/Apikey.vala:142
+msgid "- Use only to try this application"
+msgstr ""
+
+#: src/Widgets/Apikey.vala:140
+msgid "- You can't use the update button"
+msgstr ""
+
+#: src/Widgets/Apikey.vala:138
+msgid "- You'll have limited access to API"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:126
 msgid "12 hrs."
 msgstr "12 val."
 
-#: src/Widgets/Preferences.vala:126
+#: src/Widgets/Preferences.vala:124
 msgid "2 hrs."
 msgstr "2 val."
 
-#: src/Widgets/Preferences.vala:129
+#: src/Widgets/Preferences.vala:127
 msgid "24 hrs."
 msgstr "24 val."
 
-#: src/Widgets/Preferences.vala:127
+#: src/Widgets/Preferences.vala:125
 msgid "6 hrs."
 msgstr "6 val."
 
-#: src/Widgets/Apikey.vala:43
-msgid "<big>Enter your OpenWeatherMap API key</big>\n"
-msgstr "<big>Įveskite savo OpenWeatherMap API raktą</big>\n"
-
-#: src/Widgets/Apikey.vala:63
-msgid ""
-"<small>If you don't have it, please visit: <a href =\"https://home."
-"openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
-msgstr ""
-"<small>Jeigu jo neturite, apsilankykite: <a href =\"https://home."
-"openweathermap.org/users/sign_up\">OpenWeatherMap</a> arba, tiesiog, "
-"pažymėkite :</small>"
-
-#: src/Widgets/About.vala:32
+#: src/Widgets/About.vala:30
 msgid "A forecast application with OpenWeatherMap API"
 msgstr "Orų prognozės programa su OpenWeatherMap API"
 
-#: src/Widgets/Header.vala:38
+#: src/Widgets/Header.vala:36
 msgid "About Meteo"
 msgstr "Apie Meteo"
 
-#: src/Widgets/City.vala:53 src/Widgets/City.vala:136 src/Widgets/City.vala:144
+#: src/Widgets/City.vala:47 src/Widgets/City.vala:135 src/Widgets/City.vala:142
 msgid "At least of 3 characters are required!"
 msgstr "Reikia bent 3 simbolių!"
+
+#: src/Widgets/About.vala:53
+msgid "Based in a mockup by"
+msgstr ""
 
 #: data/com.github.bitseater.weather.appdata.xml.in:43
 msgid "Carlos Suárez"
 msgstr "Carlos Suárez"
 
-#: src/Widgets/Header.vala:64
+#: src/Widgets/Header.vala:62
 msgid "Change location"
 msgstr "Keisti vietą"
 
-#: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
+#: src/Widgets/MapViewOWM.vala:142 src/Widgets/MapView.vala:105
 msgid "Change to "
 msgstr "Keisti į "
 
@@ -80,47 +83,53 @@ msgstr "Pasirinkite savo miestą su žemėlapių informacija."
 msgid "Choose your units (metric, imperial or british)."
 msgstr "Pasirinkite savo vienetus (metrinius, imperinius ar britiškus)."
 
-#: src/Widgets/Preferences.vala:261 src/Widgets/ViewFile.vala:66
+#: src/Widgets/Preferences.vala:259 src/Widgets/ViewFile.vala:64
+#: src/Widgets/Apikey.vala:157
 msgid "Close"
 msgstr "Užverti"
 
-#: src/Widgets/Today.vala:68
+#: src/Widgets/Today.vala:70
 msgid "Cloudiness :"
 msgstr "Debesuotumas :"
 
-#: src/Widgets/MapViewOWM.vala:94 src/Widgets/MapView.vala:101
+#: src/Widgets/MapViewOWM.vala:92 src/Widgets/MapView.vala:99
 msgid "Clouds"
 msgstr "Debesys"
 
-#: src/Widgets/About.vala:49
+#: src/Widgets/About.vala:51
 msgid "Colaborators"
 msgstr "Talkininkai"
 
-#: src/Widgets/Today.vala:37
+#: src/Widgets/Today.vala:39
 msgid "Coordinates :"
 msgstr "Koordinatės :"
 
-#: src/Widgets/ViewFile.vala:32
+#: src/Widgets/ViewFile.vala:30
 msgid "Current Weather Data"
 msgstr "Dabartinių orų duomenys"
 
-#: src/Widgets/Preferences.vala:42
+#: src/Widgets/Preferences.vala:40
 msgid "Dark theme:"
 msgstr "Tamsi tema:"
 
-#: src/Widgets/Header.vala:85
+#: src/Widgets/Header.vala:80
 msgid "Data"
 msgstr "Duomenys"
 
-#: src/Widgets/ViewFile.vala:52
+#: src/Widgets/ViewFile.vala:50
 msgid "Data file not found"
 msgstr "Duomenų failas nerastas"
 
-#: src/Widgets/Preferences.vala:211
+#: src/Widgets/Apikey.vala:39
+#, fuzzy
+msgid "Enter your OpenWeatherMap API key"
+msgstr "<big>Įveskite savo OpenWeatherMap API raktą</big>\n"
+
+#: src/Widgets/Preferences.vala:209
 msgid "Find my location automatically:"
 msgstr "Automatiškai rasti mano buvimo vietą:"
 
-#: src/Widgets/Forecast.vala:67
+#: src/Widgets/Forecast.vala:93
 msgid "Forecast"
 msgstr "Orų prognozė"
 
@@ -136,28 +145,31 @@ msgstr "Orų prognozė ateinančioms 18 valandoms."
 msgid "Forecast for next five days."
 msgstr "Orų prognozė ateinančioms 5 dienoms."
 
-#: src/Widgets/MapViewOWM.vala:55 src/Widgets/Apikey.vala:132
-#: src/Widgets/MapView.vala:80 src/Utils/GeoLocate.vala:71
+#: src/Widgets/MapViewOWM.vala:53 src/Widgets/MapView.vala:78
 msgid "Found an error"
 msgstr "Rasta klaida"
 
-#: src/Widgets/Preferences.vala:37
+#: src/Widgets/Preferences.vala:35
 msgid "General"
 msgstr "Bendra"
 
-#: src/Widgets/Today.vala:56
+#: src/Widgets/Today.vala:58
 msgid "Humidity :"
 msgstr "Drėgnumas :"
 
-#: src/Widgets/MapViewOWM.vala:189
+#: src/Widgets/Apikey.vala:59
+msgid "If you don't have it, please visit:"
+msgstr ""
+
+#: src/Widgets/MapViewOWM.vala:186
 msgid "Image not found"
 msgstr "Paveikslas nerastas"
 
-#: src/Widgets/Preferences.vala:175
+#: src/Widgets/Preferences.vala:173
 msgid "Imperial System"
 msgstr "Imperinė sistema"
 
-#: src/Widgets/Preferences.vala:34
+#: src/Widgets/Preferences.vala:32
 msgid "Interface"
 msgstr "Sąsaja"
 
@@ -167,7 +179,7 @@ msgstr ""
 "Žinokite ateinančių valandų ir dienų orų prognozę su duomenimis ir "
 "žemėlapiais"
 
-#: src/Widgets/Header.vala:86
+#: src/Widgets/Header.vala:81
 msgid "Maps"
 msgstr "Žemėlapiai"
 
@@ -177,7 +189,7 @@ msgstr "Žemėlapiai"
 msgid "Meteo"
 msgstr "Meteo"
 
-#: src/Widgets/Preferences.vala:174
+#: src/Widgets/Preferences.vala:172
 msgid "Metric System"
 msgstr "Metrinė sistema"
 
@@ -189,111 +201,115 @@ msgstr "Nėra duomenų"
 msgid "Now with System Tray Indicator."
 msgstr "Dabar su sistemos dėklo indikatoriumi."
 
-#: src/Widgets/Header.vala:58
+#: src/Widgets/Header.vala:56
 msgid "Options"
 msgstr "Parametrai"
 
-#: src/Widgets/MapViewOWM.vala:95 src/Widgets/MapView.vala:102
+#: src/Widgets/MapViewOWM.vala:93 src/Widgets/MapView.vala:100
 msgid "Precipitation"
 msgstr "Krituliai"
 
-#: src/Widgets/Header.vala:36
+#: src/Widgets/Header.vala:34
 msgid "Preferences"
 msgstr "Nuostatos"
 
-#: src/Widgets/MapViewOWM.vala:96 src/Widgets/MapView.vala:103
+#: src/Widgets/MapViewOWM.vala:94 src/Widgets/MapView.vala:101
 msgid "Pressure"
 msgstr "Slėgis"
 
-#: src/Widgets/Today.vala:52
+#: src/Widgets/Today.vala:54
 msgid "Pressure :"
 msgstr "Slėgis :"
 
-#: src/MainWindow.vala:107
+#: src/MainWindow.vala:177
 msgid "Quit"
 msgstr "Išeiti"
 
-#: src/Widgets/Preferences.vala:195
+#: src/Widgets/Preferences.vala:193
 msgid "Restore API key:"
 msgstr "Atkurti API raktą:"
 
-#: src/Widgets/Apikey.vala:52
+#: src/Widgets/Apikey.vala:48
 msgid "Save"
 msgstr "Įrašyti"
 
-#: src/Widgets/City.vala:40
+#: src/Widgets/City.vala:34
 msgid "Search for new location:"
 msgstr "Ieškoti naujos vietos:"
 
-#: src/Widgets/City.vala:91
+#: src/Widgets/City.vala:84
 msgid "Select"
 msgstr "Pasirinkti"
 
-#: src/MainWindow.vala:98
+#: src/MainWindow.vala:168
 msgid "Show Meteo"
 msgstr "Rodyti Meteo"
 
-#: src/Widgets/About.vala:50
+#: src/Widgets/About.vala:52
 msgid "Special Thanks to"
 msgstr "Ypatinga padėka"
 
-#: src/Widgets/Preferences.vala:80
+#: src/Widgets/Preferences.vala:78
 msgid "Start minimized:"
 msgstr "Paleisti suskleistą:"
 
-#: src/Widgets/Today.vala:70
+#: src/Widgets/Today.vala:72
 msgid "Sunrise :"
 msgstr "Saulėtekis :"
 
-#: src/Widgets/Today.vala:74
+#: src/Widgets/Today.vala:76
 msgid "Sunset :"
 msgstr "Saulėlydis :"
 
-#: src/Widgets/Preferences.vala:62
+#: src/Widgets/Preferences.vala:60
 msgid "Symbolic icons:"
 msgstr "Simbolinės piktogramos:"
 
-#: src/Widgets/MapViewOWM.vala:93 src/Widgets/MapView.vala:100
+#: src/Widgets/MapViewOWM.vala:91 src/Widgets/MapView.vala:98
 msgid "Temperature"
 msgstr "Temperatūra"
 
-#: src/Widgets/MapViewOWM.vala:146 src/Widgets/MapView.vala:109
+#: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
 msgid "Terms of Service"
 msgstr "Naudojimosi sąlygos"
 
-#: src/Widgets/Apikey.vala:110
+#: src/Widgets/Apikey.vala:103
 msgid "The API key cannot be empty."
 msgstr "API raktas negali būti tuščias."
 
-#: src/Widgets/Today.vala:34
+#: src/Widgets/Today.vala:36
 msgid "Today"
 msgstr "Šiandien"
 
-#: src/Widgets/Preferences.vala:176
+#: src/Widgets/Preferences.vala:174
 msgid "UK System"
 msgstr "JK sistema"
 
-#: src/Widgets/Preferences.vala:171
+#: src/Widgets/Preferences.vala:169
 msgid "Units:"
 msgstr "Vienetai:"
 
-#: src/Widgets/Header.vala:66
+#: src/Widgets/Header.vala:64
 msgid "Update conditions"
 msgstr "Atnaujinti orų sąlygas"
 
-#: src/Widgets/Preferences.vala:123
+#: src/Widgets/Preferences.vala:121
 msgid "Update conditions every :"
 msgstr "Atnaujinti orų sąlygas kas :"
 
-#: src/Widgets/Apikey.vala:68
+#: src/Widgets/Apikey.vala:65
 msgid "Use API key built-in"
 msgstr "Naudoti įtaisytąjį API raktą"
 
-#: src/Widgets/Preferences.vala:98
+#: src/Widgets/Preferences.vala:96
 msgid "Use System Tray Indicator:"
 msgstr "Naudoti sistemos dėklo indikatorių:"
 
-#: src/Widgets/Header.vala:37
+#: src/Widgets/Apikey.vala:135
+msgid "Using built-in API key:"
+msgstr ""
+
+#: src/Widgets/Header.vala:35
 msgid "View weather data"
 msgstr "Rodyti orų duomenis"
 
@@ -301,23 +317,23 @@ msgstr "Rodyti orų duomenis"
 msgid "Watch awesome maps with weather info."
 msgstr "Stebėkite įspūdingus žemėlapius su orų informacija."
 
-#: data/com.github.bitseater.weather.desktop.in:12
+#: data/com.github.bitseater.weather.desktop.in:13
 msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
 msgstr "Orai;Prognozė;Temperatūra;Vėjas;Oras;Sniegas;Lietus;"
 
-#: src/Widgets/MapViewOWM.vala:97 src/Widgets/MapView.vala:104
+#: src/Widgets/MapViewOWM.vala:95 src/Widgets/MapView.vala:102
 msgid "Wind Speed"
 msgstr "Vėjo greitis"
 
-#: src/Widgets/Today.vala:64
+#: src/Widgets/Today.vala:66
 msgid "Wind dir :"
 msgstr "Vėjo kryptis :"
 
-#: src/Widgets/Today.vala:60
+#: src/Widgets/Today.vala:62
 msgid "Wind speed :"
 msgstr "Vėjo greitis :"
 
-#: src/Widgets/Apikey.vala:104
+#: src/Widgets/Apikey.vala:97
 msgid "Wrong API Key. Please, try again."
 msgstr "Neteisingas API raktas. Bandykite dar kartą."
 
@@ -325,9 +341,21 @@ msgstr "Neteisingas API raktas. Bandykite dar kartą."
 msgid "com.github.bitseater.weather"
 msgstr "com.github.bitseater.weather"
 
-#: src/Widgets/About.vala:44
+#: src/Widgets/Apikey.vala:59
+msgid "or just :"
+msgstr ""
+
+#: src/Widgets/About.vala:45
 msgid "website"
 msgstr "Internetinė svetainė"
+
+#~ msgid ""
+#~ "<small>If you don't have it, please visit: <a href =\"https://home."
+#~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
+#~ msgstr ""
+#~ "<small>Jeigu jo neturite, apsilankykite: <a href =\"https://home."
+#~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a> arba, tiesiog, "
+#~ "pažymėkite :</small>"
 
 #~ msgid "Weather"
 #~ msgstr "Orai"

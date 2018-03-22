@@ -2,7 +2,7 @@
 
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bitseater.weather)﻿
 
-[![Release 0.6.1](https://img.shields.io/badge/Release-0.6.1-orange.svg)](https://github.com/bitseater/weather/releases) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Travis CI](https://travis-ci.org/bitseater/weather.svg?branch=master)](https://travis-ci.org/bitseater/weather/builds/) [![Flatpak](https://img.shields.io/badge/flatpak-download-lightgrey.svg)](https://flathub.org/repo/appstream/com.github.bitseater.weather.flatpakref) [![Snap Status](https://build.snapcraft.io/badge/bitseater/snap-meteo.svg)](https://build.snapcraft.io/user/bitseater/snap-meteo)
+[![Release 0.6.1](https://img.shields.io/badge/Release-0.7.ß-orange.svg)](https://github.com/bitseater/weather/releases) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Travis CI](https://travis-ci.org/bitseater/weather.svg?branch=master)](https://travis-ci.org/bitseater/weather/builds/) [![Flatpak](https://img.shields.io/badge/flatpak-download-lightgrey.svg)](https://flathub.org/repo/appstream/com.github.bitseater.weather.flatpakref) [![Snap Status](https://build.snapcraft.io/badge/bitseater/snap-meteo.svg)](https://build.snapcraft.io/user/bitseater/snap-meteo)
 
 
 ### Know the forecast of the next hours & days.
@@ -72,6 +72,7 @@ Library Dependencies :
 - geocode-glib-1.0
 - webkit2gtk-4.0
 - appindicator3-0.1
+- libgeoclue-2.0
 - meson
 
 
@@ -83,15 +84,15 @@ For advanced users!
 
 ----
 
-#### New on release 0.6.1:
+#### New on release 0.7.0:
 
-- Change appname to METEO.
-- Save current data to cache file.
-- Show cache file in text format.
-- Add new translations: pt_PT and pt_BR.
-- Reload button when own API key.
+- Load data from cache file when no connect.
+- Add some comments when user select built-in API key.
+- Add more information to indicator.
+- Add new translations.
+- Use GeoClue2 to get location (for Juno support).
 
-Fixed issues: #28 #29 #34 #36 #39 #44 #46 #47 #48 #54
+Fixed issues: #49 #50 #52 #53 #57 #58 #60 #61
 
 ----
 ### Other screenshots:

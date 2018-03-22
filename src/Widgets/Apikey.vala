@@ -87,10 +87,7 @@ namespace  Weather.Widgets {
                     if (check_apikey (uri)) {
                         setting.set_string ("apiid", apientry.get_text ());
                         if (setting.get_boolean ("auto")) {
-                            Weather.Utils.geolocate ();
-                            var current = new Weather.Widgets.Current (window, header);
-                            window.change_view (current);
-                            window.show_all ();
+                            Weather.Utils.get_location.begin (window, header);
                         } else {
                             var city = new Weather.Widgets.City (window, header);
                             window.change_view (city);
@@ -158,12 +155,11 @@ namespace  Weather.Widgets {
             content.attach (lab3, 1, 3, 1, 1);
             content.show_all ();
             var msgbutton = new Gtk.Button.with_label (_("Close"));
+            msgbutton.margin = 6;
+            msgbutton.margin_top = 12;
             msgbutton.get_style_context ().add_class (Gtk.STYLE_CLASS_SUGGESTED_ACTION);
             msg.get_content_area ().add (content);
-            msg.get_action_area ().margin = 6;
-            msg.get_action_area ().margin_top = 12;
             msg.add_action_widget (msgbutton, Gtk.ResponseType.CLOSE);
-            msg.get_action_area ().show_all ();
             msg.response.connect (() => {
                 msg.destroy ();
             });

@@ -1,3 +1,14 @@
+com.github.bitseater.weather (0.7.0) xenial; urgency=medium
+
+    * Load data from cache file when no connect.
+    * Add some comments when user select built-in API key.
+    * Add more information to indicator.
+    * Add new translations.
+    * Use GeoClue2 to get location (for Juno support).
+    * Fixed issues: 49,50,52,53,57,58,60,61.
+
+ -- Carlos Suárez <bitseater@gmail.com>  Thu, 22 Mar 2018 21:30:00 +0100
+
 com.github.bitseater.weather (0.6.1) xenial; urgency=medium
 
     * Change appname to METEO.
