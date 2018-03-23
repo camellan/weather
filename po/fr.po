@@ -1,4 +1,4 @@
-# WEATHER
+# METEO
 # Copyright (C) 2017 Carlos Suárez
 # This file is distributed under the same license as the com.github.bitseater.weather package.
 # Carlos Suárez <bitseater@gmail.com>, 2017.
@@ -7,9 +7,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-26 22:57+0100\n"
-"PO-Revision-Date: 2017-11-26 23:24+0100\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2018-03-22 21:48+0100\n"
+"PO-Revision-Date: 2018-03-20 20:40+0100\n"
+"Last-Translator: Arthur Soulié <arthur.soulie@tuta.io>\n"
 "Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
@@ -18,157 +18,359 @@ msgstr ""
 "X-Generator: Poedit 1.8.7.1\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: weather/src/Widgets/Apikey.vala:43
-msgid "<big>Enter your OpenWeatherMap API key</big>\n"
-msgstr "<big>Entrez votre clé pour la API de OpenWeatherMap</big>\n"
-
-#: weather/src/Widgets/Apikey.vala:63
-msgid ""
-"<small>If you don't have it, please visit: <a href =\"https://home."
-"openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
+#: src/Widgets/Apikey.vala:142
+msgid "- Use only to try this application"
 msgstr ""
-"<small>Si vous ne l'avez pas, veuillez visiter: <a href =\"https://home."
-"openweathermap.org/users/sign_up\">OpenWeatherMap</a>  ou tout simplement :</"
-"small>"
 
-#: weather/src/Widgets/About.vala:31
+#: src/Widgets/Apikey.vala:140
+msgid "- You can't use the update button"
+msgstr ""
+
+#: src/Widgets/Apikey.vala:138
+msgid "- You'll have limited access to API"
+msgstr ""
+
+#: src/Widgets/Preferences.vala:126
+msgid "12 hrs."
+msgstr "12 hrs."
+
+#: src/Widgets/Preferences.vala:124
+msgid "2 hrs."
+msgstr "2 hrs."
+
+#: src/Widgets/Preferences.vala:127
+msgid "24 hrs."
+msgstr "24 hrs."
+
+#: src/Widgets/Preferences.vala:125
+msgid "6 hrs."
+msgstr "6 hrs."
+
+#: src/Widgets/About.vala:30
 msgid "A forecast application with OpenWeatherMap API"
-msgstr "Une application pour les prévisions avec l'API de OpenWeatherMap "
+msgstr "Une application de prévision météo avec l'API OpenWeatherMap "
 
-#: weather/src/Widgets/Header.vala:34
-msgid "About Weather"
-msgstr "À Propos De Weather"
+#: src/Widgets/Header.vala:36
+msgid "About Meteo"
+msgstr "À propos de Météo"
 
-#: weather/src/Widgets/City.vala:94
+#: src/Widgets/City.vala:47 src/Widgets/City.vala:135 src/Widgets/City.vala:142
 msgid "At least of 3 characters are required!"
-msgstr "À moins de 3 caractères sont requis!"
+msgstr "Au moins 3 caractères sont requis!"
 
-#: weather/src/Widgets/Header.vala:56
+#: src/Widgets/About.vala:53
+msgid "Based in a mockup by"
+msgstr ""
+
+#: data/com.github.bitseater.weather.appdata.xml.in:43
+msgid "Carlos Suárez"
+msgstr "Carlos Suárez"
+
+#: src/Widgets/Header.vala:62
 msgid "Change location"
-msgstr "Changement d'emplacement"
+msgstr "Changer de lieu"
 
-#: weather/src/Widgets/City.vala:63
-msgid "City"
-msgstr "Ville"
+#: src/Widgets/MapViewOWM.vala:142 src/Widgets/MapView.vala:105
+msgid "Change to "
+msgstr "Changement de "
 
-#: weather/src/Widgets/Preferences.vala:109
+#: data/com.github.bitseater.weather.appdata.xml.in:20
+msgid "Choose your city with maps info."
+msgstr "Choisissez votre ville grâce à la carte."
+
+#: data/com.github.bitseater.weather.appdata.xml.in:19
+msgid "Choose your units (metric, imperial or british)."
+msgstr "Choisissez une unité (métrique, impériale ou britannique)."
+
+#: src/Widgets/Preferences.vala:259 src/Widgets/ViewFile.vala:64
+#: src/Widgets/Apikey.vala:157
 msgid "Close"
 msgstr "Fermer"
 
-#: weather/src/Widgets/Today.vala:68
+#: src/Widgets/Today.vala:70
 msgid "Cloudiness :"
-msgstr "Nébulosité :"
+msgstr "Encombrement du ciel :"
 
-#: weather/src/Widgets/Today.vala:37
+#: src/Widgets/MapViewOWM.vala:92 src/Widgets/MapView.vala:99
+msgid "Clouds"
+msgstr "Nuages"
+
+#: src/Widgets/About.vala:51
+msgid "Colaborators"
+msgstr "Collaborateurs"
+
+#: src/Widgets/Today.vala:39
 msgid "Coordinates :"
 msgstr "Coordonnées :"
 
-#: weather/src/Widgets/City.vala:61
-msgid "Country"
-msgstr "Pays"
+#: src/Widgets/ViewFile.vala:30
+msgid "Current Weather Data"
+msgstr "Données Météorologiques Actuelles"
 
-#: weather/src/Widgets/Preferences.vala:36
+#: src/Widgets/Preferences.vala:40
 msgid "Dark theme:"
 msgstr "Thème sombre:"
 
-#: weather/src/Widgets/About.vala:32
-msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
-msgstr "Développé à l'aide de Vala, Gtk & Granite - bitseater - 2017"
+#: src/Widgets/Header.vala:80
+msgid "Data"
+msgstr "Données"
 
-#: weather/src/Widgets/Forecast.vala:51
+#: src/Widgets/ViewFile.vala:50
+msgid "Data file not found"
+msgstr "Fichier non trouvé"
+
+#: src/Widgets/Apikey.vala:39
+#, fuzzy
+msgid "Enter your OpenWeatherMap API key"
+msgstr "<big>Entrez votre clé API pour OpenWeatherMap</big>\n"
+
+#: src/Widgets/Preferences.vala:209
+msgid "Find my location automatically:"
+msgstr "Trouver ma position automatiquement: "
+
+#: src/Widgets/Forecast.vala:93
 msgid "Forecast"
 msgstr "Prévisions"
 
-#: weather/src/Utils/OWM_Today.vala:159 weather/src/Widgets/City.vala:125
-#: weather/src/Widgets/Apikey.vala:124 weather/src/Widgets/Forecast.vala:75
-#, c-format
-msgid "Found an error"
-msgstr "Trouvé une erreur"
+#: data/com.github.bitseater.weather.desktop.in:5
+msgid "Forecast App for desktop"
+msgstr "Application météo pour le bureau"
 
-#: weather/src/Widgets/Today.vala:56
+#: data/com.github.bitseater.weather.appdata.xml.in:17
+msgid "Forecast for next 18 hours."
+msgstr "Prévisions pour les prochaines 18 heures."
+
+#: data/com.github.bitseater.weather.appdata.xml.in:18
+msgid "Forecast for next five days."
+msgstr "Prévisions pour les cinq prochains jours."
+
+#: src/Widgets/MapViewOWM.vala:53 src/Widgets/MapView.vala:78
+msgid "Found an error"
+msgstr "Erreur trouvée"
+
+#: src/Widgets/Preferences.vala:35
+msgid "General"
+msgstr "Général"
+
+#: src/Widgets/Today.vala:58
 msgid "Humidity :"
 msgstr "Humidité :"
 
-#: weather/src/Widgets/Preferences.vala:59
+#: src/Widgets/Apikey.vala:59
+msgid "If you don't have it, please visit:"
+msgstr ""
+
+#: src/Widgets/MapViewOWM.vala:186
+msgid "Image not found"
+msgstr "Image non trouvée"
+
+#: src/Widgets/Preferences.vala:173
 msgid "Imperial System"
 msgstr "Système Impérial"
 
-#: weather/src/Widgets/Preferences.vala:58
+#: src/Widgets/Preferences.vala:32
+msgid "Interface"
+msgstr "Interface"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:10
+msgid "Know the forecast of the next hours and days with data and maps"
+msgstr ""
+"Prenez connaissance des prévisions dans les heures et des jours à veniravec "
+"des données et des cartes"
+
+#: src/Widgets/Header.vala:81
+msgid "Maps"
+msgstr "Cartes"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:8
+#: data/com.github.bitseater.weather.desktop.in:3
+#: data/com.github.bitseater.weather.desktop.in:4
+msgid "Meteo"
+msgstr "Météo"
+
+#: src/Widgets/Preferences.vala:172
 msgid "Metric System"
-msgstr "Système Métrique "
+msgstr "Système Métrique"
 
-#: weather/src/Widgets/City.vala:110
+#: src/Widgets/City.vala:127
 msgid "No data"
-msgstr "Pas de données "
+msgstr "Pas de données"
 
-#: weather/src/Widgets/City.vala:62
-msgid "OpenWM ID"
-msgstr "Id. OpenWM"
+#: data/com.github.bitseater.weather.appdata.xml.in:22
+msgid "Now with System Tray Indicator."
+msgstr "Maintenant, avec l'Indicateur du Système."
 
-#: weather/src/Widgets/Header.vala:49
+#: src/Widgets/Header.vala:56
 msgid "Options"
 msgstr "Options"
 
-#: weather/src/Widgets/Header.vala:33 weather/src/Widgets/Preferences.vala:33
-msgid "Preferences"
-msgstr "Preferences"
+#: src/Widgets/MapViewOWM.vala:93 src/Widgets/MapView.vala:100
+msgid "Precipitation"
+msgstr "Précipitations"
 
-#: weather/src/Widgets/Today.vala:52
+#: src/Widgets/Header.vala:34
+msgid "Preferences"
+msgstr "Préférences"
+
+#: src/Widgets/MapViewOWM.vala:94 src/Widgets/MapView.vala:101
+msgid "Pressure"
+msgstr "Pression"
+
+#: src/Widgets/Today.vala:54
 msgid "Pressure :"
 msgstr "Pression :"
 
-#: weather/src/Widgets/Preferences.vala:74
-msgid "Restore API key:"
-msgstr "Restaurer la clé de l'API:"
+#: src/MainWindow.vala:177
+msgid "Quit"
+msgstr "Fermer"
 
-#: weather/src/Widgets/Apikey.vala:52
+#: src/Widgets/Preferences.vala:193
+msgid "Restore API key:"
+msgstr "Restaurer la clé API:"
+
+#: src/Widgets/Apikey.vala:48
 msgid "Save"
 msgstr "Enregistrer"
 
-#: weather/src/Widgets/City.vala:49
+#: src/Widgets/City.vala:34
 msgid "Search for new location:"
-msgstr "Recherche d'un nouvel emplacement:"
+msgstr "Rechercher un nouvel emplacement:"
 
-#: weather/src/Widgets/Today.vala:70
+#: src/Widgets/City.vala:84
+msgid "Select"
+msgstr "Sélectionner"
+
+#: src/MainWindow.vala:168
+msgid "Show Meteo"
+msgstr "Afficher la Météo"
+
+#: src/Widgets/About.vala:52
+msgid "Special Thanks to"
+msgstr "Un Merci spécial à"
+
+#: src/Widgets/Preferences.vala:78
+msgid "Start minimized:"
+msgstr "Réduire au démarrage:"
+
+#: src/Widgets/Today.vala:72
 msgid "Sunrise :"
 msgstr "Lever du soleil :"
 
-#: weather/src/Widgets/Today.vala:74
+#: src/Widgets/Today.vala:76
 msgid "Sunset :"
 msgstr "Coucher de soleil :"
 
-#: weather/src/Widgets/Apikey.vala:102
-msgid "The API key cannot be empty."
-msgstr "La clé de l'API ne peut pas être vide."
+#: src/Widgets/Preferences.vala:60
+msgid "Symbolic icons:"
+msgstr "Icônes symboliques:"
 
-#: weather/src/Widgets/Today.vala:34
+#: src/Widgets/MapViewOWM.vala:91 src/Widgets/MapView.vala:98
+msgid "Temperature"
+msgstr "Température"
+
+#: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
+msgid "Terms of Service"
+msgstr "Conditions de Service"
+
+#: src/Widgets/Apikey.vala:103
+msgid "The API key cannot be empty."
+msgstr "La clé API ne peut pas être vide."
+
+#: src/Widgets/Today.vala:36
 msgid "Today"
 msgstr "Aujourd'hui"
 
-#: weather/src/Widgets/Preferences.vala:55
+#: src/Widgets/Preferences.vala:174
+msgid "UK System"
+msgstr "Système britannique "
+
+#: src/Widgets/Preferences.vala:169
 msgid "Units:"
 msgstr "Unités:"
 
-#: weather/src/Widgets/Header.vala:54
-msgid "Update"
-msgstr "Mise à jour"
+#: src/Widgets/Header.vala:64
+msgid "Update conditions"
+msgstr "Mise à jour des conditions"
 
-#: weather/src/Widgets/Apikey.vala:68
+#: src/Widgets/Preferences.vala:121
+msgid "Update conditions every :"
+msgstr "Recharger les données toute les:"
+
+#: src/Widgets/Apikey.vala:65
 msgid "Use API key built-in"
-msgstr "Utiliser la clé de l'API intégré"
+msgstr "Utiliser la clé API intégrée"
 
-#: weather/src/Widgets/Today.vala:64
+#: src/Widgets/Preferences.vala:96
+msgid "Use System Tray Indicator:"
+msgstr "Utiliser L'Indicateur:"
+
+#: src/Widgets/Apikey.vala:135
+msgid "Using built-in API key:"
+msgstr ""
+
+#: src/Widgets/Header.vala:35
+msgid "View weather data"
+msgstr "Afficher les données météorologiques"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:21
+msgid "Watch awesome maps with weather info."
+msgstr "Regardez de superbes cartes météorologiques."
+
+#: data/com.github.bitseater.weather.desktop.in:13
+msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
+msgstr "Prévisions;Météo;Température;Vent;Neige;Pluie;"
+
+#: src/Widgets/MapViewOWM.vala:95 src/Widgets/MapView.vala:102
+msgid "Wind Speed"
+msgstr "Vitesse du vent"
+
+#: src/Widgets/Today.vala:66
 msgid "Wind dir :"
 msgstr "Dir. du vent :"
 
-#: weather/src/Widgets/Today.vala:60
+#: src/Widgets/Today.vala:62
 msgid "Wind speed :"
 msgstr "Vitesse du vent :"
 
-#: weather/src/Widgets/Apikey.vala:96
+#: src/Widgets/Apikey.vala:97
 msgid "Wrong API Key. Please, try again."
-msgstr "Mauvaise clé de API. S'il vous plaît, essayez de nouveau."
+msgstr "Mauvaise clé API. Veuillez réessayer."
 
-#: weather/src/Widgets/About.vala:39
+#: data/com.github.bitseater.weather.desktop.in:8
+msgid "com.github.bitseater.weather"
+msgstr "com.github.bitseater.weather"
+
+#: src/Widgets/Apikey.vala:59
+msgid "or just :"
+msgstr ""
+
+#: src/Widgets/About.vala:45
 msgid "website"
 msgstr "site web "
+
+#~ msgid ""
+#~ "<small>If you don't have it, please visit: <a href =\"https://home."
+#~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
+#~ msgstr ""
+#~ "<small>Si vous ne l'avez pas, veuillez visiter: <a href =\"https://home."
+#~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a>  ou tout "
+#~ "simplement :</small>"
+
+#, fuzzy
+#~ msgid "Weather"
+#~ msgstr "Afficher le Weather"
+
+#~ msgid "Update"
+#~ msgstr "Mise à jour"
+
+#~ msgid "City"
+#~ msgstr "Ville"
+
+#~ msgid "Country"
+#~ msgstr "Pays"
+
+#~ msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
+#~ msgstr "Développé à l'aide de Vala, Gtk & Granite - bitseater - 2017"
+
+#~ msgid "OpenWM ID"
+#~ msgstr "Id. OpenWM"

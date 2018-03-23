@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
+* Copyright (c) 2017-2018 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
 * License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
+* version 3 of the License, or (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -12,9 +12,7 @@
 * General Public License for more details.
 *
 * You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-* Boston, MA 02111-1307, USA.
+* License along with this program; If not, see <http://www.gnu.org/licenses/>.
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
@@ -22,7 +20,7 @@ namespace  Weather.Widgets {
 
     public class Today : Gtk.Grid {
 
-        public Today (string idplace) {
+        public Today (string idplace, Weather.MainWindow window) {
             valign = Gtk.Align.START;
             halign = Gtk.Align.CENTER;
             row_spacing = 5;
@@ -31,6 +29,10 @@ namespace  Weather.Widgets {
 
             var today = new Weather.Utils.OWM_Today (idplace);
 
+            if (today.update != "") {
+                window.ticket.set_text (today.update);
+                window.ticket.reveal_child = true;
+            }
             var title = new Gtk.Label (_("Today"));
             title.get_style_context ().add_class ("weather");
             title.halign = Gtk.Align.START;
@@ -38,7 +40,7 @@ namespace  Weather.Widgets {
             coord_lb.halign = Gtk.Align.END;
             var coord_c = new Gtk.Label ("[ " + today.coor_lat + " , " + today.coor_lon + " ]");
             coord_c.halign = Gtk.Align.START;
-            var weather_main = new Gtk.Label (today.wmain + ", " + today.wdescrip);
+            var weather_main = new Gtk.Label (today.wdescrip);
             weather_main.halign = Gtk.Align.START;
             weather_main.get_style_context ().add_class ("resumen");
             var icon = new Weather.Utils.Iconame (today.icon, 128);
@@ -97,6 +99,9 @@ namespace  Weather.Widgets {
             attach (sunrise, 3, 10, 2, 1);
             attach (sun_s, 1, 11, 2, 1);
             attach (sunset, 3, 11, 2, 1);
+
+            window.set_icolabel (icon.get_icon (today.icon) + "-symbolic", today.temp);
+            window.set_indicatormenu (today.humidity, today.pressure, today.windspeed, today.winddir, today.clouds, today.sunrise, today.sunset);
         }
     }
 }

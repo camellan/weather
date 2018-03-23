@@ -3,7 +3,7 @@ Upstream-Name: com.github.bitseater.weather
 Source: https://github.com/bitseater/weather
 
 Files: src/* data/* cmake/* debian/* po/*
-Copyright: 2017 Carlos Suárez <bitseater@gmail.com>
+Copyright: 2017-2018 Carlos Suárez <bitseater@gmail.com>
 
 License: GPL-3.0+
  This program is free software: you can redistribute it and/or modify

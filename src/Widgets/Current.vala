@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
+* Copyright (c) 2017-2018 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
 * License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
+* version 3 of the License, or (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -12,9 +12,7 @@
 * General Public License for more details.
 *
 * You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-* Boston, MA 02111-1307, USA.
+* License along with this program; If not, see <http://www.gnu.org/licenses/>.
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
@@ -22,25 +20,37 @@ namespace Weather.Widgets {
 
     public class Current : Gtk.Box {
 
-        public Current (Gtk.Window window, Weather.Widgets.Header header) {
+        public Current (Weather.MainWindow window, Weather.Widgets.Header header) {
             orientation = Gtk.Orientation.HORIZONTAL;
 
             var setting = new Settings ("com.github.bitseater.weather");
-            header.set_title (setting.get_string ("location") + " (" + setting.get_string ("country") + ")");
+            header.custom_title = null;
+            header.set_title (setting.get_string ("location") + ", " + setting.get_string ("state") + " " + setting.get_string ("country"));
             header.change_visible (true);
-
-            string lang = Gtk.get_default_language ().to_string ().substring (0, 2);
             string idplace = setting.get_string ("idplace");
-            string apiid = setting.get_string ("apiid");
-            string units = setting.get_string ("units");
-            string uri = idplace + "&APPID=" + apiid + "&units=" + units + "&lang=" + lang;
-
-            var today = new Weather.Widgets.Today (setting.get_string ("idplace"));
-            var forecast = new Weather.Widgets.Forecast (uri);
+            var today = new Weather.Widgets.Today (idplace, window);
+            var forecast = new Weather.Widgets.Forecast (idplace);
             var separator = new Gtk.Separator (Gtk.Orientation.VERTICAL);
             pack_start (today, true, true, 0);
             pack_start (separator, false, true, 0);
             pack_start (forecast, true, true, 0);
+
+            //Configure header nav
+            header.show_mapwindow.connect (() => {
+                window.change_view (new Weather.Widgets.MapView (window, header));
+                window.show_all ();
+            });
+            if (setting.get_string ("apiid") != Constants.API_KEY) {
+                header.upd_button.sensitive = true;
+            }
+
+            //Update countdown
+            var interval = setting.get_int ("interval");
+            GLib.Timeout.add_seconds (interval, () => {
+                var current = new Weather.Widgets.Current (window, header);
+                window.change_view (current);
+                return false;
+            }, GLib.Priority.DEFAULT);
         }
     }
 }

@@ -1,12 +1,52 @@
+com.github.bitseater.weather (0.7.0) xenial; urgency=medium
+
+    * Load data from cache file when no connect.
+    * Add some comments when user select built-in API key.
+    * Add more information to indicator.
+    * Add new translations.
+    * Use GeoClue2 to get location (for Juno support).
+    * Fixed issues: 49,50,52,53,57,58,60,61.
+
+ -- Carlos Suárez <bitseater@gmail.com>  Thu, 22 Mar 2018 21:30:00 +0100
+
+com.github.bitseater.weather (0.6.1) xenial; urgency=medium
+
+    * Change appname to METEO.
+    * Save currenta data to cache file.
+    * Show cache file in text format.
+    * Add new translations: pt_PT and pt_BR.
+    * Reload button when own API key.
+
+ -- Carlos Suárez <bitseater@gmail.com>  Wed, 21 Feb 2018 01:30:00 +0100
+
+com.github.bitseater.weather (0.5.3) xenial; urgency=medium
+
+    * Change to meson build.
+    * Add new translations.
+    * System tray indicator with weather icons.
+    * Weather Maps for temperature, clouds, rain, pressure and wind speed.
+
+ -- Carlos Suárez <bitseater@gmail.com>  Sat, 10 Feb 2018 19:50:00 +0100
+
+com.github.bitseater.weather (0.4.1) xenial; urgency=medium
+
+  * Fix application icon issue.
+
+ -- Carlos Suárez <bitseater@gmail.com>  Sat, 09 Dec 2017 04:45:00 +0100
+
 com.github.bitseater.weather (0.4) xenial; urgency=medium
 
   * Add cmake support to other SO than elementaryOS.
   * Add lituanian and russian translations. Thx to welaq and camellan.
-  * Fix internationalization and localization (gettext) issue. Special thx to  Andrey Kultyapov <camellan@yandex.ru>.
+  * Fix gettext issue. Thx to Andrey Kultyapov <camellan@yandex.ru>.
   * Add support to Debian/Ubuntu.
-  * Fix visual issues in UI and css support added.
+  * Fix visual issues in UI.
+  * CSS support added.
+  * New "find location" screen, with elegants maps.
+  * Automatic location on start (Can disabled on preferences).
+  * Choose between realistic and symbolic icons.
 
- -- Carlos Suárez <bitseater@gmail.com>  Mon, 04 Dic 2017 19:44:00 +0100
+ -- Carlos Suárez <bitseater@gmail.com>  Fri, 08 Dec 2017 15:10:00 +0100
 
 com.github.bitseater.weather (0.3) xenial; urgency=medium
 

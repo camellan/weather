@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
+* Copyright (c) 2017-2018 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
 * License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
+* version 3 of the License, or (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -12,9 +12,7 @@
 * General Public License for more details.
 *
 * You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-* Boston, MA 02111-1307, USA.
+* License along with this program; If not, see <http://www.gnu.org/licenses/>.
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
@@ -22,7 +20,7 @@ namespace  Weather.Widgets {
 
     public class Forecast : Gtk.Grid {
 
-        public Forecast (string uri_end) {
+        public Forecast (string idplace) {
             valign = Gtk.Align.START;
             halign = Gtk.Align.CENTER;
             row_spacing = 5;
@@ -30,34 +28,88 @@ namespace  Weather.Widgets {
             column_homogeneous = true;
             margin = 15;
 
-            string uri = Constants.OWM_API_ADDR + "forecast?id=" + uri_end;
-
             var setting = new Settings ("com.github.bitseater.weather");
-            var units = setting.get_string ("units");
+            string apiid = setting.get_string ("apiid");
+            string lang = Gtk.get_default_language ().to_string ().substring (0, 2);
+            string unit = setting.get_string ("units");
+            string units = "";
             string temp_un = "";
-            if (units != "metric") {
-                temp_un = "F";
-            } else {
-                temp_un = "C";
+            switch (unit) {
+                case "metric":
+                    temp_un = "C";
+                    units = "metric";
+                    break;
+                case "imperial":
+                    temp_un = "F";
+                    units = "imperial";
+                    break;
+                case "british":
+                    temp_un = "C";
+                    units = "imperial";
+                    break;
+                default:
+                    temp_un = "C";
+                    units = "metric";
+                    break;
             }
+
+            string uri_end = idplace + "&APPID=" + apiid + "&units=" + units + "&lang=" + lang;
+            string uri = Constants.OWM_API_ADDR + "forecast?id=" + uri_end;
+            string path = Environment.get_user_cache_dir () + "/" + Constants.EXEC_NAME;
+            bool save = true;
 
             var session = new Soup.Session ();
             var message = new Soup.Message ("GET", uri);
             session.send_message (message);
             try {
                 var parser = new Json.Parser ();
-                parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+                string text = (string) message.response_body.flatten ().data;
+                parser.load_from_data (text, -1);
+
+                //Check response: Null response
+                Json.Node? node = parser.get_root ();
+                var root = new Json.Object ();
+                if (node != null) {
+                    root = parser.get_root ().get_object ();
+                    var cod = root.get_string_member ("cod");
+                    switch (cod) {
+                        case "200":
+                            save = true;
+                            break;
+                        default:
+                            save = false;
+                            string cache_json = path + "/forecast.json";
+                            parser.load_from_file (cache_json);
+                            root = parser.get_root ().get_object ();
+                            break;
+                    }
+                } else {
+                    save = false;
+                    string cache_json = path + "/forecast.json";
+                    parser.load_from_file (cache_json);
+                    root = parser.get_root ().get_object ();
+                }
 
                 var forecast = new Gtk.Label (_("Forecast"));
                 forecast.get_style_context ().add_class ("weather");
                 forecast.halign = Gtk.Align.START;
                 attach (forecast, 0, 0, 2, 1);
-                var root = parser.get_root ().get_object ();
                 var list = root.get_array_member ("list");
                 for (int a = 0; a < 5; a++) {
                     var time = new Gtk.Label (time_format (new DateTime.from_unix_local (list.get_object_element (a).get_int_member ("dt"))));
                     var icon = new Weather.Utils.Iconame (list.get_object_element(a).get_array_member ("weather").get_object_element (0).get_string_member ("icon"), 36);
-                    var temp = new Gtk.Label (Weather.Utils.to_string0 (list.get_object_element(a).get_object_member ("main").get_double_member ("temp")) + "\u00B0" + temp_un);
+                    double temp_n = list.get_object_element(a).get_object_member ("main").get_double_member ("temp");
+                    var temp = new Gtk.Label ("");
+                    switch (unit) {
+                            case "british":
+                                temp.label = Weather.Utils.to_string0 (((temp_n - 32)*5)/9) + "\u00B0" + temp_un;
+                                break;
+                            case "metric":
+                            case "imperial":
+                            default:
+                                temp.label = Weather.Utils.to_string0 (temp_n) + "\u00B0" + temp_un;
+                                break;
+                        }
                     attach (time, a, 1, 1, 1);
                     attach (icon, a, 2, 1, 1);
                     attach (temp, a, 3, 1, 1);
@@ -67,13 +119,35 @@ namespace  Weather.Widgets {
                 for (int b = 0; b < 5; b++) {
                     var time = new Gtk.Label (new DateTime.from_unix_local (list.get_object_element (b*8+cnt).get_int_member ("dt")).format ("%a %H:%M"));
                     var icon = new Weather.Utils.Iconame (list.get_object_element(b*8+cnt).get_array_member ("weather").get_object_element (0).get_string_member ("icon"), 36);
-                    var temp = new Gtk.Label (Weather.Utils.to_string0 (list.get_object_element(b*8+cnt).get_object_member ("main").get_double_member ("temp")) + "\u00B0" + temp_un);
+                    double temp_n = list.get_object_element(b*8+cnt).get_object_member ("main").get_double_member ("temp");
+                    var temp = new Gtk.Label ("");
+                    switch (unit) {
+                            case "british":
+                                temp.label = Weather.Utils.to_string0 (((temp_n - 32)*5)/9) + "\u00B0" + temp_un;
+                                break;
+                            case "metric":
+                            case "imperial":
+                            default:
+                                temp.label = Weather.Utils.to_string0 (temp_n) + "\u00B0" + temp_un;
+                                break;
+                        }
                     attach (time, 0, 5+b, 2, 1);
                     attach (icon, 2, 5+b, 1, 1);
                     attach (temp, 3, 5+b, 2, 1);
+
+                    //Record data
+                    if (save) {
+                        string fcson = path + "/forecast.json";
+                        var fcjson = File.new_for_path (fcson);
+                        if (fcjson.query_exists ()) {
+                            fcjson.delete ();
+                        }
+                        var fcjos = new DataOutputStream (fcjson.create (FileCreateFlags.REPLACE_DESTINATION));
+                        fcjos.put_string (text);
+                    }
                 }
             } catch (Error e) {
-                stderr.printf (_("Found an error"));
+                debug (e.message);
             }
         }
 

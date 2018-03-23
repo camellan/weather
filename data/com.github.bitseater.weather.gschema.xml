@@ -1,12 +1,12 @@
 <schemalist>
-  <schema id="com.github.bitseater.weather" path="/com/github/bitseater/weather/" gettext-domain="weather">
-    
+  <schema id="com.github.bitseater.weather" path="/com/github/bitseater/weather/" gettext-domain="com.github.bitseater.weather">
+
     <key name="dark" type="b">
       <default>false</default>
       <summary>Dark Theme</summary>
       <description>Use dark theme in application</description>
-    </key>      
-    
+    </key>
+
     <key name="apiid" type="s">
         <default l10n="messages">""</default>
         <summary>API key</summary>
@@ -22,19 +22,55 @@
     <key name="location" type="s">
         <default l10n="messages">""</default>
         <summary>City name</summary>
-        <description>City name from OpenWeatherMap</description>
+        <description>City name</description>
+    </key>
+
+    <key name="state" type="s">
+        <default l10n="messages">""</default>
+        <summary>State name</summary>
+        <description>State name</description>
     </key>
 
     <key name="country" type="s">
         <default l10n="messages">""</default>
         <summary>Country name</summary>
-        <description>Country name from OpenWeatherMap</description>
+        <description>Country name</description>
     </key>
 
     <key name="units" type="s">
         <default l10n="messages">"metric"</default>
         <summary>Local units</summary>
-        <description>Units System to use in application: 0-metric, 1-imperial</description>
+        <description>Units System to use in application: metric or imperial</description>
+    </key>
+
+    <key name="symbolic" type="b">
+        <default>true</default>
+        <summary>Symbolic icons</summary>
+        <description>Use symbolic icons. Otherwise, application use realistic icons.</description>
+    </key>
+
+    <key name="indicator" type="b">
+        <default>false</default>
+        <summary>Use indicator</summary>
+        <description>Mark to use app indicator and minimized to system tray.</description>
+    </key>
+
+    <key name="minimized" type="b">
+        <default>false</default>
+        <summary>Minimized on start</summary>
+        <description>When use indicator, start with minimized window.</description>
+    </key>
+
+    <key name="interval" type="i">
+        <default>7200</default>
+        <summary>Update interval</summary>
+        <description>Time in seconds to update weather conditions.</description>
+    </key>
+
+    <key name="auto" type="b">
+      <default>true</default>
+      <summary>Autolocation</summary>
+      <description>Catch my location on start</description>
     </key>
 
   </schema>

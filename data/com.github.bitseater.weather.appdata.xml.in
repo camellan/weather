@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017-2018 Carlos Suárez <bitseater@gmail.com> -->
+<component type="desktop-application">
+    <id>com.github.bitseater.weather.desktop</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <update_contact>bitseater@gmail</update_contact>
+    <name>Meteo</name>
+    <translation type="gettext">com.github.bitseater.weather</translation>
+    <summary>Know the forecast of the next hours and days with data and maps</summary>
+    <description>
+        <p>Current weather, with information about temperature, pressure,
+        wind speed and direction, sunrise and sunset. Show awesome maps with
+        all the information. Switch between some maps distributors.
+        Other features:
+        <ul>
+            <li>Forecast for next 18 hours.</li>
+            <li>Forecast for next five days.</li>
+            <li>Choose your units (metric, imperial or british).</li>
+            <li>Choose your city with maps info.</li>
+            <li>Watch awesome maps with weather info.</li>
+            <li>Now with System Tray Indicator.</li>
+        </ul>
+        </p>
+    </description>
+    <provides>
+        <binary>com.github.bitseater.weather</binary>
+    </provides>
+    <screenshots>
+        <screenshot type="default">
+            <image type="source" width="750" height="650">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_1.png</image>
+        </screenshot>
+        <screenshot type="default">
+            <image type="source" width="750" height="650">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_2.png</image>
+        </screenshot>
+        <screenshot type="default">
+            <image type="source" width="750" height="650">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_3.png</image>
+        </screenshot>
+        <screenshot type="default">
+            <image type="source" width="650" height="650">https://raw.githubusercontent.com/bitseater/weather/master/data/screens/screenshot_4.png</image>
+        </screenshot>
+    </screenshots>
+    <developer_name>Carlos Suárez</developer_name>
+    <url type="homepage">https://github.com/bitseater/weather</url>
+    <url type="bugtracker">https://github.com/bitseater/weather/issues</url>
+    <custom>
+        <value key="x-appcenter-color-primary">#660066</value>
+        <value key="x-appcenter-color-primary-text">rgb(189, 253, 255)</value>
+        <value key="x-appcenter-suggested-price">1</value>
+    </custom>
+  ​  <releases>
+        <release version="0.7.0" date="2018-03-22">
+            <description>
+        ​        <p>New in this version are:
+                    <li>Load data from cache file when no connect</li>
+                    <li>Add some comments when user select built-in API key</li>
+                    <li>Add more information to indicator</li>
+                    <li>Add new translations</li>
+                    <li>Use GeoClue2 to get location, for Juno support</li>
+                </p>
+                <p>Fixed issues:
+                    <li>#49: wind speed map disappears in Dark Sky mode in flatpak</li>
+                    <li>#50: Load from cache when no connect</li>
+                    <li>#52: Clicking "Maps" before entering API key breaks the app</li>
+                    <li>#53: API key prompt is never explained</li>
+                    <li>#57: Please add some of the weather data into the indicator icon</li>
+                    <li>#58: Encoding</li>
+                    <li>#60: Error saving location to GSettings</li>
+                    <li>#61: Use GeoClue2 to get location</li>
+                </p>
+            </description>
+        </release>
+    </releases>
+</component>

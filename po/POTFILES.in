@@ -1,11 +1,20 @@
 # List of source files containing translatable strings.
 # Copyright (C) 1995 Free Software Foundation, Inc
+# METEO
+# Copyright (C) 2017 Carlos Suárez
+# This file is distributed under the same license as the com.github.bitseater.weather package.
+# Carlos Suárez <bitseater@gmail.com>, 2017.
 #
+data/com.github.bitseater.weather.appdata.xml.in
+data/com.github.bitseater.weather.desktop.in
 src/Weather.vala
 src/MainWindow.vala
 src/Constants.vala
+src/Utils/GeoLocate.vala
 src/Utils/Iconame.vala
 src/Utils/MapCity.vala
+src/Utils/MapLayer.vala
+src/Utils/MiniMap.vala
 src/Utils/OWM_Today.vala
 src/Utils/Utils.vala
 src/Widgets/About.vala
@@ -14,6 +23,9 @@ src/Widgets/City.vala
 src/Widgets/Current.vala
 src/Widgets/Forecast.vala
 src/Widgets/Header.vala
+src/Widgets/MapView.vala
+src/Widgets/MapViewOWM.vala
 src/Widgets/Preferences.vala
 src/Widgets/Ticket.vala
 src/Widgets/Today.vala
+src/Widgets/ViewFile.vala

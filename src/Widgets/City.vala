@@ -1,10 +1,10 @@
 /*
-* Copyright (c) 2017 Carlos Suárez (https://github.com/bitseater)
+* Copyright (c) 2017-2018 Carlos Suárez (https://github.com/bitseater)
 *
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public
 * License as published by the Free Software Foundation; either
-* version 2 of the License, or (at your option) any later version.
+* version 3 of the License, or (at your option) any later version.
 *
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -12,148 +12,154 @@
 * General Public License for more details.
 *
 * You should have received a copy of the GNU General Public
-* License along with this program; if not, write to the
-* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
-* Boston, MA 02111-1307, USA.
+* License along with this program; If not, see <http://www.gnu.org/licenses/>.
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
 namespace  Weather.Widgets {
 
-    public class City : Gtk.Box {
+    public class City : Gtk.ScrolledWindow {
 
         private Settings setting;
-        private Gtk.TreeView cityview;
+        private Weather.Utils.MapCity mapcity;
+        private Gtk.ListBoxRow row;
+        private Gtk.Box hbox;
 
-        struct Mycity {
-            string country;
-            int id;
-            string name;
-            double lat;
-            double lon;
-        }
+        public City (Weather.MainWindow window, Weather.Widgets.Header header) {
+            hscrollbar_policy = Gtk.PolicyType.NEVER;
+            vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
 
-        public City (Gtk.Window window, Weather.Widgets.Header header) {
-            orientation = Gtk.Orientation.VERTICAL;
-            spacing = 5;
-
-            header.set_title ("");
             header.change_visible (false);
+            var entry = new Gtk.SearchEntry ();
+            entry.placeholder_text = _("Search for new location:");
+            entry.width_chars = 30;
+            header.custom_title = entry;
 
             setting = new Settings ("com.github.bitseater.weather");
-            var search_line = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
-            pack_start (search_line, false, false, 5);
-            var uri1 = Constants.OWM_API_ADDR + "find?q=";
-            var uri2 = "&type=like&APPID=" + setting.get_string ("apiid");
+            var uri1 = Constants.OWM_API_ADDR + "weather?lat=";
+            var uri2 = "&APPID=" + setting.get_string ("apiid");
 
-            var citylabel = new Gtk.Label (_("Search for new location:"));
-            search_line.pack_start (citylabel, false, false, 5);
-            var cityentry = new Gtk.Entry ();
-            cityentry.max_length = 40;
-            cityentry.primary_icon_name = "system-search-symbolic";
-            cityentry.secondary_icon_name = "edit-clear-symbolic";
-            search_line.pack_start (cityentry, true, true, 5);
-
-            cityview = new Gtk.TreeView ();
-            cityview.expand = true;
-            var citylist = new Gtk.ListStore (5, typeof (string), typeof (int), typeof (string), typeof (double), typeof (double));
-            cityview.model = citylist;
-            cityview.insert_column_with_attributes (-1, _("Country"), new Gtk.CellRendererText (), "text", 0);
-            cityview.insert_column_with_attributes (-1, _("OpenWM ID"), new Gtk.CellRendererText (), "text", 1);
-            cityview.insert_column_with_attributes (-1, _("City"), new Gtk.CellRendererText (), "text", 2);
-            var scroll = new Gtk.ScrolledWindow (null,null);
-            scroll.hscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
-            scroll.vscrollbar_policy = Gtk.PolicyType.AUTOMATIC;
-            scroll.add (cityview);
-
-            cityentry.icon_press.connect ((pos, event) => {
-                if (pos == Gtk.EntryIconPosition.SECONDARY) {
-                    cityentry.set_text ("");
-                    citylist.clear ();
-                }
-            });
-
-            var overlay = new Gtk.Overlay ();
-            pack_end (overlay, true, true, 0);
-            var ticket = new Weather.Widgets.Ticket ("");
-            overlay.add_overlay (scroll);
-            overlay.add_overlay (ticket);
-
-            setting.get_string ("country");
-            setting.changed["country"].connect (() => {
-                window.remove (window.get_child ());
-                var current = new Weather.Widgets.Current (window, header);
-                window.add (current);
-                window.show_all ();
-            });
-
-            cityentry.changed.connect (() => {
-                if (cityentry.get_text_length () < 3) {
-                    citylist.clear ();
-                    ticket.set_text (_("At least of 3 characters are required!"));
-                    ticket.reveal_child = true;
-                    ticket.showtime (1500);
+            var box = new Gtk.ListBox ();
+            box.selection_mode = Gtk.SelectionMode.NONE;
+            entry.activate.connect (() => {
+                box.forall ((row) => box.remove (row));
+                if (entry.get_text_length () < 3) {
+                    window.ticket.set_text (_("At least of 3 characters are required!"));
+                    window.ticket.reveal_child = true;
                 } else {
-                    string uri = "";
-                    citylist.clear ();
-                    uri = uri1 + cityentry.get_text () + uri2;
-                    var session = new Soup.Session ();
-                    var message = new Soup.Message ("GET", uri);
-                    session.send_message (message);
+                    var busqueda = new Geocode.Forward.for_string (entry.get_text ());
                     try {
-                        var parser = new Json.Parser ();
-                        parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+                        var cities = busqueda.search ();
+                        int i = 0;
+                        foreach (var city in cities) {
+                            var tipo = city.place_type;
+                            var town = city.town;
+                            if (tipo == Geocode.PlaceType.TOWN && town != null) {
+                                hbox = new Gtk.Box (Gtk.Orientation.HORIZONTAL, 5);
+                                hbox.halign = Gtk.Align.FILL;
+                                hbox.set_border_width (10);
+                                var state = city.state;
+                                var country = city.country_code;
+                                var lat = city.location.latitude;
+                                var lon = city.location.longitude;
+                                var icon = new Gtk.Button ();
+                                icon.relief = Gtk.ReliefStyle.NONE;
+                                icon.halign = Gtk.Align.START;
+                                icon.valign = Gtk.Align.CENTER;
+                                var minimap = new Weather.Utils.MiniMap (lat, lon, 50);
+                                icon.image = minimap;
+                                minimap.show_all ();
+                                icon.button_press_event.connect (() => {
+                                    mapcity = new Weather.Utils.MapCity (lat, lon, icon);
+                                    mapcity.show_all ();
+                                    return true;
+                                });
+                                icon.button_release_event.connect (() => {
+                                    mapcity.hide ();
+                                    return false;
+                                });
+                                var place = new Gtk.Label (town + ", " + state + " " + country);
+                                place.halign = Gtk.Align.CENTER;
+                                place.valign = Gtk.Align.CENTER;
+                                var select = new Gtk.Button.with_label (_("Select"));
+                                select.clicked.connect (() => {
+                                    string uri = uri1 + lat.to_string () + "&lon=" + lon.to_string () + uri2;
+                                    setting.set_string ("idplace", update_id (uri).to_string());
+                                    if (town != null) {
+                                        setting.set_string ("location", town);
+                                    } else {
+                                        setting.set_string ("location", "");
+                                    }
+                                    if (state != null) {
+                                        setting.set_string ("state", state);
+                                    } else {
+                                        setting.set_string ("state", "");
+                                    }
+                                    if (country != null) {
+                                        setting.set_string ("country", country);
+                                    } else {
+                                        setting.set_string ("country", "");
+                                    }
+                                    header.custom_title = null;
+                                    header.title = town + ", " + state + " " + country;
+                                    header.restart_switcher ();
+                                    var current = new Weather.Widgets.Current (window, header);
+                                    window.change_view (current);
+                                    window.show_all ();
 
-                        var root = parser.get_root ().get_object ();
-                        var city = root.get_array_member ("list");
-                        if (root.get_int_member ("count") == 0) {
-                            ticket.set_text (_("No data"));
-                            ticket.reveal_child = true;
-                            ticket.showtime (1500);
-                        } else {
-                            Gtk.TreeIter iter;
-                            foreach (var geonode in city.get_elements ()) {
-                                var geoname = geonode.get_object ();
-                                citylist.append (out iter);
-                                citylist.set (iter, 0, geoname.get_object_member ("sys").get_string_member ("country"),
-                                                    1, geoname.get_int_member ("id"),
-                                                    2, geoname.get_string_member ("name"),
-                                                    3, geoname.get_object_member ("coord").get_double_member ("lat"),
-                                                    4, geoname.get_object_member ("coord").get_double_member ("lon"));
+                                });
+                                select.halign = Gtk.Align.END;
+                                select.valign = Gtk.Align.CENTER;
+                                hbox.pack_start (icon, false, true, 5);
+                                hbox.pack_start (place, true, true, 5);
+                                hbox.pack_end (select, true, true, 5);
+                                hbox.show_all ();
+                                row = new Gtk.ListBoxRow ();
+                                row.add (hbox);
+                                box.add (row);
+                                hbox.show_all ();
+                                row.show_all ();
+                                box.show_all ();
+                                i++;
                             }
                         }
-                    } catch (Error e) {
-                            stderr.printf (_("Found an error"));
+                    } catch (Error error) {
+                        window.ticket.set_text (_("No data"));
+                        window.ticket.reveal_child = true;
                     }
                 }
             });
-            cityview.row_activated.connect (on_row_activated);
-            cityview.get_selection().changed.connect (() => {
-                Gtk.TreeModel model;
-                Gtk.TreeIter iter;
-                if (cityview.get_selection ().get_selected (out model, out iter)) {
-                    Mycity city = def_selection (this.cityview.model, iter);
-                    var mapview = new Weather.Utils.MapCity (city.lat, city.lon);
-                    mapview.show_all ();
+            entry.backspace.connect (() => {
+                box.forall ((row) => box.remove (row));
+                if (entry.get_text_length () < 3) {
+                    window.ticket.set_text (_("At least of 3 characters are required!"));
+                    window.ticket.reveal_child = true;
                 }
             });
+            entry.icon_press.connect ((pos, event) => {
+                    if (pos == Gtk.EntryIconPosition.SECONDARY) {
+                        box.forall ((row) => box.remove (row));
+                        window.ticket.set_text (_("At least of 3 characters are required!"));
+                        window.ticket.reveal_child = true;
+                    }
+            });
+            add (box);
         }
 
-        private static Mycity def_selection (Gtk.TreeModel model, Gtk.TreeIter iter) {
-            var city = Mycity ();
-            model.get (iter, 0, out city.country, 1, out city.id, 2, out city.name, 3, out city.lat, 4, out city.lon);
-            return city;
-        }
-
-        private void on_row_activated (Gtk.TreeView cityview , Gtk.TreePath path, Gtk.TreeViewColumn column) {
-            Gtk.TreeIter iter;
-            if (cityview.model.get_iter (out iter, path)) {
-                Mycity city = def_selection (cityview.model, iter);
-                var setting = new Settings ("com.github.bitseater.weather");
-                setting.set_string ("location", city.name);
-                setting.set_string ("idplace", city.id.to_string());
-                setting.set_string ("country", city.country);
+        private static int64 update_id (string uri) {
+            var session = new Soup.Session ();
+            var message = new Soup.Message ("GET", uri);
+            session.send_message (message);
+            int64 id = 0;
+            try {
+                var parser = new Json.Parser ();
+                parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+                var root = parser.get_root ().get_object ();
+                id = root.get_int_member ("id");
+            } catch (Error e) {
+                debug (e.message);
             }
+            return id;
         }
     }
 }

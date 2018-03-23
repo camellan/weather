@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Meteo
+GenericName=Meteo
+Comment=Forecast App for desktop
+Categories=Utility;Education;Science;
+Exec=com.github.bitseater.weather
+Icon=com.github.bitseater.weather
+Terminal=false
+Type=Application
+StartupNotify=true
+X-GNOME-Gettext-Domain=com.github.bitseater.weather
+Keywords=Weather;Forecast;Temperature;Wind;Snow;Rain;
+X-GNOME-UsesNotifications=true
