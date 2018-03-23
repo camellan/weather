@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 21:48+0100\n"
+"POT-Creation-Date: 2018-03-23 13:56+0400\n"
 "PO-Revision-Date: 2018-03-22 23:10+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
@@ -82,8 +82,8 @@ msgstr "Choose your city with maps info."
 msgid "Choose your units (metric, imperial or british)."
 msgstr "Choose your units (metric, imperial or british)."
 
-#: src/Widgets/Preferences.vala:259 src/Widgets/ViewFile.vala:64
-#: src/Widgets/Apikey.vala:157
+#: src/Widgets/Apikey.vala:157 src/Widgets/Preferences.vala:259
+#: src/Widgets/ViewFile.vala:64
 msgid "Close"
 msgstr "Close"
 
@@ -179,9 +179,9 @@ msgstr "Know the forecast of the next hours and days with data and maps"
 msgid "Maps"
 msgstr "Maps"
 
-#: data/com.github.bitseater.weather.appdata.xml.in:8
 #: data/com.github.bitseater.weather.desktop.in:3
 #: data/com.github.bitseater.weather.desktop.in:4
+#: data/com.github.bitseater.weather.appdata.xml.in:8
 msgid "Meteo"
 msgstr "Meteo"
 
@@ -345,8 +345,12 @@ msgstr "or just :"
 msgid "website"
 msgstr "website"
 
-#~ msgid "<small>If you don't have it, please visit: <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
-#~ msgstr "<small>If you don't have it, please visit: <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
+#~ msgid ""
+#~ "<small>If you don't have it, please visit: <a href =\"https://home."
+#~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
+#~ msgstr ""
+#~ "<small>If you don't have it, please visit: <a href =\"https://home."
+#~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
 
 #, fuzzy
 #~ msgid "Weather"
