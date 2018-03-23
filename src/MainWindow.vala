@@ -28,8 +28,8 @@ namespace Weather {
         public MainWindow (WeatherApp app) {
             this.app = app;
             this.set_application (app);
-            this.set_default_size (800, 650);
-            this.set_size_request (800, 650);
+            this.set_default_size (950, 650);
+            this.set_size_request (950, 650);
             window_position = Gtk.WindowPosition.CENTER;
             var header = new Weather.Widgets.Header (this, false);
             this.set_titlebar (header);

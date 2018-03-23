@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 13:56+0400\n"
+"POT-Creation-Date: 2018-03-22 21:48+0100\n"
 "PO-Revision-Date: 2018-02-21 20:58+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
@@ -82,8 +82,8 @@ msgstr "Escolha sua cidade com os mapas de informação."
 msgid "Choose your units (metric, imperial or british)."
 msgstr "Escolha o seu unidades (sistema métrico, imperial ou britânico)."
 
-#: src/Widgets/Apikey.vala:157 src/Widgets/Preferences.vala:259
-#: src/Widgets/ViewFile.vala:64
+#: src/Widgets/Preferences.vala:259 src/Widgets/ViewFile.vala:64
+#: src/Widgets/Apikey.vala:157
 msgid "Close"
 msgstr "Fechar"
 
@@ -180,9 +180,9 @@ msgstr "Saber a previsão para as próximas horas e dias, com dados e mapas"
 msgid "Maps"
 msgstr "Mapas"
 
+#: data/com.github.bitseater.weather.appdata.xml.in:8
 #: data/com.github.bitseater.weather.desktop.in:3
 #: data/com.github.bitseater.weather.desktop.in:4
-#: data/com.github.bitseater.weather.appdata.xml.in:8
 msgid "Meteo"
 msgstr "Meteo"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-22 21:48+0100\n"
+"POT-Creation-Date: 2018-03-23 13:56+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -81,8 +81,8 @@ msgstr ""
 msgid "Choose your units (metric, imperial or british)."
 msgstr ""
 
-#: src/Widgets/Preferences.vala:259 src/Widgets/ViewFile.vala:64
-#: src/Widgets/Apikey.vala:157
+#: src/Widgets/Apikey.vala:157 src/Widgets/Preferences.vala:259
+#: src/Widgets/ViewFile.vala:64
 msgid "Close"
 msgstr ""
 
@@ -178,9 +178,9 @@ msgstr ""
 msgid "Maps"
 msgstr ""
 
-#: data/com.github.bitseater.weather.appdata.xml.in:8
 #: data/com.github.bitseater.weather.desktop.in:3
 #: data/com.github.bitseater.weather.desktop.in:4
+#: data/com.github.bitseater.weather.appdata.xml.in:8
 msgid "Meteo"
 msgstr ""
 
