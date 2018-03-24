@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: weather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-24 13:34+0400\n"
-"PO-Revision-Date: 2018-03-22 21:52+0100\n"
+"PO-Revision-Date: 2018-03-24 21:08+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
@@ -52,9 +52,8 @@ msgid "A forecast application with OpenWeatherMap API"
 msgstr "Aplicación de predicción con la API de OpenWeatherMap"
 
 #: src/Utils/OWM_Today.vala:229
-#, fuzzy
 msgid "API key: "
-msgstr "Borrar clave API:"
+msgstr "Clave API: "
 
 #: src/Widgets/Header.vala:36
 msgid "About Meteo"
@@ -102,31 +101,28 @@ msgid "Clouds"
 msgstr "Nubes"
 
 #: src/Utils/OWM_Today.vala:245
-#, fuzzy
 msgid "Clouds: "
-msgstr "Nubes"
+msgstr "Nubes: "
 
 #: src/Widgets/About.vala:51
 msgid "Colaborators"
 msgstr "Colaboradores"
 
 #: src/Utils/OWM_Today.vala:233
-#, fuzzy
 msgid "Coord. lat: "
-msgstr "Coordenadas :"
+msgstr "Coord. lat: "
 
 #: src/Utils/OWM_Today.vala:232
 msgid "Coord. lon: "
-msgstr ""
+msgstr "Coord. lon: "
 
 #: src/Widgets/Today.vala:39
 msgid "Coordinates :"
 msgstr "Coordenadas :"
 
 #: src/Utils/OWM_Today.vala:236
-#, fuzzy
 msgid "Country: "
-msgstr "Pais"
+msgstr "Pais: "
 
 #: src/Widgets/ViewFile.vala:30
 msgid "Current Weather Data"
@@ -145,9 +141,8 @@ msgid "Data file not found"
 msgstr "Archivo de datos no encontrado"
 
 #: src/Utils/OWM_Today.vala:238
-#, fuzzy
 msgid "Description: "
-msgstr "Precipitación"
+msgstr "Descripción: "
 
 #: src/Widgets/Apikey.vala:39
 msgid "Enter your OpenWeatherMap API key"
@@ -186,17 +181,16 @@ msgid "Humidity :"
 msgstr "Humedad :"
 
 #: src/Utils/OWM_Today.vala:242
-#, fuzzy
 msgid "Humidity: "
-msgstr "Humedad :"
+msgstr "Humedad: "
 
 #: src/Utils/OWM_Today.vala:231
 msgid "ID place: "
-msgstr ""
+msgstr "ID lugar: "
 
 #: src/Utils/OWM_Today.vala:239
 msgid "Icon file: "
-msgstr ""
+msgstr "Fichero de icono: "
 
 #: src/Widgets/Apikey.vala:59
 msgid "If you don't have it, please visit:"
@@ -222,11 +216,11 @@ msgstr ""
 
 #: src/Utils/OWM_Today.vala:228
 msgid "Language: "
-msgstr ""
+msgstr "Idioma: "
 
 #: src/Utils/OWM_Today.vala:234
 msgid "Location: "
-msgstr ""
+msgstr "Localización: "
 
 #: src/Widgets/Header.vala:81
 msgid "Maps"
@@ -271,13 +265,12 @@ msgid "Pressure :"
 msgstr "Presión :"
 
 #: src/Utils/OWM_Today.vala:241
-#, fuzzy
 msgid "Pressure: "
-msgstr "Presión :"
+msgstr "Presión: "
 
 #: src/MainWindow.vala:177
 msgid "Quit"
-msgstr "Quitar"
+msgstr "Salir"
 
 #: src/Widgets/Preferences.vala:193
 msgid "Restore API key:"
@@ -309,25 +302,23 @@ msgstr "Comenzar minimizado:"
 
 #: src/Utils/OWM_Today.vala:235
 msgid "State: "
-msgstr ""
+msgstr "Estado/Región: "
 
 #: src/Widgets/Today.vala:72
 msgid "Sunrise :"
 msgstr "Amanecer :"
 
 #: src/Utils/OWM_Today.vala:246
-#, fuzzy
 msgid "Sunrise: "
-msgstr "Amanecer :"
+msgstr "Amanecer: "
 
 #: src/Widgets/Today.vala:76
 msgid "Sunset :"
 msgstr "Crepúsculo :"
 
 #: src/Utils/OWM_Today.vala:247
-#, fuzzy
 msgid "Sunset: "
-msgstr "Crepúsculo :"
+msgstr "Crepúsculo: "
 
 #: src/Widgets/Preferences.vala:60
 msgid "Symbolic icons:"
@@ -338,9 +329,8 @@ msgid "Temperature"
 msgstr "Temperatura"
 
 #: src/Utils/OWM_Today.vala:240
-#, fuzzy
 msgid "Temperature: "
-msgstr "Temperatura"
+msgstr "Temperatura: "
 
 #: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
 msgid "Terms of Service"
@@ -363,9 +353,8 @@ msgid "Units:"
 msgstr "Unidades:"
 
 #: src/Utils/OWM_Today.vala:230
-#, fuzzy
 msgid "Units: "
-msgstr "Unidades:"
+msgstr "Unidades: "
 
 #: src/Widgets/Header.vala:64
 msgid "Update conditions"
@@ -396,9 +385,8 @@ msgid "Watch awesome maps with weather info."
 msgstr "Observe divertidos mapas con información meteorológica."
 
 #: src/Utils/OWM_Today.vala:237
-#, fuzzy
 msgid "Weather: "
-msgstr "Mostrar Weather"
+msgstr "Tiempo: "
 
 #: data/com.github.bitseater.weather.desktop.in:13
 msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
@@ -413,18 +401,16 @@ msgid "Wind dir :"
 msgstr "Dir. viento :"
 
 #: src/Utils/OWM_Today.vala:244
-#, fuzzy
 msgid "Wind dir: "
-msgstr "Dir. viento :"
+msgstr "Dir. viento: "
 
 #: src/Widgets/Today.vala:62
 msgid "Wind speed :"
 msgstr "Veloc. viento :"
 
 #: src/Utils/OWM_Today.vala:243
-#, fuzzy
 msgid "Wind speed: "
-msgstr "Veloc. viento :"
+msgstr "Veloc. viento: "
 
 #: src/Widgets/Apikey.vala:97
 msgid "Wrong API Key. Please, try again."

@@ -1,4 +1,4 @@
-com.github.bitseater.weather (0.7.0) xenial; urgency=medium
+com.github.bitseater.weather (0.7.0) unstable; urgency=medium
 
     * Load data from cache file when no connect.
     * Add some comments when user select built-in API key.
@@ -9,7 +9,7 @@ com.github.bitseater.weather (0.7.0) xenial; urgency=medium
 
  -- Carlos Suárez <bitseater@gmail.com>  Thu, 22 Mar 2018 21:30:00 +0100
 
-com.github.bitseater.weather (0.6.1) xenial; urgency=medium
+com.github.bitseater.weather (0.6.1) unstable; urgency=medium
 
     * Change appname to METEO.
     * Save currenta data to cache file.
@@ -19,7 +19,7 @@ com.github.bitseater.weather (0.6.1) xenial; urgency=medium
 
  -- Carlos Suárez <bitseater@gmail.com>  Wed, 21 Feb 2018 01:30:00 +0100
 
-com.github.bitseater.weather (0.5.3) xenial; urgency=medium
+com.github.bitseater.weather (0.5.3) unstable; urgency=medium
 
     * Change to meson build.
     * Add new translations.
@@ -28,13 +28,13 @@ com.github.bitseater.weather (0.5.3) xenial; urgency=medium
 
  -- Carlos Suárez <bitseater@gmail.com>  Sat, 10 Feb 2018 19:50:00 +0100
 
-com.github.bitseater.weather (0.4.1) xenial; urgency=medium
+com.github.bitseater.weather (0.4.1) unstable; urgency=medium
 
   * Fix application icon issue.
 
  -- Carlos Suárez <bitseater@gmail.com>  Sat, 09 Dec 2017 04:45:00 +0100
 
-com.github.bitseater.weather (0.4) xenial; urgency=medium
+com.github.bitseater.weather (0.4) unstable; urgency=medium
 
   * Add cmake support to other SO than elementaryOS.
   * Add lituanian and russian translations. Thx to welaq and camellan.
@@ -48,19 +48,19 @@ com.github.bitseater.weather (0.4) xenial; urgency=medium
 
  -- Carlos Suárez <bitseater@gmail.com>  Fri, 08 Dec 2017 15:10:00 +0100
 
-com.github.bitseater.weather (0.3) xenial; urgency=medium
+com.github.bitseater.weather (0.3) unstable; urgency=medium
 
   * Fix some issues and support map layers on city selection.
 
  -- Carlos Suárez <bitseater@gmail.com>  Sun, 26 Nov 2017 21:27:00 +0100
 
-com.github.bitseater.weather (0.2) xenial; urgency=medium
+com.github.bitseater.weather (0.2) unstable; urgency=medium
 
   * Adding tooltips and fixing translations issues.
 
  -- Carlos Suárez <bitseater@gmail.com>  Fri, 18 Nov 2017 20:43:00 +0100
 
-com.github.bitseater.weather (0.1) xenial; urgency=low
+com.github.bitseater.weather (0.1) unstable; urgency=low
 
   * Initial Release.
 

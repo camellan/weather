@@ -27,7 +27,7 @@ namespace Constants {
     public const string VERSION = Config.VERSION;
     public const string APP_NAME = "Meteo";
     public const string VERSION_INFO = "Stable";
-    public const string RELEASE = "Loki";
+    public const string RELEASE = "stable";
     public const string OWM_API_ADDR = "http://api.openweathermap.org/data/2.5/";
     public const string API_KEY = "936b1aed9a541e3446cafb8be2c70e62";
 }

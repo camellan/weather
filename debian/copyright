@@ -2,7 +2,7 @@ Format: http://dep.debian.net/deps/dep5
 Upstream-Name: com.github.bitseater.weather
 Source: https://github.com/bitseater/weather
 
-Files: src/* data/* cmake/* debian/* po/*
+Files: src/* data/* cmake/* debian/* po/* vapi/* meson/*
 Copyright: 2017-2018 Carlos Suárez <bitseater@gmail.com>
 
 License: GPL-3.0+
