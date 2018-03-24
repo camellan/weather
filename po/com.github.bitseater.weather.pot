@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 13:56+0400\n"
+"POT-Creation-Date: 2018-03-24 13:34+0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,6 +47,10 @@ msgstr ""
 
 #: src/Widgets/About.vala:30
 msgid "A forecast application with OpenWeatherMap API"
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:229
+msgid "API key: "
 msgstr ""
 
 #: src/Widgets/Header.vala:36
@@ -94,12 +98,28 @@ msgstr ""
 msgid "Clouds"
 msgstr ""
 
+#: src/Utils/OWM_Today.vala:245
+msgid "Clouds: "
+msgstr ""
+
 #: src/Widgets/About.vala:51
 msgid "Colaborators"
 msgstr ""
 
+#: src/Utils/OWM_Today.vala:233
+msgid "Coord. lat: "
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:232
+msgid "Coord. lon: "
+msgstr ""
+
 #: src/Widgets/Today.vala:39
 msgid "Coordinates :"
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:236
+msgid "Country: "
 msgstr ""
 
 #: src/Widgets/ViewFile.vala:30
@@ -116,6 +136,10 @@ msgstr ""
 
 #: src/Widgets/ViewFile.vala:50
 msgid "Data file not found"
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:238
+msgid "Description: "
 msgstr ""
 
 #: src/Widgets/Apikey.vala:39
@@ -154,6 +178,18 @@ msgstr ""
 msgid "Humidity :"
 msgstr ""
 
+#: src/Utils/OWM_Today.vala:242
+msgid "Humidity: "
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:231
+msgid "ID place: "
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:239
+msgid "Icon file: "
+msgstr ""
+
 #: src/Widgets/Apikey.vala:59
 msgid "If you don't have it, please visit:"
 msgstr ""
@@ -172,6 +208,14 @@ msgstr ""
 
 #: data/com.github.bitseater.weather.appdata.xml.in:10
 msgid "Know the forecast of the next hours and days with data and maps"
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:228
+msgid "Language: "
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:234
+msgid "Location: "
 msgstr ""
 
 #: src/Widgets/Header.vala:81
@@ -216,6 +260,10 @@ msgstr ""
 msgid "Pressure :"
 msgstr ""
 
+#: src/Utils/OWM_Today.vala:241
+msgid "Pressure: "
+msgstr ""
+
 #: src/MainWindow.vala:177
 msgid "Quit"
 msgstr ""
@@ -248,12 +296,24 @@ msgstr ""
 msgid "Start minimized:"
 msgstr ""
 
+#: src/Utils/OWM_Today.vala:235
+msgid "State: "
+msgstr ""
+
 #: src/Widgets/Today.vala:72
 msgid "Sunrise :"
 msgstr ""
 
+#: src/Utils/OWM_Today.vala:246
+msgid "Sunrise: "
+msgstr ""
+
 #: src/Widgets/Today.vala:76
 msgid "Sunset :"
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:247
+msgid "Sunset: "
 msgstr ""
 
 #: src/Widgets/Preferences.vala:60
@@ -262,6 +322,10 @@ msgstr ""
 
 #: src/Widgets/MapViewOWM.vala:91 src/Widgets/MapView.vala:98
 msgid "Temperature"
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:240
+msgid "Temperature: "
 msgstr ""
 
 #: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
@@ -282,6 +346,10 @@ msgstr ""
 
 #: src/Widgets/Preferences.vala:169
 msgid "Units:"
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:230
+msgid "Units: "
 msgstr ""
 
 #: src/Widgets/Header.vala:64
@@ -312,6 +380,10 @@ msgstr ""
 msgid "Watch awesome maps with weather info."
 msgstr ""
 
+#: src/Utils/OWM_Today.vala:237
+msgid "Weather: "
+msgstr ""
+
 #: data/com.github.bitseater.weather.desktop.in:13
 msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
 msgstr ""
@@ -324,8 +396,16 @@ msgstr ""
 msgid "Wind dir :"
 msgstr ""
 
+#: src/Utils/OWM_Today.vala:244
+msgid "Wind dir: "
+msgstr ""
+
 #: src/Widgets/Today.vala:62
 msgid "Wind speed :"
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:243
+msgid "Wind speed: "
 msgstr ""
 
 #: src/Widgets/Apikey.vala:97

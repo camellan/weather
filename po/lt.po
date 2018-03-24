@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 13:56+0400\n"
+"POT-Creation-Date: 2018-03-24 13:34+0400\n"
 "PO-Revision-Date: 2018-03-06 12:02+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
@@ -50,6 +50,11 @@ msgstr "6 val."
 #: src/Widgets/About.vala:30
 msgid "A forecast application with OpenWeatherMap API"
 msgstr "Orų prognozės programa su OpenWeatherMap API"
+
+#: src/Utils/OWM_Today.vala:229
+#, fuzzy
+msgid "API key: "
+msgstr "Atkurti API raktą:"
 
 #: src/Widgets/Header.vala:36
 msgid "About Meteo"
@@ -96,13 +101,32 @@ msgstr "Debesuotumas :"
 msgid "Clouds"
 msgstr "Debesys"
 
+#: src/Utils/OWM_Today.vala:245
+#, fuzzy
+msgid "Clouds: "
+msgstr "Debesys"
+
 #: src/Widgets/About.vala:51
 msgid "Colaborators"
 msgstr "Talkininkai"
 
+#: src/Utils/OWM_Today.vala:233
+#, fuzzy
+msgid "Coord. lat: "
+msgstr "Koordinatės :"
+
+#: src/Utils/OWM_Today.vala:232
+msgid "Coord. lon: "
+msgstr ""
+
 #: src/Widgets/Today.vala:39
 msgid "Coordinates :"
 msgstr "Koordinatės :"
+
+#: src/Utils/OWM_Today.vala:236
+#, fuzzy
+msgid "Country: "
+msgstr "Šalis"
 
 #: src/Widgets/ViewFile.vala:30
 msgid "Current Weather Data"
@@ -119,6 +143,11 @@ msgstr "Duomenys"
 #: src/Widgets/ViewFile.vala:50
 msgid "Data file not found"
 msgstr "Duomenų failas nerastas"
+
+#: src/Utils/OWM_Today.vala:238
+#, fuzzy
+msgid "Description: "
+msgstr "Krituliai"
 
 #: src/Widgets/Apikey.vala:39
 #, fuzzy
@@ -157,6 +186,19 @@ msgstr "Bendra"
 msgid "Humidity :"
 msgstr "Drėgnumas :"
 
+#: src/Utils/OWM_Today.vala:242
+#, fuzzy
+msgid "Humidity: "
+msgstr "Drėgnumas :"
+
+#: src/Utils/OWM_Today.vala:231
+msgid "ID place: "
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:239
+msgid "Icon file: "
+msgstr ""
+
 #: src/Widgets/Apikey.vala:59
 msgid "If you don't have it, please visit:"
 msgstr ""
@@ -178,6 +220,14 @@ msgid "Know the forecast of the next hours and days with data and maps"
 msgstr ""
 "Žinokite ateinančių valandų ir dienų orų prognozę su duomenimis ir "
 "žemėlapiais"
+
+#: src/Utils/OWM_Today.vala:228
+msgid "Language: "
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:234
+msgid "Location: "
+msgstr ""
 
 #: src/Widgets/Header.vala:81
 msgid "Maps"
@@ -221,6 +271,11 @@ msgstr "Slėgis"
 msgid "Pressure :"
 msgstr "Slėgis :"
 
+#: src/Utils/OWM_Today.vala:241
+#, fuzzy
+msgid "Pressure: "
+msgstr "Slėgis :"
+
 #: src/MainWindow.vala:177
 msgid "Quit"
 msgstr "Išeiti"
@@ -253,12 +308,26 @@ msgstr "Ypatinga padėka"
 msgid "Start minimized:"
 msgstr "Paleisti suskleistą:"
 
+#: src/Utils/OWM_Today.vala:235
+msgid "State: "
+msgstr ""
+
 #: src/Widgets/Today.vala:72
 msgid "Sunrise :"
 msgstr "Saulėtekis :"
 
+#: src/Utils/OWM_Today.vala:246
+#, fuzzy
+msgid "Sunrise: "
+msgstr "Saulėtekis :"
+
 #: src/Widgets/Today.vala:76
 msgid "Sunset :"
+msgstr "Saulėlydis :"
+
+#: src/Utils/OWM_Today.vala:247
+#, fuzzy
+msgid "Sunset: "
 msgstr "Saulėlydis :"
 
 #: src/Widgets/Preferences.vala:60
@@ -267,6 +336,11 @@ msgstr "Simbolinės piktogramos:"
 
 #: src/Widgets/MapViewOWM.vala:91 src/Widgets/MapView.vala:98
 msgid "Temperature"
+msgstr "Temperatūra"
+
+#: src/Utils/OWM_Today.vala:240
+#, fuzzy
+msgid "Temperature: "
 msgstr "Temperatūra"
 
 #: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
@@ -287,6 +361,11 @@ msgstr "JK sistema"
 
 #: src/Widgets/Preferences.vala:169
 msgid "Units:"
+msgstr "Vienetai:"
+
+#: src/Utils/OWM_Today.vala:230
+#, fuzzy
+msgid "Units: "
 msgstr "Vienetai:"
 
 #: src/Widgets/Header.vala:64
@@ -317,6 +396,11 @@ msgstr "Rodyti orų duomenis"
 msgid "Watch awesome maps with weather info."
 msgstr "Stebėkite įspūdingus žemėlapius su orų informacija."
 
+#: src/Utils/OWM_Today.vala:237
+#, fuzzy
+msgid "Weather: "
+msgstr "Orai"
+
 #: data/com.github.bitseater.weather.desktop.in:13
 msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
 msgstr "Orai;Prognozė;Temperatūra;Vėjas;Oras;Sniegas;Lietus;"
@@ -329,8 +413,18 @@ msgstr "Vėjo greitis"
 msgid "Wind dir :"
 msgstr "Vėjo kryptis :"
 
+#: src/Utils/OWM_Today.vala:244
+#, fuzzy
+msgid "Wind dir: "
+msgstr "Vėjo kryptis :"
+
 #: src/Widgets/Today.vala:62
 msgid "Wind speed :"
+msgstr "Vėjo greitis :"
+
+#: src/Utils/OWM_Today.vala:243
+#, fuzzy
+msgid "Wind speed: "
 msgstr "Vėjo greitis :"
 
 #: src/Widgets/Apikey.vala:97
@@ -357,17 +451,11 @@ msgstr "Internetinė svetainė"
 #~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a> arba, tiesiog, "
 #~ "pažymėkite :</small>"
 
-#~ msgid "Weather"
-#~ msgstr "Orai"
-
 #~ msgid "Update"
 #~ msgstr "Atnaujinti"
 
 #~ msgid "City"
 #~ msgstr "Miestas"
-
-#~ msgid "Country"
-#~ msgstr "Šalis"
 
 #~ msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
 #~ msgstr "Sukurta, naudojant Vala, Gtk ir Granite - bitseater - 2017"
