@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-23 13:56+0400\n"
+"POT-Creation-Date: 2018-03-24 13:34+0400\n"
 "PO-Revision-Date: 2018-03-11 20:48+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -50,6 +50,11 @@ msgstr "6 Stdn."
 msgid "A forecast application with OpenWeatherMap API"
 msgstr ""
 "Eine Anwendung, die Wetterprogrosen anhand der OpenWeatherMap API anzeigt"
+
+#: src/Utils/OWM_Today.vala:229
+#, fuzzy
+msgid "API key: "
+msgstr "API Key wiederherstellen:"
 
 #: src/Widgets/Header.vala:36
 msgid "About Meteo"
@@ -98,13 +103,31 @@ msgstr "Bewölkung:"
 msgid "Clouds"
 msgstr "Wolken"
 
+#: src/Utils/OWM_Today.vala:245
+#, fuzzy
+msgid "Clouds: "
+msgstr "Wolken"
+
 #: src/Widgets/About.vala:51
 msgid "Colaborators"
 msgstr "Mitwirkende"
 
+#: src/Utils/OWM_Today.vala:233
+#, fuzzy
+msgid "Coord. lat: "
+msgstr "Koordinaten:"
+
+#: src/Utils/OWM_Today.vala:232
+msgid "Coord. lon: "
+msgstr ""
+
 #: src/Widgets/Today.vala:39
 msgid "Coordinates :"
 msgstr "Koordinaten:"
+
+#: src/Utils/OWM_Today.vala:236
+msgid "Country: "
+msgstr ""
 
 #: src/Widgets/ViewFile.vala:30
 msgid "Current Weather Data"
@@ -121,6 +144,11 @@ msgstr "Daten"
 #: src/Widgets/ViewFile.vala:50
 msgid "Data file not found"
 msgstr "Datendatei nicht gefunden"
+
+#: src/Utils/OWM_Today.vala:238
+#, fuzzy
+msgid "Description: "
+msgstr "Niederschlag"
 
 #: src/Widgets/Apikey.vala:39
 #, fuzzy
@@ -159,6 +187,19 @@ msgstr "Allgemeines"
 msgid "Humidity :"
 msgstr "Luftfeuchtigkeit:"
 
+#: src/Utils/OWM_Today.vala:242
+#, fuzzy
+msgid "Humidity: "
+msgstr "Luftfeuchtigkeit:"
+
+#: src/Utils/OWM_Today.vala:231
+msgid "ID place: "
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:239
+msgid "Icon file: "
+msgstr ""
+
 #: src/Widgets/Apikey.vala:59
 msgid "If you don't have it, please visit:"
 msgstr ""
@@ -180,6 +221,14 @@ msgid "Know the forecast of the next hours and days with data and maps"
 msgstr ""
 "Sehen Sie die Wetterprognose der nächsten Stunden und Tage mit vielen "
 "Informationen und einer Kartenansicht"
+
+#: src/Utils/OWM_Today.vala:228
+msgid "Language: "
+msgstr ""
+
+#: src/Utils/OWM_Today.vala:234
+msgid "Location: "
+msgstr ""
 
 #: src/Widgets/Header.vala:81
 msgid "Maps"
@@ -223,6 +272,11 @@ msgstr "Luftdruck"
 msgid "Pressure :"
 msgstr "Luftdruck:"
 
+#: src/Utils/OWM_Today.vala:241
+#, fuzzy
+msgid "Pressure: "
+msgstr "Luftdruck:"
+
 #: src/MainWindow.vala:177
 msgid "Quit"
 msgstr "Verlassen"
@@ -255,12 +309,26 @@ msgstr "Besonderer Dank gilt"
 msgid "Start minimized:"
 msgstr "Anwendung minimiert starten:"
 
+#: src/Utils/OWM_Today.vala:235
+msgid "State: "
+msgstr ""
+
 #: src/Widgets/Today.vala:72
 msgid "Sunrise :"
 msgstr "Sonnenaufgang:"
 
+#: src/Utils/OWM_Today.vala:246
+#, fuzzy
+msgid "Sunrise: "
+msgstr "Sonnenaufgang:"
+
 #: src/Widgets/Today.vala:76
 msgid "Sunset :"
+msgstr "Sonnenuntergang:"
+
+#: src/Utils/OWM_Today.vala:247
+#, fuzzy
+msgid "Sunset: "
 msgstr "Sonnenuntergang:"
 
 #: src/Widgets/Preferences.vala:60
@@ -269,6 +337,11 @@ msgstr "Symbolische Icons:"
 
 #: src/Widgets/MapViewOWM.vala:91 src/Widgets/MapView.vala:98
 msgid "Temperature"
+msgstr "Temperatur"
+
+#: src/Utils/OWM_Today.vala:240
+#, fuzzy
+msgid "Temperature: "
 msgstr "Temperatur"
 
 #: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
@@ -289,6 +362,11 @@ msgstr "Britisches System"
 
 #: src/Widgets/Preferences.vala:169
 msgid "Units:"
+msgstr "Einheiten:"
+
+#: src/Utils/OWM_Today.vala:230
+#, fuzzy
+msgid "Units: "
 msgstr "Einheiten:"
 
 #: src/Widgets/Header.vala:64
@@ -319,6 +397,10 @@ msgstr "Wetterdaten ansehen"
 msgid "Watch awesome maps with weather info."
 msgstr "Wunderbare Karten mit Informationen ansehen."
 
+#: src/Utils/OWM_Today.vala:237
+msgid "Weather: "
+msgstr ""
+
 #: data/com.github.bitseater.weather.desktop.in:13
 msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
 msgstr "Wetter; Wetterprognose; Temperatur; Wind; Schnee; Regen;"
@@ -331,8 +413,18 @@ msgstr "Windgeschwindigkeit"
 msgid "Wind dir :"
 msgstr "Windrichtung:"
 
+#: src/Utils/OWM_Today.vala:244
+#, fuzzy
+msgid "Wind dir: "
+msgstr "Windrichtung:"
+
 #: src/Widgets/Today.vala:62
 msgid "Wind speed :"
+msgstr "Windgeschwindigkeit :"
+
+#: src/Utils/OWM_Today.vala:243
+#, fuzzy
+msgid "Wind speed: "
 msgstr "Windgeschwindigkeit :"
 
 #: src/Widgets/Apikey.vala:97
