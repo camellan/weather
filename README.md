@@ -49,13 +49,11 @@ Also, you can install the flatpak package:
 
 #### Snap package:
 
-Snap package will be available soon. You can see the build progress at [snapcraft.io](https://build.snapcraft.io/user/bitseater/weather)
+Snap package is available at [Meteo in Snap Store](https://snapcraft.io/meteo)
 
-**Updated**: Actually beta release on the air. If you want to test it:
+You can install it with:
 
-    snap install --beta meteo
-
-Remember, it's a beta version, test it at your own risk.
+    sudo snap install meteo
 
 ----
 
@@ -91,6 +89,7 @@ For advanced users!
 - Add more information to indicator.
 - Add new translations.
 - Use GeoClue2 to get location (for Juno support).
+- Snap package avalaible.
 
 Fixed issues: #49 #50 #52 #53 #57 #58 #60 #61
 
