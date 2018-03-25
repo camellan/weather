@@ -2,7 +2,7 @@
 
 [![Get it on AppCenter](https://appcenter.elementary.io/badge.svg)](https://appcenter.elementary.io/com.github.bitseater.weather)﻿
 
-[![Release 0.6.1](https://img.shields.io/badge/Release-0.7.ß-orange.svg)](https://github.com/bitseater/weather/releases) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Travis CI](https://travis-ci.org/bitseater/weather.svg?branch=master)](https://travis-ci.org/bitseater/weather/builds/) [![Flatpak](https://img.shields.io/badge/flatpak-download-lightgrey.svg)](https://flathub.org/repo/appstream/com.github.bitseater.weather.flatpakref) [![Snap Status](https://build.snapcraft.io/badge/bitseater/snap-meteo.svg)](https://build.snapcraft.io/user/bitseater/snap-meteo)
+[![Release 0.7.0](https://img.shields.io/badge/Release-0.7.0-orange.svg)](https://github.com/bitseater/weather/releases) [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0) [![Travis CI](https://travis-ci.org/bitseater/weather.svg?branch=master)](https://travis-ci.org/bitseater/weather/builds/) [![Flatpak](https://img.shields.io/badge/flatpak-download-lightgrey.svg)](https://flathub.org/repo/appstream/com.github.bitseater.weather.flatpakref) [![Snap Status](https://build.snapcraft.io/badge/bitseater/snap-meteo.svg)](https://build.snapcraft.io/user/bitseater/snap-meteo)
 
 
 ### Know the forecast of the next hours & days.
@@ -51,7 +51,7 @@ Also, you can install the flatpak package:
 
 Snap package is available at [Meteo in Snap Store](https://snapcraft.io/meteo)
 
-You can install it with:
+I've added it at the request of the users, but I don't give support to snap.You can install it, at your own risk, from terminal:
 
     sudo snap install meteo
 
@@ -70,7 +70,6 @@ Library Dependencies :
 - geocode-glib-1.0
 - webkit2gtk-4.0
 - appindicator3-0.1
-- libgeoclue-2.0
 - meson
 
 
@@ -88,7 +87,6 @@ For advanced users!
 - Add some comments when user select built-in API key.
 - Add more information to indicator.
 - Add new translations.
-- Use GeoClue2 to get location (for Juno support).
 - Snap package avalaible.
 
 Fixed issues: #49 #50 #52 #53 #57 #58 #60 #61

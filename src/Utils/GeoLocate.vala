@@ -16,60 +16,63 @@
 *
 * Authored by: Carlos Suárez <bitseater@gmail.com>
 */
-namespace Weather.Utils {
+namespace  Weather.Utils {
 
-    private GClue.Simple simple;
-
-    public async void get_location (Weather.MainWindow window, Weather.Widgets.Header header) {
-        try {
-            simple = yield new GClue.Simple ("com.github.bitseater.weather", GClue.AccuracyLevel.CITY, null);
-
-            simple.notify["location"].connect (() => {
-                on_save_coords (window, header);
-            });
-            on_save_coords (window, header);
-        } catch (Error e) {
-            warning ("Failed to connect to GeoClue2 service: %s", e.message);
-            var city = new Weather.Widgets.City (window, header);
-            window.change_view (city);
-            window.show_all ();
-            return;
-        }
+    struct Coord {
+        double lat;
+        double lon;
     }
 
-    public void on_save_coords (Weather.MainWindow window, Weather.Widgets.Header header) {
+    public void geolocate () {
         var setting = new Settings ("com.github.bitseater.weather");
         var uri1 = Constants.OWM_API_ADDR + "weather?lat=";
         var uri2 = "&APPID=" + setting.get_string ("apiid");
-        var myloc = simple.get_location ();
-        var location = new Geocode.Location (myloc.latitude, myloc.longitude);
+
+        Coord mycoords = get_location ();
+        var location = new Geocode.Location (mycoords.lat, mycoords.lon);
         var reverse = new Geocode.Reverse.for_location (location);
+
         try {
             Geocode.Place mycity = reverse.resolve ();
             if (mycity != null) {
-                string uri = uri1 + myloc.latitude.to_string () + "&lon=" + myloc.longitude.to_string () + uri2;
+                string uri = uri1 + mycoords.lat.to_string () + "&lon=" + mycoords.lon.to_string () + uri2;
                 setting.set_string ("idplace", update_id (uri).to_string());
                 setting.set_string ("location", mycity.town);
-                if (mycity.state != null) {
-                    setting.set_string ("state", mycity.state);
+                setting.set_string ("state", mycity.state);
+                setting.set_string ("country", mycity.country_code);
+            }
+        } catch (Error e) {
+            debug (e.message);
+        }
+    }
+
+    private static Coord get_location () {
+        var coord = Coord ();
+        string uri = "https://location.services.mozilla.com/v1/geolocate?key=test";
+        var session = new Soup.Session ();
+        var message = new Soup.Message ("GET", uri);
+        session.send_message (message);
+
+        try {
+            var parser = new Json.Parser ();
+            parser.load_from_data ((string) message.response_body.flatten ().data, -1);
+
+            var root = parser.get_root ().get_object ();
+
+            foreach (string name in root.get_members ()) {
+                if (name == "location") {
+                    var mycoords = root.get_object_member ("location");
+                    coord.lat = mycoords.get_double_member ("lat");
+                    coord.lon = mycoords.get_double_member ("lng");
+                    break;
                 } else {
-                    setting.set_string ("state", "");
-                }
-                if (mycity.country_code != null) {
-                    setting.set_string ("country", mycity.country_code);
-                } else {
-                    setting.set_string ("country", "");
+                    stdout.printf (_("Found an error"));
                 }
             }
         } catch (Error e) {
             debug (e.message);
-            var city = new Weather.Widgets.City (window, header);
-            window.change_view (city);
-            window.show_all ();
         }
-        var current = new Weather.Widgets.Current (window, header);
-        window.change_view (current);
-        window.show_all ();
+        return coord;
     }
 
     private static int64 update_id (string uri) {

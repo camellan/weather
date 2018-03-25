@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-24 13:34+0400\n"
+"POT-Creation-Date: 2018-03-25 03:21+0200\n"
 "PO-Revision-Date: 2018-03-24 21:34+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
@@ -18,31 +18,31 @@ msgstr ""
 "X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Widgets/Apikey.vala:142
+#: src/Widgets/Apikey.vala:145
 msgid "- Use only to try this application"
 msgstr "- Use apenas para experimentar este aplicativo"
 
-#: src/Widgets/Apikey.vala:140
+#: src/Widgets/Apikey.vala:143
 msgid "- You can't use the update button"
 msgstr "- Você não pode usar o botão atualizar"
 
-#: src/Widgets/Apikey.vala:138
+#: src/Widgets/Apikey.vala:141
 msgid "- You'll have limited access to API"
 msgstr "- Você vai ter limitado o acesso à API"
 
-#: src/Widgets/Preferences.vala:126
+#: src/Widgets/Preferences.vala:127
 msgid "12 hrs."
 msgstr "12 hrs."
 
-#: src/Widgets/Preferences.vala:124
+#: src/Widgets/Preferences.vala:125
 msgid "2 hrs."
 msgstr "2 hrs."
 
-#: src/Widgets/Preferences.vala:127
+#: src/Widgets/Preferences.vala:128
 msgid "24 hrs."
 msgstr "24 hrs."
 
-#: src/Widgets/Preferences.vala:125
+#: src/Widgets/Preferences.vala:126
 msgid "6 hrs."
 msgstr "6 hrs."
 
@@ -86,8 +86,8 @@ msgstr "Escolha sua cidade com os mapas de informação."
 msgid "Choose your units (metric, imperial or british)."
 msgstr "Escolha o seu unidades (sistema métrico, imperial ou britânico)."
 
-#: src/Widgets/Apikey.vala:157 src/Widgets/Preferences.vala:259
-#: src/Widgets/ViewFile.vala:64
+#: src/Widgets/Preferences.vala:260 src/Widgets/ViewFile.vala:64
+#: src/Widgets/Apikey.vala:160
 msgid "Close"
 msgstr "Fechar"
 
@@ -147,7 +147,7 @@ msgstr "Descrição: "
 msgid "Enter your OpenWeatherMap API key"
 msgstr "Digite a sua chave da API OpenWeatherMap"
 
-#: src/Widgets/Preferences.vala:209
+#: src/Widgets/Preferences.vala:210
 msgid "Find my location automatically:"
 msgstr "Encontrar minha localização automaticamente:"
 
@@ -167,7 +167,8 @@ msgstr "Previsão para os próximos 18 horas."
 msgid "Forecast for next five days."
 msgstr "Previsão para os próximos cinco dias."
 
-#: src/Widgets/MapViewOWM.vala:53 src/Widgets/MapView.vala:78
+#: src/Utils/GeoLocate.vala:69 src/Widgets/MapViewOWM.vala:53
+#: src/Widgets/MapView.vala:78
 msgid "Found an error"
 msgstr "Um erro foi encontrado"
 
@@ -199,7 +200,7 @@ msgstr "Se você não tem isso, por favor visite:"
 msgid "Image not found"
 msgstr "Imagem não encontrada"
 
-#: src/Widgets/Preferences.vala:173
+#: src/Widgets/Preferences.vala:174
 msgid "Imperial System"
 msgstr "Sistema Imperial"
 
@@ -229,7 +230,7 @@ msgstr "Mapas"
 msgid "Meteo"
 msgstr "Meteo"
 
-#: src/Widgets/Preferences.vala:172
+#: src/Widgets/Preferences.vala:173
 msgid "Metric System"
 msgstr "Sistema Métrico"
 
@@ -265,11 +266,11 @@ msgstr "Pressão :"
 msgid "Pressure: "
 msgstr "Pressão: "
 
-#: src/MainWindow.vala:177
+#: src/MainWindow.vala:179
 msgid "Quit"
 msgstr "Fechar"
 
-#: src/Widgets/Preferences.vala:193
+#: src/Widgets/Preferences.vala:194
 msgid "Restore API key:"
 msgstr "Restaurar a chave da API:"
 
@@ -285,7 +286,7 @@ msgstr "Pesquisar nova localização:"
 msgid "Select"
 msgstr "Selecionar"
 
-#: src/MainWindow.vala:168
+#: src/MainWindow.vala:170
 msgid "Show Meteo"
 msgstr "Mostrar Meteo"
 
@@ -333,7 +334,7 @@ msgstr "Temperatura: "
 msgid "Terms of Service"
 msgstr "Termos de Serviço"
 
-#: src/Widgets/Apikey.vala:103
+#: src/Widgets/Apikey.vala:106
 msgid "The API key cannot be empty."
 msgstr "A chave da API não pode estar vazia."
 
@@ -341,11 +342,11 @@ msgstr "A chave da API não pode estar vazia."
 msgid "Today"
 msgstr "Hoje"
 
-#: src/Widgets/Preferences.vala:174
+#: src/Widgets/Preferences.vala:175
 msgid "UK System"
 msgstr "Sistema britânico"
 
-#: src/Widgets/Preferences.vala:169
+#: src/Widgets/Preferences.vala:170
 msgid "Units:"
 msgstr "Unidades:"
 
@@ -357,7 +358,7 @@ msgstr "Unidades: "
 msgid "Update conditions"
 msgstr "Atualização condições"
 
-#: src/Widgets/Preferences.vala:121
+#: src/Widgets/Preferences.vala:122
 msgid "Update conditions every :"
 msgstr "Atualizar as condições a cada :"
 
@@ -369,7 +370,7 @@ msgstr "Usar chave de API interna"
 msgid "Use System Tray Indicator:"
 msgstr "Usar o Indicador na Bandeja de Sistema"
 
-#: src/Widgets/Apikey.vala:135
+#: src/Widgets/Apikey.vala:138
 msgid "Using built-in API key:"
 msgstr "Usar chave de API incluída:"
 
@@ -409,7 +410,7 @@ msgstr "Velocidade do vento :"
 msgid "Wind speed: "
 msgstr "Velocidade do vento: "
 
-#: src/Widgets/Apikey.vala:97
+#: src/Widgets/Apikey.vala:100
 msgid "Wrong API Key. Please, try again."
 msgstr "Chave de API errada. Por favor, tente novamente."
 
@@ -424,9 +425,3 @@ msgstr "ou simplesmente :"
 #: src/Widgets/About.vala:45
 msgid "website"
 msgstr "site"
-
-#~ msgid "<small>If you don't have it, please visit: <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
-#~ msgstr "<small>Se você não tiver, por favor visite: <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a> ou simplesmente :</small>"
-
-#~ msgid "Update"
-#~ msgstr "Atualização"
