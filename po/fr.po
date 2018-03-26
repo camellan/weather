@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-25 03:21+0200\n"
-"PO-Revision-Date: 2018-03-20 20:40+0100\n"
+"PO-Revision-Date: 2018-26-20 19:25+0100\n"
 "Last-Translator: Arthur Soulié <arthur.soulie@tuta.io>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -20,15 +20,15 @@ msgstr ""
 
 #: src/Widgets/Apikey.vala:145
 msgid "- Use only to try this application"
-msgstr ""
+msgstr "- A utiliser seulement pour tester l'application"
 
 #: src/Widgets/Apikey.vala:143
 msgid "- You can't use the update button"
-msgstr ""
+msgstr "- Vous ne pouvez pas utiliser le bouton de mise à jour"
 
 #: src/Widgets/Apikey.vala:141
 msgid "- You'll have limited access to API"
-msgstr ""
+msgstr "- Vous aurez un accès limité à l'API"
 
 #: src/Widgets/Preferences.vala:127
 msgid "12 hrs."
@@ -53,7 +53,7 @@ msgstr "Une application de prévision météo avec l'API OpenWeatherMap "
 #: src/Utils/OWM_Today.vala:229
 #, fuzzy
 msgid "API key: "
-msgstr "Restaurer la clé API:"
+msgstr "Restaurer la clé API: "
 
 #: src/Widgets/Header.vala:36
 msgid "About Meteo"
@@ -65,7 +65,7 @@ msgstr "Au moins 3 caractères sont requis!"
 
 #: src/Widgets/About.vala:53
 msgid "Based in a mockup by"
-msgstr ""
+msgstr "Basé sur un mockup par"
 
 #: data/com.github.bitseater.weather.appdata.xml.in:43
 msgid "Carlos Suárez"
@@ -103,7 +103,7 @@ msgstr "Nuages"
 #: src/Utils/OWM_Today.vala:245
 #, fuzzy
 msgid "Clouds: "
-msgstr "Nuages"
+msgstr "Nuages: "
 
 #: src/Widgets/About.vala:51
 msgid "Colaborators"
@@ -112,11 +112,11 @@ msgstr "Collaborateurs"
 #: src/Utils/OWM_Today.vala:233
 #, fuzzy
 msgid "Coord. lat: "
-msgstr "Coordonnées :"
+msgstr "Coord. lat:"
 
 #: src/Utils/OWM_Today.vala:232
 msgid "Coord. lon: "
-msgstr ""
+msgstr "Coord. lon: "
 
 #: src/Widgets/Today.vala:39
 msgid "Coordinates :"
@@ -125,7 +125,7 @@ msgstr "Coordonnées :"
 #: src/Utils/OWM_Today.vala:236
 #, fuzzy
 msgid "Country: "
-msgstr "Pays"
+msgstr "Pays: "
 
 #: src/Widgets/ViewFile.vala:30
 msgid "Current Weather Data"
@@ -146,16 +146,16 @@ msgstr "Fichier non trouvé"
 #: src/Utils/OWM_Today.vala:238
 #, fuzzy
 msgid "Description: "
-msgstr "Précipitations"
+msgstr "Description: "
 
 #: src/Widgets/Apikey.vala:39
 #, fuzzy
 msgid "Enter your OpenWeatherMap API key"
-msgstr "<big>Entrez votre clé API pour OpenWeatherMap</big>\n"
+msgstr "Entrez votre clé API pour OpenWeatherMap"
 
 #: src/Widgets/Preferences.vala:210
 msgid "Find my location automatically:"
-msgstr "Trouver ma position automatiquement: "
+msgstr "Trouver ma position automatiquement:"
 
 #: src/Widgets/Forecast.vala:93
 msgid "Forecast"
@@ -189,19 +189,19 @@ msgstr "Humidité :"
 #: src/Utils/OWM_Today.vala:242
 #, fuzzy
 msgid "Humidity: "
-msgstr "Humidité :"
+msgstr "Humidité: "
 
 #: src/Utils/OWM_Today.vala:231
 msgid "ID place: "
-msgstr ""
+msgstr "ID du lieu: "
 
 #: src/Utils/OWM_Today.vala:239
 msgid "Icon file: "
-msgstr ""
+msgstr "Fichier de l'icone: "
 
 #: src/Widgets/Apikey.vala:59
 msgid "If you don't have it, please visit:"
-msgstr ""
+msgstr "Si vous ne l'avez pas, visitez:"
 
 #: src/Widgets/MapViewOWM.vala:186
 msgid "Image not found"
@@ -218,16 +218,16 @@ msgstr "Interface"
 #: data/com.github.bitseater.weather.appdata.xml.in:10
 msgid "Know the forecast of the next hours and days with data and maps"
 msgstr ""
-"Prenez connaissance des prévisions dans les heures et des jours à veniravec "
+"Prenez connaissance des prévisions dans les heures et des jours à venir avec "
 "des données et des cartes"
 
 #: src/Utils/OWM_Today.vala:228
 msgid "Language: "
-msgstr ""
+msgstr "Langue: "
 
 #: src/Utils/OWM_Today.vala:234
 msgid "Location: "
-msgstr ""
+msgstr "Position: "
 
 #: src/Widgets/Header.vala:81
 msgid "Maps"
@@ -274,7 +274,7 @@ msgstr "Pression :"
 #: src/Utils/OWM_Today.vala:241
 #, fuzzy
 msgid "Pressure: "
-msgstr "Pression :"
+msgstr "Pression: "
 
 #: src/MainWindow.vala:179
 msgid "Quit"
@@ -310,7 +310,7 @@ msgstr "Réduire au démarrage:"
 
 #: src/Utils/OWM_Today.vala:235
 msgid "State: "
-msgstr ""
+msgstr "Etat: "
 
 #: src/Widgets/Today.vala:72
 msgid "Sunrise :"
@@ -319,7 +319,7 @@ msgstr "Lever du soleil :"
 #: src/Utils/OWM_Today.vala:246
 #, fuzzy
 msgid "Sunrise: "
-msgstr "Lever du soleil :"
+msgstr "Lever du soleil: "
 
 #: src/Widgets/Today.vala:76
 msgid "Sunset :"
@@ -328,7 +328,7 @@ msgstr "Coucher de soleil :"
 #: src/Utils/OWM_Today.vala:247
 #, fuzzy
 msgid "Sunset: "
-msgstr "Coucher de soleil :"
+msgstr "Coucher de soleil: "
 
 #: src/Widgets/Preferences.vala:60
 msgid "Symbolic icons:"
@@ -341,7 +341,7 @@ msgstr "Température"
 #: src/Utils/OWM_Today.vala:240
 #, fuzzy
 msgid "Temperature: "
-msgstr "Température"
+msgstr "Température: "
 
 #: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
 msgid "Terms of Service"
@@ -357,7 +357,7 @@ msgstr "Aujourd'hui"
 
 #: src/Widgets/Preferences.vala:175
 msgid "UK System"
-msgstr "Système britannique "
+msgstr "Système britannique"
 
 #: src/Widgets/Preferences.vala:170
 msgid "Units:"
@@ -374,7 +374,7 @@ msgstr "Mise à jour des conditions"
 
 #: src/Widgets/Preferences.vala:122
 msgid "Update conditions every :"
-msgstr "Recharger les données toute les:"
+msgstr "Recharger les données toute les :"
 
 #: src/Widgets/Apikey.vala:65
 msgid "Use API key built-in"
@@ -386,7 +386,7 @@ msgstr "Utiliser L'Indicateur:"
 
 #: src/Widgets/Apikey.vala:138
 msgid "Using built-in API key:"
-msgstr ""
+msgstr "Utilisation de la clé API intégrée:"
 
 #: src/Widgets/Header.vala:35
 msgid "View weather data"
@@ -399,7 +399,7 @@ msgstr "Regardez de superbes cartes météorologiques."
 #: src/Utils/OWM_Today.vala:237
 #, fuzzy
 msgid "Weather: "
-msgstr "Afficher le Weather"
+msgstr "Temps: "
 
 #: data/com.github.bitseater.weather.desktop.in:13
 msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
@@ -425,7 +425,7 @@ msgstr "Vitesse du vent :"
 #: src/Utils/OWM_Today.vala:243
 #, fuzzy
 msgid "Wind speed: "
-msgstr "Vitesse du vent :"
+msgstr "Vitesse du vent:"
 
 #: src/Widgets/Apikey.vala:100
 msgid "Wrong API Key. Please, try again."
@@ -437,8 +437,8 @@ msgstr "com.github.bitseater.weather"
 
 #: src/Widgets/Apikey.vala:59
 msgid "or just :"
-msgstr ""
+msgstr "ou seulement :"
 
 #: src/Widgets/About.vala:45
 msgid "website"
-msgstr "site web "
+msgstr "site web"
