@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-25 03:21+0200\n"
-"PO-Revision-Date: 2018-26-20 19:25+0100\n"
+"PO-Revision-Date: 2018-03-27 02:08+0200\n"
 "Last-Translator: Arthur Soulié <arthur.soulie@tuta.io>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -51,9 +51,8 @@ msgid "A forecast application with OpenWeatherMap API"
 msgstr "Une application de prévision météo avec l'API OpenWeatherMap "
 
 #: src/Utils/OWM_Today.vala:229
-#, fuzzy
 msgid "API key: "
-msgstr "Restaurer la clé API: "
+msgstr "la clé API: "
 
 #: src/Widgets/Header.vala:36
 msgid "About Meteo"
@@ -101,7 +100,6 @@ msgid "Clouds"
 msgstr "Nuages"
 
 #: src/Utils/OWM_Today.vala:245
-#, fuzzy
 msgid "Clouds: "
 msgstr "Nuages: "
 
@@ -110,9 +108,8 @@ msgid "Colaborators"
 msgstr "Collaborateurs"
 
 #: src/Utils/OWM_Today.vala:233
-#, fuzzy
 msgid "Coord. lat: "
-msgstr "Coord. lat:"
+msgstr "Coord. lat: "
 
 #: src/Utils/OWM_Today.vala:232
 msgid "Coord. lon: "
@@ -123,7 +120,6 @@ msgid "Coordinates :"
 msgstr "Coordonnées :"
 
 #: src/Utils/OWM_Today.vala:236
-#, fuzzy
 msgid "Country: "
 msgstr "Pays: "
 
@@ -144,12 +140,10 @@ msgid "Data file not found"
 msgstr "Fichier non trouvé"
 
 #: src/Utils/OWM_Today.vala:238
-#, fuzzy
 msgid "Description: "
 msgstr "Description: "
 
 #: src/Widgets/Apikey.vala:39
-#, fuzzy
 msgid "Enter your OpenWeatherMap API key"
 msgstr "Entrez votre clé API pour OpenWeatherMap"
 
@@ -187,7 +181,6 @@ msgid "Humidity :"
 msgstr "Humidité :"
 
 #: src/Utils/OWM_Today.vala:242
-#, fuzzy
 msgid "Humidity: "
 msgstr "Humidité: "
 
@@ -272,7 +265,6 @@ msgid "Pressure :"
 msgstr "Pression :"
 
 #: src/Utils/OWM_Today.vala:241
-#, fuzzy
 msgid "Pressure: "
 msgstr "Pression: "
 
@@ -317,7 +309,6 @@ msgid "Sunrise :"
 msgstr "Lever du soleil :"
 
 #: src/Utils/OWM_Today.vala:246
-#, fuzzy
 msgid "Sunrise: "
 msgstr "Lever du soleil: "
 
@@ -326,7 +317,6 @@ msgid "Sunset :"
 msgstr "Coucher de soleil :"
 
 #: src/Utils/OWM_Today.vala:247
-#, fuzzy
 msgid "Sunset: "
 msgstr "Coucher de soleil: "
 
@@ -339,7 +329,6 @@ msgid "Temperature"
 msgstr "Température"
 
 #: src/Utils/OWM_Today.vala:240
-#, fuzzy
 msgid "Temperature: "
 msgstr "Température: "
 
@@ -364,9 +353,8 @@ msgid "Units:"
 msgstr "Unités:"
 
 #: src/Utils/OWM_Today.vala:230
-#, fuzzy
 msgid "Units: "
-msgstr "Unités:"
+msgstr "Unités: "
 
 #: src/Widgets/Header.vala:64
 msgid "Update conditions"
@@ -397,7 +385,6 @@ msgid "Watch awesome maps with weather info."
 msgstr "Regardez de superbes cartes météorologiques."
 
 #: src/Utils/OWM_Today.vala:237
-#, fuzzy
 msgid "Weather: "
 msgstr "Temps: "
 
@@ -414,18 +401,16 @@ msgid "Wind dir :"
 msgstr "Dir. du vent :"
 
 #: src/Utils/OWM_Today.vala:244
-#, fuzzy
 msgid "Wind dir: "
-msgstr "Dir. du vent :"
+msgstr "Dir. du vent: "
 
 #: src/Widgets/Today.vala:62
 msgid "Wind speed :"
 msgstr "Vitesse du vent :"
 
 #: src/Utils/OWM_Today.vala:243
-#, fuzzy
 msgid "Wind speed: "
-msgstr "Vitesse du vent:"
+msgstr "Vitesse du vent: "
 
 #: src/Widgets/Apikey.vala:100
 msgid "Wrong API Key. Please, try again."

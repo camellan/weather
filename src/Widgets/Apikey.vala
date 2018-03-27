@@ -56,7 +56,7 @@ namespace  Weather.Widgets {
             apibox.pack_start (apibutton, false, false, 0);
             attach (apibox, 0, 2, 1, 1);
             var apilink = new Gtk.Label ("");
-            apilink.label = _("If you don't have it, please visit:") + "  <a href =\"https://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a>  " + _("or just :");
+            apilink.label = _("If you don't have it, please visit:") + "  <a href =\"http://home.openweathermap.org/users/sign_up\">OpenWeatherMap</a>  " + _("or just :");
             apilink.use_markup = true;
             apilink.get_style_context ().add_class ("comment");
             apilink.halign = Gtk.Align.CENTER;
