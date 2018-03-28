@@ -34,18 +34,18 @@ namespace  Weather.Widgets {
             logo_icon_name = Constants.ICON_NAME;
             program_name = Constants.APP_NAME;
             translator_credits = "(es, en) Carlos Suárez <bitseater@gmail.com>
-                                (en) J0Ar http://github.com/J0Ar
+                                (en) J0Ar https://github.com/J0Ar
                                 (pt) btd1337 <helder.bertoldo@gmail.com>
                                 (ru) Andrey Kultyapov <camellan@yandex.ru>
-                                (lt) welaq http://github.com/welaq
-                                (fr) ArthurS1 http://github.com/ArthurS1
-                                (de) BeatriceFendt http://github.com/BeatriceFendt";
+                                (lt) welaq https://github.com/welaq
+                                (fr) ArthurS1 https://github.com/ArthurS1
+                                (de) BeatriceFendt https://github.com/BeatriceFendt";
             version = Constants.VERSION;
-            website = "http://github.com/bitseater/weather";
+            website = "https://github.com/bitseater/weather";
             website_label = _("website");
 
             string[] colaborators = {"Andrey Kultyapov <camellan@yandex.ru>",
-                                    "Cassidy James Blaede http://github.com/cassidyjames"};
+                                    "Cassidy James Blaede https://github.com/cassidyjames"};
             string[] special_thx = {"Bilal Elmoussaoui <bil.elmoussaoui@gmail.com>"};
             string[] based = {"Sam Hewitt <sam@snwh.org>"};
             add_credit_section (_("Colaborators"), colaborators);
