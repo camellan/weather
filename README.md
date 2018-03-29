@@ -31,13 +31,17 @@ You can get it on [AppCenter](https://appcenter.elementary.io/com.github.bitseat
 
 #### For Ubuntu and derivates:
 
-You can add my ppa at Launchpad.net:
+You can add my ppa at Launchpad.net, only for *artful* and *bionic* releases:
 
     sudo add-apt-repository ppa:bitseater/ppa
     sudo apt update
     sudo apt install com.github.bitseater.weather
 
-#### For Debian and derivates:
+For **LinuxMint** users, you must to activate appindicator support:
+
+	Configuration -> Preferences -> General -> Activate indicator support (Cinnamon restart required)	
+
+#### For Debian and derivates (and Ubuntu Xenial):
 
 You can download the last signed .deb package from [Releases](https://github.com/bitseater/weather/releases) page.
 
