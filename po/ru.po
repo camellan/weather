@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Weather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-24 13:34+0400\n"
-"PO-Revision-Date: 2018-03-24 14:01+0400\n"
+"PO-Revision-Date: 2018-04-10 21:21+0400\n"
 "Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -73,7 +73,7 @@ msgstr "Требуется не менее 3 символов!"
 
 #: src/Widgets/About.vala:53
 msgid "Based in a mockup by"
-msgstr "В макет по"
+msgstr "Основано на макете от"
 
 #: data/com.github.bitseater.weather.appdata.xml.in:43
 msgid "Carlos Suárez"
@@ -142,7 +142,7 @@ msgstr "Тёмная тема :"
 
 #: src/Widgets/Header.vala:80
 msgid "Data"
-msgstr "Проноз"
+msgstr "Прогноз"
 
 #: src/Widgets/ViewFile.vala:50
 msgid "Data file not found"
