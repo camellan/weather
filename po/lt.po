@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-24 13:34+0400\n"
-"PO-Revision-Date: 2018-03-06 12:02+0200\n"
+"POT-Creation-Date: 2018-03-23 13:56+0400\n"
+"PO-Revision-Date: 2018-03-24 01:26+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: \n"
 "Language: lt\n"
@@ -21,15 +21,15 @@ msgstr ""
 
 #: src/Widgets/Apikey.vala:142
 msgid "- Use only to try this application"
-msgstr ""
+msgstr "- Naudokite tik šiai programai išbandyti"
 
 #: src/Widgets/Apikey.vala:140
 msgid "- You can't use the update button"
-msgstr ""
+msgstr "- Negalite naudoti atnaujinimo mygtuko"
 
 #: src/Widgets/Apikey.vala:138
 msgid "- You'll have limited access to API"
-msgstr ""
+msgstr "- Turėsite ribotą prieigą prie API"
 
 #: src/Widgets/Preferences.vala:126
 msgid "12 hrs."
@@ -66,7 +66,7 @@ msgstr "Reikia bent 3 simbolių!"
 
 #: src/Widgets/About.vala:53
 msgid "Based in a mockup by"
-msgstr ""
+msgstr "Pagrįsta maketu, kurį sukūrė"
 
 #: data/com.github.bitseater.weather.appdata.xml.in:43
 msgid "Carlos Suárez"
@@ -150,9 +150,8 @@ msgid "Description: "
 msgstr "Krituliai"
 
 #: src/Widgets/Apikey.vala:39
-#, fuzzy
 msgid "Enter your OpenWeatherMap API key"
-msgstr "<big>Įveskite savo OpenWeatherMap API raktą</big>\n"
+msgstr "Įveskite savo OpenWeatherMap API raktą"
 
 #: src/Widgets/Preferences.vala:209
 msgid "Find my location automatically:"
@@ -201,7 +200,7 @@ msgstr ""
 
 #: src/Widgets/Apikey.vala:59
 msgid "If you don't have it, please visit:"
-msgstr ""
+msgstr "Jeigu jo neturite, apsilankykite:"
 
 #: src/Widgets/MapViewOWM.vala:186
 msgid "Image not found"
@@ -386,7 +385,7 @@ msgstr "Naudoti sistemos dėklo indikatorių:"
 
 #: src/Widgets/Apikey.vala:135
 msgid "Using built-in API key:"
-msgstr ""
+msgstr "Naudojamas įtaisytas API raktas:"
 
 #: src/Widgets/Header.vala:35
 msgid "View weather data"
@@ -437,7 +436,7 @@ msgstr "com.github.bitseater.weather"
 
 #: src/Widgets/Apikey.vala:59
 msgid "or just :"
-msgstr ""
+msgstr "arba tiesiog :"
 
 #: src/Widgets/About.vala:45
 msgid "website"
