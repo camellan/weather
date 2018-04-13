@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weather\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-25 03:21+0200\n"
-"PO-Revision-Date: 2018-03-24 14:01+0400\n"
+"POT-Creation-Date: 2018-03-24 13:34+0400\n"
+"PO-Revision-Date: 2018-04-10 21:21+0400\n"
 "Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -18,33 +18,40 @@ msgstr ""
 "X-Generator: Poedit 2.0.4\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Poedit-Basepath: ../src\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: Utils\n"
+"X-Poedit-SearchPath-2: Widgets\n"
+"X-Poedit-SearchPathExcluded-0: ../build\n"
+"X-Poedit-SearchPathExcluded-1: ../data\n"
+"X-Poedit-SearchPathExcluded-2: ../debian\n"
 
-#: src/Widgets/Apikey.vala:145
+#: src/Widgets/Apikey.vala:142
 msgid "- Use only to try this application"
 msgstr "- Использовать только для ознакомления"
 
-#: src/Widgets/Apikey.vala:143
+#: src/Widgets/Apikey.vala:140
 msgid "- You can't use the update button"
 msgstr "- Вы не можете использовать кнопку обновления"
 
-#: src/Widgets/Apikey.vala:141
+#: src/Widgets/Apikey.vala:138
 msgid "- You'll have limited access to API"
 msgstr "- Вы будете иметь ограниченный доступ к API"
 
-#: src/Widgets/Preferences.vala:127
+#: src/Widgets/Preferences.vala:126
 msgid "12 hrs."
 msgstr "12 ч."
 
-#: src/Widgets/Preferences.vala:125
+#: src/Widgets/Preferences.vala:124
 msgid "2 hrs."
 msgstr "2 ч."
 
-#: src/Widgets/Preferences.vala:128
+#: src/Widgets/Preferences.vala:127
 msgid "24 hrs."
 msgstr "24 ч."
 
-#: src/Widgets/Preferences.vala:126
+#: src/Widgets/Preferences.vala:125
 msgid "6 hrs."
 msgstr "6 ч."
 
@@ -66,7 +73,7 @@ msgstr "Требуется не менее 3 символов!"
 
 #: src/Widgets/About.vala:53
 msgid "Based in a mockup by"
-msgstr "В макет по"
+msgstr "Основано на макете от"
 
 #: data/com.github.bitseater.weather.appdata.xml.in:43
 msgid "Carlos Suárez"
@@ -88,8 +95,8 @@ msgstr "Выберите свой город с информацией на ка
 msgid "Choose your units (metric, imperial or british)."
 msgstr "Выберите единицы (метрические, имперские или британские)."
 
-#: src/Widgets/Preferences.vala:260 src/Widgets/ViewFile.vala:64
-#: src/Widgets/Apikey.vala:160
+#: src/Widgets/Apikey.vala:157 src/Widgets/Preferences.vala:259
+#: src/Widgets/ViewFile.vala:64
 msgid "Close"
 msgstr "Закрыть"
 
@@ -135,7 +142,7 @@ msgstr "Тёмная тема :"
 
 #: src/Widgets/Header.vala:80
 msgid "Data"
-msgstr "Проноз"
+msgstr "Прогноз"
 
 #: src/Widgets/ViewFile.vala:50
 msgid "Data file not found"
@@ -149,7 +156,7 @@ msgstr "Описание: "
 msgid "Enter your OpenWeatherMap API key"
 msgstr "Введите ключ API OpenWeatherMap"
 
-#: src/Widgets/Preferences.vala:210
+#: src/Widgets/Preferences.vala:209
 msgid "Find my location automatically:"
 msgstr "Авто-определение местоположения:"
 
@@ -169,8 +176,7 @@ msgstr "Прогноз на следующие 18 часов."
 msgid "Forecast for next five days."
 msgstr "Прогноз на ближайшие пять дней."
 
-#: src/Utils/GeoLocate.vala:69 src/Widgets/MapViewOWM.vala:53
-#: src/Widgets/MapView.vala:78
+#: src/Widgets/MapViewOWM.vala:53 src/Widgets/MapView.vala:78
 msgid "Found an error"
 msgstr "Обнаружена ошибка"
 
@@ -202,7 +208,7 @@ msgstr "Если вы не имеете его, пожалуйста посет�
 msgid "Image not found"
 msgstr "Изображение не найдено"
 
-#: src/Widgets/Preferences.vala:174
+#: src/Widgets/Preferences.vala:173
 msgid "Imperial System"
 msgstr "Имперская система"
 
@@ -232,7 +238,7 @@ msgstr "Карта"
 msgid "Meteo"
 msgstr "Meteo"
 
-#: src/Widgets/Preferences.vala:173
+#: src/Widgets/Preferences.vala:172
 msgid "Metric System"
 msgstr "Метрическая система"
 
@@ -268,11 +274,11 @@ msgstr "Давление :"
 msgid "Pressure: "
 msgstr "Давление: "
 
-#: src/MainWindow.vala:179
+#: src/MainWindow.vala:177
 msgid "Quit"
 msgstr "Выйти"
 
-#: src/Widgets/Preferences.vala:194
+#: src/Widgets/Preferences.vala:193
 msgid "Restore API key:"
 msgstr "Восстановить ключ API:"
 
@@ -288,7 +294,7 @@ msgstr "Поиск для нового местоположения:"
 msgid "Select"
 msgstr "Выбрать"
 
-#: src/MainWindow.vala:170
+#: src/MainWindow.vala:168
 msgid "Show Meteo"
 msgstr "Показать Meteo"
 
@@ -336,7 +342,7 @@ msgstr "Температура: "
 msgid "Terms of Service"
 msgstr "Условия обслуживания"
 
-#: src/Widgets/Apikey.vala:106
+#: src/Widgets/Apikey.vala:103
 msgid "The API key cannot be empty."
 msgstr "Ключ API не может быть пустым."
 
@@ -344,11 +350,11 @@ msgstr "Ключ API не может быть пустым."
 msgid "Today"
 msgstr "Cегодня"
 
-#: src/Widgets/Preferences.vala:175
+#: src/Widgets/Preferences.vala:174
 msgid "UK System"
 msgstr "Английская система"
 
-#: src/Widgets/Preferences.vala:170
+#: src/Widgets/Preferences.vala:169
 msgid "Units:"
 msgstr "Единицы:"
 
@@ -360,7 +366,7 @@ msgstr "Единицы: "
 msgid "Update conditions"
 msgstr "Обновить информацию"
 
-#: src/Widgets/Preferences.vala:122
+#: src/Widgets/Preferences.vala:121
 msgid "Update conditions every :"
 msgstr "Обновлять каждые :"
 
@@ -372,7 +378,7 @@ msgstr "Использовать встроенный ключ API"
 msgid "Use System Tray Indicator:"
 msgstr "Отображать индикатор в системном трее:"
 
-#: src/Widgets/Apikey.vala:138
+#: src/Widgets/Apikey.vala:135
 msgid "Using built-in API key:"
 msgstr "Используется встроенный API-ключ:"
 
@@ -412,7 +418,7 @@ msgstr "Скорость ветра :"
 msgid "Wind speed: "
 msgstr "Скорость ветра: "
 
-#: src/Widgets/Apikey.vala:100
+#: src/Widgets/Apikey.vala:97
 msgid "Wrong API Key. Please, try again."
 msgstr "Неверный ключ API. Пожалуйста, попробуйте еще раз."
 
