@@ -56,7 +56,6 @@
                     <li>Add some comments when user select built-in API key</li>
                     <li>Add more information to indicator</li>
                     <li>Add new translations</li>
-                    <li>Use GeoClue2 to get location, for Juno support</li>
                 </p>
                 <p>Fixed issues:
                     <li>#49: wind speed map disappears in Dark Sky mode in flatpak</li>
@@ -66,7 +65,6 @@
                     <li>#57: Please add some of the weather data into the indicator icon</li>
                     <li>#58: Encoding</li>
                     <li>#60: Error saving location to GSettings</li>
-                    <li>#61: Use GeoClue2 to get location</li>
                 </p>
             </description>
         </release>

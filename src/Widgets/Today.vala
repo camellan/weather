@@ -102,6 +102,10 @@ namespace  Weather.Widgets {
 
             window.set_icolabel (icon.get_icon (today.icon) + "-symbolic", today.temp);
             window.set_indicatormenu (today.humidity, today.pressure, today.windspeed, today.winddir, today.clouds, today.sunrise, today.sunset);
+            var setting = new Settings ("com.github.bitseater.weather");
+            if (setting.get_boolean ("indicator")) {
+                window.show_indicator ();
+            }
         }
     }
 }

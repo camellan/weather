@@ -105,15 +105,16 @@ namespace Weather.Widgets {
                 minz.sensitive = false;
             }
             ind.notify["active"].connect (() => {
-                if (ind.get_active ()) {
+                if (ind.active) {
                     setting.set_boolean ("indicator", true);
                     minz.sensitive = true;
-                    (window as Weather.MainWindow).create_indicator ();
+                    minz.active = true;
+                    window.show_indicator ();
                 } else {
                     setting.set_boolean ("indicator", false);
                     minz.active = false;
                     minz.sensitive = false;
-                    (window as Weather.MainWindow).hide_indicator ();
+                    window.hide_indicator ();
                 }
             });
 
@@ -262,7 +263,9 @@ namespace Weather.Widgets {
                     var apikey = new Weather.Widgets.Apikey (window, header);
                     window.change_view (apikey);
                 } else if (setting.get_boolean ("auto")) {
-                    Weather.Utils.get_location.begin (window, header);
+                    Weather.Utils.geolocate ();
+                    var current = new Weather.Widgets.Current (window, header);
+                    window.change_view (current);
                 } else if (setting.get_string ("idplace") == "") {
                     var city = new Weather.Widgets.City (window, header);
                     window.change_view (city);
