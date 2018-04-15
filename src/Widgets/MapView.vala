@@ -104,7 +104,7 @@ namespace Weather.Widgets {
             //Define other elements
             string base_lab = _("Change to ");
             var prov_lab = new Gtk.Label ("\xc2\xa9 Dark Sky");
-            var tos = new Gtk.LinkButton.with_label ("https://darksky.net/widgetterms", _("Terms of Service"));
+            var tos = new Gtk.LinkButton.with_label ("http://darksky.net/widgetterms", _("Terms of Service"));
             tos.halign = Gtk.Align.END;
             var mbutton = new Gtk.Button.with_label (base_lab + "OpenWeatherMap");
             mbutton.clicked.connect (() => {

@@ -7,42 +7,42 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-03-24 13:34+0400\n"
-"PO-Revision-Date: 2018-03-22 23:10+0100\n"
+"POT-Creation-Date: 2018-03-25 03:21+0200\n"
+"PO-Revision-Date: 2018-03-24 21:01+0100\n"
 "Last-Translator: Carlos Suárez <bitseater@gmail.com>\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 2.0.6\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/Widgets/Apikey.vala:142
+#: src/Widgets/Apikey.vala:145
 msgid "- Use only to try this application"
 msgstr "- Use only to try this application"
 
-#: src/Widgets/Apikey.vala:140
+#: src/Widgets/Apikey.vala:143
 msgid "- You can't use the update button"
 msgstr "- You can't use the update button"
 
-#: src/Widgets/Apikey.vala:138
+#: src/Widgets/Apikey.vala:141
 msgid "- You'll have limited access to API"
 msgstr "- You'll have limited access to API"
 
-#: src/Widgets/Preferences.vala:126
+#: src/Widgets/Preferences.vala:127
 msgid "12 hrs."
 msgstr "12 hrs."
 
-#: src/Widgets/Preferences.vala:124
+#: src/Widgets/Preferences.vala:125
 msgid "2 hrs."
 msgstr "2 hrs."
 
-#: src/Widgets/Preferences.vala:127
+#: src/Widgets/Preferences.vala:128
 msgid "24 hrs."
 msgstr "24 hrs."
 
-#: src/Widgets/Preferences.vala:125
+#: src/Widgets/Preferences.vala:126
 msgid "6 hrs."
 msgstr "6 hrs."
 
@@ -51,9 +51,8 @@ msgid "A forecast application with OpenWeatherMap API"
 msgstr "A forecast application with OpenWeatherMap API"
 
 #: src/Utils/OWM_Today.vala:229
-#, fuzzy
 msgid "API key: "
-msgstr "Restore API key:"
+msgstr "API key: "
 
 #: src/Widgets/Header.vala:36
 msgid "About Meteo"
@@ -87,8 +86,8 @@ msgstr "Choose your city with maps info."
 msgid "Choose your units (metric, imperial or british)."
 msgstr "Choose your units (metric, imperial or british)."
 
-#: src/Widgets/Apikey.vala:157 src/Widgets/Preferences.vala:259
-#: src/Widgets/ViewFile.vala:64
+#: src/Widgets/Preferences.vala:260 src/Widgets/ViewFile.vala:64
+#: src/Widgets/Apikey.vala:160
 msgid "Close"
 msgstr "Close"
 
@@ -101,31 +100,28 @@ msgid "Clouds"
 msgstr "Clouds"
 
 #: src/Utils/OWM_Today.vala:245
-#, fuzzy
 msgid "Clouds: "
-msgstr "Clouds"
+msgstr "Clouds: "
 
 #: src/Widgets/About.vala:51
 msgid "Colaborators"
 msgstr "Colaborators"
 
 #: src/Utils/OWM_Today.vala:233
-#, fuzzy
 msgid "Coord. lat: "
-msgstr "Coordinates :"
+msgstr "Coord. lat: "
 
 #: src/Utils/OWM_Today.vala:232
 msgid "Coord. lon: "
-msgstr ""
+msgstr "Coord. lon: "
 
 #: src/Widgets/Today.vala:39
 msgid "Coordinates :"
 msgstr "Coordinates :"
 
 #: src/Utils/OWM_Today.vala:236
-#, fuzzy
 msgid "Country: "
-msgstr "Country"
+msgstr "Country: "
 
 #: src/Widgets/ViewFile.vala:30
 msgid "Current Weather Data"
@@ -144,15 +140,14 @@ msgid "Data file not found"
 msgstr "Data file not found"
 
 #: src/Utils/OWM_Today.vala:238
-#, fuzzy
 msgid "Description: "
-msgstr "Precipitation"
+msgstr "Description: "
 
 #: src/Widgets/Apikey.vala:39
 msgid "Enter your OpenWeatherMap API key"
 msgstr "Enter your OpenWeatherMap API key"
 
-#: src/Widgets/Preferences.vala:209
+#: src/Widgets/Preferences.vala:210
 msgid "Find my location automatically:"
 msgstr "Find my location automatically:"
 
@@ -172,7 +167,8 @@ msgstr "Forecast for next 18 hours."
 msgid "Forecast for next five days."
 msgstr "Forecast for next five days."
 
-#: src/Widgets/MapViewOWM.vala:53 src/Widgets/MapView.vala:78
+#: src/Utils/GeoLocate.vala:69 src/Widgets/MapViewOWM.vala:53
+#: src/Widgets/MapView.vala:78
 msgid "Found an error"
 msgstr "Found an error"
 
@@ -185,17 +181,16 @@ msgid "Humidity :"
 msgstr "Humidity :"
 
 #: src/Utils/OWM_Today.vala:242
-#, fuzzy
 msgid "Humidity: "
-msgstr "Humidity :"
+msgstr "Humidity: "
 
 #: src/Utils/OWM_Today.vala:231
 msgid "ID place: "
-msgstr ""
+msgstr "ID place: "
 
 #: src/Utils/OWM_Today.vala:239
 msgid "Icon file: "
-msgstr ""
+msgstr "Icon file: "
 
 #: src/Widgets/Apikey.vala:59
 msgid "If you don't have it, please visit:"
@@ -205,7 +200,7 @@ msgstr "If you don't have it, please visit:"
 msgid "Image not found"
 msgstr "Image not found"
 
-#: src/Widgets/Preferences.vala:173
+#: src/Widgets/Preferences.vala:174
 msgid "Imperial System"
 msgstr "Imperial System"
 
@@ -219,11 +214,11 @@ msgstr "Know the forecast of the next hours and days with data and maps"
 
 #: src/Utils/OWM_Today.vala:228
 msgid "Language: "
-msgstr ""
+msgstr "Language: "
 
 #: src/Utils/OWM_Today.vala:234
 msgid "Location: "
-msgstr ""
+msgstr "Location: "
 
 #: src/Widgets/Header.vala:81
 msgid "Maps"
@@ -235,7 +230,7 @@ msgstr "Maps"
 msgid "Meteo"
 msgstr "Meteo"
 
-#: src/Widgets/Preferences.vala:172
+#: src/Widgets/Preferences.vala:173
 msgid "Metric System"
 msgstr "Metric System"
 
@@ -268,15 +263,14 @@ msgid "Pressure :"
 msgstr "Pressure :"
 
 #: src/Utils/OWM_Today.vala:241
-#, fuzzy
 msgid "Pressure: "
-msgstr "Pressure :"
+msgstr "Pressure: "
 
-#: src/MainWindow.vala:177
+#: src/MainWindow.vala:179
 msgid "Quit"
 msgstr "Quit"
 
-#: src/Widgets/Preferences.vala:193
+#: src/Widgets/Preferences.vala:194
 msgid "Restore API key:"
 msgstr "Restore API key:"
 
@@ -292,7 +286,7 @@ msgstr "Search for new location:"
 msgid "Select"
 msgstr "Select"
 
-#: src/MainWindow.vala:168
+#: src/MainWindow.vala:170
 msgid "Show Meteo"
 msgstr "Show Meteo"
 
@@ -306,25 +300,23 @@ msgstr "Start minimized:"
 
 #: src/Utils/OWM_Today.vala:235
 msgid "State: "
-msgstr ""
+msgstr "State: "
 
 #: src/Widgets/Today.vala:72
 msgid "Sunrise :"
 msgstr "Sunrise :"
 
 #: src/Utils/OWM_Today.vala:246
-#, fuzzy
 msgid "Sunrise: "
-msgstr "Sunrise :"
+msgstr "Sunrise: "
 
 #: src/Widgets/Today.vala:76
 msgid "Sunset :"
 msgstr "Sunset :"
 
 #: src/Utils/OWM_Today.vala:247
-#, fuzzy
 msgid "Sunset: "
-msgstr "Sunset :"
+msgstr "Sunset: "
 
 #: src/Widgets/Preferences.vala:60
 msgid "Symbolic icons:"
@@ -335,15 +327,14 @@ msgid "Temperature"
 msgstr "Temperature"
 
 #: src/Utils/OWM_Today.vala:240
-#, fuzzy
 msgid "Temperature: "
-msgstr "Temperature"
+msgstr "Temperature: "
 
 #: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
 msgid "Terms of Service"
 msgstr "Terms of Service"
 
-#: src/Widgets/Apikey.vala:103
+#: src/Widgets/Apikey.vala:106
 msgid "The API key cannot be empty."
 msgstr "The API key cannot be empty."
 
@@ -351,24 +342,23 @@ msgstr "The API key cannot be empty."
 msgid "Today"
 msgstr "Today"
 
-#: src/Widgets/Preferences.vala:174
+#: src/Widgets/Preferences.vala:175
 msgid "UK System"
 msgstr "UK System"
 
-#: src/Widgets/Preferences.vala:169
+#: src/Widgets/Preferences.vala:170
 msgid "Units:"
 msgstr "Units:"
 
 #: src/Utils/OWM_Today.vala:230
-#, fuzzy
 msgid "Units: "
-msgstr "Units:"
+msgstr "Units: "
 
 #: src/Widgets/Header.vala:64
 msgid "Update conditions"
 msgstr "Update conditions"
 
-#: src/Widgets/Preferences.vala:121
+#: src/Widgets/Preferences.vala:122
 msgid "Update conditions every :"
 msgstr "Update conditions every :"
 
@@ -380,7 +370,7 @@ msgstr "Use API key built-in"
 msgid "Use System Tray Indicator:"
 msgstr "Use System Tray Indicator:"
 
-#: src/Widgets/Apikey.vala:135
+#: src/Widgets/Apikey.vala:138
 msgid "Using built-in API key:"
 msgstr "Using built-in API key:"
 
@@ -393,9 +383,8 @@ msgid "Watch awesome maps with weather info."
 msgstr "Watch awesome maps with weather info."
 
 #: src/Utils/OWM_Today.vala:237
-#, fuzzy
 msgid "Weather: "
-msgstr "Show Weather"
+msgstr "Weather: "
 
 #: data/com.github.bitseater.weather.desktop.in:13
 msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
@@ -410,20 +399,18 @@ msgid "Wind dir :"
 msgstr "Wind dir :"
 
 #: src/Utils/OWM_Today.vala:244
-#, fuzzy
 msgid "Wind dir: "
-msgstr "Wind dir :"
+msgstr "Wind dir: "
 
 #: src/Widgets/Today.vala:62
 msgid "Wind speed :"
 msgstr "Wind speed :"
 
 #: src/Utils/OWM_Today.vala:243
-#, fuzzy
 msgid "Wind speed: "
-msgstr "Wind speed :"
+msgstr "Wind speed: "
 
-#: src/Widgets/Apikey.vala:97
+#: src/Widgets/Apikey.vala:100
 msgid "Wrong API Key. Please, try again."
 msgstr "Wrong API Key. Please, try again."
 
@@ -438,22 +425,3 @@ msgstr "or just :"
 #: src/Widgets/About.vala:45
 msgid "website"
 msgstr "website"
-
-#~ msgid ""
-#~ "<small>If you don't have it, please visit: <a href =\"https://home."
-#~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
-#~ msgstr ""
-#~ "<small>If you don't have it, please visit: <a href =\"https://home."
-#~ "openweathermap.org/users/sign_up\">OpenWeatherMap</a> or just :</small>"
-
-#~ msgid "Update"
-#~ msgstr "Actualizar"
-
-#~ msgid "City"
-#~ msgstr "City"
-
-#~ msgid "Developed using Vala, Gtk & Granite - bitseater - 2017"
-#~ msgstr "Developed using Vala, Gtk & Granite - bitseater - 2017"
-
-#~ msgid "OpenWM ID"
-#~ msgstr "OpenWM ID"

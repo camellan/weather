@@ -89,7 +89,6 @@ executable(
         dependency('geocode-glib-1.0'),
         dependency('webkit2gtk-4.0'),
         dependency('appindicator3-0.1'),
-        dependency('libgeoclue-2.0'),
     ],
 
     vala_args: [
