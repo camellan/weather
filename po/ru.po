@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Weather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-03-25 03:21+0200\n"
-"PO-Revision-Date: 2018-03-24 14:01+0400\n"
+"PO-Revision-Date: 2018-04-15 23:55+0400\n"
 "Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -66,7 +66,7 @@ msgstr "Требуется не менее 3 символов!"
 
 #: src/Widgets/About.vala:53
 msgid "Based in a mockup by"
-msgstr "В макет по"
+msgstr "Основано на макете от"
 
 #: data/com.github.bitseater.weather.appdata.xml.in:43
 msgid "Carlos Suárez"
@@ -135,7 +135,7 @@ msgstr "Тёмная тема :"
 
 #: src/Widgets/Header.vala:80
 msgid "Data"
-msgstr "Проноз"
+msgstr "Прогноз"
 
 #: src/Widgets/ViewFile.vala:50
 msgid "Data file not found"
@@ -212,7 +212,8 @@ msgstr "Интерфейс"
 
 #: data/com.github.bitseater.weather.appdata.xml.in:10
 msgid "Know the forecast of the next hours and days with data and maps"
-msgstr "Узнайте прогноз погоды на ближайшие часы и дни с данными на карте"
+msgstr ""
+"Узнайте прогноз погоды на ближайшие часы и дни с отображением данных на карте"
 
 #: src/Utils/OWM_Today.vala:228
 msgid "Language: "
@@ -390,7 +391,7 @@ msgstr "Погода: "
 
 #: data/com.github.bitseater.weather.desktop.in:13
 msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
-msgstr "Погода;прогноз; температура; ветер,;снег; дождь;"
+msgstr "Погода;прогноз;температура;ветер;снег;дождь;"
 
 #: src/Widgets/MapViewOWM.vala:95 src/Widgets/MapView.vala:102
 msgid "Wind Speed"
