@@ -1,0 +1,430 @@
+# METEO
+# Copyright (C) 2017 Carlos Suárez
+# This file is distributed under the same license as the com.github.bitseater.weather package.
+# Eudald Gubert Roldan <eudaldgr@posteo.net>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: weather\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-01 11:48+0100\n"
+"PO-Revision-Date: 2018-05-01 11:48+0100\n"
+"Last-Translator: Eudald Gubert Roldan <eudaldgr@posteo.net>\n"
+"Language-Team: Catalan\n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: src/Widgets/Apikey.vala:145
+msgid "- Use only to try this application"
+msgstr "- Utilitzi només per provar l'aplicatiu"
+
+#: src/Widgets/Apikey.vala:143
+msgid "- You can't use the update button"
+msgstr "- No podrà usar el botó d'actualitzar"
+
+#: src/Widgets/Apikey.vala:141
+msgid "- You'll have limited access to API"
+msgstr "- Tindrà accés limitat a l'API"
+
+#: src/Widgets/Preferences.vala:127
+msgid "12 hrs."
+msgstr "12 hrs."
+
+#: src/Widgets/Preferences.vala:125
+msgid "2 hrs."
+msgstr "2 hrs."
+
+#: src/Widgets/Preferences.vala:128
+msgid "24 hrs."
+msgstr "24 hrs."
+
+#: src/Widgets/Preferences.vala:126
+msgid "6 hrs."
+msgstr "6 hrs."
+
+#: src/Widgets/About.vala:30
+msgid "A forecast application with OpenWeatherMap API"
+msgstr "Aplicatiu de predicció amb l'API d'OpenWeatherMap"
+
+#: src/Utils/OWM_Today.vala:229
+msgid "API key: "
+msgstr "Clau API: "
+
+#: src/Widgets/Header.vala:36
+msgid "About Meteo"
+msgstr "Sobre Meteo"
+
+#: src/Widgets/City.vala:47 src/Widgets/City.vala:135 src/Widgets/City.vala:142
+msgid "At least of 3 characters are required!"
+msgstr "Es necessiten almenys 3 caràcters!"
+
+#: src/Widgets/About.vala:53
+msgid "Based in a mockup by"
+msgstr "Basat en una idea de"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:43
+msgid "Carlos Suárez"
+msgstr "Carlos Suárez"
+
+#: src/Widgets/Header.vala:62
+msgid "Change location"
+msgstr "Canviar ubicació"
+
+#: src/Widgets/MapViewOWM.vala:142 src/Widgets/MapView.vala:105
+msgid "Change to "
+msgstr "Canviar a "
+
+#: data/com.github.bitseater.weather.appdata.xml.in:20
+msgid "Choose your city with maps info."
+msgstr "Esculli la localitat des de mapes informatius"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:19
+msgid "Choose your units (metric, imperial or british)."
+msgstr "Esculli unitats (Sistema mètric, imperial o britànic)"
+
+#: src/Widgets/Preferences.vala:260 src/Widgets/ViewFile.vala:64
+#: src/Widgets/Apikey.vala:160
+msgid "Close"
+msgstr "Tancar"
+
+#: src/Widgets/Today.vala:70
+msgid "Cloudiness :"
+msgstr "Nuvolositat :"
+
+#: src/Widgets/MapViewOWM.vala:92 src/Widgets/MapView.vala:99
+msgid "Clouds"
+msgstr "Nuvols"
+
+#: src/Utils/OWM_Today.vala:245
+msgid "Clouds: "
+msgstr "Nuvols: "
+
+#: src/Widgets/About.vala:51
+msgid "Colaborators"
+msgstr "Col·laboradors"
+
+#: src/Utils/OWM_Today.vala:233
+msgid "Coord. lat: "
+msgstr "Coord. lat: "
+
+#: src/Utils/OWM_Today.vala:232
+msgid "Coord. lon: "
+msgstr "Coord. lon: "
+
+#: src/Widgets/Today.vala:39
+msgid "Coordinates :"
+msgstr "Coordinades :"
+
+#: src/Utils/OWM_Today.vala:236
+msgid "Country: "
+msgstr "País: "
+
+#: src/Widgets/ViewFile.vala:30
+msgid "Current Weather Data"
+msgstr "Dades meteorològiques actuals"
+
+#: src/Widgets/Preferences.vala:40
+msgid "Dark theme:"
+msgstr "Tema fosc:"
+
+#: src/Widgets/Header.vala:80
+msgid "Data"
+msgstr "Dades"
+
+#: src/Widgets/ViewFile.vala:50
+msgid "Data file not found"
+msgstr "Arxiu de dades no trobat"
+
+#: src/Utils/OWM_Today.vala:238
+msgid "Description: "
+msgstr "Descripció: "
+
+#: src/Widgets/Apikey.vala:39
+msgid "Enter your OpenWeatherMap API key"
+msgstr "Introdueixi la seva clau API d'OpenWeatherMap"
+
+#: src/Widgets/Preferences.vala:210
+msgid "Find my location automatically:"
+msgstr "Troba la meva posició automàticament:"
+
+#: src/Widgets/Forecast.vala:93
+msgid "Forecast"
+msgstr "Previsió"
+
+#: data/com.github.bitseater.weather.desktop.in:5
+msgid "Forecast App for desktop"
+msgstr "Aplicatiu de predicció per a l'escriptori"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:17
+msgid "Forecast for next 18 hours."
+msgstr "Predicció per a les pròximes 18 hores"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:18
+msgid "Forecast for next five days."
+msgstr "Previsió per als pròxims cinc dies."
+
+#: src/Utils/GeoLocate.vala:69 src/Widgets/MapViewOWM.vala:53
+#: src/Widgets/MapView.vala:78
+msgid "Found an error"
+msgstr "Trobat un error"
+
+#: src/Widgets/Preferences.vala:35
+msgid "General"
+msgstr "General"
+
+#: src/Widgets/Today.vala:58
+msgid "Humidity :"
+msgstr "Humitat :"
+
+#: src/Utils/OWM_Today.vala:242
+msgid "Humidity: "
+msgstr "Humitat: "
+
+#: src/Utils/OWM_Today.vala:231
+msgid "ID place: "
+msgstr "ID lloc: "
+
+#: src/Utils/OWM_Today.vala:239
+msgid "Icon file: "
+msgstr "Fitxer d'icona: "
+
+#: src/Widgets/Apikey.vala:59
+msgid "If you don't have it, please visit:"
+msgstr "Si no la té, si us plau visiti:"
+
+#: src/Widgets/MapViewOWM.vala:186
+msgid "Image not found"
+msgstr "Imatge no trobada"
+
+#: src/Widgets/Preferences.vala:174
+msgid "Imperial System"
+msgstr "Sistema Imperial"
+
+#: src/Widgets/Preferences.vala:32
+msgid "Interface"
+msgstr "Interfície"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:10
+msgid "Know the forecast of the next hours and days with data and maps"
+msgstr ""
+"Conegui la previsió meteorològica de les pròximes hores i dies, amb dades i "
+"mapes."
+
+#: src/Utils/OWM_Today.vala:228
+msgid "Language: "
+msgstr "Idioma: "
+
+#: src/Utils/OWM_Today.vala:234
+msgid "Location: "
+msgstr "Localització: "
+
+#: src/Widgets/Header.vala:81
+msgid "Maps"
+msgstr "Mapes"
+
+#: data/com.github.bitseater.weather.desktop.in:3
+#: data/com.github.bitseater.weather.desktop.in:4
+#: data/com.github.bitseater.weather.appdata.xml.in:8
+msgid "Meteo"
+msgstr "Meteo"
+
+#: src/Widgets/Preferences.vala:173
+msgid "Metric System"
+msgstr "Sistema Mètric"
+
+#: src/Widgets/City.vala:127
+msgid "No data"
+msgstr "No hi ha dades"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:22
+msgid "Now with System Tray Indicator."
+msgstr "Ara amb indicador de sistema."
+
+#: src/Widgets/Header.vala:56
+msgid "Options"
+msgstr "Opcions"
+
+#: src/Widgets/MapViewOWM.vala:93 src/Widgets/MapView.vala:100
+msgid "Precipitation"
+msgstr "Precipitació"
+
+#: src/Widgets/Header.vala:34
+msgid "Preferences"
+msgstr "Preferències"
+
+#: src/Widgets/MapViewOWM.vala:94 src/Widgets/MapView.vala:101
+msgid "Pressure"
+msgstr "Pressió"
+
+#: src/Widgets/Today.vala:54
+msgid "Pressure :"
+msgstr "Pressió :"
+
+#: src/Utils/OWM_Today.vala:241
+msgid "Pressure: "
+msgstr "Pressió: "
+
+#: src/MainWindow.vala:179
+msgid "Quit"
+msgstr "Sortir"
+
+#: src/Widgets/Preferences.vala:194
+msgid "Restore API key:"
+msgstr "Esborrar clau API:"
+
+#: src/Widgets/Apikey.vala:48
+msgid "Save"
+msgstr "Guardar"
+
+#: src/Widgets/City.vala:34
+msgid "Search for new location:"
+msgstr "Buscar nova ubicació:"
+
+#: src/Widgets/City.vala:84
+msgid "Select"
+msgstr "Seleccionar"
+
+#: src/MainWindow.vala:170
+msgid "Show Meteo"
+msgstr "Mostrar Meteo"
+
+#: src/Widgets/About.vala:52
+msgid "Special Thanks to"
+msgstr "Gràcies especialment a"
+
+#: src/Widgets/Preferences.vala:78
+msgid "Start minimized:"
+msgstr "Començar minimitzat:"
+
+#: src/Utils/OWM_Today.vala:235
+msgid "State: "
+msgstr "Estat/Regió: "
+
+#: src/Widgets/Today.vala:72
+msgid "Sunrise :"
+msgstr "Albada :"
+
+#: src/Utils/OWM_Today.vala:246
+msgid "Sunrise: "
+msgstr "Albada: "
+
+#: src/Widgets/Today.vala:76
+msgid "Sunset :"
+msgstr "Crepuscle :"
+
+#: src/Utils/OWM_Today.vala:247
+msgid "Sunset: "
+msgstr "Crepuscle: "
+
+#: src/Widgets/Preferences.vala:60
+msgid "Symbolic icons:"
+msgstr "Icones simbòliques:"
+
+#: src/Widgets/MapViewOWM.vala:91 src/Widgets/MapView.vala:98
+msgid "Temperature"
+msgstr "Temperatura"
+
+#: src/Utils/OWM_Today.vala:240
+msgid "Temperature: "
+msgstr "Temperatura: "
+
+#: src/Widgets/MapViewOWM.vala:144 src/Widgets/MapView.vala:107
+msgid "Terms of Service"
+msgstr "Termes de Servei"
+
+#: src/Widgets/Apikey.vala:106
+msgid "The API key cannot be empty."
+msgstr "La clau API no pot estar buida."
+
+#: src/Widgets/Today.vala:36
+msgid "Today"
+msgstr "Avui"
+
+#: src/Widgets/Preferences.vala:175
+msgid "UK System"
+msgstr "Sistema britànic"
+
+#: src/Widgets/Preferences.vala:170
+msgid "Units:"
+msgstr "Unitats:"
+
+#: src/Utils/OWM_Today.vala:230
+msgid "Units: "
+msgstr "Unitats: "
+
+#: src/Widgets/Header.vala:64
+msgid "Update conditions"
+msgstr "Actualitzar condicions"
+
+#: src/Widgets/Preferences.vala:122
+msgid "Update conditions every :"
+msgstr "Actualitzar condicions cada :"
+
+#: src/Widgets/Apikey.vala:65
+msgid "Use API key built-in"
+msgstr "Usar la clau API incorporada"
+
+#: src/Widgets/Preferences.vala:96
+msgid "Use System Tray Indicator:"
+msgstr "Usar indicador de sistema"
+
+#: src/Widgets/Apikey.vala:138
+msgid "Using built-in API key:"
+msgstr "Usar la clau API inclosa:"
+
+#: src/Widgets/Header.vala:35
+msgid "View weather data"
+msgstr "Veure dades del temps"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:21
+msgid "Watch awesome maps with weather info."
+msgstr "Observi divertits mapes amb informació meteorològica."
+
+#: src/Utils/OWM_Today.vala:237
+msgid "Weather: "
+msgstr "Temps: "
+
+#: data/com.github.bitseater.weather.desktop.in:13
+msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
+msgstr "Temps;Previsió;Temperatura;Vent;Neu;Pluja;"
+
+#: src/Widgets/MapViewOWM.vala:95 src/Widgets/MapView.vala:102
+msgid "Wind Speed"
+msgstr "Veloc. vent"
+
+#: src/Widgets/Today.vala:66
+msgid "Wind dir :"
+msgstr "Dir. vent :"
+
+#: src/Utils/OWM_Today.vala:244
+msgid "Wind dir: "
+msgstr "Dir. vent: "
+
+#: src/Widgets/Today.vala:62
+msgid "Wind speed :"
+msgstr "Veloc. vent :"
+
+#: src/Utils/OWM_Today.vala:243
+msgid "Wind speed: "
+msgstr "Veloc. vent: "
+
+#: src/Widgets/Apikey.vala:100
+msgid "Wrong API Key. Please, try again."
+msgstr "Clau API errònia. Si us plau, intenti-ho de nou"
+
+#: data/com.github.bitseater.weather.desktop.in:8
+msgid "com.github.bitseater.weather"
+msgstr "com.github.bitseater.weather"
+
+#: src/Widgets/Apikey.vala:59
+msgid "or just :"
+msgstr "o simplement :"
+
+#: src/Widgets/About.vala:45
+msgid "website"
+msgstr "lloc web"
