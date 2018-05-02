@@ -54,4 +54,29 @@ namespace  Weather.Utils {
         }
         return units;
     }
+
+    public void set_start_on_boot () {
+        string origin = Constants.DATADIR + "/applications/" + Constants.EXEC_NAME + ".desktop";
+        string destine = Environment.get_user_config_dir () + "/autostart/" + Constants.EXEC_NAME + ".desktop";
+        try {
+            var file = File.new_for_path (destine);
+            file.make_symbolic_link (origin, null);
+            stdout.printf ("Added to autostart\n");
+
+        } catch (Error e) {
+            stdout.printf ("Error: %s\n", e.message);
+        }
+    }
+
+    public void reset_start_on_boot () {
+        try {
+            var file = File.new_for_path (Environment.get_user_config_dir () + "/autostart/com.github.bitseater.weather.desktop");
+            if (file.query_exists ()) {
+                file.delete ();
+                stdout.printf ("Removed from autostart\n");
+            }
+        } catch (Error e) {
+            stdout.printf ("Error: %s\n", e.message);
+        }
+    }
 }

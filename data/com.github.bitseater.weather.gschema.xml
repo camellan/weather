@@ -73,5 +73,11 @@
       <description>Catch my location on start</description>
     </key>
 
+    <key name="start-on-boot" type="b">
+      <default>false</default>
+      <summary>Start on boot</summary>
+      <description>Start application when user log into the desktop</description>
+    </key>
+
   </schema>
 </schemalist>

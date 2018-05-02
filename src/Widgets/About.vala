@@ -37,6 +37,7 @@ namespace  Weather.Widgets {
                                 (en) J0Ar https://github.com/J0Ar
                                 (pt) btd1337 <helder.bertoldo@gmail.com>
                                 (ru) Andrey Kultyapov <camellan@yandex.ru>
+                                (ca) Eudald Gubert Roldan <eudaldgr@posteo.net>
                                 (lt) welaq https://github.com/welaq
                                 (fr) ArthurS1 https://github.com/ArthurS1
                                 (de) BeatriceFendt https://github.com/BeatriceFendt";
