@@ -108,8 +108,12 @@ namespace Weather {
             this.indicator.label = label;
         }
 
-        public void set_indicatormenu (string? humi, string? pres, string? wspe, string? wdir, string? clou, string? sunr, string? suns) {
+        public void set_indicatormenu (string? humi, string? pres, string? wspe, string? wdir, string? clou, string? sunr, string? suns, string loc) {
             var menu = new Gtk.Menu ();
+            var city_item = new Gtk.MenuItem.with_label (loc);
+            city_item.sensitive = false;
+            city_item.show ();
+            menu.append (city_item);
             if (humi != null) {
                 var humi_item = new Gtk.ImageMenuItem.with_label (humi);
                 var humi_img = new Gtk.Image.from_icon_name ("weather-showers-symbolic", Gtk.IconSize.MENU);
@@ -117,7 +121,7 @@ namespace Weather {
                 humi_item.set_image (humi_img);
                 humi_item.sensitive = false;
                 humi_item.show ();
-                menu.append(humi_item);
+                menu.append (humi_item);
             }
             if (pres != null) {
                 var pres_item = new Gtk.ImageMenuItem.with_label (pres);
@@ -126,7 +130,7 @@ namespace Weather {
                 pres_item.set_image (pres_img);
                 pres_item.sensitive = false;
                 pres_item.show ();
-                menu.append(pres_item);
+                menu.append (pres_item);
             }
             if (wspe != null && wdir != null) {
                 var wind_item = new Gtk.ImageMenuItem.with_label (wspe + " | " + wdir);
@@ -135,7 +139,7 @@ namespace Weather {
                 wind_item.set_image (wind_img);
                 wind_item.sensitive = false;
                 wind_item.show ();
-                menu.append(wind_item);
+                menu.append (wind_item);
             }
             if (clou != null) {
                 var clou_item = new Gtk.ImageMenuItem.with_label (clou);
@@ -144,7 +148,7 @@ namespace Weather {
                 clou_item.set_image (clou_img);
                 clou_item.sensitive = false;
                 clou_item.show ();
-                menu.append(clou_item);
+                menu.append (clou_item);
             }
             if (sunr != null) {
                 var sunr_item = new Gtk.ImageMenuItem.with_label (sunr);
@@ -153,7 +157,7 @@ namespace Weather {
                 sunr_item.set_image (sunr_img);
                 sunr_item.sensitive = false;
                 sunr_item.show ();
-                menu.append(sunr_item);
+                menu.append (sunr_item);
             }
             if (suns != null) {
                 var suns_item = new Gtk.ImageMenuItem.with_label (suns);
@@ -162,8 +166,9 @@ namespace Weather {
                 suns_item.set_image (suns_img);
                 suns_item.sensitive = false;
                 suns_item.show ();
-                menu.append(suns_item);
+                menu.append (suns_item);
             }
+
             var hr_item = new Gtk.SeparatorMenuItem ();
             hr_item.show ();
             menu.append (hr_item);

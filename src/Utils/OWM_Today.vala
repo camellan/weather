@@ -116,7 +116,7 @@ namespace  Weather.Utils {
             switch (unit) {
                 case "metric":
                     temp_un = "C";
-                    speed_un = " m/s";
+                    speed_un = " km/h";
                     units = "metric";
                     break;
                 case "imperial":
@@ -204,7 +204,7 @@ namespace  Weather.Utils {
                 _pressure = vmain.get_int_member ("pressure").to_string() + " hPa";
                 _humidity = vmain.get_int_member ("humidity").to_string () + " %";
                 var wind = root.get_object_member ("wind");
-                _windspeed = Weather.Utils.to_string0 (wind.get_double_member ("speed")) + speed_un;
+                _windspeed = Weather.Utils.to_string0 ((wind.get_double_member ("speed")) * 3.6) + speed_un;
                 _winddir = cardinal (wind.get_double_member ("deg"));
                 var clouds = root.get_object_member ("clouds");
                 _clouds = clouds.get_int_member ("all").to_string () + " %";
@@ -227,7 +227,7 @@ namespace  Weather.Utils {
                     var dos = new DataOutputStream (file.create (FileCreateFlags.REPLACE_DESTINATION));
                     dos.put_string (_("Language: ") + lang + "\n");
                     dos.put_string (_("API key: ") + apiid + "\n");
-                    dos.put_string (_("Units: ") + unit + "\n");
+                    dos.put_string (_("Units") + ": " + unit + "\n");
                     dos.put_string (_("ID place: ") + idplace + "\n");
                     dos.put_string (_("Coord. lon: ") + _coor_lon + "\n");
                     dos.put_string (_("Coord. lat: ") + _coor_lat + "\n");
@@ -237,14 +237,14 @@ namespace  Weather.Utils {
                     dos.put_string (_("Weather: ") + _wmain + "\n");
                     dos.put_string (_("Description: ") + _wdescrip + "\n");
                     dos.put_string (_("Icon file: ") + _icon + "\n");
-                    dos.put_string (_("Temperature: ") + _temp + "\n");
-                    dos.put_string (_("Pressure: ") + _pressure + "\n");
-                    dos.put_string (_("Humidity: ") + _humidity + "\n");
-                    dos.put_string (_("Wind speed: ") + _windspeed + "\n");
-                    dos.put_string (_("Wind dir: ") + _winddir + "\n");
-                    dos.put_string (_("Clouds: ") + _clouds + "\n");
-                    dos.put_string (_("Sunrise: ") + _sunrise + "\n");
-                    dos.put_string (_("Sunset: ") + _sunset + "\n");
+                    dos.put_string (_("Temperature") + ": " + _temp + "\n");
+                    dos.put_string (_("Pressure") + ": " + _pressure + "\n");
+                    dos.put_string (_("Humidity") + ": " + _humidity + "\n");
+                    dos.put_string (_("Wind speed") + ": " + _windspeed + "\n");
+                    dos.put_string (_("Wind dir") + ": " + _winddir + "\n");
+                    dos.put_string (_("Clouds") + ": " + _clouds + "\n");
+                    dos.put_string (_("Sunrise") + ": " + _sunrise + "\n");
+                    dos.put_string (_("Sunset") + ": " + _sunset + "\n");
                     string fson = path + "/current.json";
                     var fjson = File.new_for_path (fson);
                     if (fjson.query_exists ()) {

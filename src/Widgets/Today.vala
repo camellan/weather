@@ -51,29 +51,29 @@ namespace  Weather.Widgets {
             temp.halign = Gtk.Align.START;
             var pres = new Gtk.Label (today.pressure);
             pres.halign = Gtk.Align.START;
-            var pres_lb = new Gtk.Label (_("Pressure :"));
+            var pres_lb = new Gtk.Label (_("Pressure") + " :");
             pres_lb.halign = Gtk.Align.END;
             var humid = new Gtk.Label (today.humidity);
             humid.halign = Gtk.Align.START;
-            var humid_lb = new Gtk.Label (_("Humidity :"));
+            var humid_lb = new Gtk.Label (_("Humidity") + " :");
             humid_lb.halign = Gtk.Align.END;
             var speed = new Gtk.Label (today.windspeed);
             speed.halign = Gtk.Align.START;
-            var speed_lb = new Gtk.Label (_("Wind speed :"));
+            var speed_lb = new Gtk.Label (_("Wind speed") + " :");
             speed_lb.halign = Gtk.Align.END;
             var degrees = new Gtk.Label (today.winddir);
             degrees.halign = Gtk.Align.START;
-            var degrees_lb = new Gtk.Label (_("Wind dir :"));
+            var degrees_lb = new Gtk.Label (_("Wind dir") + " :");
             degrees_lb.halign = Gtk.Align.END;
             var clouds_all = new Gtk.Label (today.clouds);
             clouds_all.halign = Gtk.Align.START;
             var clouds_lb = new Gtk.Label (_("Cloudiness :"));
             clouds_lb.halign = Gtk.Align.END;
-            var sun_r = new Gtk.Label (_("Sunrise :"));
+            var sun_r = new Gtk.Label (_("Sunrise") + " :");
             sun_r.halign = Gtk.Align.END;
             var sunrise = new Gtk.Label (today.sunrise);
             sunrise.halign = Gtk.Align.START;
-            var sun_s = new Gtk.Label (_("Sunset :"));
+            var sun_s = new Gtk.Label (_("Sunset") + " :");
             sun_s.halign = Gtk.Align.END;
             var sunset = new Gtk.Label (today.sunset);
             sunset.halign = Gtk.Align.START;
@@ -100,9 +100,9 @@ namespace  Weather.Widgets {
             attach (sun_s, 1, 11, 2, 1);
             attach (sunset, 3, 11, 2, 1);
 
-            window.set_icolabel (icon.get_icon (today.icon) + "-symbolic", today.temp);
-            window.set_indicatormenu (today.humidity, today.pressure, today.windspeed, today.winddir, today.clouds, today.sunrise, today.sunset);
             var setting = new Settings ("com.github.bitseater.weather");
+            window.set_icolabel (icon.get_icon (today.icon) + "-symbolic", today.temp);
+            window.set_indicatormenu (today.humidity, today.pressure, today.windspeed, today.winddir, today.clouds, today.sunrise, today.sunset, setting.get_string ("location"));
             if (setting.get_boolean ("indicator")) {
                 window.show_indicator ();
             }
