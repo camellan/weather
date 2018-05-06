@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Weather\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-05-02 23:46+0200\n"
-"PO-Revision-Date: 2018-04-15 23:55+0400\n"
+"PO-Revision-Date: 2018-05-06 19:50+0400\n"
 "Last-Translator: Andrey Kultyapov <camellan@yandex.ru>\n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -34,7 +34,7 @@ msgstr "- Вы будете иметь ограниченный доступ к 
 
 #: src/Widgets/Preferences.vala:145
 msgid "1 hr."
-msgstr ""
+msgstr "1 ч."
 
 #: src/Widgets/Preferences.vala:148
 msgid "12 hrs."
@@ -180,9 +180,8 @@ msgid "General"
 msgstr "Общие"
 
 #: src/Widgets/Today.vala:58 src/Utils/OWM_Today.vala:242
-#, fuzzy
 msgid "Humidity"
-msgstr "Влажность :"
+msgstr "Влажность"
 
 #: src/Utils/OWM_Today.vala:231
 msgid "ID place: "
@@ -219,7 +218,7 @@ msgstr "Язык: "
 
 #: src/Widgets/Preferences.vala:122
 msgid "Launch on start:"
-msgstr ""
+msgstr "Запускать при старте:"
 
 #: src/Utils/OWM_Today.vala:234
 msgid "Location: "
@@ -301,14 +300,12 @@ msgid "State: "
 msgstr "Область: "
 
 #: src/Widgets/Today.vala:72 src/Utils/OWM_Today.vala:246
-#, fuzzy
 msgid "Sunrise"
-msgstr "Восход :"
+msgstr "Восход"
 
 #: src/Widgets/Today.vala:76 src/Utils/OWM_Today.vala:247
-#, fuzzy
 msgid "Sunset"
-msgstr "Закат :"
+msgstr "Закат"
 
 #: src/Widgets/Preferences.vala:60
 msgid "Symbolic icons:"
@@ -336,9 +333,8 @@ msgid "UK System"
 msgstr "Английская система"
 
 #: src/Widgets/Preferences.vala:197 src/Utils/OWM_Today.vala:230
-#, fuzzy
 msgid "Units"
-msgstr "Единицы:"
+msgstr "Единицы"
 
 #: src/Widgets/Header.vala:64
 msgid "Update conditions"
@@ -381,14 +377,12 @@ msgid "Wind Speed"
 msgstr "Скорость ветра"
 
 #: src/Widgets/Today.vala:66 src/Utils/OWM_Today.vala:244
-#, fuzzy
 msgid "Wind dir"
-msgstr "Ветер :"
+msgstr "Ветер"
 
 #: src/Widgets/Today.vala:62 src/Utils/OWM_Today.vala:243
-#, fuzzy
 msgid "Wind speed"
-msgstr "Скорость ветра :"
+msgstr "Скорость ветра"
 
 #: src/Widgets/Apikey.vala:100
 msgid "Wrong API Key. Please, try again."
