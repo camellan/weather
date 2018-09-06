@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-02 23:46+0200\n"
+"PO-Revision-Date: 2018-09-06 17:35+0200\n"
+"Language-Team: Dutch <vistausss@outlook.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"Last-Translator: Heimen Stoffels <vistausss@outlook.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl_NL\n"
+
+#: src/Widgets/Apikey.vala:145
+msgid "- Use only to try this application"
+msgstr "- Alleen uitproberen"
+
+#: src/Widgets/Apikey.vala:143
+msgid "- You can't use the update button"
+msgstr "- Je kunt de bijwerkknop niet gebruiken"
+
+#: src/Widgets/Apikey.vala:141
+msgid "- You'll have limited access to API"
+msgstr "- Je hebt beperkt toegang tot de API"
+
+#: src/Widgets/Preferences.vala:145
+msgid "1 hr."
+msgstr "1 uur"
+
+#: src/Widgets/Preferences.vala:148
+msgid "12 hrs."
+msgstr "12 uur"
+
+#: src/Widgets/Preferences.vala:146
+msgid "2 hrs."
+msgstr "2 uur"
+
+#: src/Widgets/Preferences.vala:149
+msgid "24 hrs."
+msgstr "24 uur"
+
+#: src/Widgets/Preferences.vala:147
+msgid "6 hrs."
+msgstr "6 uur"
+
+#: src/Widgets/About.vala:30
+msgid "A forecast application with OpenWeatherMap API"
+msgstr "Een weersvoorspelling-app die gebruikmaakt van de OpenWeatherMap API"
+
+#: src/Utils/OWM_Today.vala:229
+msgid "API key: "
+msgstr "API-sleutel: "
+
+#: src/Widgets/Header.vala:36
+msgid "About Meteo"
+msgstr "Over Meteo"
+
+#: src/Widgets/City.vala:47 src/Widgets/City.vala:135 src/Widgets/City.vala:142
+msgid "At least of 3 characters are required!"
+msgstr "Minimaal 3 tekens vereist!"
+
+#: src/Widgets/About.vala:54
+msgid "Based in a mockup by"
+msgstr "Gebaseerd op een schets van"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:43
+msgid "Carlos Su\\303\\241rez"
+msgstr "Carlos Su\\303\\241rez"
+
+#: src/Widgets/Header.vala:62
+msgid "Change location"
+msgstr "Locatie wijzigen"
+
+#: src/Widgets/MapView.vala:105 src/Widgets/MapViewOWM.vala:142
+msgid "Change to "
+msgstr "Wijzigen naar "
+
+#: data/com.github.bitseater.weather.appdata.xml.in:20
+msgid "Choose your city with maps info."
+msgstr "Kies je stad en kaartinformatie."
+
+#: data/com.github.bitseater.weather.appdata.xml.in:19
+msgid "Choose your units (metric, imperial or british)."
+msgstr "Kies je eenheden (metrisch, imperiaal or brits)."
+
+#: src/Widgets/ViewFile.vala:64 src/Widgets/Preferences.vala:289
+#: src/Widgets/Apikey.vala:160
+msgid "Close"
+msgstr "Sluiten"
+
+#: src/Widgets/Today.vala:70
+msgid "Cloudiness :"
+msgstr "Bewolking:"
+
+#: src/Widgets/MapView.vala:99 src/Widgets/MapViewOWM.vala:92
+#: src/Utils/OWM_Today.vala:245
+msgid "Clouds"
+msgstr "Bewolking"
+
+#: src/Widgets/About.vala:52
+msgid "Colaborators"
+msgstr "Bijdragers"
+
+#: src/Utils/OWM_Today.vala:233
+msgid "Coord. lat: "
+msgstr "Breedtegraad: "
+
+#: src/Utils/OWM_Today.vala:232
+msgid "Coord. lon: "
+msgstr "Lengtegraad: "
+
+#: src/Widgets/Today.vala:39
+msgid "Coordinates :"
+msgstr "Coördinaten:"
+
+#: src/Utils/OWM_Today.vala:236
+msgid "Country: "
+msgstr "Land: "
+
+#: src/Widgets/ViewFile.vala:30
+msgid "Current Weather Data"
+msgstr "Actuele weergegevens"
+
+#: src/Widgets/Preferences.vala:40
+msgid "Dark theme:"
+msgstr "Donker thema:"
+
+#: src/Widgets/Header.vala:80
+msgid "Data"
+msgstr "Gegevens"
+
+#: src/Widgets/ViewFile.vala:50
+msgid "Data file not found"
+msgstr "Gegevensbestand niet gevonden"
+
+#: src/Utils/OWM_Today.vala:238
+msgid "Description: "
+msgstr "Omschrijving: "
+
+#: src/Widgets/Apikey.vala:39
+msgid "Enter your OpenWeatherMap API key"
+msgstr "Voer je OpenWeatherMap API-sleutel in"
+
+#: src/Widgets/Preferences.vala:237
+msgid "Find my location automatically:"
+msgstr "Locatie automatisch bepalen:"
+
+#: src/Widgets/Forecast.vala:93
+msgid "Forecast"
+msgstr "Voorspelling"
+
+#: data/com.github.bitseater.weather.desktop.in:5
+msgid "Forecast App for desktop"
+msgstr "Voorspellingsapp voor je computer"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:17
+msgid "Forecast for next 18 hours."
+msgstr "Voorspelling voor de komende 18 uur."
+
+#: data/com.github.bitseater.weather.appdata.xml.in:18
+msgid "Forecast for next five days."
+msgstr "Voorspelling voor de komende vijf dagen."
+
+#: src/Widgets/MapView.vala:78 src/Widgets/MapViewOWM.vala:53
+#: src/Utils/GeoLocate.vala:69
+msgid "Found an error"
+msgstr "Er is een fout opgetreden"
+
+#: src/Widgets/Preferences.vala:35
+msgid "General"
+msgstr "Algemeen"
+
+#: src/Widgets/Today.vala:58 src/Utils/OWM_Today.vala:242
+msgid "Humidity"
+msgstr "Luchtvochtigheid"
+
+#: src/Utils/OWM_Today.vala:231
+msgid "ID place: "
+msgstr "ID-locatie: "
+
+#: src/Utils/OWM_Today.vala:239
+msgid "Icon file: "
+msgstr "Pictogrambestand: "
+
+#: src/Widgets/Apikey.vala:59
+msgid "If you don't have it, please visit:"
+msgstr "Als je dit hebt, ga dan naar:"
+
+#: src/Widgets/MapViewOWM.vala:186
+msgid "Image not found"
+msgstr "Afbeelding niet gevonden"
+
+#: src/Widgets/Preferences.vala:201
+msgid "Imperial System"
+msgstr "Imperiaal systeem"
+
+#: src/Widgets/Preferences.vala:32
+msgid "Interface"
+msgstr "Uiterlijk"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:10
+msgid "Know the forecast of the next hours and days with data and maps"
+msgstr "Verkrijg de voorspelling voor de komende uren en dagen, zowel met gegevens als kaarten"
+
+#: src/Utils/OWM_Today.vala:228
+msgid "Language: "
+msgstr "Taal: "
+
+#: src/Widgets/Preferences.vala:122
+msgid "Launch on start:"
+msgstr "Bij opstarten:"
+
+#: src/Utils/OWM_Today.vala:234
+msgid "Location: "
+msgstr "Locatie: "
+
+#: src/Widgets/Header.vala:81
+msgid "Maps"
+msgstr "Kaarten"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:8
+#: data/com.github.bitseater.weather.desktop.in:3
+#: data/com.github.bitseater.weather.desktop.in:4
+msgid "Meteo"
+msgstr "Meteo"
+
+#: src/Widgets/Preferences.vala:200
+msgid "Metric System"
+msgstr "Metrisch systeem"
+
+#: src/Widgets/City.vala:127
+msgid "No data"
+msgstr "Geen gegevens"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:22
+msgid "Now with System Tray Indicator."
+msgstr "Nu met systeemvakindicator."
+
+#: src/Widgets/Header.vala:56
+msgid "Options"
+msgstr "Opties"
+
+#: src/Widgets/MapView.vala:100 src/Widgets/MapViewOWM.vala:93
+msgid "Precipitation"
+msgstr "Neerslag"
+
+#: src/Widgets/Header.vala:34
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: src/Widgets/MapView.vala:101 src/Widgets/MapViewOWM.vala:94
+#: src/Widgets/Today.vala:54 src/Utils/OWM_Today.vala:241
+msgid "Pressure"
+msgstr "Luchtdruk"
+
+#: src/MainWindow.vala:184
+msgid "Quit"
+msgstr "Afsluiten"
+
+#: src/Widgets/Preferences.vala:221
+msgid "Restore API key:"
+msgstr "API-sleutel herstellen:"
+
+#: src/Widgets/Apikey.vala:48
+msgid "Save"
+msgstr "Opslaan"
+
+#: src/Widgets/City.vala:34
+msgid "Search for new location:"
+msgstr "Zoeken naar nieuwe locatie:"
+
+#: src/Widgets/City.vala:84
+msgid "Select"
+msgstr "Selecteren"
+
+#: src/MainWindow.vala:175
+msgid "Show Meteo"
+msgstr "Meteo tonen"
+
+#: src/Widgets/About.vala:53
+msgid "Special Thanks to"
+msgstr "Met extra dank aan"
+
+#: src/Widgets/Preferences.vala:78
+msgid "Start minimized:"
+msgstr "Geminimaliseerd opstarten:"
+
+#: src/Utils/OWM_Today.vala:235
+msgid "State: "
+msgstr "Status: "
+
+#: src/Widgets/Today.vala:72 src/Utils/OWM_Today.vala:246
+msgid "Sunrise"
+msgstr "Zonsopkomst"
+
+#: src/Widgets/Today.vala:76 src/Utils/OWM_Today.vala:247
+msgid "Sunset"
+msgstr "Zonsondergang"
+
+#: src/Widgets/Preferences.vala:60
+msgid "Symbolic icons:"
+msgstr "Symbolische pictogrammen:"
+
+#: src/Widgets/MapView.vala:98 src/Widgets/MapViewOWM.vala:91
+#: src/Utils/OWM_Today.vala:240
+msgid "Temperature"
+msgstr "Temperatuur"
+
+#: src/Widgets/MapView.vala:107 src/Widgets/MapViewOWM.vala:144
+msgid "Terms of Service"
+msgstr "Algemene voorwaarden"
+
+#: src/Widgets/Apikey.vala:106
+msgid "The API key cannot be empty."
+msgstr "De API-sleutel mag niet blanco zijn."
+
+#: src/Widgets/Today.vala:36
+msgid "Today"
+msgstr "Vandaag"
+
+#: src/Widgets/Preferences.vala:202
+msgid "UK System"
+msgstr "Brits systeem"
+
+#: src/Widgets/Preferences.vala:197 src/Utils/OWM_Today.vala:230
+msgid "Units"
+msgstr "Eenheden"
+
+#: src/Widgets/Header.vala:64
+msgid "Update conditions"
+msgstr "Weer bijwerken"
+
+#: src/Widgets/Preferences.vala:142
+msgid "Update conditions every :"
+msgstr "Weer bijwerken, elke:"
+
+#: src/Widgets/Apikey.vala:65
+msgid "Use API key built-in"
+msgstr "Meegeleverde API-sleutel gebruiken"
+
+#: src/Widgets/Preferences.vala:96
+msgid "Use System Tray Indicator:"
+msgstr "Systeemvakindicator gebruiken:"
+
+#: src/Widgets/Apikey.vala:138
+msgid "Using built-in API key:"
+msgstr "Gebruikmakend van meegeleverde API-sleutel:"
+
+#: src/Widgets/Header.vala:35
+msgid "View weather data"
+msgstr "Weergegevens tonen"
+
+#: data/com.github.bitseater.weather.appdata.xml.in:21
+msgid "Watch awesome maps with weather info."
+msgstr "Bekijk prachtige kaarten met weergegevens."
+
+#: src/Utils/OWM_Today.vala:237
+msgid "Weather: "
+msgstr "Weer: "
+
+#: data/com.github.bitseater.weather.desktop.in:13
+msgid "Weather;Forecast;Temperature;Wind;Snow;Rain;"
+msgstr "Weer;Voorspelling;Temperatuur;Wind;Sneeuw;Regen;"
+
+#: src/Widgets/MapView.vala:102 src/Widgets/MapViewOWM.vala:95
+msgid "Wind Speed"
+msgstr "Windsnelheid"
+
+#: src/Widgets/Today.vala:66 src/Utils/OWM_Today.vala:244
+msgid "Wind dir"
+msgstr "Windrichting"
+
+#: src/Widgets/Today.vala:62 src/Utils/OWM_Today.vala:243
+msgid "Wind speed"
+msgstr "Windsnelheid"
+
+#: src/Widgets/Apikey.vala:100
+msgid "Wrong API Key. Please, try again."
+msgstr "Onjuiste API-sleutel. Probeer het opnieuw."
+
+#: data/com.github.bitseater.weather.desktop.in:8
+msgid "com.github.bitseater.weather"
+msgstr "com.github.bitseater.weather"
+
+#: src/Widgets/Apikey.vala:59
+msgid "or just :"
+msgstr "of:"
+
+#: src/Widgets/About.vala:46
+msgid "website"
+msgstr "website"
